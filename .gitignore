@@ -1,1 +1,21 @@
 .DS_Store
+
+# data never goes in git
+data/
+*.zip
+*.mat
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# training outputs
+checkpoints/
+runs/
+*.pt
+*.pth
+
+# local settings
+config.yaml
