@@ -19,3 +19,15 @@ runs/
 
 # local settings
 config.yaml
+
+# Datasets folder and photos (Task 1: no photo in git)
+Datasets/
+*.jpg
+*.jpeg
+*.JPG
+*.JPEG
+*.tif
+*.tiff
+
+# pip install bookkeeping
+*.egg-info/

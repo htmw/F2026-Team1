@@ -20,11 +20,33 @@ academic research only (September 2026). No images are redistributed.
 Glaucoma has three external test sets. External cataract testing relies on
 retina_dataset_2016 alone.
 
-## Setup
+## Setup (one time)
+Use Python 3.14. The package versions in requirements.txt were pinned on 3.14,
+and older Python versions may fail to install them.
 
+    git clone https://github.com/htmw/F2026-Team1.git
+    cd F2026-Team1
     python3 -m venv .venv
-    source .venv/bin/activate
+    source .venv/bin/activate        # Windows: .venv\Scripts\activate
     pip install -r requirements.txt
+
+Every time you open a new terminal to work on the project, activate again:
+
+    source .venv/bin/activate        # Windows: .venv\Scripts\activate
+
+## Random seed
+The whole project uses one seed, `SEED = 42`, defined in `src/dual/config.py`.
+It was fixed before any results. Do not change it after the Task 7 split.
+Every script starts with:
+
+    from dual.config import set_seed
+    set_seed()
+
+## Branches
+- `main`: stable version, updated only at the end of each sprint.
+- `develop`: everyday work is merged here through pull requests.
+- Task branches: create from `develop`, name after the task
+  (for example `task-3-verification-script`), open the pull request into `develop`.
 
 ## Repo layout
 - `src/dual/` project code (preprocessing, model, training, evaluation)
