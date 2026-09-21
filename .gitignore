@@ -1,9 +1,11 @@
 .DS_Store
 
-# data never goes in git
-data/
+# the dataset goes in data/ and IS in git (team decision, Sep 2026)
+# zips are not needed, the unzipped folders are in data/
 *.zip
-*.mat
+
+# preprocessed copies can be rebuilt with the preprocessing script
+Preprocessed/
 
 # python
 .venv/
@@ -19,15 +21,6 @@ runs/
 
 # local settings
 config.yaml
-
-# Datasets folder and photos (Task 1: no photo in git)
-Datasets/
-*.jpg
-*.jpeg
-*.JPG
-*.JPEG
-*.tif
-*.tiff
 
 # pip install bookkeeping
 *.egg-info/

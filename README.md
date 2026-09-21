@@ -48,7 +48,22 @@ Every script starts with:
 - Task branches: create from `develop`, name after the task
   (for example `task-3-verification-script`), open the pull request into `develop`.
 
+## Dataset folder
+All images are in the repo under `data/`, so everyone has the same paths after cloning:
+
+    data/Internal/ODIR-5K/Training Images/     training data (ODIR-5K)
+    data/External/ORIGA/                        test only
+    data/External/DRISHTI-GS/                   test only
+    data/External/ACRIMA/                       test only
+    data/External/retina_dataset_2016/          test only
+
+Code should use paths starting with `data/`, for example
+`Path("data/Internal/ODIR-5K/Training Images")`, and be run from the repo folder.
+Nothing under `data/External/` is used for training or tuning.
+Preprocessed copies go in `Preprocessed/`, which git ignores, since they can be rebuilt.
+
 ## Repo layout
+- `data/` the datasets (see above)
 - `src/dual/` project code (preprocessing, model, training, evaluation)
 - `scripts/` tools such as the ODIR label builder
 - `labels/` derived per-eye label file
