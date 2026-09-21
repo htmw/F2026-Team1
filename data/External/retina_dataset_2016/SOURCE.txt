@@ -1,0 +1,36 @@
+retina_dataset_2016: provenance and status
+Recorded 13 September 2026 by the EyeQ team (CS691 Capstone).
+
+WHAT THIS IS
+The GitHub "retina_dataset" (original repository sjchoi86/retina_dataset, now removed;
+surviving forks include yiweichen04/retina_dataset and cvblab/retina_dataset, with
+history going back to November 2016). Also redistributed on Kaggle as the "cataract dataset"
+(jr2ngb), and listed in glaucoma catalogues as "sjchoi86-HRF" (not related to the HRF
+High-Resolution Fundus database).
+
+CONTENTS
+601 PNG fundus photos, labelled only by folder name:
+  1_normal          300
+  2_cataract        100
+  2_glaucoma        101
+  3_retina_disease  100
+Image sizes: 2592x1728 (403), 2464x1632 (158), 1848x1224 (40).
+
+STATUS: USE WITH CAUTION
+- No documented origin: no hospital, country, camera, dates or grading method.
+- No licence. Reuse permission is not granted explicitly. Confirm with the advisor
+  before using it in the paper, and do not redistribute.
+- Some photos in 2_cataract look sharp with no visible haze, so the cataract label
+  may not match ODIR-5K's grading.
+- One disease per photo: a glaucoma eye that also has cataract counts as not cataract.
+- No optic disc outlines, so it is excluded from the glaucoma heatmap check.
+
+CHECKS PERFORMED (13 September 2026)
+- All 601 photos checked against the 7,000 ODIR-5K training photos: no copies found.
+- The 101 glaucoma photos checked against ORIGA, DRISHTI-GS and RFMiD 2.0: no overlap.
+- No duplicates within the set. This copy is byte-identical to the downloaded archive.
+
+HOW WE USE IT
+External test only, never for training or tuning. Reported in its own results row.
+  cataract = 1 for 2_cataract; 0 for 1_normal, 2_glaucoma, 3_retina_disease
+  glaucoma = 1 for 2_glaucoma; 0 for 1_normal, 2_cataract, 3_retina_disease
