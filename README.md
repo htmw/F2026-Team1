@@ -23,6 +23,12 @@ To check your copy of the data is complete and unchanged, run this from inside `
 Rule: ODIR-5K is the only training data. External sets (ORIGA, DRISHTI-GS,
 ACRIMA, retina_dataset_2016) are used for testing only.
 
+## Data decisions (Task 4)
+- Media opacity: all 63 media-opacity eyes are held out of train, validation and test (split = holdout). They are used later as the check for the cataract "haze shortcut".
+- Low image quality: the 21 low-quality eyes are held out (split = holdout)  and used later to test the "uncertain, refer" result.
+- Suspected glaucoma: all 44 suspected-glaucoma eyes are held out. This includes 2 eyes that also have cataract (625_left, 1415_right), so they are not used as cataract examples either.
+- Fellow eyes: when one eye is held out, the patient's other eye can still be in train, validation or test. For 28 media-opacity patients the other eye is in training, so the haze check is reported twice: on all 63 eyes, and only on eyes whose other eye was not in training.
+
 ## Dataset approvals
 All datasets are used with Professor Wong's approval for non-commercial
 academic research only (September 2026). He confirmed that keeping the

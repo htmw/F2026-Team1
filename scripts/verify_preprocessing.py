@@ -3,7 +3,8 @@ import cv2
 import random
 import numpy as np
 
-IMAGE_DIR = Path("Preprocessed Images")
+# IMAGE_DIR = Path("Preprocessed Images")
+IMAGE_DIR = Path("Preprocessed/ODIR")
 OUTPUT = Path("preprocessing_check.jpg")
 
 SAMPLE_SIZE = 20

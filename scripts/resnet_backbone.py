@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 from torchvision.models import resnet50, ResNet50_Weights
+# from scripts.resnet_backbone import SharedResNetBackbone
 
 
 class SharedResNetBackbone(nn.Module):
