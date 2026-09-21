@@ -1,0 +1,23 @@
+patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,media_opacity,image_quality_flag,exclusion,split
+9001,left,9001_left.jpg,normal fundus,0,0,0,0,0,0,train
+9001,right,9001_right.jpg,normal fundus,0,0,0,0,0,0,train
+9002,left,9002_left.jpg,cataract,1,0,0,0,0,0,train
+9002,right,9002_right.jpg,normal fundus,0,0,0,0,0,0,train
+9003,left,9003_left.jpg,glaucoma,0,1,0,0,0,0,validation
+9003,right,9003_right.jpg,normal fundus,0,0,0,0,0,0,validation
+9004,left,9004_left.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
+9004,right,9004_right.jpg,normal fundus,0,0,0,0,0,0,train
+9005,left,9005_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
+9005,right,9005_right.jpg,normal fundus,0,0,0,0,0,0,validation
+9006,left,9006_left.jpg,low image quality,0,0,0,0,1,1,holdout
+9006,right,9006_right.jpg,normal fundus,0,0,0,0,0,0,test
+9007,left,9007_left.jpg,no fundus image,0,0,0,0,0,1,excluded
+9007,right,9007_right.jpg,normal fundus,0,0,0,0,0,0,train
+9008,left,9008_left.jpg,cataract,1,0,0,0,0,0,train
+9008,right,9008_right.jpg,glaucoma,0,1,0,0,0,0,train
+9009,left,9009_left.jpg,"cataract,suspected cataract",1,0,0,0,0,0,train
+9009,right,9009_right.jpg,normal fundus,0,0,0,0,0,0,train
+9010,left,9010_left.jpg,diabetic retinopathy,0,0,0,0,0,0,test
+9010,right,9010_right.jpg,normal fundus,0,0,0,0,0,0,test
+9011,left,9011_left.jpg,lens dust,0,0,0,0,1,0,test
+9011,right,9011_right.jpg,glaucoma，lens dust,0,1,0,0,1,0,test
