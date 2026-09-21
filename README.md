@@ -61,10 +61,13 @@ Every script starts with:
     set_seed()
 
 ## Branches
-- `main`: stable version, updated only at the end of each sprint.
-- `develop`: everyday work is merged here through pull requests.
+- `develop`: everyday work goes here. All new code is reviewed on `develop` first.
+- `main`: the reviewed version. Changes move from `develop` to `main` through a
+  pull request once they are reviewed, as often as needed (not only at the end of a sprint).
+  Never push to `main` directly.
 - Task branches: create from `develop`, name after the task
   (for example `task-3-verification-script`), open the pull request into `develop`.
+- When opening a pull request, check the base branch before creating it.
 
 ## Repo layout
 - `data/` the datasets (see Data above)
