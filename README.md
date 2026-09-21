@@ -62,7 +62,7 @@ Every script starts with:
 - Task branches: create from `develop`, name after the task
   (for example `task-3-verification-script`), open the pull request into `develop`.
 - When opening a pull request, check the base branch before creating it.
-  
+
 ## Repo layout
 - `data/` the datasets (see Data above)
 - `src/dual/` project code (preprocessing, model, training, evaluation)
