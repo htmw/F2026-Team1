@@ -1,8 +1,6 @@
 from pathlib import Path
 import cv2
 import numpy as np
-from scripts.preprocess_images import preprocess_image
-
 
 TARGET_SIZE = 512
 

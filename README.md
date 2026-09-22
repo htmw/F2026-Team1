@@ -71,8 +71,8 @@ Every script starts with:
 
 ## Repo layout
 - `data/` the datasets (see Data above)
-- `src/dual/` project code (preprocessing, model, training, evaluation)
-- `scripts/` tools such as the ODIR label builder
+- `src/dual/` shared settings (the random seed in config.py)
+- `scripts/` project code: labels, split, preprocessing, model backbone
 - `labels/` derived per-eye label file
 - `tests/` automatic checks
 - `notebooks/` exploration
