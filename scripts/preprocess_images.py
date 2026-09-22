@@ -5,11 +5,11 @@ import numpy as np
 TARGET_SIZE = 512
 
 DATASETS = {
-    "ODIR": Path("Training Images"),
-    "ORIGA": Path("External/ORIGA"),
-    "DRISHTI-GS": Path("External/DRISHTI-GS"),
-    "ACRIMA": Path("External/ACRIMA"),
-    "retina_dataset_2016": Path("External/retina_dataset_2016"),
+    "ODIR": Path("data/Internal/ODIR-5K/Training Images"),
+    "ORIGA": Path("data/External/ORIGA"),
+    "DRISHTI-GS": Path("data/External/DRISHTI-GS"),
+    "ACRIMA": Path("data/External/ACRIMA"),
+    "retina_dataset_2016": Path("data/External/retina_dataset_2016"),
 }
 
 OUTPUT_ROOT = Path("Preprocessed")
@@ -105,6 +105,8 @@ def preprocess_image(input_path, output_path):
         resized
     )
 
+SKIP_FOLDERS = {"GT", "Test_GT", "Semi-automatic-annotations"}
+
 
 def get_images(folder):
     extensions = {
@@ -114,10 +116,12 @@ def get_images(folder):
 
     # rglob handles datasets that contain
     # images inside subfolders.
+    # SKIP_FOLDERS leaves out outline/annotation files that are not photos.
     return sorted([
         p for p in folder.rglob("*")
         if p.is_file()
         and p.suffix.lower() in extensions
+        and not (set(p.parts) & SKIP_FOLDERS)
     ])
 
 

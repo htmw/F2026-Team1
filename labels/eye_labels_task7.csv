@@ -189,7 +189,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 93,right,93_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 94,left,94_left.jpg,normal fundus，lens dust,0,0,0,0,1,0,test
 94,right,94_right.jpg,vitreous degeneration，mild nonproliferative retinopathy,0,0,0,0,0,0,test
-95,left,95_left.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+95,left,95_left.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
 95,right,95_right.jpg,hypertensive retinopathy,0,0,0,0,0,0,train
 96,left,96_left.jpg,vitreous degeneration,0,0,0,0,0,0,train
 96,right,96_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
@@ -272,7 +272,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 135,left,135_left.jpg,drusen,0,0,0,0,0,0,train
 135,right,135_right.jpg,drusen,0,0,0,0,0,0,train
 136,left,136_left.jpg,wet age-related macular degeneration,0,0,0,0,0,0,train
-136,right,136_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+136,right,136_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 137,left,137_left.jpg,normal fundus,0,0,0,0,0,0,train
 137,right,137_right.jpg,moderate non proliferative retinopathy，epiretinal membrane,0,0,0,0,0,0,train
 138,left,138_left.jpg,epiretinal membrane,0,0,0,0,0,0,train
@@ -311,7 +311,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 154,right,154_right.jpg,lens dust，normal fundus,0,0,0,0,1,0,validation
 155,left,155_left.jpg,normal fundus,0,0,0,0,0,0,train
 155,right,155_right.jpg,retinal pigmentation,0,0,0,0,0,0,train
-156,left,156_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+156,left,156_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 156,right,156_right.jpg,macular epiretinal membrane,0,0,0,0,0,0,train
 157,left,157_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 157,right,157_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
@@ -433,7 +433,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 216,right,216_right.jpg,epiretinal membrane,0,0,0,0,0,0,train
 217,left,217_left.jpg,epiretinal membrane,0,0,0,0,0,0,validation
 217,right,217_right.jpg,moderate non proliferative retinopathy，spotted membranous change,0,0,0,0,0,0,validation
-218,left,218_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+218,left,218_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 218,right,218_right.jpg,cataract,1,0,0,0,0,0,train
 219,left,219_left.jpg,vitreous degeneration,0,0,0,0,0,0,validation
 219,right,219_right.jpg,normal fundus,0,0,0,0,0,0,validation
@@ -503,7 +503,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 251,right,251_right.jpg,macular epiretinal membrane，lens dust，moderate non proliferative retinopathy,0,0,0,0,1,0,train
 252,left,252_left.jpg,normal fundus,0,0,0,0,0,0,train
 252,right,252_right.jpg,vitreous degeneration,0,0,0,0,0,0,train
-253,left,253_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+253,left,253_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 253,right,253_right.jpg,normal fundus,0,0,0,0,0,0,train
 254,left,254_left.jpg,cataract,1,0,0,0,0,0,train
 254,right,254_right.jpg,macular epiretinal membrane,0,0,0,0,0,0,train
@@ -564,7 +564,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 282,left,282_left.jpg,moderate non proliferative retinopathy，branch retinal vein occlusion,0,0,0,0,0,0,train
 282,right,282_right.jpg,normal fundus,0,0,0,0,0,0,train
 283,left,283_left.jpg,spotted membranous change,0,0,0,0,0,0,train
-283,right,283_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+283,right,283_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 284,left,284_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 284,right,284_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 285,left,285_left.jpg,normal fundus,0,0,0,0,0,0,train
@@ -696,13 +696,13 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 348,left,348_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,validation
 348,right,348_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,validation
 349,left,349_left.jpg,normal fundus,0,0,0,0,0,0,train
-349,right,349_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+349,right,349_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 350,left,350_left.jpg,epiretinal membrane over the macula,0,0,0,0,0,0,train
 350,right,350_right.jpg,normal fundus,0,0,0,0,0,0,train
 351,left,351_left.jpg,epiretinal membrane,0,0,0,0,0,0,train
 351,right,351_right.jpg,normal fundus,0,0,0,0,0,0,train
-352,left,352_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
-352,right,352_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+352,left,352_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
+352,right,352_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 353,left,353_left.jpg,normal fundus,0,0,0,0,0,0,train
 353,right,353_right.jpg,myelinated nerve fibers,0,0,0,0,0,0,train
 354,left,354_left.jpg,normal fundus,0,0,0,0,0,0,train
@@ -727,8 +727,8 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 363,right,363_right.jpg,normal fundus,0,0,0,0,0,0,validation
 364,left,364_left.jpg,myelinated nerve fibers,0,0,0,0,0,0,train
 364,right,364_right.jpg,normal fundus,0,0,0,0,0,0,train
-365,left,365_left.jpg,hypertensive retinopathy，suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
-365,right,365_right.jpg,hypertensive retinopathy，suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+365,left,365_left.jpg,hypertensive retinopathy，suspected glaucoma,0,0,1,0,0,0,holdout
+365,right,365_right.jpg,hypertensive retinopathy，suspected glaucoma,0,0,1,0,0,0,holdout
 366,left,366_left.jpg,macular epiretinal membrane,0,0,0,0,0,0,train
 366,right,366_right.jpg,normal fundus,0,0,0,0,0,0,train
 367,left,367_left.jpg,epiretinal membrane,0,0,0,0,0,0,train
@@ -741,8 +741,8 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 370,right,370_right.jpg,normal fundus,0,0,0,0,0,0,train
 371,left,371_left.jpg,drusen,0,0,0,0,0,0,train
 371,right,371_right.jpg,drusen,0,0,0,0,0,0,train
-372,left,372_left.jpg,"low image quality,maculopathy",0,0,0,0,1,1,excluded
-372,right,372_right.jpg,low image quality,0,0,0,0,1,1,excluded
+372,left,372_left.jpg,"low image quality,maculopathy",0,0,0,0,1,1,holdout
+372,right,372_right.jpg,low image quality,0,0,0,0,1,1,holdout
 373,left,373_left.jpg,normal fundus,0,0,0,0,0,0,test
 373,right,373_right.jpg,macular epiretinal membrane,0,0,0,0,0,0,test
 374,left,374_left.jpg,hypertensive retinopathy,0,0,0,0,0,0,train
@@ -773,8 +773,8 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 386,right,386_right.jpg,moderate non proliferative retinopathy，epiretinal membrane,0,0,0,0,0,0,train
 387,left,387_left.jpg,laser spot，moderate non proliferative retinopathy,0,0,0,0,0,0,train
 387,right,387_right.jpg,laser spot，moderate non proliferative retinopathy，macular epiretinal membrane,0,0,0,0,0,0,train
-388,left,388_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
-388,right,388_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+388,left,388_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
+388,right,388_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 389,left,389_left.jpg,myelinated nerve fibers,0,0,0,0,0,0,test
 389,right,389_right.jpg,normal fundus,0,0,0,0,0,0,test
 390,left,390_left.jpg,normal fundus,0,0,0,0,0,0,train
@@ -917,7 +917,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 458,right,458_right.jpg,normal fundus,0,0,0,0,0,0,test
 459,left,459_left.jpg,normal fundus，lens dust,0,0,0,0,1,0,train
 459,right,459_right.jpg,lens dust，macular epiretinal membrane,0,0,0,0,1,0,train
-460,left,460_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+460,left,460_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 460,right,460_right.jpg,normal fundus，lens dust,0,0,0,0,1,0,train
 461,left,461_left.jpg,normal fundus,0,0,0,0,0,0,train
 461,right,461_right.jpg,macular epiretinal membrane,0,0,0,0,0,0,train
@@ -1087,7 +1087,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 543,right,543_right.jpg,hypertensive retinopathy,0,0,0,0,0,0,test
 544,left,544_left.jpg,normal fundus,0,0,0,0,0,0,train
 544,right,544_right.jpg,moderate non proliferative retinopathy，epiretinal membrane,0,0,0,0,0,0,train
-545,left,545_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+545,left,545_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 545,right,545_right.jpg,normal fundus,0,0,0,0,0,0,validation
 546,left,546_left.jpg,branch retinal vein occlusion,0,0,0,0,0,0,train
 546,right,546_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
@@ -1106,7 +1106,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 553,left,553_left.jpg,cataract,1,0,0,0,0,0,train
 553,right,553_right.jpg,cataract,1,0,0,0,0,0,train
 554,left,554_left.jpg,normal fundus,0,0,0,0,0,0,test
-554,right,554_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+554,right,554_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 555,left,555_left.jpg,myelinated nerve fibers,0,0,0,0,0,0,validation
 555,right,555_right.jpg,normal fundus,0,0,0,0,0,0,validation
 556,left,556_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,validation
@@ -1167,8 +1167,8 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 583,right,583_right.jpg,glaucoma,0,1,0,0,0,0,train
 584,left,584_left.jpg,myelinated nerve fibers,0,0,0,0,0,0,train
 584,right,584_right.jpg,normal fundus,0,0,0,0,0,0,train
-585,left,585_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
-585,right,585_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+585,left,585_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
+585,right,585_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 586,left,586_left.jpg,lens dust，epiretinal membrane,0,0,0,0,1,0,train
 586,right,586_right.jpg,lens dust，spotted membranous change,0,0,0,0,1,0,train
 587,left,587_left.jpg,epiretinal membrane,0,0,0,0,0,0,test
@@ -1247,7 +1247,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 623,right,623_right.jpg,normal fundus,0,0,0,0,0,0,validation
 624,left,624_left.jpg,lens dust，drusen,0,0,0,0,1,0,train
 624,right,624_right.jpg,drusen,0,0,0,0,0,0,train
-625,left,625_left.jpg,cataract，suspected glaucoma,1,0,1,0,0,0,suspected_glaucoma_holdout
+625,left,625_left.jpg,cataract，suspected glaucoma,1,0,1,0,0,0,holdout
 625,right,625_right.jpg,cataract，branch retinal vein occlusion,1,0,0,0,0,0,train
 626,left,626_left.jpg,chorioretinal atrophy,0,0,0,0,0,0,train
 626,right,626_right.jpg,chorioretinal atrophy with pigmentation proliferation，mild nonproliferative retinopathy,0,0,0,0,0,0,train
@@ -1268,7 +1268,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 634,left,634_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 634,right,634_right.jpg,moderate non proliferative retinopathy，laser spot,0,0,0,0,0,0,train
 635,left,635_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
-635,right,635_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+635,right,635_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 636,left,636_left.jpg,epiretinal membrane,0,0,0,0,0,0,train
 636,right,636_right.jpg,drusen，epiretinal membrane,0,0,0,0,0,0,train
 637,left,637_left.jpg,lens dust，normal fundus,0,0,0,0,1,0,train
@@ -1307,7 +1307,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 653,right,653_right.jpg,normal fundus,0,0,0,0,0,0,train
 654,left,654_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 654,right,654_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
-655,left,655_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+655,left,655_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 655,right,655_right.jpg,normal fundus,0,0,0,0,0,0,train
 656,left,656_left.jpg,retinochoroidal coloboma,0,0,0,0,0,0,validation
 656,right,656_right.jpg,retinochoroidal coloboma,0,0,0,0,0,0,validation
@@ -1487,8 +1487,8 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 744,right,744_right.jpg,epiretinal membrane，moderate non proliferative retinopathy,0,0,0,0,0,0,train
 745,left,745_left.jpg,macular epiretinal membrane，moderate non proliferative retinopathy，laser spot,0,0,0,0,0,0,test
 745,right,745_right.jpg,epiretinal membrane over the macula,0,0,0,0,0,0,test
-746,left,746_left.jpg,suspected glaucoma，suspicious diabetic retinopathy,0,0,1,0,0,0,suspected_glaucoma_holdout
-746,right,746_right.jpg,suspected glaucoma，suspicious diabetic retinopathy,0,0,1,0,0,0,suspected_glaucoma_holdout
+746,left,746_left.jpg,suspected glaucoma，suspicious diabetic retinopathy,0,0,1,0,0,0,holdout
+746,right,746_right.jpg,suspected glaucoma，suspicious diabetic retinopathy,0,0,1,0,0,0,holdout
 747,left,747_left.jpg,maculopathy,0,0,0,0,0,0,test
 747,right,747_right.jpg,maculopathy,0,0,0,0,0,0,test
 748,left,748_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,validation
@@ -1653,8 +1653,8 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 827,right,827_right.jpg,atrophic change,0,0,0,0,0,0,train
 828,left,828_left.jpg,normal fundus,0,0,0,0,0,0,train
 828,right,828_right.jpg,macular epiretinal membrane,0,0,0,0,0,0,train
-829,left,829_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
-829,right,829_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+829,left,829_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
+829,right,829_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 830,left,830_left.jpg,macular epiretinal membrane，lens dust,0,0,0,0,1,0,train
 830,right,830_right.jpg,lens dust，mild nonproliferative retinopathy,0,0,0,0,1,0,train
 831,left,831_left.jpg,pathological myopia,0,0,0,0,0,0,train
@@ -1738,7 +1738,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 870,left,870_left.jpg,dry age-related macular degeneration,0,0,0,0,0,0,validation
 870,right,870_right.jpg,dry age-related macular degeneration,0,0,0,0,0,0,validation
 871,left,871_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
-871,right,871_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+871,right,871_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 872,left,872_left.jpg,vitreous degeneration,0,0,0,0,0,0,validation
 872,right,872_right.jpg,normal fundus,0,0,0,0,0,0,validation
 873,left,873_left.jpg,drusen,0,0,0,0,0,0,validation
@@ -1750,7 +1750,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 876,left,876_left.jpg,epiretinal membrane,0,0,0,0,0,0,train
 876,right,876_right.jpg,epiretinal membrane,0,0,0,0,0,0,train
 877,left,877_left.jpg,normal fundus,0,0,0,0,0,0,test
-877,right,877_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+877,right,877_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 878,left,878_left.jpg,epiretinal membrane,0,0,0,0,0,0,train
 878,right,878_right.jpg,normal fundus,0,0,0,0,0,0,train
 879,left,879_left.jpg,drusen,0,0,0,0,0,0,validation
@@ -1767,7 +1767,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 884,right,884_right.jpg,normal fundus,0,0,0,0,0,0,train
 885,left,885_left.jpg,normal fundus,0,0,0,0,0,0,test
 885,right,885_right.jpg,dry age-related macular degeneration,0,0,0,0,0,0,test
-886,left,886_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+886,left,886_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 886,right,886_right.jpg,dry age-related macular degeneration,0,0,0,0,0,0,validation
 887,left,887_left.jpg,macular epiretinal membrane，laser spot,0,0,0,0,0,0,test
 887,right,887_right.jpg,laser spot,0,0,0,0,0,0,test
@@ -1810,7 +1810,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 906,left,906_left.jpg,drusen,0,0,0,0,0,0,train
 906,right,906_right.jpg,normal fundus,0,0,0,0,0,0,train
 907,left,907_left.jpg,cataract,1,0,0,0,0,0,test
-907,right,907_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+907,right,907_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 908,left,908_left.jpg,lens dust，normal fundus,0,0,0,0,1,0,train
 908,right,908_right.jpg,pathological myopia,0,0,0,0,0,0,train
 909,left,909_left.jpg,macular epiretinal membrane,0,0,0,0,0,0,test
@@ -1844,7 +1844,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 923,left,923_left.jpg,moderate non proliferative retinopathy，atrophic change,0,0,0,0,0,0,train
 923,right,923_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 924,left,924_left.jpg,normal fundus,0,0,0,0,0,0,train
-924,right,924_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+924,right,924_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 925,left,925_left.jpg,normal fundus,0,0,0,0,0,0,train
 925,right,925_right.jpg,epiretinal membrane,0,0,0,0,0,0,train
 926,left,926_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
@@ -1855,10 +1855,10 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 928,right,928_right.jpg,drusen,0,0,0,0,0,0,train
 929,left,929_left.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,validation
 929,right,929_right.jpg,drusen,0,0,0,0,0,0,validation
-930,left,930_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+930,left,930_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 930,right,930_right.jpg,normal fundus，lens dust,0,0,0,0,1,0,train
-931,left,931_left.jpg,suspected glaucoma，moderate non proliferative retinopathy,0,0,1,0,0,0,suspected_glaucoma_holdout
-931,right,931_right.jpg,suspected glaucoma，moderate non proliferative retinopathy,0,0,1,0,0,0,suspected_glaucoma_holdout
+931,left,931_left.jpg,suspected glaucoma，moderate non proliferative retinopathy,0,0,1,0,0,0,holdout
+931,right,931_right.jpg,suspected glaucoma，moderate non proliferative retinopathy,0,0,1,0,0,0,holdout
 932,left,932_left.jpg,normal fundus，lens dust,0,0,0,0,1,0,validation
 932,right,932_right.jpg,macular epiretinal membrane，lens dust,0,0,0,0,1,0,validation
 933,left,933_left.jpg,normal fundus,0,0,0,0,0,0,train
@@ -1937,8 +1937,8 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 971,right,971_right.jpg,dry age-related macular degeneration,0,0,0,0,0,0,train
 972,left,972_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 972,right,972_right.jpg,mild nonproliferative retinopathy，vitreous degeneration,0,0,0,0,0,0,train
-973,left,973_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
-973,right,973_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+973,left,973_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
+973,right,973_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 974,left,974_left.jpg,macular epiretinal membrane,0,0,0,0,0,0,train
 974,right,974_right.jpg,normal fundus,0,0,0,0,0,0,train
 975,left,975_left.jpg,normal fundus,0,0,0,0,0,0,train
@@ -2011,7 +2011,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1017,right,1017_right.jpg,lens dust，epiretinal membrane，normal fundus,0,0,0,0,1,0,validation
 1018,left,1018_left.jpg,laser spot，branch retinal vein occlusion,0,0,0,0,0,0,train
 1018,right,1018_right.jpg,normal fundus,0,0,0,0,0,0,train
-1019,left,1019_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1019,left,1019_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1019,right,1019_right.jpg,normal fundus,0,0,0,0,0,0,train
 1020,left,1020_left.jpg,glaucoma，intraretinal hemorrhage,0,1,0,0,0,0,train
 1020,right,1020_right.jpg,myopia retinopathy,0,0,0,0,0,0,train
@@ -2055,8 +2055,8 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1048,right,1048_right.jpg,hypertensive retinopathy,0,0,0,0,0,0,validation
 1050,left,1050_left.jpg,drusen,0,0,0,0,0,0,train
 1050,right,1050_right.jpg,drusen,0,0,0,0,0,0,train
-1052,left,1052_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
-1052,right,1052_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1052,left,1052_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
+1052,right,1052_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1053,left,1053_left.jpg,normal fundus,0,0,0,0,0,0,train
 1053,right,1053_right.jpg,myelinated nerve fibers,0,0,0,0,0,0,train
 1054,left,1054_left.jpg,normal fundus,0,0,0,0,0,0,train
@@ -2147,7 +2147,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1111,right,1111_right.jpg,dry age-related macular degeneration,0,0,0,0,0,0,test
 1113,left,1113_left.jpg,normal fundus,0,0,0,0,0,0,train
 1113,right,1113_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
-1114,left,1114_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1114,left,1114_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1114,right,1114_right.jpg,normal fundus,0,0,0,0,0,0,validation
 1115,left,1115_left.jpg,cataract,1,0,0,0,0,0,test
 1115,right,1115_right.jpg,normal fundus,0,0,0,0,0,0,test
@@ -2250,7 +2250,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1173,left,1173_left.jpg,vitreous degeneration,0,0,0,0,0,0,train
 1173,right,1173_right.jpg,normal fundus,0,0,0,0,0,0,train
 1174,left,1174_left.jpg,epiretinal membrane,0,0,0,0,0,0,train
-1174,right,1174_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1174,right,1174_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1176,left,1176_left.jpg,normal fundus,0,0,0,0,0,0,train
 1176,right,1176_right.jpg,macular epiretinal membrane,0,0,0,0,0,0,train
 1177,left,1177_left.jpg,depigmentation of the retinal pigment epithelium,0,0,0,0,0,0,train
@@ -2300,7 +2300,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1218,left,1218_left.jpg,glaucoma,0,1,0,0,0,0,validation
 1218,right,1218_right.jpg,glaucoma,0,1,0,0,0,0,validation
 1219,left,1219_left.jpg,pathological myopia,0,0,0,0,0,0,train
-1219,right,1219_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1219,right,1219_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1220,left,1220_left.jpg,glaucoma,0,1,0,0,0,0,validation
 1220,right,1220_right.jpg,glaucoma,0,1,0,0,0,0,validation
 1221,left,1221_left.jpg,glaucoma，macular epiretinal membrane,0,1,0,0,0,0,train
@@ -2374,7 +2374,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1263,left,1263_left.jpg,old central retinal vein occlusion,0,0,0,0,0,0,test
 1263,right,1263_right.jpg,glaucoma，hypertensive retinopathy,0,1,0,0,0,0,test
 1264,left,1264_left.jpg,glaucoma,0,1,0,0,0,0,train
-1264,right,1264_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1264,right,1264_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1265,left,1265_left.jpg,glaucoma,0,1,0,0,0,0,train
 1265,right,1265_right.jpg,glaucoma,0,1,0,0,0,0,train
 1266,left,1266_left.jpg,glaucoma,0,1,0,0,0,0,train
@@ -2428,7 +2428,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1295,left,1295_left.jpg,wet age-related macular degeneration,0,0,0,0,0,0,train
 1295,right,1295_right.jpg,dry age-related macular degeneration,0,0,0,0,0,0,train
 1296,left,1296_left.jpg,normal fundus,0,0,0,0,0,0,train
-1296,right,1296_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1296,right,1296_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1297,left,1297_left.jpg,glaucoma，macular epiretinal membrane,0,1,0,0,0,0,train
 1297,right,1297_right.jpg,glaucoma,0,1,0,0,0,0,train
 1299,left,1299_left.jpg,old branch retinal vein occlusion,0,0,0,0,0,0,train
@@ -2511,70 +2511,70 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1392,right,1392_right.jpg,glaucoma,0,1,0,0,0,0,train
 1393,left,1393_left.jpg,normal fundus,0,0,0,0,0,0,train
 1393,right,1393_right.jpg,glaucoma,0,1,0,0,0,0,train
-1396,left,1396_left.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
-1396,right,1396_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1396,left,1396_left.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
+1396,right,1396_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1397,left,1397_left.jpg,glaucoma,0,1,0,0,0,0,validation
 1397,right,1397_right.jpg,normal fundus,0,0,0,0,0,0,validation
 1401,left,1401_left.jpg,lens dust，normal fundus,0,0,0,0,1,0,validation
-1401,right,1401_right.jpg,lens dust，suspected glaucoma,0,0,1,0,1,0,suspected_glaucoma_holdout
-1402,left,1402_left.jpg,suspected glaucoma，moderate non proliferative retinopathy,0,0,1,0,0,0,suspected_glaucoma_holdout
+1401,right,1401_right.jpg,lens dust，suspected glaucoma,0,0,1,0,1,0,holdout
+1402,left,1402_left.jpg,suspected glaucoma，moderate non proliferative retinopathy,0,0,1,0,0,0,holdout
 1402,right,1402_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,validation
-1404,left,1404_left.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+1404,left,1404_left.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
 1404,right,1404_right.jpg,normal fundus,0,0,0,0,0,0,train
-1405,left,1405_left.jpg,suspected glaucoma，refractive media opacity,0,0,1,1,0,0,suspected_glaucoma_holdout
-1405,right,1405_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
-1406,left,1406_left.jpg,suspected glaucoma，mild nonproliferative retinopathy,0,0,1,0,0,0,suspected_glaucoma_holdout
+1405,left,1405_left.jpg,suspected glaucoma，refractive media opacity,0,0,1,1,0,0,holdout
+1405,right,1405_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
+1406,left,1406_left.jpg,suspected glaucoma，mild nonproliferative retinopathy,0,0,1,0,0,0,holdout
 1406,right,1406_right.jpg,normal fundus,0,0,0,0,0,0,train
-1408,left,1408_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
-1408,right,1408_right.jpg,suspected glaucoma，refractive media opacity,0,0,1,1,0,0,suspected_glaucoma_holdout
+1408,left,1408_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
+1408,right,1408_right.jpg,suspected glaucoma，refractive media opacity,0,0,1,1,0,0,holdout
 1409,left,1409_left.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
-1409,right,1409_right.jpg,moderate non proliferative retinopathy，lens dust，suspected glaucoma,0,0,1,0,1,0,suspected_glaucoma_holdout
-1410,left,1410_left.jpg,suspected glaucoma，refractive media opacity,0,0,1,1,0,0,suspected_glaucoma_holdout
+1409,right,1409_right.jpg,moderate non proliferative retinopathy，lens dust，suspected glaucoma,0,0,1,0,1,0,holdout
+1410,left,1410_left.jpg,suspected glaucoma，refractive media opacity,0,0,1,1,0,0,holdout
 1410,right,1410_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,test
 1411,left,1411_left.jpg,glaucoma,0,1,0,0,0,0,train
 1411,right,1411_right.jpg,glaucoma，macular epiretinal membrane,0,1,0,0,0,0,train
-1412,left,1412_left.jpg,white vessel，suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
-1412,right,1412_right.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+1412,left,1412_left.jpg,white vessel，suspected glaucoma,0,0,1,0,0,0,holdout
+1412,right,1412_right.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
 1413,left,1413_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
-1413,right,1413_right.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
-1414,left,1414_left.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+1413,right,1413_right.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
+1414,left,1414_left.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
 1414,right,1414_right.jpg,normal fundus,0,0,0,0,0,0,train
 1415,left,1415_left.jpg,cataract,1,0,0,0,0,0,validation
-1415,right,1415_right.jpg,cataract，suspected glaucoma,1,0,1,0,0,0,suspected_glaucoma_holdout
+1415,right,1415_right.jpg,cataract，suspected glaucoma,1,0,1,0,0,0,holdout
 1416,left,1416_left.jpg,normal fundus,0,0,0,0,0,0,validation
-1416,right,1416_right.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+1416,right,1416_right.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
 1417,left,1417_left.jpg,normal fundus,0,0,0,0,0,0,train
-1417,right,1417_right.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
-1418,left,1418_left.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+1417,right,1417_right.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
+1418,left,1418_left.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
 1418,right,1418_right.jpg,normal fundus,0,0,0,0,0,0,train
-1419,left,1419_left.jpg,suspected glaucoma，drusen,0,0,1,0,0,0,suspected_glaucoma_holdout
+1419,left,1419_left.jpg,suspected glaucoma，drusen,0,0,1,0,0,0,holdout
 1419,right,1419_right.jpg,drusen,0,0,0,0,0,0,train
-1420,left,1420_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
-1420,right,1420_right.jpg,suspected glaucoma，refractive media opacity,0,0,1,1,0,0,suspected_glaucoma_holdout
-1421,left,1421_left.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+1420,left,1420_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
+1420,right,1420_right.jpg,suspected glaucoma，refractive media opacity,0,0,1,1,0,0,holdout
+1421,left,1421_left.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
 1421,right,1421_right.jpg,normal fundus,0,0,0,0,0,0,train
-1422,left,1422_left.jpg,tessellated fundus，suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+1422,left,1422_left.jpg,tessellated fundus，suspected glaucoma,0,0,1,0,0,0,holdout
 1422,right,1422_right.jpg,tessellated fundus,0,0,0,0,0,0,train
-1423,left,1423_left.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+1423,left,1423_left.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
 1423,right,1423_right.jpg,normal fundus,0,0,0,0,0,0,train
-1424,left,1424_left.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+1424,left,1424_left.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
 1424,right,1424_right.jpg,normal fundus,0,0,0,0,0,0,train
 1425,left,1425_left.jpg,normal fundus,0,0,0,0,0,0,train
-1425,right,1425_right.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
-1426,left,1426_left.jpg,suspected glaucoma，drusen,0,0,1,0,0,0,suspected_glaucoma_holdout
+1425,right,1425_right.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
+1426,left,1426_left.jpg,suspected glaucoma，drusen,0,0,1,0,0,0,holdout
 1426,right,1426_right.jpg,vitreous degeneration,0,0,0,0,0,0,train
 1427,left,1427_left.jpg,normal fundus,0,0,0,0,0,0,train
-1427,right,1427_right.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
-1428,left,1428_left.jpg,suspected glaucoma，moderate non proliferative retinopathy,0,0,1,0,0,0,suspected_glaucoma_holdout
+1427,right,1427_right.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
+1428,left,1428_left.jpg,suspected glaucoma，moderate non proliferative retinopathy,0,0,1,0,0,0,holdout
 1428,right,1428_right.jpg,normal fundus,0,0,0,0,0,0,train
-1429,left,1429_left.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+1429,left,1429_left.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
 1429,right,1429_right.jpg,normal fundus,0,0,0,0,0,0,validation
-1431,left,1431_left.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
-1431,right,1431_right.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+1431,left,1431_left.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
+1431,right,1431_right.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
 1433,left,1433_left.jpg,glaucoma,0,1,0,0,0,0,train
 1433,right,1433_right.jpg,glaucoma,0,1,0,0,0,0,train
-1434,left,1434_left.jpg,suspected glaucoma，moderate non proliferative retinopathy,0,0,1,0,0,0,suspected_glaucoma_holdout
-1434,right,1434_right.jpg,moderate non proliferative retinopathy，suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+1434,left,1434_left.jpg,suspected glaucoma，moderate non proliferative retinopathy,0,0,1,0,0,0,holdout
+1434,right,1434_right.jpg,moderate non proliferative retinopathy，suspected glaucoma,0,0,1,0,0,0,holdout
 1435,left,1435_left.jpg,cataract,1,0,0,0,0,0,train
 1435,right,1435_right.jpg,normal fundus,0,0,0,0,0,0,train
 1436,left,1436_left.jpg,glaucoma,0,1,0,0,0,0,test
@@ -2637,7 +2637,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1478,right,1478_right.jpg,normal fundus,0,0,0,0,0,0,train
 1479,left,1479_left.jpg,glaucoma,0,1,0,0,0,0,train
 1479,right,1479_right.jpg,normal fundus,0,0,0,0,0,0,train
-1480,left,1480_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1480,left,1480_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1480,right,1480_right.jpg,glaucoma,0,1,0,0,0,0,test
 1482,left,1482_left.jpg,moderate non proliferative retinopathy，glaucoma,0,1,0,0,0,0,train
 1482,right,1482_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
@@ -2685,11 +2685,11 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1514,right,1514_right.jpg,normal fundus,0,0,0,0,0,0,train
 1515,left,1515_left.jpg,glaucoma,0,1,0,0,0,0,validation
 1515,right,1515_right.jpg,normal fundus,0,0,0,0,0,0,validation
-1516,left,1516_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
-1516,right,1516_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1516,left,1516_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
+1516,right,1516_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1519,left,1519_left.jpg,normal fundus,0,0,0,0,0,0,train
 1519,right,1519_right.jpg,pathological myopia,0,0,0,0,0,0,train
-1520,left,1520_left.jpg,refractive media opacity，pathological myopia,0,0,0,1,0,0,media_opacity_holdout
+1520,left,1520_left.jpg,refractive media opacity，pathological myopia,0,0,0,1,0,0,holdout
 1520,right,1520_right.jpg,pathological myopia,0,0,0,0,0,0,test
 1523,left,1523_left.jpg,pathological myopia,0,0,0,0,0,0,train
 1523,right,1523_right.jpg,pathological myopia,0,0,0,0,0,0,train
@@ -2698,7 +2698,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1527,left,1527_left.jpg,pathological myopia,0,0,0,0,0,0,train
 1527,right,1527_right.jpg,pathological myopia,0,0,0,0,0,0,train
 1528,left,1528_left.jpg,pathological myopia,0,0,0,0,0,0,train
-1528,right,1528_right.jpg,refractive media opacity，pathological myopia,0,0,0,1,0,0,media_opacity_holdout
+1528,right,1528_right.jpg,refractive media opacity，pathological myopia,0,0,0,1,0,0,holdout
 1529,left,1529_left.jpg,pathological myopia,0,0,0,0,0,0,train
 1529,right,1529_right.jpg,pathological myopia,0,0,0,0,0,0,train
 1530,left,1530_left.jpg,pathological myopia,0,0,0,0,0,0,test
@@ -2714,7 +2714,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1535,left,1535_left.jpg,pathological myopia,0,0,0,0,0,0,train
 1535,right,1535_right.jpg,pathological myopia，lens dust,0,0,0,0,1,0,train
 1536,left,1536_left.jpg,pathological myopia,0,0,0,0,0,0,train
-1536,right,1536_right.jpg,refractive media opacity，pathological myopia,0,0,0,1,0,0,media_opacity_holdout
+1536,right,1536_right.jpg,refractive media opacity，pathological myopia,0,0,0,1,0,0,holdout
 1537,left,1537_left.jpg,pathological myopia,0,0,0,0,0,0,train
 1537,right,1537_right.jpg,pathological myopia,0,0,0,0,0,0,train
 1538,left,1538_left.jpg,pathological myopia,0,0,0,0,0,0,validation
@@ -2754,7 +2754,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1556,left,1556_left.jpg,pathological myopia,0,0,0,0,0,0,train
 1556,right,1556_right.jpg,normal fundus,0,0,0,0,0,0,train
 1557,left,1557_left.jpg,pathological myopia,0,0,0,0,0,0,train
-1557,right,1557_right.jpg,refractive media opacity，pathological myopia,0,0,0,1,0,0,media_opacity_holdout
+1557,right,1557_right.jpg,refractive media opacity，pathological myopia,0,0,0,1,0,0,holdout
 1558,left,1558_left.jpg,pathological myopia,0,0,0,0,0,0,train
 1558,right,1558_right.jpg,pathological myopia,0,0,0,0,0,0,train
 1559,left,1559_left.jpg,pathological myopia,0,0,0,0,0,0,train
@@ -2887,7 +2887,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1642,right,1642_right.jpg,pathological myopia,0,0,0,0,0,0,test
 1643,left,1643_left.jpg,pathological myopia,0,0,0,0,0,0,train
 1643,right,1643_right.jpg,tessellated fundus，peripapillary atrophy,0,0,0,0,0,0,train
-1644,left,1644_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1644,left,1644_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1644,right,1644_right.jpg,pathological myopia,0,0,0,0,0,0,train
 1647,left,1647_left.jpg,pathological myopia,0,0,0,0,0,0,train
 1647,right,1647_right.jpg,pathological myopia,0,0,0,0,0,0,train
@@ -2910,16 +2910,16 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1673,left,1673_left.jpg,epiretinal membrane,0,0,0,0,0,0,train
 1673,right,1673_right.jpg,pathological myopia,0,0,0,0,0,0,train
 1674,left,1674_left.jpg,moderate non proliferative retinopathy，pathological myopia,0,0,0,0,0,0,train
-1674,right,1674_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1674,right,1674_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1677,left,1677_left.jpg,tessellated fundus,0,0,0,0,0,0,validation
 1677,right,1677_right.jpg,pathological myopia,0,0,0,0,0,0,validation
-1681,left,1681_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1681,left,1681_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1681,right,1681_right.jpg,pathological myopia,0,0,0,0,0,0,validation
 1683,left,1683_left.jpg,peripapillary atrophy,0,0,0,0,0,0,train
 1683,right,1683_right.jpg,pathological myopia,0,0,0,0,0,0,train
 1686,left,1686_left.jpg,pathological myopia,0,0,0,0,0,0,train
 1686,right,1686_right.jpg,pathological myopia,0,0,0,0,0,0,train
-1694,left,1694_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1694,left,1694_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1694,right,1694_right.jpg,pathological myopia,0,0,0,0,0,0,validation
 1706,left,1706_left.jpg,anterior segment image,0,0,0,0,0,1,excluded
 1706,right,1706_right.jpg,moderate non proliferative retinopathy，pathological myopia,0,0,0,0,0,0,validation
@@ -2990,7 +2990,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1864,left,1864_left.jpg,laser spot，chorioretinal atrophy，glaucoma,0,1,0,0,0,0,validation
 1864,right,1864_right.jpg,laser spot,0,0,0,0,0,0,validation
 1865,left,1865_left.jpg,laser spot，chorioretinal atrophy，glaucoma,0,1,0,0,0,0,validation
-1865,right,1865_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1865,right,1865_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1867,left,1867_left.jpg,hypertensive retinopathy,0,0,0,0,0,0,train
 1867,right,1867_right.jpg,hypertensive retinopathy,0,0,0,0,0,0,train
 1868,left,1868_left.jpg,normal fundus,0,0,0,0,0,0,validation
@@ -3015,7 +3015,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1880,right,1880_right.jpg,wet age-related macular degeneration,0,0,0,0,0,0,train
 1881,left,1881_left.jpg,dry age-related macular degeneration，glaucoma,0,1,0,0,0,0,test
 1881,right,1881_right.jpg,dry age-related macular degeneration，glaucoma,0,1,0,0,0,0,test
-1884,left,1884_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1884,left,1884_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1884,right,1884_right.jpg,wet age-related macular degeneration,0,0,0,0,0,0,train
 1885,left,1885_left.jpg,dry age-related macular degeneration,0,0,0,0,0,0,test
 1885,right,1885_right.jpg,wet age-related macular degeneration,0,0,0,0,0,0,test
@@ -3031,7 +3031,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1892,right,1892_right.jpg,dry age-related macular degeneration,0,0,0,0,0,0,train
 1893,left,1893_left.jpg,dry age-related macular degeneration,0,0,0,0,0,0,train
 1893,right,1893_right.jpg,dry age-related macular degeneration,0,0,0,0,0,0,train
-1919,left,1919_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+1919,left,1919_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 1919,right,1919_right.jpg,dry age-related macular degeneration,0,0,0,0,0,0,train
 1927,left,1927_left.jpg,optic nerve atrophy，dry age-related macular degeneration,0,0,0,0,0,0,test
 1927,right,1927_right.jpg,optic nerve atrophy,0,0,0,0,0,0,test
@@ -3051,7 +3051,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 1968,right,1968_right.jpg,lens dust，myelinated nerve fibers,0,0,0,0,1,0,train
 1970,left,1970_left.jpg,glaucoma，lens dust,0,1,0,0,1,0,validation
 1970,right,1970_right.jpg,myelinated nerve fibers，lens dust，drusen,0,0,0,0,1,0,validation
-1971,left,1971_left.jpg,suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+1971,left,1971_left.jpg,suspected glaucoma,0,0,1,0,0,0,holdout
 1971,right,1971_right.jpg,moderate non proliferative retinopathy，pathological myopia,0,0,0,0,0,0,train
 1974,left,1974_left.jpg,lens dust，moderate non proliferative retinopathy,0,0,0,0,1,0,train
 1974,right,1974_right.jpg,lens dust，glaucoma,0,1,0,0,1,0,train
@@ -3081,14 +3081,14 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 2004,right,2004_right.jpg,hypertensive retinopathy,0,0,0,0,0,0,train
 2006,left,2006_left.jpg,maculopathy，glaucoma,0,1,0,0,0,0,train
 2006,right,2006_right.jpg,maculopathy,0,0,0,0,0,0,train
-2010,left,2010_left.jpg,moderate non proliferative retinopathy，suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+2010,left,2010_left.jpg,moderate non proliferative retinopathy，suspected glaucoma,0,0,1,0,0,0,holdout
 2010,right,2010_right.jpg,lens dust，normal fundus,0,0,0,0,1,0,validation
-2020,left,2020_left.jpg,myelinated nerve fibers，suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+2020,left,2020_left.jpg,myelinated nerve fibers，suspected glaucoma,0,0,1,0,0,0,holdout
 2020,right,2020_right.jpg,normal fundus,0,0,0,0,0,0,train
 2030,left,2030_left.jpg,glaucoma,0,1,0,0,0,0,train
 2030,right,2030_right.jpg,mild nonproliferative retinopathy，glaucoma，vitreous degeneration,0,1,0,0,0,0,train
 2032,left,2032_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
-2032,right,2032_right.jpg,moderate non proliferative retinopathy，suspected glaucoma,0,0,1,0,0,0,suspected_glaucoma_holdout
+2032,right,2032_right.jpg,moderate non proliferative retinopathy，suspected glaucoma,0,0,1,0,0,0,holdout
 2034,left,2034_left.jpg,dry age-related macular degeneration,0,0,0,0,0,0,test
 2034,right,2034_right.jpg,myelinated nerve fibers，old branch retinal vein occlusion,0,0,0,0,0,0,test
 2041,left,2041_left.jpg,glaucoma，wet age-related macular degeneration,0,1,0,0,0,0,train
@@ -3123,7 +3123,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 2098,right,2098_right.jpg,cataract,1,0,0,0,0,0,train
 2099,left,2099_left.jpg,cataract,1,0,0,0,0,0,train
 2099,right,2099_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
-2100,left,2100_left.jpg,moderate non proliferative retinopathy，refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+2100,left,2100_left.jpg,moderate non proliferative retinopathy，refractive media opacity,0,0,0,1,0,0,holdout
 2100,right,2100_right.jpg,cataract，moderate non proliferative retinopathy,1,0,0,0,0,0,train
 2101,left,2101_left.jpg,cataract,1,0,0,0,0,0,test
 2101,right,2101_right.jpg,cataract,1,0,0,0,0,0,test
@@ -3146,7 +3146,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 2110,left,2110_left.jpg,cataract,1,0,0,0,0,0,test
 2110,right,2110_right.jpg,cataract,1,0,0,0,0,0,test
 2111,left,2111_left.jpg,cataract,1,0,0,0,0,0,train
-2111,right,2111_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+2111,right,2111_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 2112,left,2112_left.jpg,normal fundus，lens dust,0,0,0,0,1,0,train
 2112,right,2112_right.jpg,cataract,1,0,0,0,0,0,train
 2113,left,2113_left.jpg,cataract,1,0,0,0,0,0,train
@@ -3159,7 +3159,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 2116,right,2116_right.jpg,cataract,1,0,0,0,0,0,train
 2117,left,2117_left.jpg,cataract,1,0,0,0,0,0,train
 2117,right,2117_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
-2118,left,2118_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+2118,left,2118_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 2118,right,2118_right.jpg,cataract,1,0,0,0,0,0,validation
 2119,left,2119_left.jpg,normal fundus,0,0,0,0,0,0,validation
 2119,right,2119_right.jpg,cataract，lens dust,1,0,0,0,1,0,validation
@@ -3170,7 +3170,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 2122,left,2122_left.jpg,cataract,1,0,0,0,0,0,train
 2122,right,2122_right.jpg,cataract,1,0,0,0,0,0,train
 2123,left,2123_left.jpg,cataract,1,0,0,0,0,0,train
-2123,right,2123_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+2123,right,2123_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 2124,left,2124_left.jpg,cataract,1,0,0,0,0,0,validation
 2124,right,2124_right.jpg,epiretinal membrane,0,0,0,0,0,0,validation
 2125,left,2125_left.jpg,cataract,1,0,0,0,0,0,train
@@ -3216,7 +3216,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 2146,left,2146_left.jpg,cataract,1,0,0,0,0,0,validation
 2146,right,2146_right.jpg,cataract,1,0,0,0,0,0,validation
 2147,left,2147_left.jpg,cataract,1,0,0,0,0,0,train
-2147,right,2147_right.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+2147,right,2147_right.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 2149,left,2149_left.jpg,normal fundus,0,0,0,0,0,0,train
 2149,right,2149_right.jpg,cataract,1,0,0,0,0,0,train
 2150,left,2150_left.jpg,cataract,1,0,0,0,0,0,train
@@ -3265,7 +3265,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 2171,right,2171_right.jpg,normal fundus,0,0,0,0,0,0,test
 2172,left,2172_left.jpg,cataract,1,0,0,0,0,0,train
 2172,right,2172_right.jpg,normal fundus,0,0,0,0,0,0,train
-2173,left,2173_left.jpg,refractive media opacity,0,0,0,1,0,0,media_opacity_holdout
+2173,left,2173_left.jpg,refractive media opacity,0,0,0,1,0,0,holdout
 2173,right,2173_right.jpg,cataract,1,0,0,0,0,0,validation
 2174,left,2174_left.jpg,normal fundus,0,0,0,0,0,0,train
 2174,right,2174_right.jpg,cataract,1,0,0,0,0,0,train
@@ -5657,7 +5657,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 3932,right,3932_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
 3934,left,3934_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,test
 3934,right,3934_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,test
-3935,left,3935_left.jpg,low image quality,0,0,0,0,1,1,excluded
+3935,left,3935_left.jpg,low image quality,0,0,0,0,1,1,holdout
 3935,right,3935_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,test
 3936,left,3936_left.jpg,moderate non proliferative retinopathy，hypertensive retinopathy,0,0,0,0,0,0,train
 3936,right,3936_right.jpg,moderate non proliferative retinopathy，hypertensive retinopathy,0,0,0,0,0,0,train
@@ -5680,7 +5680,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 3946,left,3946_left.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,validation
 3946,right,3946_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,validation
 3947,left,3947_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
-3947,right,3947_right.jpg,low image quality,0,0,0,0,1,1,excluded
+3947,right,3947_right.jpg,low image quality,0,0,0,0,1,1,holdout
 3948,left,3948_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 3948,right,3948_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
 3949,left,3949_left.jpg,normal fundus,0,0,0,0,0,0,train
@@ -5777,7 +5777,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4003,right,4003_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
 4005,left,4005_left.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
 4005,right,4005_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
-4007,left,4007_left.jpg,low image quality,0,0,0,0,1,1,excluded
+4007,left,4007_left.jpg,low image quality,0,0,0,0,1,1,holdout
 4007,right,4007_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
 4008,left,4008_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,validation
 4008,right,4008_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,validation
@@ -5882,7 +5882,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4064,left,4064_left.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,test
 4064,right,4064_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,test
 4066,left,4066_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
-4066,right,4066_right.jpg,low image quality,0,0,0,0,1,1,excluded
+4066,right,4066_right.jpg,low image quality,0,0,0,0,1,1,holdout
 4067,left,4067_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4067,right,4067_right.jpg,normal fundus,0,0,0,0,0,0,train
 4068,left,4068_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
@@ -5988,7 +5988,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4123,left,4123_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4123,right,4123_right.jpg,normal fundus,0,0,0,0,0,0,train
 4124,left,4124_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
-4124,right,4124_right.jpg,low image quality,0,0,0,0,1,1,excluded
+4124,right,4124_right.jpg,low image quality,0,0,0,0,1,1,holdout
 4125,left,4125_left.jpg,severe nonproliferative retinopathy,0,0,0,0,0,0,train
 4125,right,4125_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
 4126,left,4126_left.jpg,normal fundus,0,0,0,0,0,0,test
@@ -6029,8 +6029,8 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4147,right,4147_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,test
 4148,left,4148_left.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,test
 4148,right,4148_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,test
-4149,left,4149_left.jpg,low image quality,0,0,0,0,1,1,excluded
-4149,right,4149_right.jpg,low image quality,0,0,0,0,1,1,excluded
+4149,left,4149_left.jpg,low image quality,0,0,0,0,1,1,holdout
+4149,right,4149_right.jpg,low image quality,0,0,0,0,1,1,holdout
 4151,left,4151_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4151,right,4151_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4152,left,4152_left.jpg,normal fundus,0,0,0,0,0,0,validation
@@ -6063,7 +6063,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4167,right,4167_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
 4168,left,4168_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4168,right,4168_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
-4169,left,4169_left.jpg,low image quality,0,0,0,0,1,1,excluded
+4169,left,4169_left.jpg,low image quality,0,0,0,0,1,1,holdout
 4169,right,4169_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4171,left,4171_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4171,right,4171_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
@@ -6084,7 +6084,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4179,left,4179_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,test
 4179,right,4179_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,test
 4180,left,4180_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
-4180,right,4180_right.jpg,low image quality,0,0,0,0,1,1,excluded
+4180,right,4180_right.jpg,low image quality,0,0,0,0,1,1,holdout
 4181,left,4181_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4181,right,4181_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4182,left,4182_left.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
@@ -6116,7 +6116,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4197,left,4197_left.jpg,normal fundus,0,0,0,0,0,0,train
 4197,right,4197_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
 4198,left,4198_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
-4198,right,4198_right.jpg,low image quality,0,0,0,0,1,1,excluded
+4198,right,4198_right.jpg,low image quality,0,0,0,0,1,1,holdout
 4199,left,4199_left.jpg,moderate non proliferative retinopathy，hypertensive retinopathy,0,0,0,0,0,0,validation
 4199,right,4199_right.jpg,hypertensive retinopathy,0,0,0,0,0,0,validation
 4200,left,4200_left.jpg,normal fundus,0,0,0,0,0,0,train
@@ -6240,7 +6240,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4261,left,4261_left.jpg,normal fundus,0,0,0,0,0,0,test
 4261,right,4261_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,test
 4262,left,4262_left.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
-4262,right,4262_right.jpg,low image quality,0,0,0,0,1,1,excluded
+4262,right,4262_right.jpg,low image quality,0,0,0,0,1,1,holdout
 4263,left,4263_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,test
 4263,right,4263_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,test
 4265,left,4265_left.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,validation
@@ -6293,7 +6293,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4288,right,4288_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4289,left,4289_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,test
 4289,right,4289_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,test
-4290,left,4290_left.jpg,low image quality,0,0,0,0,1,1,excluded
+4290,left,4290_left.jpg,low image quality,0,0,0,0,1,1,holdout
 4290,right,4290_right.jpg,normal fundus,0,0,0,0,0,0,test
 4291,left,4291_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4291,right,4291_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
@@ -6352,7 +6352,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4318,left,4318_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,test
 4318,right,4318_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,test
 4319,left,4319_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,validation
-4319,right,4319_right.jpg,low image quality,0,0,0,0,1,1,excluded
+4319,right,4319_right.jpg,low image quality,0,0,0,0,1,1,holdout
 4320,left,4320_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4320,right,4320_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4321,left,4321_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,validation
@@ -6488,7 +6488,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4393,left,4393_left.jpg,severe nonproliferative retinopathy,0,0,0,0,0,0,train
 4393,right,4393_right.jpg,severe nonproliferative retinopathy,0,0,0,0,0,0,train
 4394,left,4394_left.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,validation
-4394,right,4394_right.jpg,low image quality,0,0,0,0,1,1,excluded
+4394,right,4394_right.jpg,low image quality,0,0,0,0,1,1,holdout
 4395,left,4395_left.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
 4395,right,4395_right.jpg,normal fundus,0,0,0,0,0,0,train
 4396,left,4396_left.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,test
@@ -6548,7 +6548,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4426,left,4426_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4426,right,4426_right.jpg,normal fundus,0,0,0,0,0,0,train
 4427,left,4427_left.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
-4427,right,4427_right.jpg,low image quality,0,0,0,0,1,1,excluded
+4427,right,4427_right.jpg,low image quality,0,0,0,0,1,1,holdout
 4428,left,4428_left.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,test
 4428,right,4428_right.jpg,normal fundus,0,0,0,0,0,0,test
 4429,left,4429_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
@@ -6575,7 +6575,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4440,right,4440_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4441,left,4441_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,validation
 4441,right,4441_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,validation
-4442,left,4442_left.jpg,low image quality,0,0,0,0,1,1,excluded
+4442,left,4442_left.jpg,low image quality,0,0,0,0,1,1,holdout
 4442,right,4442_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4443,left,4443_left.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
 4443,right,4443_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
@@ -6585,7 +6585,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4445,right,4445_right.jpg,moderate non proliferative retinopathy，hypertensive retinopathy,0,0,0,0,0,0,train
 4447,left,4447_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4447,right,4447_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
-4448,left,4448_left.jpg,low image quality,0,0,0,0,1,1,excluded
+4448,left,4448_left.jpg,low image quality,0,0,0,0,1,1,holdout
 4448,right,4448_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4449,left,4449_left.jpg,severe nonproliferative retinopathy,0,0,0,0,0,0,validation
 4449,right,4449_right.jpg,severe nonproliferative retinopathy,0,0,0,0,0,0,validation
@@ -6707,7 +6707,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4519,right,4519_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
 4520,left,4520_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,validation
 4520,right,4520_right.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,validation
-4522,left,4522_left.jpg,low image quality,0,0,0,0,1,1,excluded
+4522,left,4522_left.jpg,low image quality,0,0,0,0,1,1,holdout
 4522,right,4522_right.jpg,severe nonproliferative retinopathy,0,0,0,0,0,0,validation
 4523,left,4523_left.jpg,normal fundus,0,0,0,0,0,0,train
 4523,right,4523_right.jpg,mild nonproliferative retinopathy,0,0,0,0,0,0,train
@@ -6858,7 +6858,7 @@ patient_id,eye,filename,diagnosis_text,cataract,glaucoma,suspected_glaucoma,medi
 4600,left,4600_left.jpg,post retinal laser surgery，moderate non proliferative retinopathy,0,0,0,0,0,0,test
 4600,right,4600_right.jpg,post retinal laser surgery，moderate non proliferative retinopathy,0,0,0,0,0,0,test
 4601,left,4601_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,train
-4601,right,4601_right.jpg,low image quality,0,0,0,0,1,1,excluded
+4601,right,4601_right.jpg,low image quality,0,0,0,0,1,1,holdout
 4602,left,4602_left.jpg,moderate non proliferative retinopathy,0,0,0,0,0,0,test
 4602,right,4602_right.jpg,normal fundus,0,0,0,0,0,0,test
 4603,left,4603_left.jpg,severe nonproliferative retinopathy,0,0,0,0,0,0,train

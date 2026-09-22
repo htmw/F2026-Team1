@@ -2,8 +2,12 @@ import pandas as pd
 import re
 from pathlib import Path
 
-INPUT = Path("data.xlsx")
-OUTPUT = Path("eye_labels_task6.csv")
+# INPUT = Path("data.xlsx")
+# OUTPUT = Path("eye_labels_task6.csv")
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+INPUT = BASE_DIR / "labels" / "data.xlsx"
+OUTPUT = BASE_DIR / "labels" / "eye_labels_task6.csv"
 
 
 def has_phrase(text, phrase):
