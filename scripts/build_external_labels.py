@@ -114,3 +114,40 @@ with output_file.open("w", newline="", encoding="utf-8") as file:
     writer.writerows(drishti_rows)
 
 print(f"Saved: {output_file}")
+
+
+# ACRIMA: build test-only labels from filenames
+
+ACRIMA_DIR = EXTERNAL_DIR / "ACRIMA" / "Images"
+acrima_rows = []
+
+for path in sorted(ACRIMA_DIR.rglob("*")):
+    if not path.is_file() or path.suffix.lower() != ".jpg":
+        continue
+    acrima_rows.append({
+        "filename": path.name,
+        "glaucoma": int("_g_" in path.name.lower()),
+        "split": "test",
+    })
+
+acrima_glaucoma_count = sum(row["glaucoma"] for row in acrima_rows)
+
+print(f"ACRIMA images: {len(acrima_rows)}")
+print(f"ACRIMA glaucoma cases: {acrima_glaucoma_count}")
+
+if len(acrima_rows) != 705 or acrima_glaucoma_count != 396:
+    raise ValueError("Unexpected ACRIMA counts")
+
+
+# Save the verified ACRIMA test-only labels.
+output_file = OUTPUT_DIR / "acrima_labels.csv"
+
+with output_file.open("w", newline="", encoding="utf-8") as file:
+    writer = csv.DictWriter(
+        file,
+        fieldnames=["filename", "glaucoma", "split"],
+    )
+    writer.writeheader()
+    writer.writerows(acrima_rows)
+
+print(f"Saved: {output_file}")
