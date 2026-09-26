@@ -182,3 +182,17 @@ print(f"Retina glaucoma cases: {glaucoma_count}")
 
 if (len(retina_rows), cataract_count, glaucoma_count) != (601, 100, 101):
     raise ValueError("Unexpected retina dataset counts")    
+
+
+# Save the verified retina test-only labels.
+output_file = OUTPUT_DIR / "retina_labels.csv"
+
+with output_file.open("w", newline="", encoding="utf-8") as file:
+    writer = csv.DictWriter(
+        file,
+        fieldnames=["filename", "cataract", "glaucoma", "split"],
+    )
+    writer.writeheader()
+    writer.writerows(retina_rows)
+
+print(f"Saved: {output_file}")
