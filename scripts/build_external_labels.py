@@ -15,3 +15,6 @@ with ORIGA_LABELS.open(newline="" , encoding="utf-8-sig") as file:
 
 print (f"ORIGA rows: {len(rows)}")
 print ("First row:" , rows[0])    
+
+glaucoma_count = sum(int(row["Glaucoma"]) for row in rows )
+print (f"Glaucoma cases: {glaucoma_count}")
