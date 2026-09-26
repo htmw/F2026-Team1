@@ -96,3 +96,21 @@ for row in drishti_rows:
         raise ValueError(f"Label mismatch: {row['filename']}")
 
 print(f"Spreadsheet check passed for {len(drishti_rows)} images.")
+
+# Save the verified DRISHTI-GS test-only labels.
+if len(drishti_rows) != 101 or sum(
+    row["glaucoma"] for row in drishti_rows
+) != 70:
+    raise ValueError("Unexpected DRISHTI-GS counts")
+
+output_file = OUTPUT_DIR / "drishti_labels.csv"
+
+with output_file.open("w", newline="", encoding="utf-8") as file:
+    writer = csv.DictWriter(
+        file,
+        fieldnames=["filename", "glaucoma", "split"],
+    )
+    writer.writeheader()
+    writer.writerows(drishti_rows)
+
+print(f"Saved: {output_file}")
