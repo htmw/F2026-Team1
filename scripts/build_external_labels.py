@@ -151,3 +151,34 @@ with output_file.open("w", newline="", encoding="utf-8") as file:
     writer.writerows(acrima_rows)
 
 print(f"Saved: {output_file}")
+
+
+ # Retina dataset_2016: build test-only labels from folders
+
+Retina_DIR = EXTERNAL_DIR / "retina_dataset_2016"
+retina_rows = []
+
+folder_labels = { "1_normal": (0, 0) , "2_cataract": (1, 0), "2_glaucoma": (0,1), "3_retina_disease": (0, 0),}
+
+for path in sorted(Retina_DIR.rglob("*")):
+    if not path.is_file() or path.suffix.lower() !=".png" :
+        continue
+
+    folder = path.parent.name
+
+    if folder not in folder_labels:
+        raise ValueError(f"Unexpected folder: {path.parent}")
+
+    cataract, glaucoma = folder_labels[folder]
+
+    retina_rows.append({ "filename": path.name, "cataract": cataract, "glaucoma": glaucoma, "split": "test",})
+
+cataract_count = sum(row["cataract"] for row in retina_rows)
+glaucoma_count = sum(row["glaucoma"] for row in retina_rows)
+
+print(f"Retina images: {len(retina_rows)}")
+print(f"Retina cataract cases: {cataract_count}")
+print(f"Retina glaucoma cases: {glaucoma_count}")
+
+if (len(retina_rows), cataract_count, glaucoma_count) != (601, 100, 101):
+    raise ValueError("Unexpected retina dataset counts")    
