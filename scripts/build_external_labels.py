@@ -1,14 +1,15 @@
 """Build test-only label files for the four external datasets."""
 
+import csv
 from pathlib import Path
+
+from openpyxl import load_workbook
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 EXTERNAL_DIR = PROJECT_ROOT / "data" / "External"
 OUTPUT_DIR = PROJECT_ROOT / "labels" / "external"
 
-import csv 
-
-# ORIGA: build test-only labels from folder names
+# ORIGA: build test-only labels from glaucoma.csv
 
 ORIGA_LABELS = EXTERNAL_DIR / "ORIGA" / "glaucoma.csv"
 
@@ -30,12 +31,17 @@ OUTPUT_DIR.mkdir(parents = True, exist_ok = True)
 output_file = OUTPUT_DIR / "origa_labels.csv"
 
 with output_file.open("w", newline="", encoding= "utf-8") as file:
-    writer = csv.DictWriter(file, fieldnames = ["filename", "glaucoma", "split"],)
+    writer = csv.DictWriter(file, fieldnames = ["filename", "path", "glaucoma", "split"],)
 
     writer.writeheader()
 
     for row in rows:
-        writer.writerow({"filename": row["Filename"], "glaucoma": int(row["Glaucoma"]), "split": "test",})
+        writer.writerow({
+            "filename": row["Filename"],
+            "path": f"External/ORIGA/ORIGA/ORIGA/Images/{row['Filename']}",
+            "glaucoma": int(row["Glaucoma"]),
+            "split": "test",
+        })
 
 print(f"Saved: {output_file}")    
 
@@ -56,6 +62,7 @@ for path in sorted(DRISHTI_DIR.rglob("*.png")):
 
     drishti_rows.append({
         "filename": path.name,
+        "path": path.relative_to(PROJECT_ROOT / "data").as_posix(),
         "glaucoma": int(folder_label == "glaucoma"),
         "split": "test",
     })
@@ -67,8 +74,6 @@ print(
 )
 
 # ********** Check DRISHTI-GS folder labels against the spreadsheet *********
-
-from openpyxl import load_workbook
 
 spreadsheet = next(
     DRISHTI_DIR.rglob("Notching___Image__level_decisions.xlsx")
@@ -108,7 +113,7 @@ output_file = OUTPUT_DIR / "drishti_labels.csv"
 with output_file.open("w", newline="", encoding="utf-8") as file:
     writer = csv.DictWriter(
         file,
-        fieldnames=["filename", "glaucoma", "split"],
+        fieldnames=["filename", "path", "glaucoma", "split"],
     )
     writer.writeheader()
     writer.writerows(drishti_rows)
@@ -126,6 +131,7 @@ for path in sorted(ACRIMA_DIR.rglob("*")):
         continue
     acrima_rows.append({
         "filename": path.name,
+        "path": path.relative_to(PROJECT_ROOT / "data").as_posix(),
         "glaucoma": int("_g_" in path.name.lower()),
         "split": "test",
     })
@@ -145,7 +151,7 @@ output_file = OUTPUT_DIR / "acrima_labels.csv"
 with output_file.open("w", newline="", encoding="utf-8") as file:
     writer = csv.DictWriter(
         file,
-        fieldnames=["filename", "glaucoma", "split"],
+        fieldnames=["filename", "path", "glaucoma", "split"],
     )
     writer.writeheader()
     writer.writerows(acrima_rows)
@@ -171,7 +177,13 @@ for path in sorted(Retina_DIR.rglob("*")):
 
     cataract, glaucoma = folder_labels[folder]
 
-    retina_rows.append({ "filename": path.name, "cataract": cataract, "glaucoma": glaucoma, "split": "test",})
+    retina_rows.append({
+        "filename": path.name,
+        "path": path.relative_to(PROJECT_ROOT / "data").as_posix(),
+        "cataract": cataract,
+        "glaucoma": glaucoma,
+        "split": "test",
+    })
 
 cataract_count = sum(row["cataract"] for row in retina_rows)
 glaucoma_count = sum(row["glaucoma"] for row in retina_rows)
@@ -190,7 +202,7 @@ output_file = OUTPUT_DIR / "retina_labels.csv"
 with output_file.open("w", newline="", encoding="utf-8") as file:
     writer = csv.DictWriter(
         file,
-        fieldnames=["filename", "cataract", "glaucoma", "split"],
+        fieldnames=["filename", "path", "cataract", "glaucoma", "split"],
     )
     writer.writeheader()
     writer.writerows(retina_rows)
