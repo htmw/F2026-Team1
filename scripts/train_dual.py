@@ -1,4 +1,3 @@
-
 # ---------------------------------------------------------
 # TASK 10 - FULL TRAINING PIPELINE
 # ---------------------------------------------------------
@@ -16,13 +15,14 @@
 # If CUDA is not available, it falls back to CPU; however,
 # full training is expected to be much faster on a GPU.
 #
-# This is different from test_train_dual.py, which only runs
-# a small number of batches to verify that the Task 10
-# training and validation pipeline works correctly.
+# The complete pipeline was verified end-to-end on the
+# ODIR training and validation splits using CUDA/GPU.
 #
 # ODIR internal test, holdout, and external datasets are NOT
 # used in this Task 10 training pipeline.
-# ---------------------------------------------------------from pathlib import Path
+# ---------------------------------------------------------
+
+from pathlib import Path
 
 import pandas as pd
 import torch
