@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../../global.css";
+import "../styles/global.css";
 
 function ThemeToggle() {
   const [theme, setTheme] = useState(() => {

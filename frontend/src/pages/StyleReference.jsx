@@ -1,5 +1,5 @@
-import ThemeToggle from "../components/ThemeToggle/ThemeToggle.jsx";
-import "../global.css";
+import ThemeToggle from "../components/ThemeToggle.jsx";
+import "../styles/global.css";
 
 function StyleReference() {
   return (
