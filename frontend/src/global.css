@@ -1,0 +1,195 @@
+:root {
+  --bg-canvas: #f8f9ff;
+  --bg-panel: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --border-default: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent: #9d5819;
+  --success: #047857;
+  --danger: #be123c;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-logo: "Space Grotesk", sans-serif;
+
+  --tint: 10%;
+  --edge: 30%;
+
+  --space-1: 0.4rem;
+  --space-2: 0.8rem;
+  --space-3: 1.2rem;
+  --space-4: 1.6rem;
+  --space-5: 2rem;
+  --space-6: 2.4rem;
+  --space-8: 3.2rem;
+  --space-10: 4rem;
+  --space-12: 4.8rem;
+  --space-16: 6.4rem;
+  --radius-sm: 0.4rem;
+  --radius-md: 0.8rem;
+  --radius-pill: 999.9rem;
+}
+
+[data-theme="dark"] {
+  --bg-canvas: #0d131e;
+  --bg-panel: #161c27;
+  --bg-subtle: #1e293b;
+  --border-default: #283446;
+  --border-strong: #475569;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --accent: #d97724;
+  --success: #34d399;
+  --danger: #fb7185;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.1s all ease-out;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+}
+
+.tint-accent {
+  background: color-mix(in srgb, var(--accent) var(--tint), transparent);
+}
+
+.tint-success {
+  background: color-mix(in srgb, var(--success) var(--tint), transparent);
+}
+
+.tint-danger {
+  background: color-mix(in srgb, var(--danger) var(--tint), transparent);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg-canvas);
+  font: 600 1.4rem/2rem var(--font-sans);
+  border: 0;
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+}
+
+.btn-primary:disabled {
+  background: var(--bg-subtle);
+  color: var(--text-secondary);
+  border: 0.1rem solid var(--border-default);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0.2rem var(--space-2);
+  border-radius: var(--radius-sm);
+  border: 0.1rem solid;
+  font: 600 1.2rem/1.6rem var(--font-sans);
+}
+
+.chip--accent {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) var(--tint), transparent);
+  border-color: color-mix(in srgb, var(--accent) var(--edge), transparent);
+}
+
+.chip--success {
+  color: var(--success);
+  background: color-mix(in srgb, var(--success) var(--tint), transparent);
+  border-color: color-mix(in srgb, var(--success) var(--edge), transparent);
+}
+
+.chip--danger {
+  color: var(--danger);
+  background: color-mix(in srgb, var(--danger) var(--tint), transparent);
+  border-color: color-mix(in srgb, var(--danger) var(--edge), transparent);
+}
+
+.chip--neutral {
+  color: var(--text-secondary);
+  background: var(--bg-subtle);
+  border-color: var(--border-strong);
+}
+
+.h1 {
+  font: 600 2.8rem/3.6rem var(--font-sans);
+  letter-spacing: -0.02rem;
+}
+
+.h2 {
+  font: 600 2rem/2.8rem var(--font-sans);
+  letter-spacing: -0.01rem;
+}
+
+.h3 {
+  font: 600 1.6rem/2.4rem var(--font-sans);
+}
+
+.body-rg {
+  font: 400 1.4rem/2.1rem var(--font-sans);
+}
+
+.body-md {
+  font: 500 1.4rem/2rem var(--font-sans);
+}
+
+.body-semibold {
+  font: 600 1.4rem/2rem var(--font-sans);
+}
+
+.caption-rg {
+  font: 400 1.2rem/1.6rem var(--font-sans);
+}
+
+.caption-md {
+  font: 500 1.2rem/1.6rem var(--font-sans);
+}
+
+.caption-semibold {
+  font: 600 1.2rem/1.6rem var(--font-sans);
+}
+
+.label-micro {
+  font: 600 1.1rem/1.6rem var(--font-sans);
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+.mono-score {
+  font: 700 2.4rem/3.2rem var(--font-mono);
+}
+
+.mono-score-s {
+  font: 700 1.8rem/2.4rem var(--font-mono);
+}
+
+.mono-reference {
+  font: 500 1.3rem/2rem var(--font-mono);
+}
+
+.mono-meta {
+  font: 400 1.1rem/1.6rem var(--font-mono);
+}
+
+.logo-wordmark {
+  font: 700 1.6rem/2.4rem var(--font-logo);
+}
+
+.logo-descriptor {
+  font: 700 1.1rem/1.6rem var(--font-mono);
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
