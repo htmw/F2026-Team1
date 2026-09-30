@@ -126,7 +126,7 @@ def calculate_positive_weights(labels_csv):
 # Smoke-test TRAINING batches
 # ---------------------------------------------------------
 
-def test_training(
+def run_training(
     model,
     loader,
     optimizer,
@@ -215,7 +215,7 @@ def test_training(
 # Smoke-test VALIDATION batches
 # ---------------------------------------------------------
 
-def test_validation(
+def run_validation(
     model,
     loader,
     cataract_loss_fn,
@@ -461,7 +461,7 @@ def main():
     # -----------------------------------------------------
 
     training_batches, training_images = (
-        test_training(
+        run_training(
             model=model,
             loader=train_loader,
             optimizer=optimizer,
@@ -476,7 +476,7 @@ def main():
     # -----------------------------------------------------
 
     validation_batches, validation_images = (
-        test_validation(
+        run_validation(
             model=model,
             loader=validation_loader,
             cataract_loss_fn=cataract_loss_fn,
