@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap");
+
 :root {
   --bg-canvas: #f8f9ff;
   --bg-panel: #ffffff;
@@ -192,4 +194,16 @@ body {
   font: 700 1.1rem/1.6rem var(--font-mono);
   letter-spacing: 0.05rem;
   text-transform: uppercase;
+}
+
+@media (max-width: 45.5em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 41em) {
+  html {
+    font-size: 50%;
+  }
 }
