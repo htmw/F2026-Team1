@@ -1,10 +1,10 @@
 import ThemeToggle from "../components/ThemeToggle.jsx";
 function Home() {
   return (
-    <div>
+    <main className="main">
       Home
       <ThemeToggle />
-    </div>
+    </main>
   );
 }
 

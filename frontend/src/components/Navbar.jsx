@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../styles/global.css";
 import "../styles/navbar.css";
 import logo from "../assets/images/logo.png";
 

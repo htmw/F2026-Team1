@@ -64,6 +64,10 @@ body {
   color: var(--text-primary);
 }
 
+.main {
+  min-height: 100vh;
+}
+
 .tint-accent {
   background: color-mix(in srgb, var(--accent) var(--tint), transparent);
 }
