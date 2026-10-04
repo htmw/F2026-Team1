@@ -80,6 +80,16 @@ body {
   background: color-mix(in srgb, var(--danger) var(--tint), transparent);
 }
 
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+
+  cursor: pointer;
+}
+
 .btn-primary {
   background: var(--accent);
   color: var(--bg-canvas);
@@ -94,6 +104,20 @@ body {
   background: var(--bg-subtle);
   color: var(--text-secondary);
   border: 0.1rem solid var(--border-default);
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--bg-panel);
+  color: var(--text-primary);
+  font: 600 1.4rem/2rem var(--font-sans);
+  border: 0.1rem solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.btn--block {
+  width: 100%;
 }
 
 .chip {

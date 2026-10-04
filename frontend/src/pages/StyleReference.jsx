@@ -1,5 +1,7 @@
 import ThemeToggle from "../components/ThemeToggle.jsx";
 import "../styles/global.css";
+import { BarChart3, Download } from "lucide-react";
+import Button from "../components/Button.jsx";
 
 function StyleReference() {
   return (
@@ -34,6 +36,17 @@ function StyleReference() {
       <p className="mono-meta">mono meta</p>
       <p className="logo-wordmark">logo wordmark</p>
       <p className="logo-descriptor">logo descriptor</p>
+
+      <Button icon={BarChart3}>Screen this photo</Button>
+      <Button variant="secondary" icon={Download}>
+        Export Summary
+      </Button>
+      <Button icon={BarChart3} disabled>
+        Screen this photo
+      </Button>
+      <Button icon={BarChart3} fullWidth>
+        Full width
+      </Button>
     </div>
   );
 }
