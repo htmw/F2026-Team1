@@ -11,6 +11,7 @@
   --accent: #9d5819;
   --success: #047857;
   --danger: #be123c;
+  --warning: #a16207;
 
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
@@ -45,6 +46,7 @@
   --accent: #d97724;
   --success: #34d399;
   --danger: #fb7185;
+  --warning: #fbbf24;
 }
 
 * {
@@ -146,6 +148,16 @@ body {
   color: var(--danger);
   background: color-mix(in srgb, var(--danger) var(--tint), transparent);
   border-color: color-mix(in srgb, var(--danger) var(--edge), transparent);
+}
+
+.chip--warning {
+  color: var(--warning);
+  background: color-mix(in srgb, var(--warning) var(--tint), transparent);
+  border-color: color-mix(in srgb, var(--warning) var(--edge), transparent);
+}
+
+.chip--mono {
+  font: 400 1.1rem/1.6rem var(--font-mono);
 }
 
 .chip--neutral {

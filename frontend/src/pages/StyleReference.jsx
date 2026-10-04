@@ -1,7 +1,15 @@
 import ThemeToggle from "../components/ThemeToggle.jsx";
 import "../styles/global.css";
-import { BarChart3, Download } from "lucide-react";
+import {
+  BarChart3,
+  Download,
+  Check,
+  HelpCircle,
+  AlertTriangle,
+  CheckCircle2,
+} from "lucide-react";
 import Button from "../components/Button.jsx";
+import Chip from "../components/Chip.jsx";
 
 function StyleReference() {
   return (
@@ -47,6 +55,21 @@ function StyleReference() {
       <Button icon={BarChart3} fullWidth>
         Full width
       </Button>
+
+      <Chip mono>Demo data</Chip>
+      <Chip mono>JPG OR PNG</Chip>
+      <Chip tone="success" icon={Check} mono>
+        maria_lopez_right_fundus.jpg
+      </Chip>
+      <Chip tone="success" icon={CheckCircle2}>
+        No concern
+      </Chip>
+      <Chip tone="danger" icon={AlertTriangle}>
+        Refer
+      </Chip>
+      <Chip tone="warning" icon={HelpCircle}>
+        Uncertain, refer
+      </Chip>
     </div>
   );
 }
