@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ThemeToggle from "../components/ThemeToggle.jsx";
 import "../styles/global.css";
 import {
@@ -12,8 +13,10 @@ import Button from "../components/Button.jsx";
 import Chip from "../components/Chip.jsx";
 import InfoNote from "../components/InfoNote.jsx";
 import Card from "../components/Card.jsx";
+import Select from "../components/Select.jsx";
 
 function StyleReference() {
+  const [patientId, setPatientId] = useState("");
   return (
     <main className="style-main">
       <ThemeToggle />
@@ -86,6 +89,18 @@ function StyleReference() {
       <Card>
         <p className="body-rg">A card with no header</p>
       </Card>
+
+      <div style={{ width: "48rem" }}>
+        <Select
+          placeholder="Select a patient"
+          value={patientId}
+          onChange={(e) => setPatientId(e.target.value)}
+          options={[
+            { value: "P-001", label: "P-001, Maria Lopez, 67" },
+            { value: "P-002", label: "P-002, James Chen, 54" },
+          ]}
+        />
+      </div>
     </main>
   );
 }
