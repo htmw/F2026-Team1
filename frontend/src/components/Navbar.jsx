@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle.jsx";
 import "../styles/navbar.css";
 import logo from "../assets/images/logo.png";
 
@@ -46,6 +47,7 @@ function Navbar() {
           </ul>
         </div>
         <div className="nav__right">
+          <ThemeToggle />
           <div className="user chip chip--neutral">
             <div className="user-status" role="presentation"></div>
             <p className="caption-md">Dr. Emily Geller</p>

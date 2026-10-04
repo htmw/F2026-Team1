@@ -117,13 +117,13 @@
   color: var(--danger);
 }
 
-@media (max-width: 36em) {
+@media (max-width: 49.375em) {
   .nav__logo-text-container {
     display: none;
   }
 }
 
-@media (max-width: 27em) {
+@media (max-width: 31.25em) {
   .user.chip {
     display: none;
   }
