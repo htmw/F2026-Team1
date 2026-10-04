@@ -78,11 +78,17 @@
 .nav__link:visited {
   text-decoration: none;
   color: var(--text-secondary);
+  padding-bottom: 0.4rem;
 }
 
 .nav__link:hover,
 .nav__link:active {
   color: var(--accent);
+}
+
+.nav__link.active {
+  color: var(--accent);
+  border-bottom: 0.2rem solid var(--accent);
 }
 
 .nav__right {
@@ -93,8 +99,8 @@
 }
 
 .user-status {
-  width: var(--radius-md);
-  height: var(--radius-md);
+  width: 0.8rem;
+  height: 0.8rem;
   background-color: var(--success);
   border-radius: var(--radius-pill);
   margin-right: 0.1rem;
