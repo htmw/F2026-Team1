@@ -15,6 +15,7 @@ import InfoNote from "../components/InfoNote.jsx";
 import Card from "../components/Card.jsx";
 import Select from "../components/Select.jsx";
 import FileDropzone from "../components/FileDropzone.jsx";
+import SummaryStrip from "../components/SummaryStripe.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -106,6 +107,18 @@ function StyleReference() {
       </div>
       <div style={{ width: "60rem" }}>
         <FileDropzone file={file} onFile={setFile} />
+      </div>
+
+      <div style={{ width: "60rem" }}>
+        <SummaryStrip />
+      </div>
+
+      <div style={{ width: "60rem" }}>
+        <SummaryStrip
+          patient="P-001, Maria Lopez, 67"
+          eye="Right eye (OD)"
+          fileName="maria_lopez_right_fundus.jpg"
+        />
       </div>
     </main>
   );
