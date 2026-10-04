@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import Button from "../components/Button.jsx";
 import Chip from "../components/Chip.jsx";
+import InfoNote from "../components/InfoNote.jsx";
 
 function StyleReference() {
   return (
@@ -70,6 +71,12 @@ function StyleReference() {
       <Chip tone="warning" icon={HelpCircle}>
         Uncertain, refer
       </Chip>
+
+      <InfoNote>
+        DUAL flags eyes that may need a specialist review for cataract or
+        glaucoma. It does not diagnose. Every Refer or Uncertain result needs a
+        full eye examination.
+      </InfoNote>
     </div>
   );
 }
