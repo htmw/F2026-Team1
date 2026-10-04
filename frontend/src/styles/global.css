@@ -70,6 +70,14 @@ body {
   min-height: 100vh;
 }
 
+/* delete this after completion */
+.style-main {
+  min-height: 100vh;
+
+  max-width: 85%;
+  margin: 8.6rem auto;
+}
+
 .tint-accent {
   background: color-mix(in srgb, var(--accent) var(--tint), transparent);
 }
@@ -207,6 +215,12 @@ body {
 .label-micro {
   font: 600 1.1rem/1.6rem var(--font-sans);
   letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+.label-mono {
+  font: 500 1.1rem/1.6rem var(--font-mono);
+  letter-spacing: 0.08rem;
   text-transform: uppercase;
 }
 

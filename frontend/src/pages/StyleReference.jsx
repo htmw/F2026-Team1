@@ -11,10 +11,11 @@ import {
 import Button from "../components/Button.jsx";
 import Chip from "../components/Chip.jsx";
 import InfoNote from "../components/InfoNote.jsx";
+import Card from "../components/Card.jsx";
 
 function StyleReference() {
   return (
-    <div>
+    <main className="style-main">
       <ThemeToggle />
       <button className="btn-primary" disabled>
         Disabled
@@ -77,7 +78,15 @@ function StyleReference() {
         glaucoma. It does not diagnose. Every Refer or Uncertain result needs a
         full eye examination.
       </InfoNote>
-    </div>
+
+      <Card title="Fundus preview" aside="Awaiting capture">
+        <p className="body-rg">Card content goes here</p>
+      </Card>
+
+      <Card>
+        <p className="body-rg">A card with no header</p>
+      </Card>
+    </main>
   );
 }
 
