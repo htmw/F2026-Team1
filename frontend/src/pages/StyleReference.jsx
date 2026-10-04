@@ -16,6 +16,7 @@ import Card from "../components/Card.jsx";
 import Select from "../components/Select.jsx";
 import FileDropzone from "../components/FileDropzone.jsx";
 import SummaryStrip from "../components/SummaryStripe.jsx";
+import PageHeader from "../components/PageHeader.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -120,6 +121,13 @@ function StyleReference() {
           fileName="maria_lopez_right_fundus.jpg"
         />
       </div>
+
+      <PageHeader eyebrow="Clinical triage intake" title="New screening" />
+
+      <PageHeader
+        title="History"
+        subtitle="Past screenings for your patients, most recent first"
+      />
     </main>
   );
 }
