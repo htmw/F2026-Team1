@@ -1,0 +1,68 @@
+.dropzone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  text-align: center;
+
+  background-color: var(--bg-panel);
+  border: 0.2rem dashed var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-8) var(--space-4);
+  cursor: pointer;
+}
+
+.dropzone:hover,
+.dropzone--dragging {
+  border-color: var(--accent);
+  background-color: color-mix(
+    in srgb,
+    var(--accent) var(--tint),
+    var(--bg-panel)
+  );
+}
+
+.dropzone:has(.dropzone__input:focus-visible) {
+  outline: 0.2rem solid var(--accent);
+  outline-offset: 0.2rem;
+}
+
+.dropzone__input {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dropzone__icon {
+  display: grid;
+  place-items: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  margin-bottom: var(--space-1);
+
+  background-color: color-mix(
+    in srgb,
+    var(--accent) var(--tint),
+    var(--bg-panel)
+  );
+  color: var(--accent);
+  border-radius: var(--radius-md);
+}
+
+.dropzone__hint {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.dropzone__error {
+  color: var(--danger);
+  margin-top: var(--space-2);
+}
+
+.dropzone .chip {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}

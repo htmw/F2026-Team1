@@ -14,9 +14,12 @@ import Chip from "../components/Chip.jsx";
 import InfoNote from "../components/InfoNote.jsx";
 import Card from "../components/Card.jsx";
 import Select from "../components/Select.jsx";
+import FileDropzone from "../components/FileDropzone.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
+  const [file, setFile] = useState(null);
+
   return (
     <main className="style-main">
       <ThemeToggle />
@@ -100,6 +103,9 @@ function StyleReference() {
             { value: "P-002", label: "P-002, James Chen, 54" },
           ]}
         />
+      </div>
+      <div style={{ width: "60rem" }}>
+        <FileDropzone file={file} onFile={setFile} />
       </div>
     </main>
   );
