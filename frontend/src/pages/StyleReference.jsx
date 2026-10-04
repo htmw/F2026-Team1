@@ -17,6 +17,7 @@ import Select from "../components/Select.jsx";
 import FileDropzone from "../components/FileDropzone.jsx";
 import SummaryStrip from "../components/SummaryStripe.jsx";
 import PageHeader from "../components/PageHeader.jsx";
+import Alert from "../components/Alert.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -128,6 +129,31 @@ function StyleReference() {
         title="History"
         subtitle="Past screenings for your patients, most recent first"
       />
+
+      <div style={{ width: "60rem" }}>
+        <Alert
+          title="Photo too dark to screen"
+          actions={
+            <>
+              <Button variant="secondary">Retake photo</Button>
+              <Button variant="secondary">Upload different photo</Button>
+            </>
+          }
+        >
+          The photo is almost completely black. Retake it, or upload another
+          photo of the right eye.
+        </Alert>
+      </div>
+
+      <div style={{ width: "60rem" }}>
+        <Alert
+          title="This file can't be opened as a photo"
+          actions={<Button variant="secondary">Upload different photo</Button>}
+        >
+          The file may be damaged or not a JPG or PNG. Upload another photo of
+          the right eye.
+        </Alert>
+      </div>
     </main>
   );
 }
