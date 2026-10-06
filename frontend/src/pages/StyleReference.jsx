@@ -15,7 +15,7 @@ import InfoNote from "../components/InfoNote.jsx";
 import Card from "../components/Card.jsx";
 import Select from "../components/Select.jsx";
 import FileDropzone from "../components/FileDropzone.jsx";
-import SummaryStrip from "../components/SummaryStripe.jsx";
+import SummaryStrip from "../components/SummaryStrip.jsx";
 import PageHeader from "../components/PageHeader.jsx";
 import Alert from "../components/Alert.jsx";
 import RadioCardGroup from "../components/RadioCardGroup.jsx";
