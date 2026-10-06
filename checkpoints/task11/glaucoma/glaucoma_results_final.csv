@@ -1,0 +1,4 @@
+model_type,seed,best_epoch,best_validation_auroc,checkpoint,learning_rate,batch_size,max_epochs,patience
+glaucoma_only,42,8,0.891136,checkpoints/task11/glaucoma/glaucoma_seed_42_best.pt,0.0001,8,30,5
+glaucoma_only,43,3,0.916608,checkpoints/task11/glaucoma/glaucoma_seed_43_best.pt,0.0001,8,30,5
+glaucoma_only,44,10,0.925966,checkpoints/task11/glaucoma/glaucoma_seed_44_best.pt,0.0001,8,30,5
