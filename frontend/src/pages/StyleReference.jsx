@@ -19,12 +19,17 @@ import SummaryStrip from "../components/SummaryStrip.jsx";
 import PageHeader from "../components/PageHeader.jsx";
 import Alert from "../components/Alert.jsx";
 import RadioCardGroup from "../components/RadioCardGroup.jsx";
+import FundusPreview from "../components/FundusPreview.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
   const [file, setFile] = useState(null);
 
   const [eye, setEye] = useState("OD");
+
+  const [formPatient, setFormPatient] = useState("");
+  const [formEye, setFormEye] = useState("OD");
+  const [formFile, setFormFile] = useState(null);
 
   return (
     <main className="style-main">
@@ -168,6 +173,10 @@ function StyleReference() {
             { value: "OS", label: "Left eye (OS)" },
           ]}
         />
+      </div>
+
+      <div style={{ width: "48rem" }}>
+        <FundusPreview src={file ? URL.createObjectURL(file) : null} />
       </div>
     </main>
   );
