@@ -18,10 +18,13 @@ import FileDropzone from "../components/FileDropzone.jsx";
 import SummaryStrip from "../components/SummaryStripe.jsx";
 import PageHeader from "../components/PageHeader.jsx";
 import Alert from "../components/Alert.jsx";
+import RadioCardGroup from "../components/RadioCardGroup.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
   const [file, setFile] = useState(null);
+
+  const [eye, setEye] = useState("OD");
 
   return (
     <main className="style-main">
@@ -153,6 +156,18 @@ function StyleReference() {
           The file may be damaged or not a JPG or PNG. Upload another photo of
           the right eye.
         </Alert>
+      </div>
+
+      <div style={{ width: "48rem" }}>
+        <RadioCardGroup
+          name="eye"
+          value={eye}
+          onChange={setEye}
+          options={[
+            { value: "OD", label: "Right eye (OD)" },
+            { value: "OS", label: "Left eye (OS)" },
+          ]}
+        />
       </div>
     </main>
   );
