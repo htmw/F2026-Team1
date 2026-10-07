@@ -8,28 +8,32 @@
 # - read the existing Task 7 train/validation splits
 # - load preprocessed ODIR images
 # - run the glaucoma-only model
+# - use the real Task 11 train_one_epoch function
 # - calculate weighted BCE loss
 # - backpropagate and update model weights
-# - run validation
-# - calculate validation AUROC
+# - use the real Task 11 validate function
+# - calculate validation loss and AUROC
 #
-# Only a few batches are used so this can be checked locally.
+# Only a small subset is used so this can be checked locally.
 # Internal test, holdout, and external datasets are NOT used.
 # ---------------------------------------------------------
 
 from pathlib import Path
 import sys
 
-import pandas as pd
 import torch
 import torch.nn as nn
-from sklearn.metrics import roc_auc_score
 from torch.utils.data import DataLoader, Subset
 
 # Allow imports from scripts/
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from glaucoma_model import GlaucomaNet
+from train_glaucoma import (
+    calculate_glaucoma_weight,
+    train_one_epoch,
+    validate,
+)
 from fundus_dataset import (
     FundusDataset,
     get_train_transform,
@@ -44,32 +48,8 @@ IMAGE_DIR = Path("Preprocessed/ODIR")
 
 SEED = 42
 BATCH_SIZE = 8
-
-# 5 batches x 8 images = 40 images
 SMOKE_IMAGES = 40
-
 LEARNING_RATE = 1e-4
-
-
-def get_glaucoma_weight():
-    labels = pd.read_csv(LABELS_CSV)
-
-    train_labels = labels[
-        labels["split"] == "train"
-    ]
-
-    positive = int(
-        train_labels["glaucoma"].sum()
-    )
-
-    negative = len(train_labels) - positive
-
-    if positive == 0:
-        raise ValueError(
-            "No glaucoma-positive training examples."
-        )
-
-    return negative / positive
 
 
 def main():
@@ -86,8 +66,7 @@ def main():
     print("Device:", device)
 
     # -----------------------------------------------------
-    # Full datasets still read the existing Task 7 split.
-    # Subset only limits how many rows this smoke test runs.
+    # Read the existing Task 7 train and validation splits
     # -----------------------------------------------------
 
     train_dataset = FundusDataset(
@@ -115,7 +94,7 @@ def main():
     )
 
     # -----------------------------------------------------
-    # Small training subset: first 40 training images
+    # Small training subset
     # -----------------------------------------------------
 
     train_subset = Subset(
@@ -129,11 +108,11 @@ def main():
     )
 
     # -----------------------------------------------------
-    # Small validation subset containing both classes.
+    # Small validation subset containing both classes
     #
-    # This is ONLY for the smoke test so that AUROC can be
-    # verified. Real Task 11 training still evaluates the
-    # complete natural validation split of 1,024 images.
+    # This is only for the smoke test so AUROC can be
+    # calculated. Real Task 11 training evaluates the
+    # complete validation split.
     # -----------------------------------------------------
 
     positive_indices = []
@@ -206,10 +185,12 @@ def main():
     )
 
     # -----------------------------------------------------
-    # Same glaucoma weighting used by real training
+    # Use the same class-weight calculation as real training
     # -----------------------------------------------------
 
-    glaucoma_weight = get_glaucoma_weight()
+    glaucoma_weight = calculate_glaucoma_weight(
+        LABELS_CSV
+    )
 
     print(
         f"Glaucoma positive weight: "
@@ -227,10 +208,11 @@ def main():
     )
 
     # -----------------------------------------------------
-    # Same model and optimizer as Task 11.
+    # Model and optimizer
     #
-    # pretrained=False is used only for this local smoke
-    # test. Real Task 11 training uses pretrained=True.
+    # pretrained=False avoids downloading ImageNet weights
+    # during the local smoke test. Real Task 11 training
+    # uses pretrained=True.
     # -----------------------------------------------------
 
     model = GlaucomaNet(
@@ -243,101 +225,36 @@ def main():
     )
 
     # -----------------------------------------------------
-    # Small training pass
+    # Call the ACTUAL Task 11 training function
     # -----------------------------------------------------
 
-    model.train()
+    train_loss = train_one_epoch(
+        model=model,
+        loader=train_loader,
+        optimizer=optimizer,
+        loss_fn=loss_fn,
+        device=device,
+    )
 
-    train_batches = 0
-
-    for batch in train_loader:
-
-        images = batch["image"].to(device)
-
-        targets = (
-            batch["glaucoma"]
-            .to(device)
-            .unsqueeze(1)
-        )
-
-        optimizer.zero_grad()
-
-        logits = model(images)
-
-        loss = loss_fn(
-            logits,
-            targets,
-        )
-
-        loss.backward()
-        optimizer.step()
-
-        train_batches += 1
-
-        print(
-            f"Training batch {train_batches} "
-            f"loss: {loss.item():.4f}"
-        )
+    print(
+        f"Smoke training loss: "
+        f"{train_loss:.4f}"
+    )
 
     # -----------------------------------------------------
-    # Small validation pass
+    # Call the ACTUAL Task 11 validation function
     # -----------------------------------------------------
 
-    model.eval()
+    validation_loss, validation_auroc = validate(
+        model=model,
+        loader=validation_loader,
+        loss_fn=loss_fn,
+        device=device,
+    )
 
-    validation_batches = 0
-    all_targets = []
-    all_probabilities = []
-
-    with torch.no_grad():
-
-        for batch in validation_loader:
-
-            images = batch["image"].to(device)
-
-            targets = (
-                batch["glaucoma"]
-                .to(device)
-                .unsqueeze(1)
-            )
-
-            logits = model(images)
-
-            probabilities = torch.sigmoid(logits)
-
-            all_targets.extend(
-                targets
-                .squeeze(1)
-                .cpu()
-                .numpy()
-                .tolist()
-            )
-
-            all_probabilities.extend(
-                probabilities
-                .squeeze(1)
-                .cpu()
-                .numpy()
-                .tolist()
-            )
-
-            validation_batches += 1
-
-    # -----------------------------------------------------
-    # AUROC
-    # -----------------------------------------------------
-
-    unique_targets = set(all_targets)
-
-    if len(unique_targets) != 2:
-        raise RuntimeError(
-            "Smoke validation subset does not "
-            "contain both glaucoma classes."
-        )
-
-    validation_auroc = roc_auc_score(
-        all_targets,
-        all_probabilities,
+    print(
+        f"Smoke validation loss: "
+        f"{validation_loss:.4f}"
     )
 
     print(
@@ -349,20 +266,32 @@ def main():
     # Final checks
     # -----------------------------------------------------
 
+    expected_train_batches = (
+        len(train_loader)
+    )
+
+    expected_validation_batches = (
+        len(validation_loader)
+    )
+
     print("--------------------------------")
 
     print(
         "Training batches:",
-        train_batches,
+        expected_train_batches,
     )
 
     print(
         "Validation batches:",
-        validation_batches,
+        expected_validation_batches,
     )
 
-    assert train_batches == 5
-    assert validation_batches == 5
+    assert expected_train_batches == 5
+    assert expected_validation_batches == 5
+
+    assert train_loss >= 0
+    assert validation_loss >= 0
+    assert 0.0 <= validation_auroc <= 1.0
 
     print(
         "Glaucoma Task 11 smoke test passed."

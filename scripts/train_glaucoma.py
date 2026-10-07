@@ -23,7 +23,7 @@
 # ---------------------------------------------------------
 
 from pathlib import Path
-import csv
+import subprocess
 
 import pandas as pd
 import torch
@@ -49,7 +49,8 @@ LABELS_CSV = Path("labels/eye_labels_task7.csv")
 IMAGE_DIR = Path("Preprocessed/ODIR")
 
 CHECKPOINT_DIR = Path("checkpoints/task11/glaucoma")
-RESULTS_CSV = Path("checkpoints/task11/glaucoma_results.csv")
+RESULTS_CSV = Path("results/task11/glaucoma_results.csv")
+HISTORY_CSV = Path("results/task11/glaucoma_training_history.csv")
 
 SEEDS = [42, 43, 44]
 
@@ -60,10 +61,38 @@ PATIENCE = 5
 
 
 # ---------------------------------------------------------
+# Get current Git commit hash
+# ---------------------------------------------------------
+
+def get_git_commit_hash():
+
+    try:
+        result = subprocess.run(
+            [
+                "git",
+                "rev-parse",
+                "HEAD",
+            ],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+        return result.stdout.strip()
+
+    except (
+        subprocess.CalledProcessError,
+        FileNotFoundError,
+    ):
+        return "unknown"
+
+
+# ---------------------------------------------------------
 # Calculate glaucoma class weight from TRAIN split only
 # ---------------------------------------------------------
 
 def calculate_glaucoma_weight(labels_csv):
+
     labels = pd.read_csv(labels_csv)
 
     train_labels = labels[
@@ -103,12 +132,14 @@ def train_one_epoch(
     loss_fn,
     device,
 ):
+
     model.train()
 
     total_loss = 0.0
     batches_processed = 0
 
     for batch in loader:
+
         images = batch["image"].to(device)
 
         targets = (
@@ -150,6 +181,7 @@ def validate(
     loss_fn,
     device,
 ):
+
     model.eval()
 
     total_loss = 0.0
@@ -161,6 +193,7 @@ def validate(
     with torch.no_grad():
 
         for batch in loader:
+
             images = batch["image"].to(device)
 
             targets = (
@@ -215,6 +248,85 @@ def validate(
 
 
 # ---------------------------------------------------------
+# Save per-epoch training history
+# ---------------------------------------------------------
+
+def save_training_history(
+    seed,
+    epoch,
+    train_loss,
+    validation_loss,
+    validation_auroc,
+    git_commit,
+):
+
+    HISTORY_CSV.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    columns = [
+        "model_type",
+        "seed",
+        "epoch",
+        "train_loss",
+        "validation_loss",
+        "validation_auroc",
+        "git_commit",
+    ]
+
+    new_history = {
+        "model_type": "glaucoma_only",
+        "seed": seed,
+        "epoch": epoch,
+        "train_loss": f"{train_loss:.6f}",
+        "validation_loss": f"{validation_loss:.6f}",
+        "validation_auroc": f"{validation_auroc:.6f}",
+        "git_commit": git_commit,
+    }
+
+    if HISTORY_CSV.exists():
+
+        history = pd.read_csv(
+            HISTORY_CSV
+        )
+
+        history = history[
+            ~(
+                (history["seed"] == seed)
+                & (history["epoch"] == epoch)
+            )
+        ]
+
+        history = pd.concat(
+            [
+                history,
+                pd.DataFrame([new_history]),
+            ],
+            ignore_index=True,
+        )
+
+    else:
+
+        history = pd.DataFrame(
+            [new_history],
+            columns=columns,
+        )
+
+    history = history.sort_values(
+        by=[
+            "seed",
+            "epoch",
+        ]
+    ).reset_index(drop=True)
+
+    history.to_csv(
+        HISTORY_CSV,
+        index=False,
+    )
+
+
+# ---------------------------------------------------------
 # Save summary of each completed run
 # ---------------------------------------------------------
 
@@ -224,49 +336,69 @@ def save_result(
     best_auroc,
     checkpoint_path,
 ):
+
     RESULTS_CSV.parent.mkdir(
         parents=True,
         exist_ok=True,
     )
 
-    file_exists = RESULTS_CSV.exists()
+    columns = [
+        "model_type",
+        "seed",
+        "best_epoch",
+        "best_validation_auroc",
+        "checkpoint",
+        "learning_rate",
+        "batch_size",
+        "max_epochs",
+        "patience",
+    ]
 
-    with RESULTS_CSV.open(
-        "a",
-        newline="",
-        encoding="utf-8",
-    ) as file:
+    new_result = {
+        "model_type": "glaucoma_only",
+        "seed": seed,
+        "best_epoch": best_epoch,
+        "best_validation_auroc": f"{best_auroc:.6f}",
+        "checkpoint": str(checkpoint_path),
+        "learning_rate": LEARNING_RATE,
+        "batch_size": BATCH_SIZE,
+        "max_epochs": MAX_EPOCHS,
+        "patience": PATIENCE,
+    }
 
-        writer = csv.writer(file)
+    if RESULTS_CSV.exists():
 
-        if not file_exists:
-            writer.writerow(
-                [
-                    "model_type",
-                    "seed",
-                    "best_epoch",
-                    "best_validation_auroc",
-                    "checkpoint",
-                    "learning_rate",
-                    "batch_size",
-                    "max_epochs",
-                    "patience",
-                ]
-            )
-
-        writer.writerow(
-            [
-                "glaucoma_only",
-                seed,
-                best_epoch,
-                f"{best_auroc:.6f}",
-                str(checkpoint_path),
-                LEARNING_RATE,
-                BATCH_SIZE,
-                MAX_EPOCHS,
-                PATIENCE,
-            ]
+        results = pd.read_csv(
+            RESULTS_CSV
         )
+
+        results = results[
+            results["seed"] != seed
+        ]
+
+        results = pd.concat(
+            [
+                results,
+                pd.DataFrame([new_result]),
+            ],
+            ignore_index=True,
+        )
+
+    else:
+
+        results = pd.DataFrame(
+            [new_result],
+            columns=columns,
+        )
+
+    results = results.sort_values(
+        by="seed"
+    ).reset_index(drop=True)
+
+    results.to_csv(
+        RESULTS_CSV,
+        index=False,
+    )
 
 
 # ---------------------------------------------------------
@@ -280,9 +412,14 @@ def train_seed(seed, device):
     print(f"Glaucoma-only training | Seed {seed}")
     print("=" * 60)
 
-    # Changes training randomness only.
-    # The dataset split already exists in the Task 7 CSV.
     set_seed(seed)
+
+    git_commit = get_git_commit_hash()
+
+    print(
+        "Git commit:",
+        git_commit,
+    )
 
     # -----------------------------------------------------
     # Existing Task 7 train and validation splits
@@ -302,7 +439,11 @@ def train_seed(seed, device):
         transform=get_validation_transform(),
     )
 
-    print("Training images:", len(train_dataset))
+    print(
+        "Training images:",
+        len(train_dataset),
+    )
+
     print(
         "Validation images:",
         len(validation_dataset),
@@ -312,8 +453,6 @@ def train_seed(seed, device):
     # DataLoaders
     # -----------------------------------------------------
 
-    # Generator makes shuffled training order reproducible
-    # for the current Task 11 seed.
     generator = torch.Generator()
     generator.manual_seed(seed)
 
@@ -390,7 +529,10 @@ def train_seed(seed, device):
     # Training
     # -----------------------------------------------------
 
-    for epoch in range(1, MAX_EPOCHS + 1):
+    for epoch in range(
+        1,
+        MAX_EPOCHS + 1,
+    ):
 
         train_loss = train_one_epoch(
             model=model,
@@ -400,7 +542,10 @@ def train_seed(seed, device):
             device=device,
         )
 
-        validation_loss, validation_auroc = validate(
+        (
+            validation_loss,
+            validation_auroc,
+        ) = validate(
             model=model,
             loader=validation_loader,
             loss_fn=loss_fn,
@@ -410,8 +555,23 @@ def train_seed(seed, device):
         print(
             f"Epoch {epoch}/{MAX_EPOCHS} | "
             f"Train loss: {train_loss:.4f} | "
-            f"Validation loss: {validation_loss:.4f} | "
-            f"Validation AUROC: {validation_auroc:.4f}"
+            f"Validation loss: "
+            f"{validation_loss:.4f} | "
+            f"Validation AUROC: "
+            f"{validation_auroc:.4f}"
+        )
+
+        # -------------------------------------------------
+        # Record per-epoch metrics
+        # -------------------------------------------------
+
+        save_training_history(
+            seed=seed,
+            epoch=epoch,
+            train_loss=train_loss,
+            validation_loss=validation_loss,
+            validation_auroc=validation_auroc,
+            git_commit=git_commit,
         )
 
         # -------------------------------------------------
@@ -431,8 +591,6 @@ def train_seed(seed, device):
                     "epoch": epoch,
                     "validation_auroc": validation_auroc,
                     "model_state_dict": model.state_dict(),
-                    "optimizer_state_dict":
-                        optimizer.state_dict(),
                     "learning_rate": LEARNING_RATE,
                     "batch_size": BATCH_SIZE,
                     "max_epochs": MAX_EPOCHS,
@@ -447,6 +605,7 @@ def train_seed(seed, device):
             )
 
         else:
+
             epochs_without_improvement += 1
 
             print(
@@ -459,10 +618,14 @@ def train_seed(seed, device):
         # Early stopping
         # -------------------------------------------------
 
-        if epochs_without_improvement >= PATIENCE:
+        if (
+            epochs_without_improvement
+            >= PATIENCE
+        ):
 
             print(
-                f"Early stopping after epoch {epoch}."
+                f"Early stopping after "
+                f"epoch {epoch}."
             )
 
             break
@@ -479,10 +642,12 @@ def train_seed(seed, device):
     )
 
     print()
+
     print(
         f"Seed {seed} complete | "
         f"Best epoch: {best_epoch} | "
-        f"Best validation AUROC: {best_auroc:.4f}"
+        f"Best validation AUROC: "
+        f"{best_auroc:.4f}"
     )
 
     print(
@@ -497,12 +662,15 @@ def train_seed(seed, device):
 
 def main():
 
-    print("TASK 11 - GLAUCOMA-ONLY ABLATION")
+    print(
+        "TASK 11 - GLAUCOMA-ONLY ABLATION"
+    )
     print("--------------------------------")
 
     if not LABELS_CSV.exists():
         raise FileNotFoundError(
-            f"Label file not found: {LABELS_CSV}"
+            f"Label file not found: "
+            f"{LABELS_CSV}"
         )
 
     if not IMAGE_DIR.exists():
@@ -512,18 +680,30 @@ def main():
         )
 
     device = torch.device(
-        "cuda" if torch.cuda.is_available() else "cpu"
+        "cuda"
+        if torch.cuda.is_available()
+        else "cpu"
     )
 
     print("Device:", device)
     print("Label file:", LABELS_CSV)
     print("Image directory:", IMAGE_DIR)
     print("Seeds:", SEEDS)
-    print("Maximum epochs:", MAX_EPOCHS)
-    print("Early stopping patience:", PATIENCE)
-    print("Selection metric: validation glaucoma AUROC")
+    print(
+        "Maximum epochs:",
+        MAX_EPOCHS,
+    )
+    print(
+        "Early stopping patience:",
+        PATIENCE,
+    )
+    print(
+        "Selection metric: "
+        "validation glaucoma AUROC"
+    )
 
     for seed in SEEDS:
+
         train_seed(
             seed=seed,
             device=device,
@@ -532,7 +712,8 @@ def main():
     print()
     print("--------------------------------")
     print(
-        "All glaucoma-only Task 11 runs completed."
+        "All glaucoma-only "
+        "Task 11 runs completed."
     )
 
 
