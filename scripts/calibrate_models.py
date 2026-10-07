@@ -11,6 +11,10 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 LABELS_FILE = PROJECT_ROOT / "labels" / "eye_labels_task7.csv"
 
+# Saved glaucoma models from Task 11
+CHECKPOINT_DIR = PROJECT_ROOT / "checkpoints" / "task11" / "glaucoma"
+SEEDS = (42, 43, 44)
+
 
 def load_validation_labels(labels_file=LABELS_FILE):
     """Read and validate the ODIR validation answer sheets."""
@@ -38,9 +42,30 @@ def load_validation_labels(labels_file=LABELS_FILE):
 
     return rows
 
+def find_glaucoma_checkpoints():
+    """Check that all three saved glaucoma models are available."""
+    checkpoints = {}
+
+    for seed in SEEDS:
+        path = CHECKPOINT_DIR / f"glaucoma_seed_{seed}_best.pt"
+
+        if not path.is_file():
+            raise FileNotFoundError(f"Missing model file:{path}")
+        
+        checkpoints[seed] = path
+
+    return checkpoints    
+
+
 
 def main():
     rows = load_validation_labels()
+
+    checkpoints = find_glaucoma_checkpoints()
+
+    for seed, path in checkpoints.items():
+        print(f"Found glaucoma model for see {seed}:{path.name}")
+
     print(f"Validation images: {len(rows)}")
     for condition in ("cataract", "glaucoma"):
         print(f"{condition.capitalize()} cases: {sum(row[condition] for row in rows)}")
