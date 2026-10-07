@@ -421,6 +421,14 @@ def train_seed(seed, device):
         git_commit,
     )
 
+    # Clear previous training history for this seed before
+    # starting a fresh run. This prevents stale epoch rows
+    # from an older, longer run remaining after a shorter rerun.
+    if HISTORY_CSV.exists():
+        history = pd.read_csv(HISTORY_CSV)
+        history = history[history["seed"] != seed]
+        history.to_csv(HISTORY_CSV, index=False)    
+
     # -----------------------------------------------------
     # Existing Task 7 train and validation splits
     # -----------------------------------------------------
