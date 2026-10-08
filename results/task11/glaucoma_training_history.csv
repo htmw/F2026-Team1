@@ -1,6 +1,6 @@
 model_type,seed,epoch,train_loss,validation_loss,validation_auroc,git_commit
-glaucoma_only,42,1,1.1558,0.8720,0.8569,unknown
-glaucoma_only,42,2,0.9152,0.9082,0.8651,unknown
+glaucoma_only,42,1,1.1568,0.8720,0.8569,unknown
+glaucoma_only,42,2,0.9152,0.9822,0.8651,unknown
 glaucoma_only,42,3,0.7813,0.8332,0.8765,unknown
 glaucoma_only,42,4,0.6445,0.9706,0.8762,unknown
 glaucoma_only,42,5,0.6159,1.0565,0.8597,unknown
@@ -14,7 +14,7 @@ glaucoma_only,42,12,0.3998,1.1624,0.8897,unknown
 glaucoma_only,42,13,0.3477,1.1273,0.8891,unknown
 glaucoma_only,43,1,1.1684,1.4703,0.7971,unknown
 glaucoma_only,43,2,0.8975,0.9094,0.8662,unknown
-glaucoma_only,43,3,0.8406,1.1654,0.9166,unknown
+glaucoma_only,43,3,0.8464,1.1654,0.9166,unknown
 glaucoma_only,43,4,0.6175,1.0728,0.8623,unknown
 glaucoma_only,43,5,0.6208,0.9318,0.8865,unknown
 glaucoma_only,43,6,0.5613,0.8799,0.8846,unknown
