@@ -1,0 +1,4 @@
+model_type,seed,best_epoch,best_validation_auroc,checkpoint,learning_rate,batch_size,max_epochs,patience
+cataract_only,42,11,0.987108,checkpoints/task11/cataract/cataract_seed_42_best.pt,0.0001,8,30,5
+cataract_only,43,7,0.985396,checkpoints/task11/cataract/cataract_seed_43_best.pt,0.0001,8,30,5
+cataract_only,44,7,0.982040,checkpoints/task11/cataract/cataract_seed_44_best.pt,0.0001,8,30,5
