@@ -20,6 +20,7 @@ import PageHeader from "../components/PageHeader.jsx";
 import Alert from "../components/Alert.jsx";
 import RadioCardGroup from "../components/RadioCardGroup.jsx";
 import FundusPreview from "../components/FundusPreview.jsx";
+import ScreeningForm from "../components/ScreeningForm.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -177,6 +178,25 @@ function StyleReference() {
 
       <div style={{ width: "48rem" }}>
         <FundusPreview src={file ? URL.createObjectURL(file) : null} />
+      </div>
+
+      <div style={{ width: "70rem" }}>
+        <ScreeningForm
+          patients={[
+            { id: "P-001", name: "Maria Lopez", age: 67 },
+            { id: "P-002", name: "James Chen", age: 54 },
+          ]}
+          patientId={formPatient}
+          onPatientChange={setFormPatient}
+          eye={formEye}
+          onEyeChange={setFormEye}
+          file={formFile}
+          onFileChange={setFormFile}
+          qualityReason={null}
+          onReset={() => setFormFile(null)}
+          canSubmit={Boolean(formPatient && formEye && formFile)}
+          onSubmit={() => console.log("submit")}
+        />
       </div>
     </main>
   );
