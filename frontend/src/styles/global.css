@@ -30,7 +30,6 @@
   --space-10: 4rem;
   --space-12: 4.8rem;
   --space-16: 6.4rem;
-  --space-24: 9.6rem;
   --radius-sm: 0.4rem;
   --radius-md: 0.8rem;
   --radius-pill: 999.9rem;
@@ -71,7 +70,7 @@ body {
   min-height: 100vh;
   max-width: 128rem;
   margin: 0 auto;
-  padding: var(--space-24) var(--space-6);
+  padding: var(--space-16) var(--space-6);
 }
 
 /* delete this after completion */
@@ -80,6 +79,11 @@ body {
 
   max-width: 85%;
   margin: 8.6rem auto;
+}
+
+/* delete this after completion */
+.style-main > * {
+  margin-bottom: 2rem;
 }
 
 .tint-accent {
@@ -258,6 +262,12 @@ body {
   text-transform: uppercase;
 }
 
+@media (max-width: 50em) {
+  .main {
+    padding: var(--space-12) var(--space-6);
+  }
+}
+
 @media (max-width: 45.5em) {
   html {
     font-size: 56.25%;
@@ -266,7 +276,7 @@ body {
 
 @media (max-width: 40em) {
   .main {
-    padding-block: var(--space-10);
+    padding: var(--space-8) var(--space-4);
   }
 }
 
