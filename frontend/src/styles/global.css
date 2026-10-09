@@ -30,6 +30,7 @@
   --space-10: 4rem;
   --space-12: 4.8rem;
   --space-16: 6.4rem;
+  --space-24: 9.6rem;
   --radius-sm: 0.4rem;
   --radius-md: 0.8rem;
   --radius-pill: 999.9rem;
@@ -70,7 +71,7 @@ body {
   min-height: 100vh;
   max-width: 128rem;
   margin: 0 auto;
-  padding: var(--space-8) var(--space-6);
+  padding: var(--space-24) var(--space-6);
 }
 
 /* delete this after completion */
@@ -260,6 +261,12 @@ body {
 @media (max-width: 45.5em) {
   html {
     font-size: 56.25%;
+  }
+}
+
+@media (max-width: 40em) {
+  .main {
+    padding-block: var(--space-10);
   }
 }
 
