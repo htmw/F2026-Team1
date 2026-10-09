@@ -1,6 +1,6 @@
 import { ImageIcon } from "lucide-react";
-import Card from "./Card.jsx";
-import "../styles/fundus-preview.css";
+import Card from "../Card.jsx";
+import "../../styles/upload/fundus-preview.css";
 
 function FundusPreview({ src }) {
   return (

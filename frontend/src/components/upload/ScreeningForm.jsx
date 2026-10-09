@@ -1,13 +1,13 @@
 import { BarChart3 } from "lucide-react";
-import Alert from "./Alert.jsx";
-import Button from "./Button.jsx";
-import Card from "./Card.jsx";
-import Chip from "./Chip.jsx";
+import Alert from "../Alert.jsx";
+import Button from "../Button.jsx";
+import Card from "../Card.jsx";
+import Chip from "../Chip.jsx";
 import FileDropzone from "./FileDropzone.jsx";
-import RadioCardGroup from "./RadioCardGroup.jsx";
-import Select from "./Select.jsx";
-import SummaryStrip from "./SummaryStrip.jsx";
-import "../styles/screening-form.css";
+import RadioCardGroup from "../RadioCardGroup.jsx";
+import Select from "../Select.jsx";
+import SummaryStrip from "../SummaryStrip.jsx";
+import "../../styles/upload/screening-form.css";
 
 const EYE_OPTIONS = [
   { value: "OD", label: "Right eye (OD)" },

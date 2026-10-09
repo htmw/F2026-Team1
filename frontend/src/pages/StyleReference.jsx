@@ -14,13 +14,13 @@ import Chip from "../components/Chip.jsx";
 import InfoNote from "../components/InfoNote.jsx";
 import Card from "../components/Card.jsx";
 import Select from "../components/Select.jsx";
-import FileDropzone from "../components/FileDropzone.jsx";
+import FileDropzone from "../components/upload/FileDropzone.jsx";
 import SummaryStrip from "../components/SummaryStrip.jsx";
 import PageHeader from "../components/PageHeader.jsx";
 import Alert from "../components/Alert.jsx";
 import RadioCardGroup from "../components/RadioCardGroup.jsx";
-import FundusPreview from "../components/FundusPreview.jsx";
-import ScreeningForm from "../components/ScreeningForm.jsx";
+import FundusPreview from "../components/upload/FundusPreview.jsx";
+import ScreeningForm from "../components/upload/ScreeningForm.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");

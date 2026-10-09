@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Check, CloudUpload } from "lucide-react";
-import Chip from "./Chip.jsx";
-import "../styles/file-dropzone.css";
+import Chip from "../Chip.jsx";
+import "../../styles/upload/file-dropzone.css";
 
 const ACCEPTED_TYPES = ["image/jpeg", "image/png"];
 

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import FundusPreview from "../components/FundusPreview.jsx";
+import FundusPreview from "../components/upload/FundusPreview.jsx";
 import InfoNote from "../components/InfoNote.jsx";
 import PageHeader from "../components/PageHeader.jsx";
-import ScreeningForm from "../components/ScreeningForm.jsx";
+import ScreeningForm from "../components/upload/ScreeningForm.jsx";
 import "../styles/upload.css";
 
 const PATIENTS = [
