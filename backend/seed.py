@@ -68,6 +68,7 @@ def init():
     """Create the tables, the model version and the demo data if they are missing."""
     conn = db.connect()
     conn.executescript(db.SCHEMA)
+    db.upgrade(conn)
     service.ensure_model_version(conn)
     seed(conn)
     conn.commit()

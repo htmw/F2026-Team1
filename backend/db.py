@@ -43,7 +43,8 @@ CREATE TABLE IF NOT EXISTS images (
     height         INTEGER,
     quality_status TEXT NOT NULL,           -- passed / failed
     quality_reason TEXT,                    -- unreadable / too_dark / not_fundus
-    uploaded_at    TEXT NOT NULL
+    uploaded_at    TEXT NOT NULL,
+    sha256         TEXT                     -- fingerprint of the uploaded file, to spot the same photo uploaded twice
 );
 CREATE TABLE IF NOT EXISTS model_versions (
     id               TEXT PRIMARY KEY,      -- v0-mock now, v1.0 after Task 19
@@ -78,7 +79,16 @@ CREATE TABLE IF NOT EXISTS heatmaps (
     condition_result_id INTEGER NOT NULL REFERENCES condition_results(id),
     stored_path         TEXT NOT NULL
 );
+-- one screening per photo, even if "Screen this photo" is clicked twice at once
+CREATE UNIQUE INDEX IF NOT EXISTS one_screening_per_image ON screenings(image_id);
 """
+
+
+def upgrade(conn):
+    """Add columns that a database made by an older version of this code is missing."""
+    columns = [row[1] for row in conn.execute("PRAGMA table_info(images)")]
+    if "sha256" not in columns:
+        conn.execute("ALTER TABLE images ADD COLUMN sha256 TEXT")
 
 
 def connect():
