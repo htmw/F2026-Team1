@@ -1,0 +1,10 @@
+.meta-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-8);
+}
+
+.meta-list__item dt {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-1);
+}

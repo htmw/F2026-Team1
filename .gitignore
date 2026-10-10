@@ -24,3 +24,6 @@ config.yaml
 
 # pip install bookkeeping
 *.egg-info/
+
+# API database, uploaded photos and heatmaps (dummy data, never in git)
+backend/storage/
