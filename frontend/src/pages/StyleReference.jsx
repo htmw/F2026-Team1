@@ -21,6 +21,7 @@ import Alert from "../components/Alert.jsx";
 import RadioCardGroup from "../components/RadioCardGroup.jsx";
 import FundusPreview from "../components/upload/FundusPreview.jsx";
 import ScreeningForm from "../components/upload/ScreeningForm.jsx";
+import ResultChip from "../components/ResultChip.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -198,6 +199,10 @@ function StyleReference() {
           onSubmit={() => console.log("submit")}
         />
       </div>
+
+      <ResultChip result="no_concern" />
+      <ResultChip result="refer" />
+      <ResultChip result="uncertain" />
     </main>
   );
 }
