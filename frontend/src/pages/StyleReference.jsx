@@ -24,6 +24,7 @@ import ScreeningForm from "../components/upload/ScreeningForm.jsx";
 import ResultChip from "../components/ResultChip.jsx";
 import BackLink from "../components/BackLink.jsx";
 import ConditionCard from "../components/ConditionCard.jsx";
+import MetaList from "../components/MetaList.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -223,6 +224,17 @@ function StyleReference() {
             Low image quality or the model is uncertain.
           </p>
         </ConditionCard>
+      </div>
+
+      <div>
+        <MetaList
+          items={[
+            { label: "Patient", value: "Maria Lopez, P-001" },
+            { label: "Eye", value: "Right eye, OD" },
+            { label: "Date", value: "Sep 22, 2026" },
+            { label: "Screening ID", value: "#SCR-2026-8841" },
+          ]}
+        />
       </div>
     </main>
   );
