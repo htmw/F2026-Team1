@@ -72,9 +72,11 @@ To skip an eye, send `POST /screenings` with
 ## Rules the server enforces
 - The model only runs on a photo that passed the quality check, was uploaded
   for the same patient and eye, and has not been screened before.
-- Per condition: a score at or above the threshold is `refer`, below it is
-  `no_concern`. For now a score within 0.05 of the threshold is `uncertain`;
-  Task 12 sets the real rule.
+- Per condition: a score within 0.05 of the threshold, on either side, is
+  `uncertain` (too close to call). Otherwise a score at or above the threshold
+  is `refer` and below it is `no_concern`. For cataract (threshold 0.35):
+  0.32 and 0.38 are `uncertain`, 0.45 is `refer`, 0.20 is `no_concern`.
+  This is a placeholder; Task 12 sets the real rule.
 - Per eye: `refer` if either condition is `refer` or `uncertain`, otherwise
   `no_concern`.
 - The same eye can be screened again with a new photo, for a follow-up visit
