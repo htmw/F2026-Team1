@@ -23,6 +23,7 @@ import FundusPreview from "../components/upload/FundusPreview.jsx";
 import ScreeningForm from "../components/upload/ScreeningForm.jsx";
 import ResultChip from "../components/ResultChip.jsx";
 import BackLink from "../components/BackLink.jsx";
+import ConditionCard from "../components/ConditionCard.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -208,6 +209,20 @@ function StyleReference() {
 
       <div>
         <BackLink to="/history">Back to History</BackLink>
+      </div>
+
+      <div>
+        <ConditionCard condition="Cataract" result="no_concern">
+          <p className="body-rg">Risk score 0.14 (14%)</p>
+        </ConditionCard>
+        <ConditionCard condition="Glaucoma" result="refer">
+          <p className="body-rg">Risk score 0.78 (78%)</p>
+        </ConditionCard>
+        <ConditionCard condition="Cataract" result="uncertain">
+          <p className="body-rg">
+            Low image quality or the model is uncertain.
+          </p>
+        </ConditionCard>
       </div>
     </main>
   );
