@@ -3,7 +3,9 @@
 Every function takes an open SQLite connection and returns plain dicts shaped
 like the models in schemas.py.
 """
+import hashlib
 import json
+import sqlite3
 import sys
 from pathlib import Path
 
@@ -117,9 +119,10 @@ def save_image(conn, patient_id, eye, data, uploaded_at=None):
         cv2.imwrite(str(folder / f"{image_id}_512.jpg"), small)
         stored_path = f"images/{image_id}.jpg"
     conn.execute(
-        "INSERT INTO images VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        "INSERT INTO images (id, patient_id, eye, file_name, stored_path, width, height, "
+        "quality_status, quality_reason, uploaded_at, sha256) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         (image_id, patient_id, eye, f"{patient_id}_{eye}.jpg", stored_path, width, height,
-         status, reason, uploaded_at or db.now()),
+         status, reason, uploaded_at or db.now(), hashlib.sha256(data).hexdigest()),
     )
     return image_out(get_image_row(conn, image_id))
 
@@ -177,6 +180,15 @@ def create_screening(conn, user_id, patient_id, eye, image_id=None, skipped=Fals
         raise HTTPException(409, f"Photo failed the quality check ({image['quality_reason']})")
     if conn.execute("SELECT 1 FROM screenings WHERE image_id = ?", (image_id,)).fetchone():
         raise HTTPException(409, "This photo has already been screened")
+    # the same file uploaded again is a duplicate; a follow-up or retake is a new photo and is allowed
+    if image["sha256"]:
+        earlier = conn.execute(
+            "SELECT s.id FROM screenings s JOIN images i ON i.id = s.image_id "
+            "WHERE s.patient_id = ? AND s.eye = ? AND i.sha256 = ?",
+            (patient_id, eye, image["sha256"]),
+        ).fetchone()
+        if earlier:
+            raise HTTPException(409, f"This photo was already screened for this eye ({earlier['id']})")
 
     version = model_version(conn)
     photo = cv2.imread(str(db.STORAGE / image["stored_path"]))
@@ -188,12 +200,16 @@ def create_screening(conn, user_id, patient_id, eye, image_id=None, skipped=Fals
         result = condition_result(calibrated, version["thresholds"][condition], version["uncertain_margin"])
         scored.append((condition, raw[condition], calibrated, result))
 
-    conn.execute(
-        "INSERT INTO screenings (id, patient_id, image_id, eye, created_at, created_by, "
-        "model_version_id, overall_result) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-        (screening_id, patient_id, image_id, eye, created_at, user_id, version["id"],
-         overall_result([s[3] for s in scored])),
-    )
+    try:
+        conn.execute(
+            "INSERT INTO screenings (id, patient_id, image_id, eye, created_at, created_by, "
+            "model_version_id, overall_result) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            (screening_id, patient_id, image_id, eye, created_at, user_id, version["id"],
+             overall_result([s[3] for s in scored])),
+        )
+    except sqlite3.IntegrityError:
+        # a second click arrived at the same moment and saved first
+        raise HTTPException(409, "This photo has already been screened")
     folder = db.STORAGE / "heatmaps"
     folder.mkdir(parents=True, exist_ok=True)
     for condition, raw_score, calibrated, result in scored:

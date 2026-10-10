@@ -2,6 +2,7 @@
 
 Run from the repo folder:  python -m pytest tests/test_api.py
 """
+import sqlite3
 from pathlib import Path
 
 import cv2
@@ -111,6 +112,29 @@ def test_same_eye_can_be_screened_again(client):
     history = client.get("/screenings", params={"patient": "P-001", "eye": "right"}).json()
     assert len(history) == 3
     assert client.get("/patients/P-001").json()["latest"]["right"]["id"] == ids[-1]
+
+
+def test_same_photo_uploaded_twice_is_not_screened_twice(client):
+    first = upload(client, fundus()).json()
+    r = client.post("/screenings", json={"patient_id": "P-004", "eye": "right", "image_id": first["id"]})
+    assert r.status_code == 201
+    again = upload(client, fundus()).json()
+    r2 = client.post("/screenings", json={"patient_id": "P-004", "eye": "right", "image_id": again["id"]})
+    assert r2.status_code == 409 and r.json()["id"] in r2.json()["detail"]
+
+
+def test_database_allows_one_screening_per_photo(client):
+    # backs up the check above when two clicks arrive at the same moment
+    image = upload(client, fundus()).json()
+    assert client.post("/screenings", json={"patient_id": "P-004", "eye": "right", "image_id": image["id"]}).status_code == 201
+    conn = db.connect()
+    with pytest.raises(sqlite3.IntegrityError):
+        conn.execute(
+            "INSERT INTO screenings (id, patient_id, image_id, eye, created_at, created_by) "
+            "VALUES ('SCR-9999', 'P-004', ?, 'right', '2026-10-10T10:00:00-04:00', 1)",
+            (image["id"],),
+        )
+    conn.close()
 
 
 def test_skip_eye_and_todays_visit(client):

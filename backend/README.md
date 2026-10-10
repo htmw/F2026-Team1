@@ -20,7 +20,8 @@ http://localhost:8000/docs, where you can also try each one.
 The first start creates `backend/storage/` with demo data: one user, four
 made-up patients and five screenings. The database, photos and heatmaps all
 live there, and git ignores the folder. To start over, stop the server and
-delete `backend/storage/`.
+delete `backend/storage/`. Do this before running a demo again with the same
+photos, since a photo can only be screened once per eye.
 
 Demo login: `emily.geller@example.com` / `dual-demo`. This account only exists
 on your own computer.
@@ -79,6 +80,9 @@ To skip an eye, send `POST /screenings` with
 - The same eye can be screened again with a new photo, for a follow-up visit
   or a retake. Every screening is kept; the newest one per eye is shown on the
   patient page.
+- The same photo is never screened twice for the same eye, even if it is
+  uploaded again or "Screen this photo" is clicked twice. The second try gets
+  409 with the ID of the earlier screening.
 - Every endpoint except login needs a session. Passwords are stored hashed.
 - Only clinic staff have accounts; patients never log in. Every signed-in user
   can see every patient.
