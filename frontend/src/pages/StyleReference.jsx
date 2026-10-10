@@ -22,6 +22,7 @@ import RadioCardGroup from "../components/RadioCardGroup.jsx";
 import FundusPreview from "../components/upload/FundusPreview.jsx";
 import ScreeningForm from "../components/upload/ScreeningForm.jsx";
 import ResultChip from "../components/ResultChip.jsx";
+import BackLink from "../components/BackLink.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -199,10 +200,15 @@ function StyleReference() {
           onSubmit={() => console.log("submit")}
         />
       </div>
+      <div>
+        <ResultChip result="no_concern" />
+        <ResultChip result="refer" />
+        <ResultChip result="uncertain" />
+      </div>
 
-      <ResultChip result="no_concern" />
-      <ResultChip result="refer" />
-      <ResultChip result="uncertain" />
+      <div>
+        <BackLink to="/history">Back to History</BackLink>
+      </div>
     </main>
   );
 }
