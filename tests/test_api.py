@@ -99,6 +99,20 @@ def test_photo_must_match_patient_and_eye(client):
     assert r.status_code == 409
 
 
+def test_same_eye_can_be_screened_again(client):
+    # follow-up visits and retakes: every screening is kept and the newest one counts
+    # (P-001's right eye is already screened in the demo data)
+    ids = []
+    for photo in ("2_right.jpg", "15_right.jpg"):
+        image = upload(client, (ODIR / photo).read_bytes(), patient_id="P-001", eye="right").json()
+        r = client.post("/screenings", json={"patient_id": "P-001", "eye": "right", "image_id": image["id"]})
+        assert r.status_code == 201
+        ids.append(r.json()["id"])
+    history = client.get("/screenings", params={"patient": "P-001", "eye": "right"}).json()
+    assert len(history) == 3
+    assert client.get("/patients/P-001").json()["latest"]["right"]["id"] == ids[-1]
+
+
 def test_skip_eye_and_todays_visit(client):
     assert client.post("/screenings", json={"patient_id": "P-004", "eye": "left", "skipped": True}).status_code == 422
     r = client.post("/screenings", json={"patient_id": "P-004", "eye": "left", "skipped": True,

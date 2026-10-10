@@ -76,7 +76,12 @@ To skip an eye, send `POST /screenings` with
   Task 12 sets the real rule.
 - Per eye: `refer` if either condition is `refer` or `uncertain`, otherwise
   `no_concern`.
+- The same eye can be screened again with a new photo, for a follow-up visit
+  or a retake. Every screening is kept; the newest one per eye is shown on the
+  patient page.
 - Every endpoint except login needs a session. Passwords are stored hashed.
+- Only clinic staff have accounts; patients never log in. Every signed-in user
+  can see every patient.
 
 ## Files
 - `main.py` the endpoints
