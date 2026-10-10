@@ -1,0 +1,34 @@
+.fundus-preview {
+  aspect-ratio: 1;
+  background-color: var(--bg-canvas);
+  border: 0.1rem solid var(--border-default);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.fundus-preview__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fundus-preview__empty {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.fundus-preview__icon {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.fundus-preview__hint {
+  color: var(--text-secondary);
+}

@@ -1,0 +1,31 @@
+.screening-form__title {
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-5);
+  border-bottom: 0.1rem solid var(--border-default);
+}
+
+.screening-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.screening-form__step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.screening-form__step-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.screening-form__hint {
+  color: var(--text-secondary);
+}
+
+.screening-form__step .alert {
+  margin-top: var(--space-2);
+}

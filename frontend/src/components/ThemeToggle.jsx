@@ -1,29 +1,18 @@
-import { useEffect, useState } from "react";
-import "../styles/global.css";
+import { Moon, Sun } from "lucide-react";
+import useTheme from "../hooks/useTheme.js";
+import "../styles/theme-toggle.css";
 
 function ThemeToggle() {
-  const [theme, setTheme] = useState(() => {
-    const storedTheme = localStorage.getItem("theme");
-
-    if (storedTheme) return storedTheme;
-
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  });
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  function toggleTheme() {
-    setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"));
-  }
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
-    <button className="btn-primary" onClick={toggleTheme}>
-      {theme === "dark" ? "Light Mode" : "Dark Mode"}
+    <button
+      className="theme-toggle"
+      onClick={toggleTheme}
+      aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
+    >
+      {isDark ? <Sun size={20} aria-hidden /> : <Moon size={20} aria-hidden />}
     </button>
   );
 }

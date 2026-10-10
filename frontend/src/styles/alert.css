@@ -1,0 +1,36 @@
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+
+  background-color: color-mix(
+    in srgb,
+    var(--danger) var(--tint),
+    var(--bg-panel)
+  );
+  border: 0.1rem solid
+    color-mix(in srgb, var(--danger) var(--edge), transparent);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.alert__icon {
+  flex-shrink: 0;
+  color: var(--danger);
+}
+
+.alert__title {
+  color: var(--danger);
+}
+
+.alert__text {
+  color: var(--text-primary);
+  margin-top: var(--space-1);
+}
+
+.alert__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}

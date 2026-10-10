@@ -1,0 +1,19 @@
+.info-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+
+  background-color: var(--bg-panel);
+  border: 0.1rem solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.info-note__icon {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.info-note__text {
+  color: var(--text-primary);
+}

@@ -1,0 +1,20 @@
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-5);
+  border-bottom: 0.1rem solid var(--border-default);
+}
+
+.page-header__eyebrow {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.page-header__subtitle {
+  color: var(--text-secondary);
+  margin-top: var(--space-1);
+}

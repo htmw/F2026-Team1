@@ -11,6 +11,7 @@
   --accent: #9d5819;
   --success: #047857;
   --danger: #be123c;
+  --warning: #a16207;
 
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
@@ -45,6 +46,7 @@
   --accent: #d97724;
   --success: #34d399;
   --danger: #fb7185;
+  --warning: #fbbf24;
 }
 
 * {
@@ -66,6 +68,22 @@ body {
 
 .main {
   min-height: 100vh;
+  max-width: 128rem;
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-6);
+}
+
+/* delete this after completion */
+.style-main {
+  min-height: 100vh;
+
+  max-width: 85%;
+  margin: 8.6rem auto;
+}
+
+/* delete this after completion */
+.style-main > * {
+  margin-bottom: 2rem;
 }
 
 .tint-accent {
@@ -78,6 +96,16 @@ body {
 
 .tint-danger {
   background: color-mix(in srgb, var(--danger) var(--tint), transparent);
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -94,6 +122,20 @@ body {
   background: var(--bg-subtle);
   color: var(--text-secondary);
   border: 0.1rem solid var(--border-default);
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--bg-panel);
+  color: var(--text-primary);
+  font: 600 1.4rem/2rem var(--font-sans);
+  border: 0.1rem solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.btn--block {
+  width: 100%;
 }
 
 .chip {
@@ -124,10 +166,24 @@ body {
   border-color: color-mix(in srgb, var(--danger) var(--edge), transparent);
 }
 
+.chip--warning {
+  color: var(--warning);
+  background: color-mix(in srgb, var(--warning) var(--tint), transparent);
+  border-color: color-mix(in srgb, var(--warning) var(--edge), transparent);
+}
+
+.chip--mono {
+  font: 400 1.1rem/1.6rem var(--font-mono);
+}
+
 .chip--neutral {
   color: var(--text-secondary);
   background: var(--bg-subtle);
   border-color: var(--border-strong);
+}
+
+.chip svg {
+  flex-shrink: 0;
 }
 
 .h1 {
@@ -174,6 +230,12 @@ body {
   text-transform: uppercase;
 }
 
+.label-mono {
+  font: 500 1.1rem/1.6rem var(--font-mono);
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+
 .mono-score {
   font: 700 2.4rem/3.2rem var(--font-mono);
 }
@@ -200,9 +262,21 @@ body {
   text-transform: uppercase;
 }
 
+@media (max-width: 50em) {
+  .main {
+    padding: var(--space-12) var(--space-6);
+  }
+}
+
 @media (max-width: 45.5em) {
   html {
     font-size: 56.25%;
+  }
+}
+
+@media (max-width: 40em) {
+  .main {
+    padding: var(--space-8) var(--space-4);
   }
 }
 

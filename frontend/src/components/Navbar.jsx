@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle.jsx";
 import "../styles/navbar.css";
 import logo from "../assets/images/logo.png";
 
@@ -11,7 +12,7 @@ function Navbar() {
     <nav className="nav">
       <div className="nav-container">
         <div className="nav__left">
-          <Link className="nav__logo-link" to="/">
+          <Link className="nav__logo-link" aria-label="DUAL home" to="/">
             <div className="nav__logo-container">
               <div className="nav__logo-img-container">
                 <img src={logo} alt="logo" className="nav__logo-img" />
@@ -29,23 +30,24 @@ function Navbar() {
 
           <ul className="nav__list">
             <li className="nav__list-item">
-              <Link className="nav__link body-md" to="/upload">
+              <NavLink className="nav__link body-md" to="/upload">
                 Upload
-              </Link>
+              </NavLink>
             </li>
             <li className="nav__list-item">
-              <Link className="nav__link body-md" to="/history">
+              <NavLink className="nav__link body-md" to="/history">
                 History
-              </Link>
+              </NavLink>
             </li>
             <li className="nav__list-item">
-              <Link className="nav__link body-md" to="/about">
+              <NavLink className="nav__link body-md" to="/about">
                 About
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
         <div className="nav__right">
+          <ThemeToggle />
           <div className="user chip chip--neutral">
             <div className="user-status" role="presentation"></div>
             <p className="caption-md">Dr. Emily Geller</p>

@@ -1,0 +1,11 @@
+.condition-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.condition-card__eyebrow {
+  color: var(--text-secondary);
+}
