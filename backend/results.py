@@ -1,8 +1,9 @@
 """Turn calibrated scores into results.
 
-Per condition: at or above the threshold is Refer, below is No concern, and too
-close to call is Uncertain, refer. The real uncertain rule comes from Task 12;
-for now a score within the margin of the threshold counts as uncertain.
+Per condition: a score within the margin of the threshold, on either side, is
+Uncertain, refer (too close to call), so it is checked first. Otherwise at or
+above the threshold is Refer and below is No concern. The real uncertain rule
+comes from Task 12; this one is a placeholder.
 Per eye: Refer if any condition is Refer or Uncertain, otherwise No concern.
 """
 
