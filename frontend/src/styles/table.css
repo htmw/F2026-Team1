@@ -1,0 +1,27 @@
+.table__wrap {
+  overflow-x: auto;
+  background-color: var(--bg-panel);
+  border: 0.1rem solid var(--border-default);
+  border-radius: var(--radius-md);
+}
+
+.table {
+  min-width: 90rem;
+}
+
+.table__head {
+  display: grid;
+  grid-template-columns: var(--columns);
+  align-items: center;
+  column-gap: var(--space-4);
+  padding: var(--space-3) var(--space-5);
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+  border-bottom: 0.1rem solid var(--border-default);
+}
+
+@media (max-width: 40em) {
+  .table__head {
+    padding: var(--space-3) var(--space-4);
+  }
+}

@@ -8,6 +8,7 @@ import {
   HelpCircle,
   AlertTriangle,
   CheckCircle2,
+  ChevronRight,
 } from "lucide-react";
 import Button from "../components/Button.jsx";
 import Chip from "../components/Chip.jsx";
@@ -25,6 +26,28 @@ import ResultChip from "../components/ResultChip.jsx";
 import BackLink from "../components/BackLink.jsx";
 import ConditionCard from "../components/ConditionCard.jsx";
 import MetaList from "../components/MetaList.jsx";
+import Table from "../components/Table.jsx";
+
+const TEST_ROWS = [
+  { id: "T-001", date: "Sep 22, 2026", name: "Maria Lopez", status: "Done" },
+  { id: "T-002", date: "Sep 21, 2026", name: "James Chen", status: "Pending" },
+  { id: "T-003", date: "Sep 19, 2026", name: "Aisha Patel", status: "Done" },
+];
+
+const TEST_COLUMNS = [
+  { key: "date", label: "Date", width: "1.2fr" },
+  { key: "id", label: "ID", isLink: true, className: "mono-reference" },
+  { key: "name", label: "Name", width: "1.6fr", className: "body-semibold" },
+  { key: "status", label: "Status" },
+  {
+    key: "open",
+    label: "Open record",
+    width: "3.2rem",
+    align: "end",
+    hidden: true,
+    render: () => <ChevronRight size={16} aria-hidden="true" />,
+  },
+];
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -234,6 +257,15 @@ function StyleReference() {
             { label: "Date", value: "Sep 22, 2026" },
             { label: "Screening ID", value: "#SCR-2026-8841" },
           ]}
+        />
+      </div>
+
+      <div>
+        <Table
+          label="Test table"
+          columns={TEST_COLUMNS}
+          rows={TEST_ROWS}
+          rowHref={(row) => `/history/${row.id}`}
         />
       </div>
     </main>

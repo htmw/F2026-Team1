@@ -236,6 +236,15 @@ body {
   text-transform: uppercase;
 }
 
+.sr-only {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .mono-score {
   font: 700 2.4rem/3.2rem var(--font-mono);
 }
