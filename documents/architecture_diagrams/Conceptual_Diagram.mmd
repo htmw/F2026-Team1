@@ -1,5 +1,5 @@
 flowchart LR
-  subgraph DATA["1. Data (scripts/)"]
+  subgraph DATA["Step 1: Data (scripts/)"]
     XLSX["labels/data.xlsx<br/>ODIR-5K diagnoses"] --> LAB["build_eye_labels.py<br/>eye_labels_task6.csv<br/>one row per eye"]
     LAB --> SPL["split_dataset.py<br/>eye_labels_task7.csv<br/>train / validation / test<br/>+ holdout, excluded"]
     CHK["verify_labels.py<br/>check_dataset_overlap.py"] -. checks .-> SPL
@@ -7,7 +7,7 @@ flowchart LR
   EXT["External test sets<br/>ORIGA, DRISHTI-GS, ACRIMA,<br/>retina_dataset_2016"] --> EXTLAB["build_external_labels.py<br/>labels/external/*.csv<br/>split = test"]
   SPL -- "ODIR-5K: training,<br/>validation, internal test" --> PRE["preprocess_images.py<br/>fundus crop, centered-square<br/>fallback, 512 x 512"]
   EXTLAB -- "evaluation only,<br/>never training or tuning" --> PRE
-  subgraph MODEL["2. Models: ablation, 3 seeds each"]
+  subgraph MODEL["Step 2: Models: ablation, 3 seeds each"]
     BB["SharedResNetBackbone<br/>ResNet-50"]
     BB --> SH["Shared: DualNet<br/>cataract + glaucoma heads"]
     BB --> GO["Glaucoma only: GlaucomaNet"]
@@ -18,13 +18,13 @@ flowchart LR
   SH -. "best checkpoint<br/>per seed" .-> REL
   GO -. "best checkpoint<br/>per seed" .-> REL
   CO -. "best checkpoint<br/>per seed" .-> REL
-  SH --> CAL["3. Calibration, uncertainty<br/>cutoff, thresholds<br/>Platt, per model, head and seed<br/>fit on validation only, not frozen yet"]
+  SH --> CAL["Step 3: Calibration, uncertainty<br/>cutoff, thresholds<br/>Platt, per model, head and seed<br/>90% sensitivity floor<br/>fit on validation only, frozen"]
   GO --> CAL
   CO --> CAL
-  CAL --> EVAL["4. Evaluation, read once after freeze<br/>internal test + external sets<br/>haze check: 63 media-opacity eyes<br/>uncertain check: 21 low-quality eyes"]
+  CAL --> EVAL["Step 4: Evaluation, read once after freeze<br/>internal test + external sets<br/>haze check: 63 media-opacity eyes<br/>uncertain check: 21 low-quality eyes"]
   BB --> GC["Grad-CAM disc check<br/>ORIGA + DRISHTI-GS"]
-  subgraph APP["5. Screening app"]
+  subgraph APP["Step 5: Screening app"]
     UI["React web app<br/>Vite"] <--> API["FastAPI"]
     API <--> DB[("SQLite<br/>+ stored photo files")]
   end
-  CAL -- "frozen model<br/>(mock model in Sprint 1)" --> API
+  CAL -- "frozen shared model, seed 42<br/>(mock model in Sprint 1)" --> API

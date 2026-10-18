@@ -13,6 +13,33 @@ The agreed rule replaces the earlier weighted Youden proposal: require at least
 distance margin around that cutoff; it includes 52/1,024 validation eyes here.
 The uncertainty band may add referrals beyond the threshold-only result.
 
+### Tradeoff compared with the earlier weighted rule
+
+We chose the 90% sensitivity rule to limit missed cases while reducing false
+referrals. Compared with the earlier weighted rule, a few models detect one or
+two fewer positive eyes, but they still meet the target and refer fewer eyes
+overall. This is the tradeoff we agreed to keep in the final settings.
+
+The following validation counts include uncertain referrals under each rule:
+
+| Model | Seed | Positive eyes found: weighted rule | Positive eyes found: approved rule | Total referrals: weighted rule | Total referrals: approved rule |
+|---|---|---|---|---|---|
+| Cataract-only | 42 | 45/46 | 44/46 | 160/1,024 | 122/1,024 |
+| Cataract-only | 43 | 45/46 | 44/46 | 168/1,024 | 125/1,024 |
+| Cataract-only | 44 | 45/46 | 43/46 | 171/1,024 | 114/1,024 |
+| Shared glaucoma head | 44 | 37/39 | 36/39 | 350/1,024 | 318/1,024 |
+
+For example, the shared glaucoma model with seed 44 now detects 36 of 39 positive
+eyes instead of 37, while total referrals decrease from 350 to 318. All four
+models shown above still meet the 90% target on validation data. We will report
+external performance separately after testing.
+
+These counts were checked against `settings_review.json` and
+`frozen_settings.json`, using `including_uncertainty` in both files. No frozen
+settings were changed for this update.
+
+### App model and frozen artifacts
+
 **Shared seed 42 is selected for the app**, before external testing. With uncertain
 referrals included it finds 38/39 glaucoma and 45/46 cataract validation eyes.
 All three seeds remain in the paper. These results are not a guarantee of external

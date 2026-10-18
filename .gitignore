@@ -27,6 +27,10 @@ config.yaml
 
 # API database, uploaded photos and heatmaps (dummy data, never in git)
 backend/storage/
+<<<<<<< HEAD
 .env
 .env.*
 !.env.example
+=======
+.env
+>>>>>>> 5bf6da83ac59e0ee8dcfcc4b79a5680e77d70077
