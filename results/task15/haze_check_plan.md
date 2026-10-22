@@ -20,10 +20,24 @@ Check whether the cataract model might be identifying image haze or blur as a si
 - A consistent increase in cataract scores as blur increases will be considered a possible sign of blur sensitivity.
 - Report unexpected or inconsistent results as well.
 
+### Visualization and reporting
+- Create a line plot with Gaussian blur sigma (0, 1, 2, 4, 8 pixels) on the X-axis and mean calibrated cataract probability on the Y-axis.
+- Use the same normal-eye images across all blur levels for a fair comparison.
+- Show variability across images using standard deviation or another clearly identified uncertainty measure.
+- Include the mean calibrated cataract probability of unblurred real-cataract images as a horizontal reference line.
+- Use the frozen model and calibration settings consistently across all groups.
+- Report numerical results for every blur level, including any non-monotonic changes.
+- Treat increasing cataract probability with blur as a possible warning of shortcut behavior, not definitive proof.
+
 ## Cataract heatmaps (SCRUM-99)
 - Generate heatmaps to examine which image regions influence cataract predictions.
 - Look for attention around cloudy regions, image boundaries, or retinal structures.
 - Treat heatmaps as supporting observations rather than proof of a shortcut.
+- Define image-selection criteria before examining heatmaps to avoid selecting only favorable examples.
+- Include representative images from normal, cataract-positive, and media-opacity groups.
+- Include correctly and incorrectly classified examples from each group where available, using the frozen model and decision threshold.
+- Select examples using a predefined, reproducible rule rather than choosing images based on their heatmap appearance.
+- Record the selected image IDs, group labels, prediction outcomes, and selection method for transparency.
 
 ## Evaluation rules
 - Do not change model weights, thresholds, or calibration based on holdout results.
