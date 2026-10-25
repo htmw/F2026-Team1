@@ -168,9 +168,11 @@ the shared model, seed 42. Details: `results/calibration/README.md`.
 
     python -m pytest tests
 
-The API tests (`tests/test_api.py`) were written for the old SQLite back end
-and are being updated for Supabase. Until then, do not run them with a `.env`
-in place, since they would write to the shared database. Each model also has a smoke
+The API tests (`tests/test_api.py`) write to a database, so they are skipped
+unless `TEST_DATABASE_URL` points to a separate test database, and they refuse
+to run against the `DATABASE_URL` in `.env` (the shared database the live app
+uses). They were written for the old SQLite back end and are being updated for
+Supabase. Each model also has a smoke
 test in `scripts/` (for example `python scripts/test_train_dual_task11.py`),
 which needs that model's checkpoints downloaded.
 

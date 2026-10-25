@@ -1,20 +1,39 @@
 """Tests for the DUAL API (backend/). Each test gets its own empty storage folder.
 
-Run from the repo folder:  python -m pytest tests/test_api.py
+These tests add users, patients, photos and screenings, so they run only
+against a separate test database. Set TEST_DATABASE_URL to it; without it the
+file is skipped. They refuse to run against the DATABASE_URL in .env, which is
+the shared database the live app uses.
+
+Run from the repo folder:  TEST_DATABASE_URL=... python -m pytest tests/test_api.py
 """
+import os
 import sqlite3
 from pathlib import Path
 
-import cv2
-import numpy as np
 import pytest
-from fastapi.testclient import TestClient
-
-from backend import db
-from backend.main import app
-from backend.seed import DEMO_USER
 
 REPO = Path(__file__).resolve().parents[1]
+TEST_DB = os.environ.get("TEST_DATABASE_URL")
+if not TEST_DB:
+    pytest.skip("Set TEST_DATABASE_URL to a separate test database to run the API tests.",
+                allow_module_level=True)
+
+from dotenv import dotenv_values  # noqa: E402
+
+if TEST_DB == dotenv_values(REPO / ".env").get("DATABASE_URL"):
+    pytest.fail("TEST_DATABASE_URL is the shared database in .env. Use a separate test database.",
+                pytrace=False)
+os.environ["DATABASE_URL"] = TEST_DB  # .env never overrides a variable that is already set
+
+import cv2  # noqa: E402
+import numpy as np  # noqa: E402
+from fastapi.testclient import TestClient  # noqa: E402
+
+from backend import db  # noqa: E402
+from backend.main import app  # noqa: E402
+from backend.seed import DEMO_USER  # noqa: E402
+
 ODIR = REPO / "data/Internal/ODIR-5K/Training Images"
 
 
