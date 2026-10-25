@@ -1,7 +1,7 @@
 
 """Team EyeQ SCRUM-76: Internal-test AUROC with patient-clustered 95% CIs.
 
-DRAFT: Internal Task 13 bootstrap methodology requires team approval.
+Approved internal Task 13 patient-clustered bootstrap methodology.
 
 Reads SCRUM-75 prediction CSVs without running inference,
 refitting calibration, or changing decision thresholds.
@@ -845,7 +845,7 @@ def publish_results(results, summary, source, attempts):
         "per_seed_rows": len(results),
         "summary_rows": len(summary),
         "methodology_status": (
-            "Draft; internal Task 13 approval required"
+            "Approved internal Task 13 patient-clustered bootstrap methodology"
         ),
     }
 
