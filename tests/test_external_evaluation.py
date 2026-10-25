@@ -80,6 +80,9 @@ def synthetic_campaign(monkeypatch):
     monkeypatch.setattr(evaluator, 'load_glaucoma_model', lambda path, seed: object())
     monkeypatch.setattr(evaluator, 'infer', lambda model, rows, shared:
                         [[-2., 2.], [-2., 2.]] if shared else [[-2., 2.]])
+    original_bootstrap = evaluator.bootstrap_indices
+    monkeypatch.setattr(evaluator, 'bootstrap_indices', lambda y:
+                        original_bootstrap(y, replicates=20))
     return settings, datasets
 
 
@@ -93,8 +96,34 @@ def test_synthetic_predictions_saved_with_correct_labels(tmp_path, synthetic_cam
     assert all(r['dataset'] == 'retina_dataset_2016' for r in rows if r['disease'] == 'cataract')
     assert all(r['decision'] == ('Refer' if r['label'] == '1' else 'No concern') for r in rows)
     manifest = json.loads((output / 'run_manifest.json').read_text())
-    assert manifest['status'] == 'predictions_saved'
+    assert manifest['status'] == 'complete'
     assert manifest['predictions_sha256'] == evaluator.file_sha256(output / 'predictions.csv')
+    with (output / 'metrics.csv').open() as stream:
+        metrics = list(csv.DictReader(stream))
+    assert len(metrics) == 60
+    assert {r['policy'] for r in metrics} == {'threshold_only', 'final_referral'}
+    assert all(float(r['auroc']) == 1 for r in metrics)
+    assert all(int(r['auroc_ci_valid']) == 20 for r in metrics)
+    with (output / 'calibration_bins.csv').open() as stream:
+        assert len(list(csv.DictReader(stream))) == 600
+    report = (output / 'external_results.md').read_text()
+    assert all(f'## {dataset}' in report for dataset in datasets)
+    assert 'No images were excluded' in report
+    for name, digest in manifest['artifact_sha256'].items():
+        assert evaluator.file_sha256(output / name) == digest
+
+
+def test_reporting_failure_preserves_predictions(tmp_path, synthetic_campaign, monkeypatch):
+    settings, datasets = synthetic_campaign
+    def fail(*args, **kwargs):
+        raise ValueError('Synthetic reporting failure')
+    monkeypatch.setattr(evaluator, 'calculate_metrics', fail)
+    output = tmp_path / 'report-failed'
+    with pytest.raises(ValueError, match='Synthetic reporting failure'):
+        evaluator.evaluate(output, settings, datasets, {}, 'synthetic-test-only')
+    record = json.loads((output / 'run_manifest.json').read_text())
+    assert record['status'] == 'failed'
+    assert record['predictions_sha256'] == evaluator.file_sha256(output / 'predictions.csv')
 
 
 def test_failed_inference_retains_failure_record(tmp_path, synthetic_campaign, monkeypatch):

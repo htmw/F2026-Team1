@@ -20,7 +20,7 @@ import torch
 from calibrate_models import PROJECT_ROOT, file_sha256, load_cataract_model, load_glaucoma_model
 from calibrate_shared_models import load_model
 from evaluate_calibration_holdout import verify_settings
-from external_metrics import probabilities
+from external_metrics import calculate_metrics, probabilities, bootstrap_indices, add_intervals
 from fundus_dataset import get_validation_transform
 
 DATASETS = {
@@ -201,12 +201,69 @@ def evaluate(output, settings, datasets, record, review):
         record["predictions_sha256"] = file_sha256(output / "predictions.csv")
         record["status"] = "predictions_saved"
         write_json(manifest_path, record)
-        record["completed_at"] = now()
+        metrics, bins, bootstrap_records = [], [], []
+        for dataset, rows in datasets.items():
+            for disease in DATASETS[dataset][2]:
+                y = np.array([r[disease] for r in rows])
+                draws, attempts = bootstrap_indices(y)
+                bootstrap_records.append(dict(dataset=dataset, disease=disease, valid=len(draws), attempts=attempts))
+                for kind in ("single", "shared"):
+                    for seed in (42, 43, 44):
+                        identity = dict(dataset=dataset, disease=disease, model_kind=kind, seed=seed)
+                        selected = [p for p in predictions if all(p[k] == v for k,v in identity.items())]
+                        if [p["path"] for p in selected] != [r["path"] for r in rows]:
+                            raise ValueError("Prediction paths do not align with labels")
+                        raw = np.array([p["raw_logit"] for p in selected])
+                        r = runs[(kind, disease, seed)]
+                        values = dict(scale=r["scale"], offset=r["offset"], threshold=r["threshold"],
+                                      margin=r["uncertain_margin"])
+                        summary, reliability = calculate_metrics(y, raw, **values)
+                        add_intervals(summary, y, raw, values, draws)
+                        metrics.extend(dict(identity, **row, resampling_unit="image") for row in summary)
+                        for method, entries in reliability.items():
+                            bins.extend(dict(identity, method=method, **b) for b in entries)
+                        print(f"Metrics complete: {dataset} {disease} {kind} {seed}", flush=True)
+        write_csv(output / "metrics.csv", metrics)
+        write_csv(output / "calibration_bins.csv", bins)
+        write_report(output, metrics)
+        record.update(status="complete", completed_at=now(), bootstrap_samples=bootstrap_records,
+                      artifact_sha256={name:file_sha256(output/name) for name in
+                                       ("predictions.csv", "metrics.csv", "calibration_bins.csv", "external_results.md")})
         write_json(manifest_path, record)
     except Exception as error:
         record.update(status="failed", failed_at=now(), error=f"{type(error).__name__}: {error}")
         write_json(manifest_path, record)
         raise
+
+
+def write_report(output, metrics):
+    """Summarize every seed and sample SD without pooling external datasets."""
+    lines = ["# External evaluation", "", LIMITATION, "",
+             "Frozen settings were applied without refitting. Referral metrics include uncertain eyes.",
+             "AUROC intervals describe image resampling, while seed SD describes variation across runs.", ""]
+    for dataset in DATASETS:
+        lines += [f"## {dataset}", "", "| Disease | Model | Seed | AUROC (95% CI) | Sensitivity | Specificity | Referrals | Uncertain | Brier | ECE |",
+                  "|---|---|---|---|---|---|---|---|---|---|"]
+        relevant = [m for m in metrics if m["dataset"] == dataset and m["policy"] == "final_referral"]
+        for m in relevant:
+            lines.append(f"| {m['disease']} | {m['model_kind']} | {m['seed']} | {m['auroc']:.4f} "
+                         f"({m['auroc_ci_low']:.4f}, {m['auroc_ci_high']:.4f}) | {m['sensitivity']:.1%} | "
+                         f"{m['specificity']:.1%} | {m['referral_count']}/{m['n']} | {m['uncertain_count']} | "
+                         f"{m['brier_calibrated']:.4f} | {m['ece_calibrated']:.4f} |")
+        lines += ["", "Across seeds (mean ± sample SD):", ""]
+        for disease in DATASETS[dataset][2]:
+            for kind in ("single", "shared"):
+                group = [m for m in relevant if m["disease"] == disease and m["model_kind"] == kind]
+                descriptions = []
+                for key in ("auroc", "sensitivity", "specificity", "referral_rate", "brier_calibrated"):
+                    values = [m[key] for m in group]
+                    descriptions.append(f"{key}: {np.mean(values):.4f} ± {np.std(values, ddof=1):.4f}")
+                lines.append(f"- {disease}, {kind}: " + "; ".join(descriptions))
+        lines.append("")
+    lines += ["No images were excluded. Missing cataract labels were not treated as negative labels.",
+              "The complete CSV includes both threshold-only and final-referral policies, raw/calibrated metrics,",
+              "confidence intervals and undefined-ratio reasons. Internal comparisons belong to Task 17."]
+    (output / "external_results.md").write_text("\n".join(lines) + "\n")
 
 
 def main():
