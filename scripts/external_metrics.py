@@ -35,7 +35,10 @@ def calculate_metrics(y, raw, scale, offset, threshold, margin):
     if not 0 <= threshold <= 1 or margin < 0:
         raise ValueError("Invalid threshold or margin")
     before = probabilities(raw)
-    adjusted = scale * raw + offset
+    with np.errstate(over="raise", invalid="raise"):
+        adjusted = scale * raw + offset
+    if not np.isfinite(adjusted).all():
+        raise ValueError("Calibration produced non-finite logits")
     p = probabilities(adjusted)
     uncertain = np.abs(p - threshold) <= margin
     binary = p >= threshold
@@ -48,7 +51,8 @@ def calculate_metrics(y, raw, scale, offset, threshold, margin):
                   ranking_reason=None if both else "Only one label class")
     for name, scores, logits in (("raw", before, raw), ("calibrated", p, adjusted)):
         common[f"brier_{name}"] = float(np.mean((scores - y) ** 2))
-        common[f"log_loss_{name}"] = float(np.mean(np.logaddexp(0, logits) - y * logits))
+        signed_logits = np.where(y == 1, -logits, logits)
+        common[f"log_loss_{name}"] = float(np.mean(np.logaddexp(0, signed_logits)))
         common[f"ece_{name}"] = sum(
             b["count"] / len(y) * abs(b["mean_probability"] - b["positive_fraction"])
             for b in bins[name] if b["count"])
@@ -109,9 +113,17 @@ def add_intervals(rows, y, raw, settings, draws):
     """Add percentile intervals without refitting any model settings."""
     if not len(draws):
         raise ValueError("Confidence intervals require bootstrap samples")
+    y, raw = np.asarray(y), np.asarray(raw)
+    if y.ndim != 1 or y.shape != raw.shape or not np.isin(y, [0, 1]).all():
+        raise ValueError("Bootstrap labels and logits must be aligned binary vectors")
     samples = [{key: [] for key in CI_METRICS} for _ in rows]
     for index in draws:
-        metrics, _ = calculate_metrics(np.asarray(y)[index], np.asarray(raw)[index], **settings)
+        index = np.asarray(index)
+        if (index.ndim != 1 or index.size == 0
+                or not np.issubdtype(index.dtype, np.integer)
+                or np.any(index < 0) or np.any(index >= len(y))):
+            raise ValueError("Invalid bootstrap indices")
+        metrics, _ = calculate_metrics(y[index], raw[index], **settings)
         for store, metrics_row in zip(samples, metrics, strict=True):
             for key in CI_METRICS:
                 if metrics_row[key] is not None:
