@@ -54,7 +54,7 @@ All values are rounded to four decimal places for readability. Full-precision re
 
 ## 5. Confidence Interval Methodology
 
-The previously completed AUROC analysis used patient-cluster bootstrap resampling with 2,000 valid replicates for each model, disease, and seed combination.
+The previously completed AUROC analysis used patient-cluster bootstrap resampling with 2,000 valid replicates (random seed 42). The same 2,000 patient resamples were used for all 12 model, disease, and seed combinations, so the intervals are directly comparable.
 
 Patient-level resampling accounts for the possibility that two eyes from the same patient are statistically dependent.
 
