@@ -1,4 +1,4 @@
-﻿# SCRUM-97 — Media-Opacity Holdout Evaluation
+# SCRUM-97 - Media-Opacity Holdout Evaluation
 
 ## Objective
 Evaluate whether the frozen cataract model produces unusually high referral rates for cataract-negative eyes with media opacity.
@@ -23,6 +23,8 @@ Evaluate whether the frozen cataract model produces unusually high referral rate
 
 Overall referral rate: 54/63 = 85.71%.
 
+Referral rates include both 'Refer' and 'Uncertain, refer' decisions; the latter are referred under the frozen uncertainty policy. The strict 'Refer' rate is 47/63 (74.60%).
+
 ## Internal-Test Baseline Comparison
 
 | Metric | Media-opacity holdout | Internal-test baseline |
@@ -35,6 +37,8 @@ Overall referral rate: 54/63 = 85.71%.
 | Referral rate | 85.71% | 8.53% |
 
 Referral-rate difference: +77.18 percentage points.
+
+The baseline includes all 996 cataract-negative internal-test eyes, not only normal-fundus eyes. Following the project label rule, eyes with other conditions (such as diabetic retinopathy, AMD, or glaucoma) also count as cataract-negative. When restricted to normal-fundus eyes, 44 of 419 were referred (10.50%), so the conclusion remains unchanged.
 
 ## Patient Overlap
 - Media-opacity patients: 53
@@ -54,6 +58,20 @@ Referral-rate difference: +77.18 percentage points.
 
 The elevated referral rate is present even among patients absent from training.
 
+## Reproducibility
+
+The subgroup analysis uses the saved media-opacity predictions and dataset labels. No model inference or retraining is required.
+
+Run the subgroup analysis from the repository root:
+
+    python scripts/summarize_media_opacity_holdout.py
+
+This generates results/task15/media_opacity_subgroups.csv and prints the patient-overlap and training-overlap statistics.
+
+Run the automated tests:
+
+    python -m pytest tests/test_media_opacity_holdout.py -v
+
 ## Model Provenance
 
 Checkpoint SHA256:
@@ -65,7 +83,7 @@ Current settings SHA256:
 Task 13 recorded settings SHA256:
 d1d97e58e25d32892527db0ad459a7b9d555391e5abda924ff33f1700f14db71
 
-The checkpoint hashes match. The settings hashes differ, although earlier verification confirmed that the current calibration reproduces all 1,036 saved Task 13 probabilities and decisions.
+The checkpoint hashes match. The settings hash in the prediction CSV (420336fd...) differs from the Task 13 hash (d1d97e58...) only because the file was hashed with Windows line endings (CRLF) on a local checkout. The content is identical: converting the committed file to CRLF reproduces the 420336fd... hash. The model used the same frozen settings as Task 13.
 
 ## Interpretation
 
@@ -79,7 +97,6 @@ This substantial difference raises concern about a possible media-opacity or haz
 - Five patients appear in both evaluation groups.
 - Some holdout patients have fellow-eye representation in training.
 - Other cohort differences may contribute to the referral-rate difference.
-- Settings-file hashes differ despite verified calibration equivalence.
 - Further blur and heatmap analyses are needed for the broader shortcut-safety assessment.
 
 ## Conclusion
