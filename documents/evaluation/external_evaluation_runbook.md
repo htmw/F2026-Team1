@@ -1,6 +1,7 @@
 # External evaluation run instructions
 
-Status: code prepared for review. The final external run is on hold.
+Status: the external evaluation completed. Results are saved in
+`results/external/frozen_run_20261030/`; review of the results is still needed.
 
 The evaluator applies the committed frozen calibration and thresholds. It does
 not fit parameters or change the decision rules. Single-head and shared models
@@ -21,9 +22,10 @@ binary labels, unique paths, source image hashes and decoded 512 by 512 processe
 images. It also repeats the existing exact-file ODIR/retina overlap check.
 It does not collect external predictions.
 
-## Review before the final run
+## Protocol review and completed run
 
-Record the team's review of these protocol choices:
+After review on [PR #81](https://github.com/htmw/F2026-Team1/pull/81), the team
+requested the final evaluation using the documented protocol:
 
 - 2,000 valid image-level bootstrap samples, seed 42, percentile 95% confidence
   intervals. Images are assumed independent because patient identifiers are
@@ -31,21 +33,22 @@ Record the team's review of these protocol choices:
 - The ODIR/retina overlap check detects identical files only. It does not detect
   resized or edited copies, or establish absence of overlap with every dataset.
 
-The current user instruction is to hold the final run until review. The command
-below is for use after review, not an instruction to run it now. Replace
-REVIEW_LINK with the actual review reference and use a new output directory.
+The final run used the reviewed protocol and the frozen settings. It scored all
+four external datasets with no image exclusions. To reproduce it, use a new
+output directory and preserve the review reference:
 
 ```sh
 python scripts/evaluate_external.py --run \
   --output results/external/reviewed_run \
-  --protocol-review REVIEW_LINK \
+  --protocol-review https://github.com/htmw/F2026-Team1/pull/81 \
   --acknowledge-exact-only-overlap
 ```
 
-Commit the reviewed code and protocol before the final run. Existing output
-directories are rejected to protect previous results. A failed run retains its
-partial predictions and failure manifest. Inspect the failure before restarting;
-do not delete saved predictions or rerun models just to improve reported results.
+The reviewed evaluator and protocol were committed before the final run.
+Existing output directories are rejected to protect previous results. A failed
+run retains its partial predictions and failure manifest. Inspect the failure
+before restarting; do not delete saved predictions or rerun models just to
+improve reported results.
 
 ## Outputs
 
