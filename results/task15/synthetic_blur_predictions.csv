@@ -1,0 +1,2019 @@
+group,sigma,patient_id,eye,filename,true_label,raw_logit,calibrated_probability,decision,is_uncertain,is_referred
+normal,0,8,left,8_left.jpg,0,-5.3461174964904785,0.000316332936416996,No concern,False,False
+normal,0,8,right,8_right.jpg,0,-5.936695098876953,0.00017913070376993594,No concern,False,False
+normal,0,10,right,10_right.jpg,0,-2.865164279937744,0.00343992191205853,No concern,False,False
+normal,0,29,right,29_right.jpg,0,-1.4018629789352417,0.013932821252633574,No concern,False,False
+normal,0,38,right,38_right.jpg,0,0.24733693897724152,0.0647037083452484,"Uncertain, refer",True,True
+normal,0,63,left,63_left.jpg,0,-7.720668315887451,3.213748338355087e-05,No concern,False,False
+normal,0,68,left,68_left.jpg,0,1.9080002307891846,0.2551043371096022,Refer,False,True
+normal,0,78,right,78_right.jpg,0,-3.405643939971924,0.0020468068683290193,No concern,False,False
+normal,0,84,left,84_left.jpg,0,-6.958713054656982,6.694477104143186e-05,No concern,False,False
+normal,0,84,right,84_right.jpg,0,-6.696994781494141,8.613566827270493e-05,No concern,False,False
+normal,0,97,left,97_left.jpg,0,-5.2923407554626465,0.00033314361868492387,No concern,False,False
+normal,0,110,right,110_right.jpg,0,-2.5013833045959473,0.004876283038301436,No concern,False,False
+normal,0,122,right,122_right.jpg,0,-3.95674467086792,0.001204819577495328,No concern,False,False
+normal,0,129,right,129_right.jpg,0,-11.396425247192383,9.321485051289404e-07,No concern,False,False
+normal,0,132,left,132_left.jpg,0,-2.345541000366211,0.005661528344303183,No concern,False,False
+normal,0,147,left,147_left.jpg,0,-5.407658100128174,0.00029813321755066207,No concern,False,False
+normal,0,173,left,173_left.jpg,0,-5.144649982452393,0.0003840495630607538,No concern,False,False
+normal,0,174,right,174_right.jpg,0,-4.831876277923584,0.0005189905301977209,No concern,False,False
+normal,0,214,left,214_left.jpg,0,-6.910684108734131,7.011410838175823e-05,No concern,False,False
+normal,0,219,right,219_right.jpg,0,-4.570546627044678,0.0006674320726603838,No concern,False,False
+normal,0,273,left,273_left.jpg,0,-11.16562557220459,1.1641976048980377e-06,No concern,False,False
+normal,0,279,right,279_right.jpg,0,-10.012652397155762,3.5343154820425154e-06,No concern,False,False
+normal,0,294,right,294_right.jpg,0,0.8558160662651062,0.1105646725018534,Refer,False,True
+normal,0,317,left,317_left.jpg,0,-7.90838098526001,2.682226416349093e-05,No concern,False,False
+normal,0,326,left,326_left.jpg,0,-8.093998908996582,2.243131943331247e-05,No concern,False,False
+normal,0,329,right,329_right.jpg,0,-10.084051132202148,3.2994373318572326e-06,No concern,False,False
+normal,0,335,left,335_left.jpg,0,-12.666685104370117,2.742493787441222e-07,No concern,False,False
+normal,0,346,left,346_left.jpg,0,-9.837106704711914,4.185375400650593e-06,No concern,False,False
+normal,0,347,left,347_left.jpg,0,-3.9301717281341553,0.001236014896829212,No concern,False,False
+normal,0,363,right,363_right.jpg,0,-7.714314937591553,3.233473810782454e-05,No concern,False,False
+normal,0,384,left,384_left.jpg,0,-0.22135145962238312,0.042190104032293334,"Uncertain, refer",True,True
+normal,0,394,left,394_left.jpg,0,-1.9095864295959473,0.008590312850319831,No concern,False,False
+normal,0,394,right,394_right.jpg,0,-8.111808776855469,2.20498306124155e-05,No concern,False,False
+normal,0,399,right,399_right.jpg,0,-2.333991527557373,0.005724495745187797,No concern,False,False
+normal,0,400,left,400_left.jpg,0,-3.214899778366089,0.0024585804191455977,No concern,False,False
+normal,0,496,left,496_left.jpg,0,-4.482062816619873,0.0007267639407356995,No concern,False,False
+normal,0,524,left,524_left.jpg,0,-0.7382274866104126,0.026076595408153495,"Uncertain, refer",True,True
+normal,0,545,right,545_right.jpg,0,1.7279714345932007,0.22357261526311467,Refer,False,True
+normal,0,549,right,549_right.jpg,0,-6.158895015716553,0.00014462405601014337,No concern,False,False
+normal,0,555,right,555_right.jpg,0,-11.448833465576172,8.862641465265616e-07,No concern,False,False
+normal,0,570,left,570_left.jpg,0,-3.230635166168213,0.0024216896726559777,No concern,False,False
+normal,0,580,left,580_left.jpg,0,-5.930741786956787,0.00018016059543024616,No concern,False,False
+normal,0,591,left,591_left.jpg,0,-5.8884758949279785,0.00018764459053251942,No concern,False,False
+normal,0,598,right,598_right.jpg,0,-12.495607376098633,3.2337474835906297e-07,No concern,False,False
+normal,0,610,left,610_left.jpg,0,-8.965719223022461,9.687831589222097e-06,No concern,False,False
+normal,0,617,left,617_left.jpg,0,-9.194558143615723,7.771518517727431e-06,No concern,False,False
+normal,0,618,right,618_right.jpg,0,-5.521839141845703,0.0002670931910563429,No concern,False,False
+normal,0,623,right,623_right.jpg,0,-6.400430202484131,0.00011460967969136873,No concern,False,False
+normal,0,633,left,633_left.jpg,0,-7.656242370605469,3.419478201035408e-05,No concern,False,False
+normal,0,641,left,641_left.jpg,0,-11.915912628173828,5.651812786135858e-07,No concern,False,False
+normal,0,652,right,652_right.jpg,0,-11.969347953796387,5.36829288375527e-07,No concern,False,False
+normal,0,671,left,671_left.jpg,0,-4.217130184173584,0.0009378229930689598,No concern,False,False
+normal,0,683,left,683_left.jpg,0,-10.75912857055664,1.7221103165354336e-06,No concern,False,False
+normal,0,689,right,689_right.jpg,0,-3.881307601928711,0.0012954997076459916,No concern,False,False
+normal,0,716,left,716_left.jpg,0,-4.63804292678833,0.0006254493476864707,No concern,False,False
+normal,0,766,left,766_left.jpg,0,1.027820110321045,0.12793742383242052,Refer,False,True
+normal,0,782,right,782_right.jpg,0,-5.632035732269287,0.00024020394051235157,No concern,False,False
+normal,0,795,right,795_right.jpg,0,-5.5629401206970215,0.0002567291020385981,No concern,False,False
+normal,0,800,left,800_left.jpg,0,-1.833338975906372,0.009238862377337759,No concern,False,False
+normal,0,807,right,807_right.jpg,0,-2.7118730545043945,0.003985028968612613,No concern,False,False
+normal,0,840,right,840_right.jpg,0,-9.694049835205078,4.803676096567691e-06,No concern,False,False
+normal,0,872,right,872_right.jpg,0,-10.500993728637695,2.2081905054109563e-06,No concern,False,False
+normal,0,879,right,879_right.jpg,0,-8.02458381652832,2.3982250526052318e-05,No concern,False,False
+normal,0,903,left,903_left.jpg,0,-4.596656322479248,0.0006508678051539697,No concern,False,False
+normal,0,918,right,918_right.jpg,0,-7.619724750518799,3.54188406964747e-05,No concern,False,False
+normal,0,945,left,945_left.jpg,0,1.2835460901260376,0.15802240272027895,Refer,False,True
+normal,0,954,right,954_right.jpg,0,-12.239419937133789,4.1387315901143935e-07,No concern,False,False
+normal,0,966,right,966_right.jpg,0,-6.447598934173584,0.00010951994039270212,No concern,False,False
+normal,0,987,right,987_right.jpg,0,-11.903318405151367,5.720787674822405e-07,No concern,False,False
+normal,0,1040,right,1040_right.jpg,0,-6.38392972946167,0.00011644544903366771,No concern,False,False
+normal,0,1074,right,1074_right.jpg,0,-7.65785551071167,3.414169660025368e-05,No concern,False,False
+normal,0,1075,right,1075_right.jpg,0,-2.7229840755462646,0.0039427773450120265,No concern,False,False
+normal,0,1093,right,1093_right.jpg,0,0.16978998482227325,0.06032800454835902,"Uncertain, refer",True,True
+normal,0,1114,right,1114_right.jpg,0,0.5050187706947327,0.08144620370952899,"Uncertain, refer",True,True
+normal,0,1119,right,1119_right.jpg,0,-1.1267743110656738,0.018083175480376364,"Uncertain, refer",True,True
+normal,0,1142,right,1142_right.jpg,0,-11.522272109985352,8.257420430246521e-07,No concern,False,False
+normal,0,1160,left,1160_left.jpg,0,-3.7130444049835205,0.0015230758117080908,No concern,False,False
+normal,0,1274,left,1274_left.jpg,0,-4.015423774719238,0.0011386906638115478,No concern,False,False
+normal,0,1397,right,1397_right.jpg,0,-6.104990482330322,0.00015232985683456514,No concern,False,False
+normal,0,1416,left,1416_left.jpg,0,-11.453137397766113,8.825978820379307e-07,No concern,False,False
+normal,0,1429,right,1429_right.jpg,0,-4.930312633514404,0.0004720681129386982,No concern,False,False
+normal,0,1491,right,1491_right.jpg,0,-3.116549491882324,0.002702200039197212,No concern,False,False
+normal,0,1515,right,1515_right.jpg,0,3.513381004333496,0.616485234269933,Refer,False,True
+normal,0,1868,left,1868_left.jpg,0,-3.8222384452819824,0.001371237078880236,No concern,False,False
+normal,0,1975,right,1975_right.jpg,0,-9.597225189208984,5.2732031459762974e-06,No concern,False,False
+normal,0,2097,left,2097_left.jpg,0,-2.762674570083618,0.0037954585943170884,No concern,False,False
+normal,0,2119,left,2119_left.jpg,0,-4.687222480773926,0.0005965313721818706,No concern,False,False
+normal,0,2197,left,2197_left.jpg,0,1.2159550189971924,0.14955224841995898,Refer,False,True
+normal,0,2338,left,2338_left.jpg,0,-3.537785768508911,0.0018026408938589227,No concern,False,False
+normal,0,2338,right,2338_right.jpg,0,-4.90562629699707,0.0004834213578825993,No concern,False,False
+normal,0,2339,left,2339_left.jpg,0,-7.417960166931152,4.3015758607519834e-05,No concern,False,False
+normal,0,2339,right,2339_right.jpg,0,-9.395791053771973,6.402245624294686e-06,No concern,False,False
+normal,0,2370,left,2370_left.jpg,0,-3.0660836696624756,0.002836406726963616,No concern,False,False
+normal,0,2371,left,2371_left.jpg,0,-8.911497116088867,1.020720970273451e-05,No concern,False,False
+normal,0,2371,right,2371_right.jpg,0,-6.451417446136475,0.00010911793026446686,No concern,False,False
+normal,0,2375,left,2375_left.jpg,0,-9.223746299743652,7.556084444617972e-06,No concern,False,False
+normal,0,2375,right,2375_right.jpg,0,-11.474649429321289,8.644991580287326e-07,No concern,False,False
+normal,0,2394,left,2394_left.jpg,0,3.4280128479003906,0.5968684080869827,Refer,False,True
+normal,0,2394,right,2394_right.jpg,0,-0.24839656054973602,0.04114994147173947,"Uncertain, refer",True,True
+normal,0,2396,left,2396_left.jpg,0,-2.587099075317383,0.004491614924950826,No concern,False,False
+normal,0,2396,right,2396_right.jpg,0,-6.371150016784668,0.00011788744282926525,No concern,False,False
+normal,0,2407,left,2407_left.jpg,0,-5.887021541595459,0.00018790757129897152,No concern,False,False
+normal,0,2407,right,2407_right.jpg,0,-7.263072490692139,4.993590000100427e-05,No concern,False,False
+normal,0,2409,left,2409_left.jpg,0,-0.5938246846199036,0.02985154694689981,"Uncertain, refer",True,True
+normal,0,2409,right,2409_right.jpg,0,-2.6402587890625,0.004268385134131304,No concern,False,False
+normal,0,2434,left,2434_left.jpg,0,-5.153979778289795,0.0003806152516687268,No concern,False,False
+normal,0,2434,right,2434_right.jpg,0,-8.065712928771973,2.305081869008445e-05,No concern,False,False
+normal,0,2438,left,2438_left.jpg,0,-5.039915561676025,0.00042479476884457035,No concern,False,False
+normal,0,2438,right,2438_right.jpg,0,-4.013702869415283,0.0011405774491315068,No concern,False,False
+normal,0,2442,left,2442_left.jpg,0,-7.284826755523682,4.890054426333768e-05,No concern,False,False
+normal,0,2442,right,2442_right.jpg,0,-7.87716817855835,2.764083460557455e-05,No concern,False,False
+normal,0,2462,left,2462_left.jpg,0,-12.245805740356445,4.1133544224919785e-07,No concern,False,False
+normal,0,2462,right,2462_right.jpg,0,-13.611230850219727,1.1042048296995001e-07,No concern,False,False
+normal,0,2474,left,2474_left.jpg,0,-6.290927410125732,0.00012735615007252677,No concern,False,False
+normal,0,2474,right,2474_right.jpg,0,-8.762582778930664,1.1781377000202647e-05,No concern,False,False
+normal,0,2475,left,2475_left.jpg,0,-10.941949844360352,1.4440704579234702e-06,No concern,False,False
+normal,0,2475,right,2475_right.jpg,0,-8.532082557678223,1.4709950702487159e-05,No concern,False,False
+normal,0,2476,left,2476_left.jpg,0,-0.5499953031539917,0.03109866091769464,"Uncertain, refer",True,True
+normal,0,2476,right,2476_right.jpg,0,-4.019700050354004,0.0011340156808814423,No concern,False,False
+normal,0,2490,left,2490_left.jpg,0,-9.382244110107422,6.486327545246524e-06,No concern,False,False
+normal,0,2490,right,2490_right.jpg,0,-12.554475784301758,3.0554973952399786e-07,No concern,False,False
+normal,0,2503,left,2503_left.jpg,0,-2.1154205799102783,0.007056374196963613,No concern,False,False
+normal,0,2503,right,2503_right.jpg,0,-1.8995792865753174,0.008672788579741977,No concern,False,False
+normal,0,2506,left,2506_left.jpg,0,-8.71414566040039,1.2344021688721234e-05,No concern,False,False
+normal,0,2506,right,2506_right.jpg,0,-14.19729232788086,6.279206144852612e-08,No concern,False,False
+normal,0,2508,left,2508_left.jpg,0,-3.523794174194336,0.0018270531099936198,No concern,False,False
+normal,0,2508,right,2508_right.jpg,0,-5.622735500335693,0.00024236472080424782,No concern,False,False
+normal,0,2512,left,2512_left.jpg,0,1.4457660913467407,0.17993707533947584,Refer,False,True
+normal,0,2512,right,2512_right.jpg,0,1.1623015403747559,0.14309802046831266,Refer,False,True
+normal,0,2514,left,2514_left.jpg,0,2.324974536895752,0.3385054939993449,Refer,False,True
+normal,0,2514,right,2514_right.jpg,0,1.5756256580352783,0.1991366282911194,Refer,False,True
+normal,0,2540,left,2540_left.jpg,0,-0.5380010008811951,0.031448642929491635,"Uncertain, refer",True,True
+normal,0,2540,right,2540_right.jpg,0,-1.031295657157898,0.019790504842823978,"Uncertain, refer",True,True
+normal,0,2543,left,2543_left.jpg,0,-11.675378799438477,7.125266600283806e-07,No concern,False,False
+normal,0,2543,right,2543_right.jpg,0,-9.036486625671387,9.049517161564957e-06,No concern,False,False
+normal,0,2549,left,2549_left.jpg,0,-1.8442614078521729,0.009143063188285288,No concern,False,False
+normal,0,2549,right,2549_right.jpg,0,-5.696986675262451,0.00022564098320503016,No concern,False,False
+normal,0,2559,left,2559_left.jpg,0,-3.282670021057129,0.0023035844156605954,No concern,False,False
+normal,0,2559,right,2559_right.jpg,0,-5.057369709014893,0.00041771618452121634,No concern,False,False
+normal,0,2563,left,2563_left.jpg,0,-1.9619383811950684,0.008171354626587241,No concern,False,False
+normal,0,2563,right,2563_right.jpg,0,-9.474479675292969,5.9349587031650365e-06,No concern,False,False
+normal,0,2575,left,2575_left.jpg,0,-12.635496139526367,2.826127482292787e-07,No concern,False,False
+normal,0,2575,right,2575_right.jpg,0,-13.790767669677734,9.288611651505329e-08,No concern,False,False
+normal,0,2576,left,2576_left.jpg,0,-4.884881496429443,0.0004931726506409622,No concern,False,False
+normal,0,2576,right,2576_right.jpg,0,-3.5518441200256348,0.0017784401315619576,No concern,False,False
+normal,0,2577,left,2577_left.jpg,0,-6.918665409088135,6.957722980034888e-05,No concern,False,False
+normal,0,2577,right,2577_right.jpg,0,-9.220040321350098,7.583103311299737e-06,No concern,False,False
+normal,0,2584,left,2584_left.jpg,0,-1.917115330696106,0.008528774986948304,No concern,False,False
+normal,0,2584,right,2584_right.jpg,0,-5.649739742279053,0.00023614374302838453,No concern,False,False
+normal,0,2588,left,2588_left.jpg,0,-1.8812896013259888,0.008825559723908166,No concern,False,False
+normal,0,2588,right,2588_right.jpg,0,-2.5119168758392334,0.004827298703025121,No concern,False,False
+normal,0,2590,left,2590_left.jpg,0,-7.463261127471924,4.117933673194318e-05,No concern,False,False
+normal,0,2590,right,2590_right.jpg,0,-2.030095100402832,0.0076561454367509475,No concern,False,False
+normal,0,2591,left,2591_left.jpg,0,-7.084226131439209,5.932241667517791e-05,No concern,False,False
+normal,0,2591,right,2591_right.jpg,0,-6.106604099273682,0.00015209333164590557,No concern,False,False
+normal,0,2593,left,2593_left.jpg,0,-2.9949960708618164,0.0030368028948699285,No concern,False,False
+normal,0,2593,right,2593_right.jpg,0,-5.4702582359313965,0.0002806937852172175,No concern,False,False
+normal,0,2595,left,2595_left.jpg,0,-13.336223602294922,1.439073592699187e-07,No concern,False,False
+normal,0,2595,right,2595_right.jpg,0,-15.681285858154297,1.5037024284198114e-08,No concern,False,False
+normal,0,2597,left,2597_left.jpg,0,-8.472434997558594,1.5579766567870183e-05,No concern,False,False
+normal,0,2597,right,2597_right.jpg,0,-10.95101547241211,1.4315163339799136e-06,No concern,False,False
+normal,0,2604,left,2604_left.jpg,0,-6.7211222648620605,8.415725270924475e-05,No concern,False,False
+normal,0,2604,right,2604_right.jpg,0,-10.101682662963867,3.243879976819706e-06,No concern,False,False
+normal,0,2612,left,2612_left.jpg,0,-10.643659591674805,1.924689376426567e-06,No concern,False,False
+normal,0,2612,right,2612_right.jpg,0,-8.49445915222168,1.5252764226913558e-05,No concern,False,False
+normal,0,2619,left,2619_left.jpg,0,-2.014979124069214,0.007767554494069615,No concern,False,False
+normal,0,2619,right,2619_right.jpg,0,-2.1367123126983643,0.006914131704313504,No concern,False,False
+normal,0,2622,left,2622_left.jpg,0,-7.623033046722412,3.530616582376148e-05,No concern,False,False
+normal,0,2622,right,2622_right.jpg,0,-11.489046096801758,8.525945783702714e-07,No concern,False,False
+normal,0,2624,left,2624_left.jpg,0,-5.671233654022217,0.00023130648516107895,No concern,False,False
+normal,0,2624,right,2624_right.jpg,0,-8.930538177490234,1.0021722916920207e-05,No concern,False,False
+normal,0,2644,left,2644_left.jpg,0,-11.624313354492188,7.484475625109971e-07,No concern,False,False
+normal,0,2644,right,2644_right.jpg,0,-13.286114692687988,1.5102302496419907e-07,No concern,False,False
+normal,0,2657,left,2657_left.jpg,0,-6.65291166305542,8.987130082608704e-05,No concern,False,False
+normal,0,2657,right,2657_right.jpg,0,1.3004374504089355,0.16019907277133916,Refer,False,True
+normal,0,2659,left,2659_left.jpg,0,-6.219605922698975,0.00013641094205464103,No concern,False,False
+normal,0,2659,right,2659_right.jpg,0,-11.247795104980469,1.075612569031741e-06,No concern,False,False
+normal,0,2662,left,2662_left.jpg,0,-1.9796061515808105,0.0080345887215472,No concern,False,False
+normal,0,2662,right,2662_right.jpg,0,-1.1335790157318115,0.017967168799951454,"Uncertain, refer",True,True
+normal,0,2666,left,2666_left.jpg,0,-4.305910587310791,0.0008610296574163031,No concern,False,False
+normal,0,2666,right,2666_right.jpg,0,-12.681981086730957,2.702386512383346e-07,No concern,False,False
+normal,0,2669,left,2669_left.jpg,0,-7.317854404449463,4.7369538230988065e-05,No concern,False,False
+normal,0,2669,right,2669_right.jpg,0,-13.224284172058105,1.602899830312178e-07,No concern,False,False
+normal,0,2681,left,2681_left.jpg,0,-9.053516387939453,8.90229652139601e-06,No concern,False,False
+normal,0,2681,right,2681_right.jpg,0,-10.799899101257324,1.6557966662340302e-06,No concern,False,False
+normal,0,2684,left,2684_left.jpg,0,-3.371469736099243,0.0021151536578345653,No concern,False,False
+normal,0,2684,right,2684_right.jpg,0,-5.111355781555176,0.00039655966899473813,No concern,False,False
+normal,0,2702,left,2702_left.jpg,0,-6.7941670417785645,7.844043167361551e-05,No concern,False,False
+normal,0,2702,right,2702_right.jpg,0,-8.812967300415039,1.1223307072569132e-05,No concern,False,False
+normal,0,2710,left,2710_left.jpg,0,-1.268595576286316,0.015810872438467086,"Uncertain, refer",True,True
+normal,0,2710,right,2710_right.jpg,0,-2.1000430583953857,0.007160909347024111,No concern,False,False
+normal,0,2737,right,2737_right.jpg,0,0.7135396003723145,0.0977904202382206,"Uncertain, refer",True,True
+normal,0,2745,left,2745_left.jpg,0,-3.197946071624756,0.0024989550426131966,No concern,False,False
+normal,0,2745,right,2745_right.jpg,0,-6.156722545623779,0.00014492694344380772,No concern,False,False
+normal,0,2748,left,2748_left.jpg,0,-7.448995113372803,4.1749036937557704e-05,No concern,False,False
+normal,0,2748,right,2748_right.jpg,0,-9.868867874145508,4.0592801401329255e-06,No concern,False,False
+normal,0,2756,right,2756_right.jpg,0,-11.717491149902344,6.842044033319779e-07,No concern,False,False
+normal,0,2762,left,2762_left.jpg,0,-12.246045112609863,4.112406189388226e-07,No concern,False,False
+normal,0,2762,right,2762_right.jpg,0,-13.206050872802734,1.6312977149319716e-07,No concern,False,False
+normal,0,2764,left,2764_left.jpg,0,-4.681118965148926,0.0006000463714623729,No concern,False,False
+normal,0,2764,right,2764_right.jpg,0,-8.830351829528809,1.1036950993004056e-05,No concern,False,False
+normal,0,2773,left,2773_left.jpg,0,-12.52364444732666,3.1475919099322307e-07,No concern,False,False
+normal,0,2773,right,2773_right.jpg,0,-16.759838104248047,5.321229076646057e-09,No concern,False,False
+normal,0,2779,left,2779_left.jpg,0,-4.409636974334717,0.0007792301183095451,No concern,False,False
+normal,0,2779,right,2779_right.jpg,0,-9.703685760498047,4.75930024190787e-06,No concern,False,False
+normal,0,2781,left,2781_left.jpg,0,-5.077445030212402,0.0004097202480608392,No concern,False,False
+normal,0,2781,right,2781_right.jpg,0,-9.520203590393066,5.679261383064583e-06,No concern,False,False
+normal,0,2783,left,2783_left.jpg,0,-6.9621405601501465,6.672415118201388e-05,No concern,False,False
+normal,0,2783,right,2783_right.jpg,0,-6.925358772277832,6.91301574859466e-05,No concern,False,False
+normal,0,2784,left,2784_left.jpg,0,-13.292844772338867,1.5004724497204533e-07,No concern,False,False
+normal,0,2784,right,2784_right.jpg,0,-5.5546183586120605,0.00025879455367626495,No concern,False,False
+normal,0,2792,right,2792_right.jpg,0,-9.224906921386719,7.5476426090716465e-06,No concern,False,False
+normal,0,2823,left,2823_left.jpg,0,-10.432548522949219,2.358666646765057e-06,No concern,False,False
+normal,0,2823,right,2823_right.jpg,0,-7.434879779815674,4.232047630039247e-05,No concern,False,False
+normal,0,2833,left,2833_left.jpg,0,-1.7093346118927002,0.010398718865292872,No concern,False,False
+normal,0,2833,right,2833_right.jpg,0,4.898443698883057,0.8592027420163852,Refer,False,True
+normal,0,2855,left,2855_left.jpg,0,-8.073807716369629,2.2871805348088844e-05,No concern,False,False
+normal,0,2855,right,2855_right.jpg,0,-9.213117599487305,7.633833282959557e-06,No concern,False,False
+normal,0,2857,left,2857_left.jpg,0,-9.812490463256836,4.285792639654995e-06,No concern,False,False
+normal,0,2857,right,2857_right.jpg,0,-10.642829895019531,1.9262280557074035e-06,No concern,False,False
+normal,0,2859,left,2859_left.jpg,0,-5.9710893630981445,0.00017329487373746828,No concern,False,False
+normal,0,2859,right,2859_right.jpg,0,-2.4744772911071777,0.005003661088935419,No concern,False,False
+normal,0,2860,left,2860_left.jpg,0,-11.768238067626953,6.515666410054982e-07,No concern,False,False
+normal,0,2860,right,2860_right.jpg,0,-8.032699584960938,2.3795522981269763e-05,No concern,False,False
+normal,0,2865,left,2865_left.jpg,0,-0.7393882870674133,0.026048216310875647,"Uncertain, refer",True,True
+normal,0,2865,right,2865_right.jpg,0,-2.001260757446289,0.007870054287097372,No concern,False,False
+normal,0,2869,left,2869_left.jpg,0,-2.126673936843872,0.0069808362335034065,No concern,False,False
+normal,0,2869,right,2869_right.jpg,0,-3.701587677001953,0.0015399493656176985,No concern,False,False
+normal,0,2885,left,2885_left.jpg,0,-3.375044345855713,0.0021078992468301972,No concern,False,False
+normal,0,2885,right,2885_right.jpg,0,-2.1100058555603027,0.007093009087602814,No concern,False,False
+normal,0,2886,left,2886_left.jpg,0,-9.463431358337402,5.998450760076793e-06,No concern,False,False
+normal,0,2886,right,2886_right.jpg,0,-15.551711082458496,1.703577961582592e-08,No concern,False,False
+normal,0,2904,left,2904_left.jpg,0,-6.279501914978027,0.0001287651995071003,No concern,False,False
+normal,0,2904,right,2904_right.jpg,0,-8.892221450805664,1.0398478875223419e-05,No concern,False,False
+normal,0,2905,left,2905_left.jpg,0,-3.9972105026245117,0.0011588186531016533,No concern,False,False
+normal,0,2905,right,2905_right.jpg,0,-6.136717796325684,0.0001477460021706372,No concern,False,False
+normal,0,2906,left,2906_left.jpg,0,-5.691997528076172,0.00022672762177217197,No concern,False,False
+normal,0,2906,right,2906_right.jpg,0,-9.807891845703125,4.3048171781455416e-06,No concern,False,False
+normal,0,2925,left,2925_left.jpg,0,-3.808746814727783,0.0013891469912911834,No concern,False,False
+normal,0,2925,right,2925_right.jpg,0,-7.413736343383789,4.3191103736313986e-05,No concern,False,False
+normal,0,2930,right,2930_right.jpg,0,-6.100583076477051,0.00015297777352526242,No concern,False,False
+normal,0,2935,left,2935_left.jpg,0,1.6414155960083008,0.20943517378718637,Refer,False,True
+normal,0,2935,right,2935_right.jpg,0,0.011681660078465939,0.052251676405118685,"Uncertain, refer",True,True
+normal,0,2951,left,2951_left.jpg,0,-12.341886520385742,3.7497845063386697e-07,No concern,False,False
+normal,0,2951,right,2951_right.jpg,0,-6.756612300872803,8.132940105509806e-05,No concern,False,False
+normal,0,2953,left,2953_left.jpg,0,-5.832513809204102,0.0001980341268013849,No concern,False,False
+normal,0,2953,right,2953_right.jpg,0,-6.276528835296631,0.0001291344034571276,No concern,False,False
+normal,0,2960,left,2960_left.jpg,0,-6.924568176269531,6.91828140954311e-05,No concern,False,False
+normal,0,2960,right,2960_right.jpg,0,-2.555621862411499,0.004629234132163007,No concern,False,False
+normal,0,2965,left,2965_left.jpg,0,-7.9054460525512695,2.6898190298108647e-05,No concern,False,False
+normal,0,2965,right,2965_right.jpg,0,-7.1269612312316895,5.6930384456890814e-05,No concern,False,False
+normal,0,2967,left,2967_left.jpg,0,-4.292582035064697,0.0008721446241579784,No concern,False,False
+normal,0,2967,right,2967_right.jpg,0,-6.880921840667725,7.215291037024616e-05,No concern,False,False
+normal,0,2968,left,2968_left.jpg,0,-6.974207401275635,6.595320842138278e-05,No concern,False,False
+normal,0,2970,left,2970_left.jpg,0,-3.1779632568359375,0.0025473933345946847,No concern,False,False
+normal,0,2970,right,2970_right.jpg,0,-5.83734655380249,0.0001971146657766389,No concern,False,False
+normal,0,2978,left,2978_left.jpg,0,-1.7098009586334229,0.010394097727236403,No concern,False,False
+normal,0,2978,right,2978_right.jpg,0,-2.668151378631592,0.004155712429312794,No concern,False,False
+normal,0,2980,left,2980_left.jpg,0,-12.99070930480957,2.007284362739215e-07,No concern,False,False
+normal,0,2980,right,2980_right.jpg,0,-6.957573413848877,6.701828830501448e-05,No concern,False,False
+normal,0,3002,left,3002_left.jpg,0,-6.477365970611572,0.0001064248937000887,No concern,False,False
+normal,0,3002,right,3002_right.jpg,0,-9.27487564086914,7.192998304369537e-06,No concern,False,False
+normal,0,3017,left,3017_left.jpg,0,-5.476620197296143,0.0002789795588813355,No concern,False,False
+normal,0,3017,right,3017_right.jpg,0,-6.902732849121094,7.065308523501996e-05,No concern,False,False
+normal,0,3025,left,3025_left.jpg,0,-6.781514644622803,7.940209400876962e-05,No concern,False,False
+normal,0,3025,right,3025_right.jpg,0,-10.631113052368164,1.948088838367989e-06,No concern,False,False
+normal,0,3028,left,3028_left.jpg,0,-3.7030792236328125,0.0015377420805236775,No concern,False,False
+normal,0,3028,right,3028_right.jpg,0,-0.6044362783432007,0.029556972255340295,"Uncertain, refer",True,True
+normal,0,3035,left,3035_left.jpg,0,-6.639863967895508,9.100773019828643e-05,No concern,False,False
+normal,0,3035,right,3035_right.jpg,0,-4.5113911628723145,0.0007065360808031093,No concern,False,False
+normal,0,3037,right,3037_right.jpg,0,3.337916135787964,0.5758247541444521,Refer,False,True
+normal,0,3044,left,3044_left.jpg,0,-10.437112808227539,2.34832047965479e-06,No concern,False,False
+normal,0,3044,right,3044_right.jpg,0,-11.70964241027832,6.89396269261791e-07,No concern,False,False
+normal,0,3048,left,3048_left.jpg,0,-13.47217845916748,1.262449924372716e-07,No concern,False,False
+normal,0,3048,right,3048_right.jpg,0,-6.979905605316162,6.559225626637398e-05,No concern,False,False
+normal,0,3071,left,3071_left.jpg,0,-5.925034999847412,0.00018115339667359892,No concern,False,False
+normal,0,3071,right,3071_right.jpg,0,-3.6320431232452393,0.0016464557152439925,No concern,False,False
+normal,0,3074,left,3074_left.jpg,0,-5.737375736236572,0.0002170337601696007,No concern,False,False
+normal,0,3074,right,3074_right.jpg,0,-5.507344722747803,0.0002708470364360637,No concern,False,False
+normal,0,3079,left,3079_left.jpg,0,-5.298959732055664,0.0003310272546436044,No concern,False,False
+normal,0,3079,right,3079_right.jpg,0,-2.899754524230957,0.0033275815709126215,No concern,False,False
+normal,0,3091,left,3091_left.jpg,0,-5.220190048217773,0.00035710930156558407,No concern,False,False
+normal,0,3091,right,3091_right.jpg,0,-15.606470108032227,1.6160572518460622e-08,No concern,False,False
+normal,0,3094,left,3094_left.jpg,0,-16.046401977539062,1.057880696356758e-08,No concern,False,False
+normal,0,3094,right,3094_right.jpg,0,-12.419302940368652,3.480355766603463e-07,No concern,False,False
+normal,0,3098,left,3098_left.jpg,0,-14.102642059326172,6.878538997798882e-08,No concern,False,False
+normal,0,3098,right,3098_right.jpg,0,-21.111656188964844,8.047862852621265e-11,No concern,False,False
+normal,0,3111,left,3111_left.jpg,0,-2.3826494216918945,0.005463838575851417,No concern,False,False
+normal,0,3111,right,3111_right.jpg,0,-1.4547147750854492,0.013250491524526105,No concern,False,False
+normal,0,3122,left,3122_left.jpg,0,-13.285385131835938,1.5112918294010294e-07,No concern,False,False
+normal,0,3122,right,3122_right.jpg,0,-16.982093811035156,4.295800815092758e-09,No concern,False,False
+normal,0,3130,left,3130_left.jpg,0,-10.337699890136719,2.5842879791263588e-06,No concern,False,False
+normal,0,3130,right,3130_right.jpg,0,-3.6280031204223633,0.0016528641790832866,No concern,False,False
+normal,0,3132,left,3132_left.jpg,0,2.7538468837738037,0.436127989042698,Refer,False,True
+normal,0,3132,right,3132_right.jpg,0,-2.657473564147949,0.0041984914846116515,No concern,False,False
+normal,0,3157,left,3157_left.jpg,0,-7.62853479385376,3.511957890902893e-05,No concern,False,False
+normal,0,3157,right,3157_right.jpg,0,-6.562326908111572,9.806371966668833e-05,No concern,False,False
+normal,0,3165,left,3165_left.jpg,0,-2.577697277069092,0.004532287706083552,No concern,False,False
+normal,0,3165,right,3165_right.jpg,0,2.362090826034546,0.3465559401908295,Refer,False,True
+normal,0,3169,left,3169_left.jpg,0,-7.351512432098389,4.5858613311134274e-05,No concern,False,False
+normal,0,3169,right,3169_right.jpg,0,-12.183013916015625,4.3697988734066887e-07,No concern,False,False
+normal,0,3170,left,3170_left.jpg,0,-10.41202163696289,2.4057626655963907e-06,No concern,False,False
+normal,0,3170,right,3170_right.jpg,0,-3.522643566131592,0.0018290752889288087,No concern,False,False
+normal,0,3191,left,3191_left.jpg,0,-8.660792350769043,1.2994921627733331e-05,No concern,False,False
+normal,0,3191,right,3191_right.jpg,0,-6.253765106201172,0.00013199655811804367,No concern,False,False
+normal,0,3196,left,3196_left.jpg,0,-9.69825267791748,4.784270299819279e-06,No concern,False,False
+normal,0,3196,right,3196_right.jpg,0,-7.113927364349365,5.7649529694220726e-05,No concern,False,False
+normal,0,3197,left,3197_left.jpg,0,-10.632926940917969,1.9446884022936607e-06,No concern,False,False
+normal,0,3197,right,3197_right.jpg,0,-11.93292236328125,5.559973641859242e-07,No concern,False,False
+normal,0,3229,left,3229_left.jpg,0,-5.579165935516357,0.00025274914756739426,No concern,False,False
+normal,0,3229,right,3229_right.jpg,0,-8.558277130126953,1.4343475374084042e-05,No concern,False,False
+normal,0,3230,left,3230_left.jpg,0,-6.404726505279541,0.00011413645894237086,No concern,False,False
+normal,0,3230,right,3230_right.jpg,0,-12.309978485107422,3.86681314460015e-07,No concern,False,False
+normal,0,3235,left,3235_left.jpg,0,-3.5195226669311523,0.0018345714841498,No concern,False,False
+normal,0,3235,right,3235_right.jpg,0,-1.8273019790649414,0.009292238085810596,No concern,False,False
+normal,0,3237,left,3237_left.jpg,0,-6.607449531555176,9.389354450280429e-05,No concern,False,False
+normal,0,3237,right,3237_right.jpg,0,-8.433586120605469,1.6173755332517066e-05,No concern,False,False
+normal,0,3248,left,3248_left.jpg,0,-1.3685898780822754,0.014380034615157689,No concern,False,False
+normal,0,3248,right,3248_right.jpg,0,-2.1810500621795654,0.006627001426310755,No concern,False,False
+normal,0,3264,left,3264_left.jpg,0,-4.311110019683838,0.000856732213295219,No concern,False,False
+normal,0,3264,right,3264_right.jpg,0,-3.676687002182007,0.0015772697165768747,No concern,False,False
+normal,0,3269,left,3269_left.jpg,0,-8.581695556640625,1.4023576463088586e-05,No concern,False,False
+normal,0,3269,right,3269_right.jpg,0,-14.988731384277344,2.929894634242e-08,No concern,False,False
+normal,0,3300,right,3300_right.jpg,0,-4.0564446449279785,0.001094627133925751,No concern,False,False
+normal,0,3302,left,3302_left.jpg,0,-5.522576808929443,0.00026690354298309824,No concern,False,False
+normal,0,3302,right,3302_right.jpg,0,-2.197025775909424,0.006526472261595621,No concern,False,False
+normal,0,3304,left,3304_left.jpg,0,-8.863029479980469,1.0694991842655695e-05,No concern,False,False
+normal,0,3304,right,3304_right.jpg,0,-10.186548233032227,2.9892778552761447e-06,No concern,False,False
+normal,0,3321,left,3321_left.jpg,0,-5.918745517730713,0.00018225390595129565,No concern,False,False
+normal,0,3321,right,3321_right.jpg,0,-4.534332752227783,0.0006911061596988583,No concern,False,False
+normal,0,3331,left,3331_left.jpg,0,-7.414318561553955,4.316689149679859e-05,No concern,False,False
+normal,0,3331,right,3331_right.jpg,0,-15.187887191772461,2.4185033401938513e-08,No concern,False,False
+normal,0,3341,left,3341_left.jpg,0,-2.655710458755493,0.004205597161325031,No concern,False,False
+normal,0,3341,right,3341_right.jpg,0,-7.605538845062256,3.5906079118773285e-05,No concern,False,False
+normal,0,3345,left,3345_left.jpg,0,0.9807000756263733,0.12295889685292288,Refer,False,True
+normal,0,3345,right,3345_right.jpg,0,-1.1524866819381714,0.017648652713324237,"Uncertain, refer",True,True
+normal,0,3364,left,3364_left.jpg,0,-5.629969120025635,0.00024068241886713372,No concern,False,False
+normal,0,3364,right,3364_right.jpg,0,-6.481541633605957,0.00010599777851427206,No concern,False,False
+normal,0,3366,left,3366_left.jpg,0,-3.2591874599456787,0.0023561547909427298,No concern,False,False
+normal,0,3366,right,3366_right.jpg,0,-7.604915142059326,3.592765438091556e-05,No concern,False,False
+normal,0,3367,left,3367_left.jpg,0,-10.918548583984375,1.4769878848326026e-06,No concern,False,False
+normal,0,3367,right,3367_right.jpg,0,-10.830102920532227,1.6083220037020196e-06,No concern,False,False
+normal,0,3379,left,3379_left.jpg,0,-13.235065460205078,1.5863413883960686e-07,No concern,False,False
+normal,0,3379,right,3379_right.jpg,0,-15.498470306396484,1.7932143766310235e-08,No concern,False,False
+normal,0,3383,right,3383_right.jpg,0,-3.673691511154175,0.0015818196865327726,No concern,False,False
+normal,0,3390,left,3390_left.jpg,0,-4.583959102630615,0.0006588711012640898,No concern,False,False
+normal,0,3390,right,3390_right.jpg,0,-6.5558600425720215,9.867636336821855e-05,No concern,False,False
+normal,0,3394,left,3394_left.jpg,0,-7.625202655792236,3.523246735389477e-05,No concern,False,False
+normal,0,3394,right,3394_right.jpg,0,-8.046276092529297,2.3486399386295715e-05,No concern,False,False
+normal,0,3404,left,3404_left.jpg,0,-0.9659777283668518,0.021048498567427087,"Uncertain, refer",True,True
+normal,0,3404,right,3404_right.jpg,0,-4.095870018005371,0.0010538834843136196,No concern,False,False
+normal,0,3406,left,3406_left.jpg,0,-5.709159851074219,0.0002230114603833875,No concern,False,False
+normal,0,3406,right,3406_right.jpg,0,-7.628506183624268,3.512054664478279e-05,No concern,False,False
+normal,0,3407,left,3407_left.jpg,0,-4.480831623077393,0.0007276256415840885,No concern,False,False
+normal,0,3407,right,3407_right.jpg,0,-7.115271091461182,5.7574971350324795e-05,No concern,False,False
+normal,0,3408,left,3408_left.jpg,0,-10.417373657226562,2.3933933397081868e-06,No concern,False,False
+normal,0,3408,right,3408_right.jpg,0,-4.653993129730225,0.0006159201892754118,No concern,False,False
+normal,0,3425,left,3425_left.jpg,0,-5.650477409362793,0.00023597606525595872,No concern,False,False
+normal,0,3425,right,3425_right.jpg,0,-7.276963710784912,4.9272271187105194e-05,No concern,False,False
+normal,0,3427,left,3427_left.jpg,0,-4.011890411376953,0.0011425679885615498,No concern,False,False
+normal,0,3427,right,3427_right.jpg,0,-7.210616588592529,5.252349903779792e-05,No concern,False,False
+normal,0,3440,left,3440_left.jpg,0,-1.7959260940551758,0.009574603931643937,No concern,False,False
+normal,0,3440,right,3440_right.jpg,0,-4.608100891113281,0.0006437373610001912,No concern,False,False
+normal,0,3444,left,3444_left.jpg,0,2.3314638137817383,0.33990643824579664,Refer,False,True
+normal,0,3444,right,3444_right.jpg,0,-6.576520919799805,9.673234072570424e-05,No concern,False,False
+normal,0,3445,left,3445_left.jpg,0,-8.247052192687988,1.9356871474230828e-05,No concern,False,False
+normal,0,3445,right,3445_right.jpg,0,-6.625751972198486,9.225303848342729e-05,No concern,False,False
+normal,0,3485,left,3485_left.jpg,0,-4.315920352935791,0.0008527754553028162,No concern,False,False
+normal,0,3485,right,3485_right.jpg,0,-6.739197731018066,8.270492165964036e-05,No concern,False,False
+normal,0,3970,left,3970_left.jpg,0,-7.677623748779297,3.349781496549888e-05,No concern,False,False
+normal,0,4115,right,4115_right.jpg,0,-7.396951198577881,4.389500382864219e-05,No concern,False,False
+normal,0,4152,left,4152_left.jpg,0,-5.578833103179932,0.0002528301634977291,No concern,False,False
+normal,0,4156,right,4156_right.jpg,0,-8.42721176147461,1.6273357685522512e-05,No concern,False,False
+normal,0,4203,left,4203_left.jpg,0,-12.097944259643555,4.7429156666280986e-07,No concern,False,False
+normal,0,4206,right,4206_right.jpg,0,-14.626972198486328,4.151193987797727e-08,No concern,False,False
+normal,0,4209,left,4209_left.jpg,0,-1.3287291526794434,0.01493444207398511,No concern,False,False
+normal,0,4218,left,4218_left.jpg,0,-12.75239372253418,2.525192081344942e-07,No concern,False,False
+normal,0,4224,left,4224_left.jpg,0,-10.86749267578125,1.5514335782961792e-06,No concern,False,False
+normal,0,4231,left,4231_left.jpg,0,-6.1089348793029785,0.00015175233227043107,No concern,False,False
+normal,0,4240,left,4240_left.jpg,0,-2.332599639892578,0.005732131137962184,No concern,False,False
+normal,0,4272,right,4272_right.jpg,0,-10.75927448272705,1.721868315827704e-06,No concern,False,False
+normal,0,4297,left,4297_left.jpg,0,-10.559005737304688,2.0881929339064704e-06,No concern,False,False
+normal,0,4302,right,4302_right.jpg,0,-12.407669067382812,3.5195731551510264e-07,No concern,False,False
+normal,0,4308,left,4308_left.jpg,0,-7.8873772621154785,2.7370383975274838e-05,No concern,False,False
+normal,0,4339,right,4339_right.jpg,0,-7.747762203216553,3.130971135969951e-05,No concern,False,False
+normal,0,4360,left,4360_left.jpg,0,-9.377758026123047,6.514414033777511e-06,No concern,False,False
+normal,0,4438,left,4438_left.jpg,0,-6.9783101081848145,6.569312329233576e-05,No concern,False,False
+normal,0,4458,right,4458_right.jpg,0,-11.130941390991211,1.203745857040193e-06,No concern,False,False
+normal,0,4464,left,4464_left.jpg,0,-3.489652395248413,0.0018880169323307913,No concern,False,False
+normal,0,4500,left,4500_left.jpg,0,-0.6054720878601074,0.0295283699207974,"Uncertain, refer",True,True
+normal,0,4512,left,4512_left.jpg,0,-5.870331287384033,0.00019095206503900902,No concern,False,False
+normal,0,4577,left,4577_left.jpg,0,-9.206541061401367,7.68234071365706e-06,No concern,False,False
+normal,0,4618,left,4618_left.jpg,0,-2.9913992881774902,0.0030473092780990982,No concern,False,False
+normal,0,4625,left,4625_left.jpg,0,-5.952047348022461,0.00017650192590284552,No concern,False,False
+normal,0,4638,right,4638_right.jpg,0,-10.021824836730957,3.5032293205966257e-06,No concern,False,False
+normal,0,4641,left,4641_left.jpg,0,-10.289600372314453,2.7068270353269776e-06,No concern,False,False
+normal,1,8,left,8_left.jpg,0,-4.938174724578857,0.00046850859370547375,No concern,False,False
+normal,1,8,right,8_right.jpg,0,-5.170325756072998,0.00037467211735597595,No concern,False,False
+normal,1,10,right,10_right.jpg,0,-2.5004401206970215,0.00488069318594465,No concern,False,False
+normal,1,29,right,29_right.jpg,0,-1.601628303527832,0.01152229974257044,No concern,False,False
+normal,1,38,right,38_right.jpg,0,-1.222400188446045,0.01651835140729032,"Uncertain, refer",True,True
+normal,1,63,left,63_left.jpg,0,-7.787313938140869,3.0139454766466886e-05,No concern,False,False
+normal,1,68,left,68_left.jpg,0,1.8455108404159546,0.24383674145661283,Refer,False,True
+normal,1,78,right,78_right.jpg,0,-3.341407060623169,0.0021771578522421916,No concern,False,False
+normal,1,84,left,84_left.jpg,0,-6.431640148162842,0.00011121616029324329,No concern,False,False
+normal,1,84,right,84_right.jpg,0,-5.547600269317627,0.000260549342659934,No concern,False,False
+normal,1,97,left,97_left.jpg,0,-4.3911309242248535,0.0007932326467072185,No concern,False,False
+normal,1,110,right,110_right.jpg,0,-3.031607151031494,0.002931893393587546,No concern,False,False
+normal,1,122,right,122_right.jpg,0,-2.8374156951904297,0.003532768145736124,No concern,False,False
+normal,1,129,right,129_right.jpg,0,-9.651945114135742,5.00248395588857e-06,No concern,False,False
+normal,1,132,left,132_left.jpg,0,-2.25154972076416,0.006194647381390623,No concern,False,False
+normal,1,147,left,147_left.jpg,0,-5.069228649139404,0.0004129741434212302,No concern,False,False
+normal,1,173,left,173_left.jpg,0,-6.211297988891602,0.00013750670512149266,No concern,False,False
+normal,1,174,right,174_right.jpg,0,-4.432858467102051,0.0007620085545187279,No concern,False,False
+normal,1,214,left,214_left.jpg,0,-5.7058868408203125,0.00022371543582660076,No concern,False,False
+normal,1,219,right,219_right.jpg,0,-3.6654815673828125,0.001594357384667826,No concern,False,False
+normal,1,273,left,273_left.jpg,0,-11.122308731079102,1.2137962041834872e-06,No concern,False,False
+normal,1,279,right,279_right.jpg,0,-8.237852096557617,1.95291535316696e-05,No concern,False,False
+normal,1,294,right,294_right.jpg,0,0.6158048510551453,0.08979391993004249,"Uncertain, refer",True,True
+normal,1,317,left,317_left.jpg,0,-6.530917644500732,0.00010107536147697424,No concern,False,False
+normal,1,326,left,326_left.jpg,0,-7.606847763061523,3.58608428748623e-05,No concern,False,False
+normal,1,329,right,329_right.jpg,0,-9.20278549194336,7.710179296821587e-06,No concern,False,False
+normal,1,335,left,335_left.jpg,0,-12.733192443847656,2.572326910117633e-07,No concern,False,False
+normal,1,346,left,346_left.jpg,0,-8.949995040893555,9.835667040199251e-06,No concern,False,False
+normal,1,347,left,347_left.jpg,0,-3.630237102508545,0.0016493174481487184,No concern,False,False
+normal,1,363,right,363_right.jpg,0,-6.725831031799316,8.377647341347406e-05,No concern,False,False
+normal,1,384,left,384_left.jpg,0,1.1051522493362427,0.13648020797172827,Refer,False,True
+normal,1,394,left,394_left.jpg,0,-1.3664753437042236,0.014408928715611957,No concern,False,False
+normal,1,394,right,394_right.jpg,0,-6.167016983032227,0.0001434972807721102,No concern,False,False
+normal,1,399,right,399_right.jpg,0,-1.8203729391098022,0.009353877335056491,No concern,False,False
+normal,1,400,left,400_left.jpg,0,-1.6517237424850464,0.010985514851098775,No concern,False,False
+normal,1,496,left,496_left.jpg,0,-6.086618900299072,0.00015504884722525813,No concern,False,False
+normal,1,524,left,524_left.jpg,0,-1.8207570314407349,0.009350449953634331,No concern,False,False
+normal,1,545,right,545_right.jpg,0,1.511929988861084,0.1895329358500095,Refer,False,True
+normal,1,549,right,549_right.jpg,0,-6.914803981781006,6.98364613962182e-05,No concern,False,False
+normal,1,555,right,555_right.jpg,0,-10.040279388427734,3.441511297526934e-06,No concern,False,False
+normal,1,570,left,570_left.jpg,0,-1.5455658435821533,0.012153800781723628,No concern,False,False
+normal,1,580,left,580_left.jpg,0,-5.071394443511963,0.00041211393519363263,No concern,False,False
+normal,1,591,left,591_left.jpg,0,-6.247915744781494,0.00013274220425128663,No concern,False,False
+normal,1,598,right,598_right.jpg,0,-11.073017120361328,1.2728113628378882e-06,No concern,False,False
+normal,1,610,left,610_left.jpg,0,-7.572848796844482,3.70545442141154e-05,No concern,False,False
+normal,1,617,left,617_left.jpg,0,-8.737077713012695,1.2074370428058707e-05,No concern,False,False
+normal,1,618,right,618_right.jpg,0,-3.392874002456665,0.0020720843464828564,No concern,False,False
+normal,1,623,right,623_right.jpg,0,-5.7860493659973145,0.00020709604915302406,No concern,False,False
+normal,1,633,left,633_left.jpg,0,-8.881416320800781,1.0507259731261385e-05,No concern,False,False
+normal,1,641,left,641_left.jpg,0,-9.021421432495117,9.18178253903909e-06,No concern,False,False
+normal,1,652,right,652_right.jpg,0,-11.943892478942871,5.501536794451628e-07,No concern,False,False
+normal,1,671,left,671_left.jpg,0,-4.110321998596191,0.0010393307465562337,No concern,False,False
+normal,1,683,left,683_left.jpg,0,-9.926645278930664,3.839558455586602e-06,No concern,False,False
+normal,1,689,right,689_right.jpg,0,-2.0290846824645996,0.007663542799673379,No concern,False,False
+normal,1,716,left,716_left.jpg,0,-3.8664655685424805,0.0013141275646429338,No concern,False,False
+normal,1,766,left,766_left.jpg,0,0.9358992576599121,0.11838078774861953,Refer,False,True
+normal,1,782,right,782_right.jpg,0,-4.151505470275879,0.0009989519662019887,No concern,False,False
+normal,1,795,right,795_right.jpg,0,-5.020649433135986,0.0004327475075510352,No concern,False,False
+normal,1,800,left,800_left.jpg,0,-1.6819052696228027,0.010674128659409136,No concern,False,False
+normal,1,807,right,807_right.jpg,0,-0.8248499631881714,0.024039467240078504,"Uncertain, refer",True,True
+normal,1,840,right,840_right.jpg,0,-8.679451942443848,1.2763465365116049e-05,No concern,False,False
+normal,1,872,right,872_right.jpg,0,-8.028820991516113,2.38845795585671e-05,No concern,False,False
+normal,1,879,right,879_right.jpg,0,-6.647169589996338,9.03696656638623e-05,No concern,False,False
+normal,1,903,left,903_left.jpg,0,-4.275750637054443,0.0008863857382521355,No concern,False,False
+normal,1,918,right,918_right.jpg,0,-6.1115593910217285,0.00015136927406415998,No concern,False,False
+normal,1,945,left,945_left.jpg,0,1.115132451057434,0.13761703285701793,Refer,False,True
+normal,1,954,right,954_right.jpg,0,-8.216883659362793,1.9927562485257144e-05,No concern,False,False
+normal,1,966,right,966_right.jpg,0,-4.854846000671387,0.000507640555092709,No concern,False,False
+normal,1,987,right,987_right.jpg,0,-11.38729190826416,9.403845990408597e-07,No concern,False,False
+normal,1,1040,right,1040_right.jpg,0,-5.8182806968688965,0.00020076705567382202,No concern,False,False
+normal,1,1074,right,1074_right.jpg,0,-6.065944194793701,0.00015816677320533448,No concern,False,False
+normal,1,1075,right,1075_right.jpg,0,-3.2303833961486816,0.0024222755643193705,No concern,False,False
+normal,1,1093,right,1093_right.jpg,0,0.18533435463905334,0.061182330993353774,"Uncertain, refer",True,True
+normal,1,1114,right,1114_right.jpg,0,1.058401346206665,0.1312598061643514,Refer,False,True
+normal,1,1119,right,1119_right.jpg,0,-0.2581211030483246,0.040781965985618424,"Uncertain, refer",True,True
+normal,1,1142,right,1142_right.jpg,0,-10.95568561553955,1.425091751365798e-06,No concern,False,False
+normal,1,1160,left,1160_left.jpg,0,-2.8498613834381104,0.0034908202282162492,No concern,False,False
+normal,1,1274,left,1274_left.jpg,0,-3.395411491394043,0.0020670368296915615,No concern,False,False
+normal,1,1397,right,1397_right.jpg,0,-5.778098106384277,0.0002086878053765619,No concern,False,False
+normal,1,1416,left,1416_left.jpg,0,-11.39780044555664,9.309146678746102e-07,No concern,False,False
+normal,1,1429,right,1429_right.jpg,0,-4.6576457023620605,0.0006137585243085739,No concern,False,False
+normal,1,1491,right,1491_right.jpg,0,-3.968696117401123,0.001191046749315786,No concern,False,False
+normal,1,1515,right,1515_right.jpg,0,2.273498773574829,0.3274941965736099,Refer,False,True
+normal,1,1868,left,1868_left.jpg,0,-3.5860090255737305,0.001720970160970628,No concern,False,False
+normal,1,1975,right,1975_right.jpg,0,-9.174772262573242,7.92103806223461e-06,No concern,False,False
+normal,1,2097,left,2097_left.jpg,0,-2.4180233478546143,0.005281784964916553,No concern,False,False
+normal,1,2119,left,2119_left.jpg,0,-4.0801310539245605,0.00106996382072122,No concern,False,False
+normal,1,2197,left,2197_left.jpg,0,0.8907445073127747,0.11391657394079463,Refer,False,True
+normal,1,2338,left,2338_left.jpg,0,-3.2904052734375,0.0022865250421200863,No concern,False,False
+normal,1,2338,right,2338_right.jpg,0,-4.363185405731201,0.0008148554471347131,No concern,False,False
+normal,1,2339,left,2339_left.jpg,0,-5.384906768798828,0.0003047363083943059,No concern,False,False
+normal,1,2339,right,2339_right.jpg,0,-7.243005275726318,5.091038919500749e-05,No concern,False,False
+normal,1,2370,left,2370_left.jpg,0,-4.179106712341309,0.0009727709759722258,No concern,False,False
+normal,1,2371,left,2371_left.jpg,0,-6.882557392120361,7.20393465045432e-05,No concern,False,False
+normal,1,2371,right,2371_right.jpg,0,-4.69844913482666,0.0005901196191336971,No concern,False,False
+normal,1,2375,left,2375_left.jpg,0,-8.590917587280273,1.3899569120289888e-05,No concern,False,False
+normal,1,2375,right,2375_right.jpg,0,-10.376983642578125,2.4883350870794922e-06,No concern,False,False
+normal,1,2394,left,2394_left.jpg,0,3.4184916019439697,0.5946599073725147,Refer,False,True
+normal,1,2394,right,2394_right.jpg,0,0.24639345705509186,0.06464873709734778,"Uncertain, refer",True,True
+normal,1,2396,left,2396_left.jpg,0,-2.003009796142578,0.007856911692287999,No concern,False,False
+normal,1,2396,right,2396_right.jpg,0,-5.685760974884033,0.00022809330636695574,No concern,False,False
+normal,1,2407,left,2407_left.jpg,0,-4.794190883636475,0.000538163956099046,No concern,False,False
+normal,1,2407,right,2407_right.jpg,0,-5.29739236831665,0.0003315271887968376,No concern,False,False
+normal,1,2409,left,2409_left.jpg,0,0.3224931061267853,0.06922484282836824,"Uncertain, refer",True,True
+normal,1,2409,right,2409_right.jpg,0,-0.6426880359649658,0.028518330636941282,"Uncertain, refer",True,True
+normal,1,2434,left,2434_left.jpg,0,-4.204123497009277,0.0009496341790015062,No concern,False,False
+normal,1,2434,right,2434_right.jpg,0,-5.951973915100098,0.00017651440762087166,No concern,False,False
+normal,1,2438,left,2438_left.jpg,0,-3.49118971824646,0.0018852287227127708,No concern,False,False
+normal,1,2438,right,2438_right.jpg,0,-1.5838907957077026,0.011718510518842573,No concern,False,False
+normal,1,2442,left,2442_left.jpg,0,-6.3846869468688965,0.00011636056429294563,No concern,False,False
+normal,1,2442,right,2442_right.jpg,0,-7.3983917236328125,4.3834146758611144e-05,No concern,False,False
+normal,1,2462,left,2462_left.jpg,0,-11.394071578979492,9.342640279359956e-07,No concern,False,False
+normal,1,2462,right,2462_right.jpg,0,-11.96163558959961,5.408318029383754e-07,No concern,False,False
+normal,1,2474,left,2474_left.jpg,0,-6.448424816131592,0.00010943286682391483,No concern,False,False
+normal,1,2474,right,2474_right.jpg,0,-9.318674087524414,6.895877533118561e-06,No concern,False,False
+normal,1,2475,left,2475_left.jpg,0,-10.275476455688477,2.743900842267473e-06,No concern,False,False
+normal,1,2475,right,2475_right.jpg,0,-7.677199840545654,3.3511494075862544e-05,No concern,False,False
+normal,1,2476,left,2476_left.jpg,0,-1.147013783454895,0.01774027388473171,"Uncertain, refer",True,True
+normal,1,2476,right,2476_right.jpg,0,-4.234382152557373,0.0009223828617963995,No concern,False,False
+normal,1,2490,left,2490_left.jpg,0,-10.481475830078125,2.2500942195898066e-06,No concern,False,False
+normal,1,2490,right,2490_right.jpg,0,-13.384387969970703,1.373840228853779e-07,No concern,False,False
+normal,1,2503,left,2503_left.jpg,0,-1.4812729358673096,0.01292017144013643,No concern,False,False
+normal,1,2503,right,2503_right.jpg,0,-1.236763834953308,0.016295101636923052,"Uncertain, refer",True,True
+normal,1,2506,left,2506_left.jpg,0,-8.859081268310547,1.0735739031510155e-05,No concern,False,False
+normal,1,2506,right,2506_right.jpg,0,-15.790122985839844,1.3540546233861675e-08,No concern,False,False
+normal,1,2508,left,2508_left.jpg,0,-2.010244369506836,0.007802780696924304,No concern,False,False
+normal,1,2508,right,2508_right.jpg,0,-5.051942348480225,0.0004199045436468524,No concern,False,False
+normal,1,2512,left,2512_left.jpg,0,-2.4716033935546875,0.005017460839791219,No concern,False,False
+normal,1,2512,right,2512_right.jpg,0,-0.9601855874061584,0.021163758315713342,"Uncertain, refer",True,True
+normal,1,2514,left,2514_left.jpg,0,1.8388259410858154,0.24265155193989066,Refer,False,True
+normal,1,2514,right,2514_right.jpg,0,1.2434687614440918,0.15295407433715494,Refer,False,True
+normal,1,2540,left,2540_left.jpg,0,0.41437098383903503,0.07514860884376365,"Uncertain, refer",True,True
+normal,1,2540,right,2540_right.jpg,0,-0.4313758611679077,0.0347318326610989,"Uncertain, refer",True,True
+normal,1,2543,left,2543_left.jpg,0,-9.996330261230469,3.590316296266037e-06,No concern,False,False
+normal,1,2543,right,2543_right.jpg,0,-8.198060989379883,2.029211881572072e-05,No concern,False,False
+normal,1,2549,left,2549_left.jpg,0,-1.019336462020874,0.02001519145850284,"Uncertain, refer",True,True
+normal,1,2549,right,2549_right.jpg,0,-3.6257472038269043,0.0016564534607262404,No concern,False,False
+normal,1,2559,left,2559_left.jpg,0,-2.1355533599853516,0.00692180045537316,No concern,False,False
+normal,1,2559,right,2559_right.jpg,0,-4.0312323570251465,0.0011215034826343301,No concern,False,False
+normal,1,2563,left,2563_left.jpg,0,-1.3380348682403564,0.014803157892213549,No concern,False,False
+normal,1,2563,right,2563_right.jpg,0,-8.100057601928711,2.230080667881949e-05,No concern,False,False
+normal,1,2575,left,2575_left.jpg,0,-10.819964408874512,1.6241040776191664e-06,No concern,False,False
+normal,1,2575,right,2575_right.jpg,0,-12.914730072021484,2.1596850014094968e-07,No concern,False,False
+normal,1,2576,left,2576_left.jpg,0,-4.276661396026611,0.0008856092294569243,No concern,False,False
+normal,1,2576,right,2576_right.jpg,0,-4.4798054695129395,0.0007283446168831867,No concern,False,False
+normal,1,2577,left,2577_left.jpg,0,-5.6402268409729,0.0002383168066499117,No concern,False,False
+normal,1,2577,right,2577_right.jpg,0,-7.844357490539551,2.852825583189506e-05,No concern,False,False
+normal,1,2584,left,2584_left.jpg,0,-1.7418193817138672,0.010081632126178509,No concern,False,False
+normal,1,2584,right,2584_right.jpg,0,-4.741044521331787,0.0005664127735882013,No concern,False,False
+normal,1,2588,left,2588_left.jpg,0,-1.5947327613830566,0.011598188860818875,No concern,False,False
+normal,1,2588,right,2588_right.jpg,0,-2.6834380626678467,0.0040952230986305025,No concern,False,False
+normal,1,2590,left,2590_left.jpg,0,-4.9813551902771,0.0004494318018093555,No concern,False,False
+normal,1,2590,right,2590_right.jpg,0,-1.5868310928344727,0.011685758407984576,No concern,False,False
+normal,1,2591,left,2591_left.jpg,0,-6.2580485343933105,0.00013145318660684973,No concern,False,False
+normal,1,2591,right,2591_right.jpg,0,-6.25659704208374,0.00013163706373339374,No concern,False,False
+normal,1,2593,left,2593_left.jpg,0,-4.887359142303467,0.0004919977481597618,No concern,False,False
+normal,1,2593,right,2593_right.jpg,0,-7.219117164611816,5.2095248274172415e-05,No concern,False,False
+normal,1,2595,left,2595_left.jpg,0,-9.386241912841797,6.461400144921938e-06,No concern,False,False
+normal,1,2595,right,2595_right.jpg,0,-13.734676361083984,9.804227004653932e-08,No concern,False,False
+normal,1,2597,left,2597_left.jpg,0,-7.087613105773926,5.912922327097809e-05,No concern,False,False
+normal,1,2597,right,2597_right.jpg,0,-9.31890869140625,6.894319530839459e-06,No concern,False,False
+normal,1,2604,left,2604_left.jpg,0,-6.27474308013916,0.00012935667130422514,No concern,False,False
+normal,1,2604,right,2604_right.jpg,0,-9.76839828491211,4.471718809838333e-06,No concern,False,False
+normal,1,2612,left,2612_left.jpg,0,-9.400678634643555,6.372178138245858e-06,No concern,False,False
+normal,1,2612,right,2612_right.jpg,0,-7.781132221221924,3.0319433120199373e-05,No concern,False,False
+normal,1,2619,left,2619_left.jpg,0,-1.4309450387954712,0.013553187238917614,No concern,False,False
+normal,1,2619,right,2619_right.jpg,0,-1.8533592224121094,0.009064019275348693,No concern,False,False
+normal,1,2622,left,2622_left.jpg,0,-4.53169584274292,0.0006928624083593752,No concern,False,False
+normal,1,2622,right,2622_right.jpg,0,-9.116829872131348,8.375654428092965e-06,No concern,False,False
+normal,1,2624,left,2624_left.jpg,0,-3.966907024383545,0.001193098444851612,No concern,False,False
+normal,1,2624,right,2624_right.jpg,0,-5.574609756469727,0.00025386044135809646,No concern,False,False
+normal,1,2644,left,2644_left.jpg,0,-10.218456268310547,2.8988079461308665e-06,No concern,False,False
+normal,1,2644,right,2644_right.jpg,0,-11.420454025268555,9.108231643326701e-07,No concern,False,False
+normal,1,2657,left,2657_left.jpg,0,-7.387434482574463,4.4299179603830015e-05,No concern,False,False
+normal,1,2657,right,2657_right.jpg,0,-0.16171979904174805,0.0445730370022507,"Uncertain, refer",True,True
+normal,1,2659,left,2659_left.jpg,0,-6.279448986053467,0.00012877176310747084,No concern,False,False
+normal,1,2659,right,2659_right.jpg,0,-10.919926643371582,1.4750288080540851e-06,No concern,False,False
+normal,1,2662,left,2662_left.jpg,0,-2.6692862510681152,0.0041511913302247384,No concern,False,False
+normal,1,2662,right,2662_right.jpg,0,-2.118534564971924,0.00703539078063868,No concern,False,False
+normal,1,2666,left,2666_left.jpg,0,-4.222843647003174,0.0009326811827742236,No concern,False,False
+normal,1,2666,right,2666_right.jpg,0,-11.586088180541992,7.765164434972237e-07,No concern,False,False
+normal,1,2669,left,2669_left.jpg,0,-3.805351734161377,0.0013936905722286982,No concern,False,False
+normal,1,2669,right,2669_right.jpg,0,-11.380027770996094,9.469870427180524e-07,No concern,False,False
+normal,1,2681,left,2681_left.jpg,0,-8.852202415466309,1.0807102864025235e-05,No concern,False,False
+normal,1,2681,right,2681_right.jpg,0,-10.112405776977539,3.2105496974587875e-06,No concern,False,False
+normal,1,2684,left,2684_left.jpg,0,-2.39787220954895,0.005384741087910113,No concern,False,False
+normal,1,2684,right,2684_right.jpg,0,-4.490015029907227,0.0007212227722363156,No concern,False,False
+normal,1,2702,left,2702_left.jpg,0,-6.445175647735596,0.00010977582997583835,No concern,False,False
+normal,1,2702,right,2702_right.jpg,0,-9.33563232421875,6.784160143453198e-06,No concern,False,False
+normal,1,2710,left,2710_left.jpg,0,-1.9005727767944336,0.008664565573275267,No concern,False,False
+normal,1,2710,right,2710_right.jpg,0,-2.4698426723480225,0.005025934090606473,No concern,False,False
+normal,1,2737,right,2737_right.jpg,0,0.38346830010414124,0.0731059515639034,"Uncertain, refer",True,True
+normal,1,2745,left,2745_left.jpg,0,-2.0464184284210205,0.007537618007729289,No concern,False,False
+normal,1,2745,right,2745_right.jpg,0,-3.7713658809661865,0.0014399991578159643,No concern,False,False
+normal,1,2748,left,2748_left.jpg,0,-5.565155506134033,0.0002561820290361152,No concern,False,False
+normal,1,2748,right,2748_right.jpg,0,-7.068325519561768,6.023786054206244e-05,No concern,False,False
+normal,1,2756,right,2756_right.jpg,0,-12.158429145812988,4.474505646642335e-07,No concern,False,False
+normal,1,2762,left,2762_left.jpg,0,-12.8555908203125,2.2862719712334737e-07,No concern,False,False
+normal,1,2762,right,2762_right.jpg,0,-11.65522575378418,7.264922296637881e-07,No concern,False,False
+normal,1,2764,left,2764_left.jpg,0,-4.757465839385986,0.0005575296779291573,No concern,False,False
+normal,1,2764,right,2764_right.jpg,0,-8.157415390014648,2.1102250799865822e-05,No concern,False,False
+normal,1,2773,left,2773_left.jpg,0,-12.065216064453125,4.894804419234713e-07,No concern,False,False
+normal,1,2773,right,2773_right.jpg,0,-14.265029907226562,5.882617957504538e-08,No concern,False,False
+normal,1,2779,left,2779_left.jpg,0,-4.032602787017822,0.0011200258052936401,No concern,False,False
+normal,1,2779,right,2779_right.jpg,0,-8.66873836517334,1.2895849381757162e-05,No concern,False,False
+normal,1,2781,left,2781_left.jpg,0,-6.33302116394043,0.00012229667014553044,No concern,False,False
+normal,1,2781,right,2781_right.jpg,0,-9.745326042175293,4.572201703350007e-06,No concern,False,False
+normal,1,2783,left,2783_left.jpg,0,-6.20550537109375,0.00013827591734072713,No concern,False,False
+normal,1,2783,right,2783_right.jpg,0,-6.3265886306762695,0.00012305661954333343,No concern,False,False
+normal,1,2784,left,2784_left.jpg,0,-12.149045944213867,4.515127081892452e-07,No concern,False,False
+normal,1,2784,right,2784_right.jpg,0,-5.477292060852051,0.00027879913780305785,No concern,False,False
+normal,1,2792,right,2792_right.jpg,0,-7.87888765335083,2.7595097273933628e-05,No concern,False,False
+normal,1,2823,left,2823_left.jpg,0,-10.682562828063965,1.853906218095747e-06,No concern,False,False
+normal,1,2823,right,2823_right.jpg,0,-6.370469570159912,0.00011796471944815244,No concern,False,False
+normal,1,2833,left,2833_left.jpg,0,-2.2633814811706543,0.006124885052315222,No concern,False,False
+normal,1,2833,right,2833_right.jpg,0,4.356210708618164,0.7835423938940826,Refer,False,True
+normal,1,2855,left,2855_left.jpg,0,-9.643810272216797,5.041832668536166e-06,No concern,False,False
+normal,1,2855,right,2855_right.jpg,0,-9.8782958984375,4.022586310338547e-06,No concern,False,False
+normal,1,2857,left,2857_left.jpg,0,-8.758960723876953,1.1822548732420837e-05,No concern,False,False
+normal,1,2857,right,2857_right.jpg,0,-10.455921173095703,2.3061629589230293e-06,No concern,False,False
+normal,1,2859,left,2859_left.jpg,0,-6.315980434417725,0.00012432021628592052,No concern,False,False
+normal,1,2859,right,2859_right.jpg,0,-2.8633368015289307,0.0034459611115067123,No concern,False,False
+normal,1,2860,left,2860_left.jpg,0,-9.83676528930664,4.18675192067862e-06,No concern,False,False
+normal,1,2860,right,2860_right.jpg,0,-6.813019275665283,7.702910402632004e-05,No concern,False,False
+normal,1,2865,left,2865_left.jpg,0,-0.7231004238128662,0.0264491819349723,"Uncertain, refer",True,True
+normal,1,2865,right,2865_right.jpg,0,-1.3290868997573853,0.014929373881949206,No concern,False,False
+normal,1,2869,left,2869_left.jpg,0,-1.8369941711425781,0.009206692951464897,No concern,False,False
+normal,1,2869,right,2869_right.jpg,0,-4.133310794830322,0.0010165941974354436,No concern,False,False
+normal,1,2885,left,2885_left.jpg,0,-1.861271619796753,0.008995825299149671,No concern,False,False
+normal,1,2885,right,2885_right.jpg,0,-1.159250259399414,0.017536066231414016,"Uncertain, refer",True,True
+normal,1,2886,left,2886_left.jpg,0,-9.093673706054688,8.56455319525362e-06,No concern,False,False
+normal,1,2886,right,2886_right.jpg,0,-14.67395305633545,3.967539917887068e-08,No concern,False,False
+normal,1,2904,left,2904_left.jpg,0,-4.15640115737915,0.0009942573710399662,No concern,False,False
+normal,1,2904,right,2904_right.jpg,0,-4.638647556304932,0.000625085450332908,No concern,False,False
+normal,1,2905,left,2905_left.jpg,0,-2.034055233001709,0.007627221182061494,No concern,False,False
+normal,1,2905,right,2905_right.jpg,0,-3.940673589706421,0.0012235909634765213,No concern,False,False
+normal,1,2906,left,2906_left.jpg,0,-6.939854145050049,6.817178437932859e-05,No concern,False,False
+normal,1,2906,right,2906_right.jpg,0,-8.614702224731445,1.3584778038042727e-05,No concern,False,False
+normal,1,2925,left,2925_left.jpg,0,-3.7937612533569336,0.0014093140278629852,No concern,False,False
+normal,1,2925,right,2925_right.jpg,0,-5.759876251220703,0.0002123819120646522,No concern,False,False
+normal,1,2930,right,2930_right.jpg,0,-5.831928253173828,0.00019814582349574397,No concern,False,False
+normal,1,2935,left,2935_left.jpg,0,1.199646234512329,0.14756540075489555,Refer,False,True
+normal,1,2935,right,2935_right.jpg,0,-0.1800692230463028,0.04382642536372856,"Uncertain, refer",True,True
+normal,1,2951,left,2951_left.jpg,0,-11.786954879760742,6.39925992071397e-07,No concern,False,False
+normal,1,2951,right,2951_right.jpg,0,-7.80373477935791,2.9666539324341494e-05,No concern,False,False
+normal,1,2953,left,2953_left.jpg,0,-5.049357891082764,0.0004209506435269842,No concern,False,False
+normal,1,2953,right,2953_right.jpg,0,-4.039928436279297,0.001112159785020745,No concern,False,False
+normal,1,2960,left,2960_left.jpg,0,-6.2332258224487305,0.00013463342152889176,No concern,False,False
+normal,1,2960,right,2960_right.jpg,0,-2.739443778991699,0.0038810051604612093,No concern,False,False
+normal,1,2965,left,2965_left.jpg,0,-5.868557453155518,0.00019127851811791247,No concern,False,False
+normal,1,2965,right,2965_right.jpg,0,-5.267157077789307,0.00034132027079808696,No concern,False,False
+normal,1,2967,left,2967_left.jpg,0,-4.3417439460754395,0.0008318441818096611,No concern,False,False
+normal,1,2967,right,2967_right.jpg,0,-6.282994747161865,0.00012833279959751127,No concern,False,False
+normal,1,2968,left,2968_left.jpg,0,-7.191421031951904,5.3503547156358334e-05,No concern,False,False
+normal,1,2970,left,2970_left.jpg,0,-3.429340362548828,0.002000713472071512,No concern,False,False
+normal,1,2970,right,2970_right.jpg,0,-5.4864277839660645,0.00027635739209732994,No concern,False,False
+normal,1,2978,left,2978_left.jpg,0,-0.8148036003112793,0.024267534382609115,"Uncertain, refer",True,True
+normal,1,2978,right,2978_right.jpg,0,-1.2422449588775635,0.01621069465822883,"Uncertain, refer",True,True
+normal,1,2980,left,2980_left.jpg,0,-12.08683967590332,4.793915345617802e-07,No concern,False,False
+normal,1,2980,right,2980_right.jpg,0,-6.075774669647217,0.00015667651084173137,No concern,False,False
+normal,1,3002,left,3002_left.jpg,0,-6.9107279777526855,7.01111461493872e-05,No concern,False,False
+normal,1,3002,right,3002_right.jpg,0,-7.931045055389404,2.6243121073405797e-05,No concern,False,False
+normal,1,3017,left,3017_left.jpg,0,-5.625706195831299,0.0002416724168303986,No concern,False,False
+normal,1,3017,right,3017_right.jpg,0,-6.359752178192139,0.00011918856983875179,No concern,False,False
+normal,1,3025,left,3025_left.jpg,0,-5.515194416046143,0.0002688075785803178,No concern,False,False
+normal,1,3025,right,3025_right.jpg,0,-8.301849365234375,1.8361762719030118e-05,No concern,False,False
+normal,1,3028,left,3028_left.jpg,0,-2.958653450012207,0.003144643793280103,No concern,False,False
+normal,1,3028,right,3028_right.jpg,0,-0.24609605967998505,0.04123745583290427,"Uncertain, refer",True,True
+normal,1,3035,left,3035_left.jpg,0,-5.334681034088135,0.0003198355053855703,No concern,False,False
+normal,1,3035,right,3035_right.jpg,0,-3.05853271484375,0.0028570511820987955,No concern,False,False
+normal,1,3037,right,3037_right.jpg,0,3.071423053741455,0.5122433002821916,Refer,False,True
+normal,1,3044,left,3044_left.jpg,0,-10.386972427368164,2.46451033316082e-06,No concern,False,False
+normal,1,3044,right,3044_right.jpg,0,-10.787457466125488,1.675757738602355e-06,No concern,False,False
+normal,1,3048,left,3048_left.jpg,0,-12.358355522155762,3.6907740508952363e-07,No concern,False,False
+normal,1,3048,right,3048_right.jpg,0,-5.980953693389893,0.0001716565009441335,No concern,False,False
+normal,1,3071,left,3071_left.jpg,0,-4.924572467803955,0.00047468400244145265,No concern,False,False
+normal,1,3071,right,3071_right.jpg,0,-1.579751968383789,0.011764766870592006,No concern,False,False
+normal,1,3074,left,3074_left.jpg,0,-6.310164928436279,0.00012501842817242353,No concern,False,False
+normal,1,3074,right,3074_right.jpg,0,-6.32860803604126,0.00012281753677481007,No concern,False,False
+normal,1,3079,left,3079_left.jpg,0,-3.557847738265991,0.0017682042770693109,No concern,False,False
+normal,1,3079,right,3079_right.jpg,0,-1.201675295829773,0.01684578089751848,"Uncertain, refer",True,True
+normal,1,3091,left,3091_left.jpg,0,-6.549749374389648,9.92587786893216e-05,No concern,False,False
+normal,1,3091,right,3091_right.jpg,0,-16.166711807250977,9.421326056547195e-09,No concern,False,False
+normal,1,3094,left,3094_left.jpg,0,-16.658382415771484,5.867459147242666e-09,No concern,False,False
+normal,1,3094,right,3094_right.jpg,0,-14.807002067565918,3.490341721405907e-08,No concern,False,False
+normal,1,3098,left,3098_left.jpg,0,-11.89455795288086,5.769261916486381e-07,No concern,False,False
+normal,1,3098,right,3098_right.jpg,0,-17.33993148803711,3.0434308699165115e-09,No concern,False,False
+normal,1,3111,left,3111_left.jpg,0,-2.835132598876953,0.0035405176159886923,No concern,False,False
+normal,1,3111,right,3111_right.jpg,0,-1.8469440937042236,0.009119684658122794,No concern,False,False
+normal,1,3122,left,3122_left.jpg,0,-12.824252128601074,2.3563327430225152e-07,No concern,False,False
+normal,1,3122,right,3122_right.jpg,0,-15.997928619384766,1.108441348301864e-08,No concern,False,False
+normal,1,3130,left,3130_left.jpg,0,-9.446691513061523,6.095947272744013e-06,No concern,False,False
+normal,1,3130,right,3130_right.jpg,0,-2.554401159286499,0.004634654795858265,No concern,False,False
+normal,1,3132,left,3132_left.jpg,0,1.070739507675171,0.132620842245155,Refer,False,True
+normal,1,3132,right,3132_right.jpg,0,-3.2594728469848633,0.0023555087655309673,No concern,False,False
+normal,1,3157,left,3157_left.jpg,0,-6.953160762786865,6.730370693493065e-05,No concern,False,False
+normal,1,3157,right,3157_right.jpg,0,-6.215945720672607,0.0001368926191172915,No concern,False,False
+normal,1,3165,left,3165_left.jpg,0,-2.1127524375915527,0.007074402749783959,No concern,False,False
+normal,1,3165,right,3165_right.jpg,0,0.7928498983383179,0.10474007889100369,Refer,False,True
+normal,1,3169,left,3169_left.jpg,0,-4.749972343444824,0.0005615658726094721,No concern,False,False
+normal,1,3169,right,3169_right.jpg,0,-11.401344299316406,9.277426202100184e-07,No concern,False,False
+normal,1,3170,left,3170_left.jpg,0,-9.714527130126953,4.7098628937470275e-06,No concern,False,False
+normal,1,3170,right,3170_right.jpg,0,-3.9578425884246826,0.0012035477314425796,No concern,False,False
+normal,1,3191,left,3191_left.jpg,0,-6.614017963409424,9.330146600760025e-05,No concern,False,False
+normal,1,3191,right,3191_right.jpg,0,-5.230526924133301,0.0003535728136814688,No concern,False,False
+normal,1,3196,left,3196_left.jpg,0,-9.381629943847656,6.490165553307242e-06,No concern,False,False
+normal,1,3196,right,3196_right.jpg,0,-6.281717300415039,0.00012849077420380028,No concern,False,False
+normal,1,3197,left,3197_left.jpg,0,-9.58978271484375,5.311138352433412e-06,No concern,False,False
+normal,1,3197,right,3197_right.jpg,0,-11.685229301452637,7.057985044439713e-07,No concern,False,False
+normal,1,3229,left,3229_left.jpg,0,-4.245084762573242,0.0009129321788913562,No concern,False,False
+normal,1,3229,right,3229_right.jpg,0,-6.513874530792236,0.00010274804743241454,No concern,False,False
+normal,1,3230,left,3230_left.jpg,0,-7.588465213775635,3.6501397401428234e-05,No concern,False,False
+normal,1,3230,right,3230_right.jpg,0,-12.383661270141602,3.6019051012839473e-07,No concern,False,False
+normal,1,3235,left,3235_left.jpg,0,-3.503152847290039,0.0018636714173649155,No concern,False,False
+normal,1,3235,right,3235_right.jpg,0,-1.9817718267440796,0.008017981257634864,No concern,False,False
+normal,1,3237,left,3237_left.jpg,0,-5.1905436515808105,0.00036744938546058484,No concern,False,False
+normal,1,3237,right,3237_right.jpg,0,-7.101179599761963,5.8361675209952836e-05,No concern,False,False
+normal,1,3248,left,3248_left.jpg,0,-1.7094550132751465,0.010397525585417578,No concern,False,False
+normal,1,3248,right,3248_right.jpg,0,-2.2320897579193115,0.0063111084519428574,No concern,False,False
+normal,1,3264,left,3264_left.jpg,0,-1.4236080646514893,0.01364799004193133,No concern,False,False
+normal,1,3264,right,3264_right.jpg,0,-1.4898552894592285,0.012815174936836649,No concern,False,False
+normal,1,3269,left,3269_left.jpg,0,-6.981590270996094,6.54859201050501e-05,No concern,False,False
+normal,1,3269,right,3269_right.jpg,0,-12.197378158569336,4.309759155336092e-07,No concern,False,False
+normal,1,3300,right,3300_right.jpg,0,-4.05343770980835,0.0010977984365877365,No concern,False,False
+normal,1,3302,left,3302_left.jpg,0,-4.901668548583984,0.00048526674142239986,No concern,False,False
+normal,1,3302,right,3302_right.jpg,0,-1.1358486413955688,0.017928638912033605,"Uncertain, refer",True,True
+normal,1,3304,left,3304_left.jpg,0,-10.585304260253906,2.0359643938668984e-06,No concern,False,False
+normal,1,3304,right,3304_right.jpg,0,-13.352612495422363,1.416536140631571e-07,No concern,False,False
+normal,1,3321,left,3321_left.jpg,0,-5.932871341705322,0.00017979151532871357,No concern,False,False
+normal,1,3321,right,3321_right.jpg,0,-4.797262191772461,0.0005365751967322281,No concern,False,False
+normal,1,3331,left,3331_left.jpg,0,-7.2559685707092285,5.027872392766341e-05,No concern,False,False
+normal,1,3331,right,3331_right.jpg,0,-13.20802116394043,1.6282049496463835e-07,No concern,False,False
+normal,1,3341,left,3341_left.jpg,0,-2.5045456886291504,0.004861525252108335,No concern,False,False
+normal,1,3341,right,3341_right.jpg,0,-6.610666751861572,9.360307629754583e-05,No concern,False,False
+normal,1,3345,left,3345_left.jpg,0,0.8645572662353516,0.11139532794756113,Refer,False,True
+normal,1,3345,right,3345_right.jpg,0,-0.8662133812904358,0.023122287193329493,"Uncertain, refer",True,True
+normal,1,3364,left,3364_left.jpg,0,-3.161947250366211,0.002586891299614197,No concern,False,False
+normal,1,3364,right,3364_right.jpg,0,-4.034239768981934,0.0011182632648663294,No concern,False,False
+normal,1,3366,left,3366_left.jpg,0,-2.6823878288269043,0.004099350670796016,No concern,False,False
+normal,1,3366,right,3366_right.jpg,0,-7.068175315856934,6.024657521007867e-05,No concern,False,False
+normal,1,3367,left,3367_left.jpg,0,-10.609945297241211,1.9882136296723244e-06,No concern,False,False
+normal,1,3367,right,3367_right.jpg,0,-11.299833297729492,1.0230308334509313e-06,No concern,False,False
+normal,1,3379,left,3379_left.jpg,0,-9.382453918457031,6.485016944649177e-06,No concern,False,False
+normal,1,3379,right,3379_right.jpg,0,-11.739580154418945,6.698016509460963e-07,No concern,False,False
+normal,1,3383,right,3383_right.jpg,0,-3.453359603881836,0.0019550492721330678,No concern,False,False
+normal,1,3390,left,3390_left.jpg,0,-5.875634670257568,0.00018997935918128875,No concern,False,False
+normal,1,3390,right,3390_right.jpg,0,-8.941110610961914,9.920191802853586e-06,No concern,False,False
+normal,1,3394,left,3394_left.jpg,0,-9.701210021972656,4.770662355181427e-06,No concern,False,False
+normal,1,3394,right,3394_right.jpg,0,-8.819275856018066,1.11553205843136e-05,No concern,False,False
+normal,1,3404,left,3404_left.jpg,0,-0.3424742519855499,0.037719693886746924,"Uncertain, refer",True,True
+normal,1,3404,right,3404_right.jpg,0,-2.5339176654815674,0.004726562166292653,No concern,False,False
+normal,1,3406,left,3406_left.jpg,0,-4.304340839385986,0.0008623313161101146,No concern,False,False
+normal,1,3406,right,3406_right.jpg,0,-4.9026570320129395,0.0004848051815819389,No concern,False,False
+normal,1,3407,left,3407_left.jpg,0,-3.330228328704834,0.0022006737284881433,No concern,False,False
+normal,1,3407,right,3407_right.jpg,0,-5.760324001312256,0.0002122903611313321,No concern,False,False
+normal,1,3408,left,3408_left.jpg,0,-10.194580078125,2.966242389986202e-06,No concern,False,False
+normal,1,3408,right,3408_right.jpg,0,-3.704777240753174,0.0015352330922158242,No concern,False,False
+normal,1,3425,left,3425_left.jpg,0,-5.2598724365234375,0.0003437226458443797,No concern,False,False
+normal,1,3425,right,3425_right.jpg,0,-6.735864639282227,8.297083203935725e-05,No concern,False,False
+normal,1,3427,left,3427_left.jpg,0,-3.856076955795288,0.0013273249595853176,No concern,False,False
+normal,1,3427,right,3427_right.jpg,0,-7.279349327087402,4.915919311566064e-05,No concern,False,False
+normal,1,3440,left,3440_left.jpg,0,-1.6712220907211304,0.010783337056560623,No concern,False,False
+normal,1,3440,right,3440_right.jpg,0,-3.137078285217285,0.0026494360371630676,No concern,False,False
+normal,1,3444,left,3444_left.jpg,0,2.322314739227295,0.3379320960913085,Refer,False,True
+normal,1,3444,right,3444_right.jpg,0,-5.0704569816589355,0.00041248605537406985,No concern,False,False
+normal,1,3445,left,3445_left.jpg,0,-5.005160331726074,0.0004392489379823287,No concern,False,False
+normal,1,3445,right,3445_right.jpg,0,-4.469995021820068,0.0007352542526361461,No concern,False,False
+normal,1,3485,left,3485_left.jpg,0,-4.166100978851318,0.0009850209680193423,No concern,False,False
+normal,1,3485,right,3485_right.jpg,0,-6.106742858886719,0.00015207300931130178,No concern,False,False
+normal,1,3970,left,3970_left.jpg,0,-7.646770000457764,3.4508169418592635e-05,No concern,False,False
+normal,1,4115,right,4115_right.jpg,0,-5.295626163482666,0.00033209145083381154,No concern,False,False
+normal,1,4152,left,4152_left.jpg,0,-4.89426326751709,0.0004887385429205126,No concern,False,False
+normal,1,4156,right,4156_right.jpg,0,-7.4925856590271,4.003258400108718e-05,No concern,False,False
+normal,1,4203,left,4203_left.jpg,0,-11.680732727050781,7.088618670347249e-07,No concern,False,False
+normal,1,4206,right,4206_right.jpg,0,-12.987244606018066,2.0139939304905373e-07,No concern,False,False
+normal,1,4209,left,4209_left.jpg,0,-1.8467415571212769,0.00912144761424418,No concern,False,False
+normal,1,4218,left,4218_left.jpg,0,-9.107503890991211,8.451225743179962e-06,No concern,False,False
+normal,1,4224,left,4224_left.jpg,0,-10.02119255065918,3.505363388928327e-06,No concern,False,False
+normal,1,4231,left,4231_left.jpg,0,-4.255011081695557,0.0009042534748913062,No concern,False,False
+normal,1,4240,left,4240_left.jpg,0,-0.600523829460144,0.029665251233689596,"Uncertain, refer",True,True
+normal,1,4272,right,4272_right.jpg,0,-11.609907150268555,7.589049334973415e-07,No concern,False,False
+normal,1,4297,left,4297_left.jpg,0,-12.158443450927734,4.4744439972735133e-07,No concern,False,False
+normal,1,4302,right,4302_right.jpg,0,-11.32986831665039,9.938602542329435e-07,No concern,False,False
+normal,1,4308,left,4308_left.jpg,0,-7.7642645835876465,3.0816013946770176e-05,No concern,False,False
+normal,1,4339,right,4339_right.jpg,0,-5.791201591491699,0.00020607111618328473,No concern,False,False
+normal,1,4360,left,4360_left.jpg,0,-8.5548734664917,1.439057335060712e-05,No concern,False,False
+normal,1,4438,left,4438_left.jpg,0,-6.650971412658691,9.003939047761629e-05,No concern,False,False
+normal,1,4458,right,4458_right.jpg,0,-10.42341423034668,2.3795090439809397e-06,No concern,False,False
+normal,1,4464,left,4464_left.jpg,0,-2.966069459915161,0.0031223322847663167,No concern,False,False
+normal,1,4500,left,4500_left.jpg,0,-0.7658252716064453,0.02540996777507579,"Uncertain, refer",True,True
+normal,1,4512,left,4512_left.jpg,0,-6.14582633972168,0.0001464556957703512,No concern,False,False
+normal,1,4577,left,4577_left.jpg,0,-9.843277931213379,4.16057210083043e-06,No concern,False,False
+normal,1,4618,left,4618_left.jpg,0,-4.694934844970703,0.0005921192554880252,No concern,False,False
+normal,1,4625,left,4625_left.jpg,0,-6.801442623138428,7.789272442240737e-05,No concern,False,False
+normal,1,4638,right,4638_right.jpg,0,-8.793397903442383,1.1436851394137164e-05,No concern,False,False
+normal,1,4641,left,4641_left.jpg,0,-8.836712837219238,1.0969539183530771e-05,No concern,False,False
+normal,2,8,left,8_left.jpg,0,-3.404020309448242,0.0020500036125487616,No concern,False,False
+normal,2,8,right,8_right.jpg,0,-3.6978163719177246,0.0015455445032506038,No concern,False,False
+normal,2,10,right,10_right.jpg,0,-0.4803042709827423,0.033186101001851966,"Uncertain, refer",True,True
+normal,2,29,right,29_right.jpg,0,0.256054162979126,0.06521367243214929,"Uncertain, refer",True,True
+normal,2,38,right,38_right.jpg,0,0.43948543071746826,0.07684715270869882,"Uncertain, refer",True,True
+normal,2,63,left,63_left.jpg,0,-5.274111270904541,0.00033904253502318,No concern,False,False
+normal,2,68,left,68_left.jpg,0,1.5285803079605103,0.19200862658978451,Refer,False,True
+normal,2,78,right,78_right.jpg,0,-1.4266653060913086,0.013608407474722977,No concern,False,False
+normal,2,84,left,84_left.jpg,0,-3.5693588256835938,0.0017487426657530477,No concern,False,False
+normal,2,84,right,84_right.jpg,0,-1.7370522022247314,0.010127558738977242,No concern,False,False
+normal,2,97,left,97_left.jpg,0,-2.064581871032715,0.007407868637573098,No concern,False,False
+normal,2,110,right,110_right.jpg,0,-1.4716229438781738,0.013039243632376159,No concern,False,False
+normal,2,122,right,122_right.jpg,0,0.4481762945652008,0.07744308680918982,"Uncertain, refer",True,True
+normal,2,129,right,129_right.jpg,0,-6.153504371643066,0.00014537678975958763,No concern,False,False
+normal,2,132,left,132_left.jpg,0,-0.9976062774658203,0.020429865475078336,"Uncertain, refer",True,True
+normal,2,147,left,147_left.jpg,0,-2.844172954559326,0.0035099310103562614,No concern,False,False
+normal,2,173,left,173_left.jpg,0,-3.987832546234131,0.0011693206966078152,No concern,False,False
+normal,2,174,right,174_right.jpg,0,-2.7021307945251465,0.0040224465155078324,No concern,False,False
+normal,2,214,left,214_left.jpg,0,-3.5005087852478027,0.0018684146815263762,No concern,False,False
+normal,2,219,right,219_right.jpg,0,-2.4307892322540283,0.005217577142413213,No concern,False,False
+normal,2,273,left,273_left.jpg,0,-10.455815315246582,2.306398100599699e-06,No concern,False,False
+normal,2,279,right,279_right.jpg,0,-5.316207408905029,0.0003255753774505269,No concern,False,False
+normal,2,294,right,294_right.jpg,0,1.5283807516098022,0.19197880967366457,Refer,False,True
+normal,2,317,left,317_left.jpg,0,-3.1490464210510254,0.002619150470482907,No concern,False,False
+normal,2,326,left,326_left.jpg,0,-4.201292991638184,0.000952224145317984,No concern,False,False
+normal,2,329,right,329_right.jpg,0,-7.105127811431885,5.814017565921964e-05,No concern,False,False
+normal,2,335,left,335_left.jpg,0,-9.152274131774902,8.094551985353547e-06,No concern,False,False
+normal,2,346,left,346_left.jpg,0,-6.855020046234131,7.397544384150989e-05,No concern,False,False
+normal,2,347,left,347_left.jpg,0,-1.2657004594802856,0.015854321697287923,"Uncertain, refer",True,True
+normal,2,363,right,363_right.jpg,0,-5.330539226531982,0.00032111352951898897,No concern,False,False
+normal,2,384,left,384_left.jpg,0,1.8182919025421143,0.23903554131189148,Refer,False,True
+normal,2,394,left,394_left.jpg,0,-0.561460554599762,0.030767641945201724,"Uncertain, refer",True,True
+normal,2,394,right,394_right.jpg,0,-3.784393310546875,0.0014220693116449518,No concern,False,False
+normal,2,399,right,399_right.jpg,0,0.5112274885177612,0.08189470103033306,"Uncertain, refer",True,True
+normal,2,400,left,400_left.jpg,0,-0.8239129781723022,0.024060649471562428,"Uncertain, refer",True,True
+normal,2,496,left,496_left.jpg,0,-3.381931781768799,0.0020939916277370888,No concern,False,False
+normal,2,524,left,524_left.jpg,0,-0.2686867117881775,0.04038573639149962,"Uncertain, refer",True,True
+normal,2,545,right,545_right.jpg,0,1.3559399843215942,0.1675222694146233,Refer,False,True
+normal,2,549,right,549_right.jpg,0,-4.741245269775391,0.000566303329415403,No concern,False,False
+normal,2,555,right,555_right.jpg,0,-5.960679531097412,0.0001750408077272409,No concern,False,False
+normal,2,570,left,570_left.jpg,0,-0.06495845317840576,0.04871469983596804,"Uncertain, refer",True,True
+normal,2,580,left,580_left.jpg,0,-2.5330569744110107,0.004730463461552056,No concern,False,False
+normal,2,591,left,591_left.jpg,0,-5.647827625274658,0.00023657893766761034,No concern,False,False
+normal,2,598,right,598_right.jpg,0,-7.597786903381348,3.617515853748273e-05,No concern,False,False
+normal,2,610,left,610_left.jpg,0,-5.400518417358398,0.0003001898107686868,No concern,False,False
+normal,2,617,left,617_left.jpg,0,-5.367008686065674,0.0003100334325539948,No concern,False,False
+normal,2,618,right,618_right.jpg,0,-0.8929605484008789,0.022547486069328323,"Uncertain, refer",True,True
+normal,2,623,right,623_right.jpg,0,-2.8094351291656494,0.0036289190400385133,No concern,False,False
+normal,2,633,left,633_left.jpg,0,-7.669200897216797,3.3770661958296503e-05,No concern,False,False
+normal,2,641,left,641_left.jpg,0,-6.699288845062256,8.594557495234159e-05,No concern,False,False
+normal,2,652,right,652_right.jpg,0,-8.368860244750977,1.7214116733896236e-05,No concern,False,False
+normal,2,671,left,671_left.jpg,0,-2.734945297241211,0.003897791294252677,No concern,False,False
+normal,2,683,left,683_left.jpg,0,-6.720724582672119,8.418949082998877e-05,No concern,False,False
+normal,2,689,right,689_right.jpg,0,-0.6849796772003174,0.02741122720121619,"Uncertain, refer",True,True
+normal,2,716,left,716_left.jpg,0,-1.9442164897918701,0.008310858683748389,No concern,False,False
+normal,2,766,left,766_left.jpg,0,2.0782952308654785,0.2875011696822713,Refer,False,True
+normal,2,782,right,782_right.jpg,0,-1.1017630100250244,0.018515919596039866,"Uncertain, refer",True,True
+normal,2,795,right,795_right.jpg,0,-3.36965274810791,0.0021188506479050072,No concern,False,False
+normal,2,800,left,800_left.jpg,0,0.031084448099136353,0.05318490769306019,"Uncertain, refer",True,True
+normal,2,807,right,807_right.jpg,0,1.6323498487472534,0.20799311516881105,Refer,False,True
+normal,2,840,right,840_right.jpg,0,-7.5959649085998535,3.623869431757612e-05,No concern,False,False
+normal,2,872,right,872_right.jpg,0,-3.14548921585083,0.002628115796597909,No concern,False,False
+normal,2,879,right,879_right.jpg,0,-3.5094213485717773,0.0018524741295913732,No concern,False,False
+normal,2,903,left,903_left.jpg,0,-2.4085865020751953,0.005329753592091469,No concern,False,False
+normal,2,918,right,918_right.jpg,0,-2.127699375152588,0.0069739930438520534,No concern,False,False
+normal,2,945,left,945_left.jpg,0,2.1306538581848145,0.2979410017479445,Refer,False,True
+normal,2,954,right,954_right.jpg,0,-4.276813507080078,0.0008854796065429839,No concern,False,False
+normal,2,966,right,966_right.jpg,0,-0.47085848450660706,0.03347924297144899,"Uncertain, refer",True,True
+normal,2,987,right,987_right.jpg,0,-7.852758407592773,2.8298361000424858e-05,No concern,False,False
+normal,2,1040,right,1040_right.jpg,0,-3.310717821121216,0.0022423253251980927,No concern,False,False
+normal,2,1074,right,1074_right.jpg,0,-3.758559226989746,0.0014578451601992117,No concern,False,False
+normal,2,1075,right,1075_right.jpg,0,-0.4549488127231598,0.03397864544067679,"Uncertain, refer",True,True
+normal,2,1093,right,1093_right.jpg,0,0.6510443687438965,0.09260684945008986,"Uncertain, refer",True,True
+normal,2,1114,right,1114_right.jpg,0,1.4633519649505615,0.18244998893458209,Refer,False,True
+normal,2,1119,right,1119_right.jpg,0,1.6947730779647827,0.21807121806938373,Refer,False,True
+normal,2,1142,right,1142_right.jpg,0,-6.9904093742370605,6.493206469877463e-05,No concern,False,False
+normal,2,1160,left,1160_left.jpg,0,-1.1702382564544678,0.017354662233509704,"Uncertain, refer",True,True
+normal,2,1274,left,1274_left.jpg,0,-1.1103260517120361,0.01836663040090175,"Uncertain, refer",True,True
+normal,2,1397,right,1397_right.jpg,0,-3.3934123516082764,0.0020710124473325413,No concern,False,False
+normal,2,1416,left,1416_left.jpg,0,-9.903072357177734,3.927729892695997e-06,No concern,False,False
+normal,2,1429,right,1429_right.jpg,0,-2.7158589363098145,0.003969820326284156,No concern,False,False
+normal,2,1491,right,1491_right.jpg,0,-2.018218517303467,0.0077435446136640265,No concern,False,False
+normal,2,1515,right,1515_right.jpg,0,1.9234974384307861,0.2579510552728915,Refer,False,True
+normal,2,1868,left,1868_left.jpg,0,-2.04445219039917,0.007551798286668496,No concern,False,False
+normal,2,1975,right,1975_right.jpg,0,-5.330496311187744,0.0003211267984552757,No concern,False,False
+normal,2,2097,left,2097_left.jpg,0,-0.4341021478176117,0.03464390771604031,"Uncertain, refer",True,True
+normal,2,2119,left,2119_left.jpg,0,-1.0859606266021729,0.018794552528025796,"Uncertain, refer",True,True
+normal,2,2197,left,2197_left.jpg,0,1.0520884990692139,0.13056802550500451,Refer,False,True
+normal,2,2338,left,2338_left.jpg,0,-1.64584481716156,0.011047205518688003,No concern,False,False
+normal,2,2338,right,2338_right.jpg,0,-1.2745150327682495,0.015722398931878007,"Uncertain, refer",True,True
+normal,2,2339,left,2339_left.jpg,0,-2.614274501800537,0.004376083964831014,No concern,False,False
+normal,2,2339,right,2339_right.jpg,0,-4.1195573806762695,0.0010301362843512891,No concern,False,False
+normal,2,2370,left,2370_left.jpg,0,-1.5871018171310425,0.01168274734868254,No concern,False,False
+normal,2,2371,left,2371_left.jpg,0,-3.5933289527893066,0.001708900288479139,No concern,False,False
+normal,2,2371,right,2371_right.jpg,0,-0.8227057456970215,0.024087967971920036,"Uncertain, refer",True,True
+normal,2,2375,left,2375_left.jpg,0,-7.085532188415527,5.924784437948619e-05,No concern,False,False
+normal,2,2375,right,2375_right.jpg,0,-5.1841959953308105,0.0003697019332544864,No concern,False,False
+normal,2,2394,left,2394_left.jpg,0,3.1357035636901855,0.5276953677775608,Refer,False,True
+normal,2,2394,right,2394_right.jpg,0,1.3129246234893799,0.16182375769923982,Refer,False,True
+normal,2,2396,left,2396_left.jpg,0,-0.6504147052764893,0.028312872526868198,"Uncertain, refer",True,True
+normal,2,2396,right,2396_right.jpg,0,-3.0681467056274414,0.002830792264598452,No concern,False,False
+normal,2,2407,left,2407_left.jpg,0,-2.536825656890869,0.004713404647167331,No concern,False,False
+normal,2,2407,right,2407_right.jpg,0,-3.076144218444824,0.0028091319341748,No concern,False,False
+normal,2,2409,left,2409_left.jpg,0,1.3329188823699951,0.16445282928661228,Refer,False,True
+normal,2,2409,right,2409_right.jpg,0,1.2775828838348389,0.157259724974428,Refer,False,True
+normal,2,2434,left,2434_left.jpg,0,-3.1180243492126465,0.002698374602460226,No concern,False,False
+normal,2,2434,right,2434_right.jpg,0,-3.4443001747131348,0.0019721491393537745,No concern,False,False
+normal,2,2438,left,2438_left.jpg,0,-0.7863535284996033,0.024924898977853896,"Uncertain, refer",True,True
+normal,2,2438,right,2438_right.jpg,0,0.6554039716720581,0.09296029610057857,"Uncertain, refer",True,True
+normal,2,2442,left,2442_left.jpg,0,-3.7597947120666504,0.0014561139368390763,No concern,False,False
+normal,2,2442,right,2442_right.jpg,0,-6.686368465423584,8.702169684005624e-05,No concern,False,False
+normal,2,2462,left,2462_left.jpg,0,-8.269176483154297,1.894876572662338e-05,No concern,False,False
+normal,2,2462,right,2462_right.jpg,0,-6.2013773918151855,0.00013882670323866775,No concern,False,False
+normal,2,2474,left,2474_left.jpg,0,-4.31439733505249,0.0008540262401869122,No concern,False,False
+normal,2,2474,right,2474_right.jpg,0,-6.198912143707275,0.00013915668073185078,No concern,False,False
+normal,2,2475,left,2475_left.jpg,0,-8.037635803222656,2.368266227699106e-05,No concern,False,False
+normal,2,2475,right,2475_right.jpg,0,-4.410241603851318,0.0007787768183405403,No concern,False,False
+normal,2,2476,left,2476_left.jpg,0,0.4181268513202667,0.07540041484503583,"Uncertain, refer",True,True
+normal,2,2476,right,2476_right.jpg,0,-2.6252217292785645,0.004330384312130119,No concern,False,False
+normal,2,2490,left,2490_left.jpg,0,-6.496156215667725,0.00010451635174602552,No concern,False,False
+normal,2,2490,right,2490_right.jpg,0,-11.154987335205078,1.1761875753228604e-06,No concern,False,False
+normal,2,2503,left,2503_left.jpg,0,-0.5611073970794678,0.03077778702129022,"Uncertain, refer",True,True
+normal,2,2503,right,2503_right.jpg,0,-0.3556002974510193,0.03726348624764832,"Uncertain, refer",True,True
+normal,2,2506,left,2506_left.jpg,0,-7.1336894035339355,5.6562674271784794e-05,No concern,False,False
+normal,2,2506,right,2506_right.jpg,0,-14.797212600708008,3.523406942083998e-08,No concern,False,False
+normal,2,2508,left,2508_left.jpg,0,0.054288096725940704,0.05432160691102958,"Uncertain, refer",True,True
+normal,2,2508,right,2508_right.jpg,0,-3.2439956665039062,0.0023908005358597253,No concern,False,False
+normal,2,2512,left,2512_left.jpg,0,-1.2692193984985352,0.01580152560924168,"Uncertain, refer",True,True
+normal,2,2512,right,2512_right.jpg,0,-1.026132345199585,0.019887207196429293,"Uncertain, refer",True,True
+normal,2,2514,left,2514_left.jpg,0,1.604395866394043,0.20359273778576473,Refer,False,True
+normal,2,2514,right,2514_right.jpg,0,0.8019509315490723,0.10556488655261839,Refer,False,True
+normal,2,2540,left,2540_left.jpg,0,1.2186121940612793,0.14987804432277266,Refer,False,True
+normal,2,2540,right,2540_right.jpg,0,1.6237635612487793,0.2066340859724436,Refer,False,True
+normal,2,2543,left,2543_left.jpg,0,-6.330141544342041,0.00012263629096405238,No concern,False,False
+normal,2,2543,right,2543_right.jpg,0,-5.392831802368164,0.0003024198050441045,No concern,False,False
+normal,2,2549,left,2549_left.jpg,0,-0.6290537118911743,0.02888441294232795,"Uncertain, refer",True,True
+normal,2,2549,right,2549_right.jpg,0,-1.2823679447174072,0.01560577903878285,No concern,False,False
+normal,2,2559,left,2559_left.jpg,0,-0.32226669788360596,0.038432530949395846,"Uncertain, refer",True,True
+normal,2,2559,right,2559_right.jpg,0,-2.2051379680633545,0.006476006716167674,No concern,False,False
+normal,2,2563,left,2563_left.jpg,0,-0.6861492395401001,0.02738121171812982,"Uncertain, refer",True,True
+normal,2,2563,right,2563_right.jpg,0,-4.209521770477295,0.0009447141505232431,No concern,False,False
+normal,2,2575,left,2575_left.jpg,0,-6.431843280792236,0.00011119440563704588,No concern,False,False
+normal,2,2575,right,2575_right.jpg,0,-9.455495834350586,6.044473051394382e-06,No concern,False,False
+normal,2,2576,left,2576_left.jpg,0,-0.8196700811386108,0.024156795861583247,"Uncertain, refer",True,True
+normal,2,2576,right,2576_right.jpg,0,-2.169933795928955,0.006697857941380846,No concern,False,False
+normal,2,2577,left,2577_left.jpg,0,-3.9355759620666504,0.0012296059135900276,No concern,False,False
+normal,2,2577,right,2577_right.jpg,0,-5.520103454589844,0.0002675399534015977,No concern,False,False
+normal,2,2584,left,2584_left.jpg,0,-0.23386605083942413,0.04170570102048969,"Uncertain, refer",True,True
+normal,2,2584,right,2584_right.jpg,0,-1.9264130592346191,0.008453382349162028,No concern,False,False
+normal,2,2588,left,2588_left.jpg,0,-0.3660033047199249,0.0369056925516501,"Uncertain, refer",True,True
+normal,2,2588,right,2588_right.jpg,0,-2.1307144165039062,0.006953910941736829,No concern,False,False
+normal,2,2590,left,2590_left.jpg,0,-2.3577773571014404,0.005595567286884851,No concern,False,False
+normal,2,2590,right,2590_right.jpg,0,-0.7087860107421875,0.02680651864801867,"Uncertain, refer",True,True
+normal,2,2591,left,2591_left.jpg,0,-2.9956493377685547,0.0030348985481922393,No concern,False,False
+normal,2,2591,right,2591_right.jpg,0,-3.351439952850342,0.002156265979877535,No concern,False,False
+normal,2,2593,left,2593_left.jpg,0,-2.049255609512329,0.007517203151149864,No concern,False,False
+normal,2,2593,right,2593_right.jpg,0,-5.924925804138184,0.00018117244652613614,No concern,False,False
+normal,2,2595,left,2595_left.jpg,0,-4.1565117835998535,0.0009941515438648058,No concern,False,False
+normal,2,2595,right,2595_right.jpg,0,-8.310932159423828,1.8201835233950017e-05,No concern,False,False
+normal,2,2597,left,2597_left.jpg,0,-2.66430926322937,0.004171055061140574,No concern,False,False
+normal,2,2597,right,2597_right.jpg,0,-7.338257312774658,4.644780282317727e-05,No concern,False,False
+normal,2,2604,left,2604_left.jpg,0,-4.826196193695068,0.0005218361144127249,No concern,False,False
+normal,2,2604,right,2604_right.jpg,0,-8.231727600097656,1.9644690837072414e-05,No concern,False,False
+normal,2,2612,left,2612_left.jpg,0,-8.922981262207031,1.009493106702568e-05,No concern,False,False
+normal,2,2612,right,2612_right.jpg,0,-6.6642537117004395,8.889496471158407e-05,No concern,False,False
+normal,2,2619,left,2619_left.jpg,0,0.5322844386100769,0.0834325812853833,"Uncertain, refer",True,True
+normal,2,2619,right,2619_right.jpg,0,-0.02548196166753769,0.050507236986708705,"Uncertain, refer",True,True
+normal,2,2622,left,2622_left.jpg,0,-1.8256484270095825,0.009306911076025208,No concern,False,False
+normal,2,2622,right,2622_right.jpg,0,-5.166932582855225,0.00037589814256641776,No concern,False,False
+normal,2,2624,left,2624_left.jpg,0,-0.8093273043632507,0.024392741451924306,"Uncertain, refer",True,True
+normal,2,2624,right,2624_right.jpg,0,-0.2071252167224884,0.042747291826744784,"Uncertain, refer",True,True
+normal,2,2644,left,2644_left.jpg,0,-9.075340270996094,8.71712707597085e-06,No concern,False,False
+normal,2,2644,right,2644_right.jpg,0,-7.767452716827393,3.0721536449010064e-05,No concern,False,False
+normal,2,2657,left,2657_left.jpg,0,-5.227054119110107,0.0003547570192794632,No concern,False,False
+normal,2,2657,right,2657_right.jpg,0,0.39755159616470337,0.07403043251553729,"Uncertain, refer",True,True
+normal,2,2659,left,2659_left.jpg,0,-5.314918518066406,0.0003259796656862262,No concern,False,False
+normal,2,2659,right,2659_right.jpg,0,-7.489944934844971,4.0134529267274e-05,No concern,False,False
+normal,2,2662,left,2662_left.jpg,0,-2.1555519104003906,0.006790647554036723,No concern,False,False
+normal,2,2662,right,2662_right.jpg,0,-0.8755590915679932,0.022919838227665145,"Uncertain, refer",True,True
+normal,2,2666,left,2666_left.jpg,0,-3.183769702911377,0.0025332227936360656,No concern,False,False
+normal,2,2666,right,2666_right.jpg,0,-9.266876220703125,7.248631608557081e-06,No concern,False,False
+normal,2,2669,left,2669_left.jpg,0,-1.2708475589752197,0.015777156222299193,"Uncertain, refer",True,True
+normal,2,2669,right,2669_right.jpg,0,-6.961325168609619,6.677656987875212e-05,No concern,False,False
+normal,2,2681,left,2681_left.jpg,0,-7.48626708984375,4.027694532246331e-05,No concern,False,False
+normal,2,2681,right,2681_right.jpg,0,-7.3998703956604,4.377176586423277e-05,No concern,False,False
+normal,2,2684,left,2684_left.jpg,0,-1.2122361660003662,0.01667814189550084,"Uncertain, refer",True,True
+normal,2,2684,right,2684_right.jpg,0,-3.0454397201538086,0.0028932034319273303,No concern,False,False
+normal,2,2702,left,2702_left.jpg,0,-3.628713369369507,0.0016517357436603777,No concern,False,False
+normal,2,2702,right,2702_right.jpg,0,-5.264426231384277,0.00034221889351240717,No concern,False,False
+normal,2,2710,left,2710_left.jpg,0,-0.639611005783081,0.028600553544443533,"Uncertain, refer",True,True
+normal,2,2710,right,2710_right.jpg,0,-1.3229234218597412,0.015016928956681821,No concern,False,False
+normal,2,2737,right,2737_right.jpg,0,1.396249771118164,0.17300678556028184,Refer,False,True
+normal,2,2745,left,2745_left.jpg,0,-0.014679738320410252,0.051008523120198275,"Uncertain, refer",True,True
+normal,2,2745,right,2745_right.jpg,0,-1.1783027648925781,0.017222697152076468,"Uncertain, refer",True,True
+normal,2,2748,left,2748_left.jpg,0,-1.7442400455474854,0.010058390626533235,No concern,False,False
+normal,2,2748,right,2748_right.jpg,0,-2.9571480751037598,0.0031491921717189597,No concern,False,False
+normal,2,2756,right,2756_right.jpg,0,-9.032989501953125,9.080049459439363e-06,No concern,False,False
+normal,2,2762,left,2762_left.jpg,0,-9.725341796875,4.661058950385119e-06,No concern,False,False
+normal,2,2762,right,2762_right.jpg,0,-9.242185592651367,7.423075006645854e-06,No concern,False,False
+normal,2,2764,left,2764_left.jpg,0,-3.644807815551758,0.001626370246559716,No concern,False,False
+normal,2,2764,right,2764_right.jpg,0,-5.236083984375,0.00035168610476147806,No concern,False,False
+normal,2,2773,left,2773_left.jpg,0,-8.06092643737793,2.3157328707306144e-05,No concern,False,False
+normal,2,2773,right,2773_right.jpg,0,-5.538151264190674,0.00026293075718227687,No concern,False,False
+normal,2,2779,left,2779_left.jpg,0,-1.4111148118972778,0.013810925407622849,No concern,False,False
+normal,2,2779,right,2779_right.jpg,0,-6.281005382537842,0.00012857889741569285,No concern,False,False
+normal,2,2781,left,2781_left.jpg,0,-5.05881929397583,0.00041713363070012747,No concern,False,False
+normal,2,2781,right,2781_right.jpg,0,-6.276017189025879,0.00012919804754808262,No concern,False,False
+normal,2,2783,left,2783_left.jpg,0,-4.512021541595459,0.0007061075394819796,No concern,False,False
+normal,2,2783,right,2783_right.jpg,0,-4.384176731109619,0.0007985592585063784,No concern,False,False
+normal,2,2784,left,2784_left.jpg,0,-7.24272346496582,5.092420881903177e-05,No concern,False,False
+normal,2,2784,right,2784_right.jpg,0,-2.6673388481140137,0.00415895239607819,No concern,False,False
+normal,2,2792,right,2792_right.jpg,0,-4.295891284942627,0.0008693716627602097,No concern,False,False
+normal,2,2823,left,2823_left.jpg,0,-8.323095321655273,1.7989848889714856e-05,No concern,False,False
+normal,2,2823,right,2823_right.jpg,0,-2.224698543548584,0.006355910149565316,No concern,False,False
+normal,2,2833,left,2833_left.jpg,0,0.27362969517707825,0.06625323995611512,"Uncertain, refer",True,True
+normal,2,2833,right,2833_right.jpg,0,4.01116418838501,0.7219385239872267,Refer,False,True
+normal,2,2855,left,2855_left.jpg,0,-8.722502708435059,1.2245063212446683e-05,No concern,False,False
+normal,2,2855,right,2855_right.jpg,0,-9.332897186279297,6.802055483455029e-06,No concern,False,False
+normal,2,2857,left,2857_left.jpg,0,-6.574481964111328,9.692247451931428e-05,No concern,False,False
+normal,2,2857,right,2857_right.jpg,0,-7.6154561042785645,3.556475489426046e-05,No concern,False,False
+normal,2,2859,left,2859_left.jpg,0,-4.81803560256958,0.000525951689792557,No concern,False,False
+normal,2,2859,right,2859_right.jpg,0,-0.686054527759552,0.027383641198854187,"Uncertain, refer",True,True
+normal,2,2860,left,2860_left.jpg,0,-6.958214282989502,6.697693645074402e-05,No concern,False,False
+normal,2,2860,right,2860_right.jpg,0,-6.308911323547363,0.00012516944939269228,No concern,False,False
+normal,2,2865,left,2865_left.jpg,0,0.6671895980834961,0.0939218607416428,"Uncertain, refer",True,True
+normal,2,2865,right,2865_right.jpg,0,-0.25491368770599365,0.04090298463602268,"Uncertain, refer",True,True
+normal,2,2869,left,2869_left.jpg,0,-1.1752562522888184,0.01727243305645406,"Uncertain, refer",True,True
+normal,2,2869,right,2869_right.jpg,0,-2.483227014541626,0.004961879143215246,No concern,False,False
+normal,2,2885,left,2885_left.jpg,0,-0.31667184829711914,0.038632168883747146,"Uncertain, refer",True,True
+normal,2,2885,right,2885_right.jpg,0,0.32868629693984985,0.0696101727484756,"Uncertain, refer",True,True
+normal,2,2886,left,2886_left.jpg,0,-6.155893802642822,0.00014504265447251878,No concern,False,False
+normal,2,2886,right,2886_right.jpg,0,-10.23857307434082,2.8431826810786135e-06,No concern,False,False
+normal,2,2904,left,2904_left.jpg,0,-2.210144281387329,0.006445056335828492,No concern,False,False
+normal,2,2904,right,2904_right.jpg,0,0.27727288007736206,0.06647064714854299,"Uncertain, refer",True,True
+normal,2,2905,left,2905_left.jpg,0,0.44681206345558167,0.07734926192009775,"Uncertain, refer",True,True
+normal,2,2905,right,2905_right.jpg,0,-0.15583011507987976,0.04481523993807084,"Uncertain, refer",True,True
+normal,2,2906,left,2906_left.jpg,0,-3.985478162765503,0.001171972183438303,No concern,False,False
+normal,2,2906,right,2906_right.jpg,0,-6.503411293029785,0.00010378863873570375,No concern,False,False
+normal,2,2925,left,2925_left.jpg,0,-2.4944543838500977,0.004908774015517794,No concern,False,False
+normal,2,2925,right,2925_right.jpg,0,-4.070154666900635,0.0010802832712770594,No concern,False,False
+normal,2,2930,right,2930_right.jpg,0,-3.7180912494659424,0.001515701474421255,No concern,False,False
+normal,2,2935,left,2935_left.jpg,0,1.1009501218795776,0.13600392229635508,Refer,False,True
+normal,2,2935,right,2935_right.jpg,0,0.5523541569709778,0.08492274641769071,"Uncertain, refer",True,True
+normal,2,2951,left,2951_left.jpg,0,-9.117450714111328,8.370647610556538e-06,No concern,False,False
+normal,2,2951,right,2951_right.jpg,0,-7.235545635223389,5.12774673570459e-05,No concern,False,False
+normal,2,2953,left,2953_left.jpg,0,-3.8403160572052,0.0013476003161393172,No concern,False,False
+normal,2,2953,right,2953_right.jpg,0,-2.6682016849517822,0.004155511915426233,No concern,False,False
+normal,2,2960,left,2960_left.jpg,0,-4.89094877243042,0.0004903005025138674,No concern,False,False
+normal,2,2960,right,2960_right.jpg,0,-0.7917448878288269,0.0247990081353589,"Uncertain, refer",True,True
+normal,2,2965,left,2965_left.jpg,0,-1.54984712600708,0.012104392772608226,No concern,False,False
+normal,2,2965,right,2965_right.jpg,0,-2.2530434131622314,0.006185796917960162,No concern,False,False
+normal,2,2967,left,2967_left.jpg,0,-3.170822858810425,0.0025649278077273293,No concern,False,False
+normal,2,2967,right,2967_right.jpg,0,-5.690728664398193,0.00022700481436411105,No concern,False,False
+normal,2,2968,left,2968_left.jpg,0,-5.388382911682129,0.0003037180488391913,No concern,False,False
+normal,2,2970,left,2970_left.jpg,0,-1.3874913454055786,0.01412427859403174,No concern,False,False
+normal,2,2970,right,2970_right.jpg,0,-2.043463706970215,0.0075589371105500925,No concern,False,False
+normal,2,2978,left,2978_left.jpg,0,0.46363547444343567,0.07851359671513007,"Uncertain, refer",True,True
+normal,2,2978,right,2978_right.jpg,0,1.0521475076675415,0.13057447747406709,Refer,False,True
+normal,2,2980,left,2980_left.jpg,0,-10.543638229370117,2.1193306375109153e-06,No concern,False,False
+normal,2,2980,right,2980_right.jpg,0,-3.1855502128601074,0.0025288932592091753,No concern,False,False
+normal,2,3002,left,3002_left.jpg,0,-3.1116127967834473,0.0027150440713118065,No concern,False,False
+normal,2,3002,right,3002_right.jpg,0,-4.085758686065674,0.0010641861694254398,No concern,False,False
+normal,2,3017,left,3017_left.jpg,0,-5.094708442687988,0.00040296674851450856,No concern,False,False
+normal,2,3017,right,3017_right.jpg,0,-3.320122480392456,0.002222150698955281,No concern,False,False
+normal,2,3025,left,3025_left.jpg,0,-2.5794169902801514,0.0045248208165364415,No concern,False,False
+normal,2,3025,right,3025_right.jpg,0,-3.404580593109131,0.0020488999149850086,No concern,False,False
+normal,2,3028,left,3028_left.jpg,0,-0.6939431428909302,0.02718200423658288,"Uncertain, refer",True,True
+normal,2,3028,right,3028_right.jpg,0,1.2467572689056396,0.15336488294452708,Refer,False,True
+normal,2,3035,left,3035_left.jpg,0,-3.6102194786071777,0.0016813708923860912,No concern,False,False
+normal,2,3035,right,3035_right.jpg,0,-1.588845133781433,0.011663376127078368,No concern,False,False
+normal,2,3037,right,3037_right.jpg,0,2.9762954711914062,0.48934175181677,Refer,False,True
+normal,2,3044,left,3044_left.jpg,0,-8.391181945800781,1.6847982787803873e-05,No concern,False,False
+normal,2,3044,right,3044_right.jpg,0,-7.4811577796936035,4.047563058661283e-05,No concern,False,False
+normal,2,3048,left,3048_left.jpg,0,-10.058988571166992,3.380051533754934e-06,No concern,False,False
+normal,2,3048,right,3048_right.jpg,0,-2.047802209854126,0.007527654183164274,No concern,False,False
+normal,2,3071,left,3071_left.jpg,0,-1.718017816543579,0.010313007510830877,No concern,False,False
+normal,2,3071,right,3071_right.jpg,0,1.339945673942566,0.1653849035719203,Refer,False,True
+normal,2,3074,left,3074_left.jpg,0,-4.715097904205322,0.0005807377807139237,No concern,False,False
+normal,2,3074,right,3074_right.jpg,0,-4.362486362457275,0.0008154038149905495,No concern,False,False
+normal,2,3079,left,3079_left.jpg,0,-1.5872340202331543,0.011681277233311749,No concern,False,False
+normal,2,3079,right,3079_right.jpg,0,0.7901889085769653,0.10449999628863503,Refer,False,True
+normal,2,3091,left,3091_left.jpg,0,-4.868002891540527,0.000501251473335401,No concern,False,False
+normal,2,3091,right,3091_right.jpg,0,-12.61568832397461,2.880561818853303e-07,No concern,False,False
+normal,2,3094,left,3094_left.jpg,0,-15.973751068115234,1.1345561596669594e-08,No concern,False,False
+normal,2,3094,right,3094_right.jpg,0,-14.725996017456055,3.773567675784897e-08,No concern,False,False
+normal,2,3098,left,3098_left.jpg,0,-9.304481506347656,6.9907881966135526e-06,No concern,False,False
+normal,2,3098,right,3098_right.jpg,0,-8.038501739501953,2.3662918942645917e-05,No concern,False,False
+normal,2,3111,left,3111_left.jpg,0,-1.7870867252349854,0.009655676463291055,No concern,False,False
+normal,2,3111,right,3111_right.jpg,0,-0.33254554867744446,0.038068334946177576,"Uncertain, refer",True,True
+normal,2,3122,left,3122_left.jpg,0,-10.502561569213867,2.2048585051356947e-06,No concern,False,False
+normal,2,3122,right,3122_right.jpg,0,-12.841608047485352,2.3172707248348979e-07,No concern,False,False
+normal,2,3130,left,3130_left.jpg,0,-6.071980953216553,0.00015724995291744375,No concern,False,False
+normal,2,3130,right,3130_right.jpg,0,0.29800698161125183,0.0677206191757809,"Uncertain, refer",True,True
+normal,2,3132,left,3132_left.jpg,0,0.5695300102233887,0.08621717463647181,"Uncertain, refer",True,True
+normal,2,3132,right,3132_right.jpg,0,-0.6343404054641724,0.028741926836291082,"Uncertain, refer",True,True
+normal,2,3157,left,3157_left.jpg,0,-4.398730754852295,0.0007874520951115486,No concern,False,False
+normal,2,3157,right,3157_right.jpg,0,-4.050511837005615,0.00110089305544653,No concern,False,False
+normal,2,3165,left,3165_left.jpg,0,-0.1590827852487564,0.0446813249061562,"Uncertain, refer",True,True
+normal,2,3165,right,3165_right.jpg,0,1.7408699989318848,0.22573655234862122,Refer,False,True
+normal,2,3169,left,3169_left.jpg,0,-2.121567726135254,0.007015011559114482,No concern,False,False
+normal,2,3169,right,3169_right.jpg,0,-5.856083393096924,0.00019359003395505225,No concern,False,False
+normal,2,3170,left,3170_left.jpg,0,-3.6894779205322266,0.001557987652176071,No concern,False,False
+normal,2,3170,right,3170_right.jpg,0,1.3060423135757446,0.1609266734659637,Refer,False,True
+normal,2,3191,left,3191_left.jpg,0,-3.505134105682373,0.0018601250560781953,No concern,False,False
+normal,2,3191,right,3191_right.jpg,0,-1.9847208261489868,0.00799542161649295,No concern,False,False
+normal,2,3196,left,3196_left.jpg,0,-8.401390075683594,1.668314794235354e-05,No concern,False,False
+normal,2,3196,right,3196_right.jpg,0,-4.0223069190979,0.0011311751664776764,No concern,False,False
+normal,2,3197,left,3197_left.jpg,0,-5.385466575622559,0.0003045720950543534,No concern,False,False
+normal,2,3197,right,3197_right.jpg,0,-11.707120895385742,6.910725743081957e-07,No concern,False,False
+normal,2,3229,left,3229_left.jpg,0,-2.0667452812194824,0.007392562955362959,No concern,False,False
+normal,2,3229,right,3229_right.jpg,0,-2.975281238555908,0.0030948377301191388,No concern,False,False
+normal,2,3230,left,3230_left.jpg,0,-6.171998023986816,0.00014281059851899182,No concern,False,False
+normal,2,3230,right,3230_right.jpg,0,-10.868646621704102,1.5497102339472053e-06,No concern,False,False
+normal,2,3235,left,3235_left.jpg,0,-1.8959989547729492,0.008702486804823606,No concern,False,False
+normal,2,3235,right,3235_right.jpg,0,-0.6316420435905457,0.028814567218320868,"Uncertain, refer",True,True
+normal,2,3237,left,3237_left.jpg,0,-2.3401260375976562,0.005690964356338182,No concern,False,False
+normal,2,3237,right,3237_right.jpg,0,-4.835660457611084,0.0005171033613492169,No concern,False,False
+normal,2,3248,left,3248_left.jpg,0,-0.04625539481639862,0.04955631200938416,"Uncertain, refer",True,True
+normal,2,3248,right,3248_right.jpg,0,0.038285352289676666,0.053535241635069016,"Uncertain, refer",True,True
+normal,2,3264,left,3264_left.jpg,0,0.807062029838562,0.10603060258561754,Refer,False,True
+normal,2,3264,right,3264_right.jpg,0,0.22404447197914124,0.06335923960882509,"Uncertain, refer",True,True
+normal,2,3269,left,3269_left.jpg,0,-5.0551252365112305,0.00041861978961647145,No concern,False,False
+normal,2,3269,right,3269_right.jpg,0,-9.147873878479004,8.128930174629647e-06,No concern,False,False
+normal,2,3300,right,3300_right.jpg,0,-2.1920738220214844,0.006557469952609175,No concern,False,False
+normal,2,3302,left,3302_left.jpg,0,-2.8995161056518555,0.0033283432397607842,No concern,False,False
+normal,2,3302,right,3302_right.jpg,0,-0.19925342500209808,0.0430586142104318,"Uncertain, refer",True,True
+normal,2,3304,left,3304_left.jpg,0,-5.653756618499756,0.00023523211369402442,No concern,False,False
+normal,2,3304,right,3304_right.jpg,0,-10.642784118652344,1.9263129841539052e-06,No concern,False,False
+normal,2,3321,left,3321_left.jpg,0,-4.544901371002197,0.0006841117238227329,No concern,False,False
+normal,2,3321,right,3321_right.jpg,0,-2.6834378242492676,0.004095224035180444,No concern,False,False
+normal,2,3331,left,3331_left.jpg,0,-6.117404460906982,0.00015051963283999867,No concern,False,False
+normal,2,3331,right,3331_right.jpg,0,-10.160722732543945,3.0645651363435244e-06,No concern,False,False
+normal,2,3341,left,3341_left.jpg,0,-0.8872200846672058,0.02266966126648509,"Uncertain, refer",True,True
+normal,2,3341,right,3341_right.jpg,0,-4.369334697723389,0.0008100474555837919,No concern,False,False
+normal,2,3345,left,3345_left.jpg,0,1.9952781200408936,0.27140426958636465,Refer,False,True
+normal,2,3345,right,3345_right.jpg,0,0.9615434408187866,0.1209829670643206,Refer,False,True
+normal,2,3364,left,3364_left.jpg,0,0.45556098222732544,0.07795277991329029,"Uncertain, refer",True,True
+normal,2,3364,right,3364_right.jpg,0,-0.5157718658447266,0.032107368470799987,"Uncertain, refer",True,True
+normal,2,3366,left,3366_left.jpg,0,-0.9619172215461731,0.02112923539020868,"Uncertain, refer",True,True
+normal,2,3366,right,3366_right.jpg,0,-3.9145748615264893,0.0012546992184071977,No concern,False,False
+normal,2,3367,left,3367_left.jpg,0,-8.096385955810547,2.2379808157622302e-05,No concern,False,False
+normal,2,3367,right,3367_right.jpg,0,-9.109310150146484,8.43653601373321e-06,No concern,False,False
+normal,2,3379,left,3379_left.jpg,0,-6.6344146728515625,9.148659672820705e-05,No concern,False,False
+normal,2,3379,right,3379_right.jpg,0,-7.38778018951416,4.4284432468645766e-05,No concern,False,False
+normal,2,3383,right,3383_right.jpg,0,-0.8125571012496948,0.024318821131331655,"Uncertain, refer",True,True
+normal,2,3390,left,3390_left.jpg,0,-3.724130153656006,0.0015069243979251277,No concern,False,False
+normal,2,3390,right,3390_right.jpg,0,-6.019297122955322,0.0001654337836061159,No concern,False,False
+normal,2,3394,left,3394_left.jpg,0,-7.810094356536865,2.948538515364484e-05,No concern,False,False
+normal,2,3394,right,3394_right.jpg,0,-5.351139068603516,0.0003148071527144386,No concern,False,False
+normal,2,3404,left,3404_left.jpg,0,0.8327929377555847,0.10840275780778509,Refer,False,True
+normal,2,3404,right,3404_right.jpg,0,-0.5407885313034058,0.0313669671393211,"Uncertain, refer",True,True
+normal,2,3406,left,3406_left.jpg,0,-1.7928932905197144,0.009602343810952908,No concern,False,False
+normal,2,3406,right,3406_right.jpg,0,-2.355639696121216,0.005607035178246954,No concern,False,False
+normal,2,3407,left,3407_left.jpg,0,-1.0764615535736084,0.018964018214917885,"Uncertain, refer",True,True
+normal,2,3407,right,3407_right.jpg,0,-2.5697274208068848,0.004567052792692606,No concern,False,False
+normal,2,3408,left,3408_left.jpg,0,-6.651854991912842,8.996280443746315e-05,No concern,False,False
+normal,2,3408,right,3408_right.jpg,0,-1.2667458057403564,0.01583861984247191,"Uncertain, refer",True,True
+normal,2,3425,left,3425_left.jpg,0,-4.148522853851318,0.0010018229191388283,No concern,False,False
+normal,2,3425,right,3425_right.jpg,0,-4.009522914886475,0.0011451733286969472,No concern,False,False
+normal,2,3427,left,3427_left.jpg,0,-2.3138632774353027,0.005835902953766266,No concern,False,False
+normal,2,3427,right,3427_right.jpg,0,-5.251025676727295,0.0003466629265587224,No concern,False,False
+normal,2,3440,left,3440_left.jpg,0,-1.5260158777236938,0.012381959863319728,No concern,False,False
+normal,2,3440,right,3440_right.jpg,0,-0.5172795057296753,0.03206227331585446,"Uncertain, refer",True,True
+normal,2,3444,left,3444_left.jpg,0,2.525909900665283,0.38309553012181713,Refer,False,True
+normal,2,3444,right,3444_right.jpg,0,-3.112853765487671,0.0027118096671611075,No concern,False,False
+normal,2,3445,left,3445_left.jpg,0,-1.4091217517852783,0.013837095434047438,No concern,False,False
+normal,2,3445,right,3445_right.jpg,0,-1.1481143236160278,0.01772181242754924,"Uncertain, refer",True,True
+normal,2,3485,left,3485_left.jpg,0,-2.4755959510803223,0.004998299774486809,No concern,False,False
+normal,2,3485,right,3485_right.jpg,0,-2.678816080093384,0.004113419193523766,No concern,False,False
+normal,2,3970,left,3970_left.jpg,0,-5.5915913581848145,0.0002497431289051691,No concern,False,False
+normal,2,4115,right,4115_right.jpg,0,-1.930210828781128,0.008422777726427674,No concern,False,False
+normal,2,4152,left,4152_left.jpg,0,-2.61519718170166,0.004372213740230573,No concern,False,False
+normal,2,4156,right,4156_right.jpg,0,-3.119839668273926,0.0026936735014214614,No concern,False,False
+normal,2,4203,left,4203_left.jpg,0,-10.953020095825195,1.4287550904673076e-06,No concern,False,False
+normal,2,4206,right,4206_right.jpg,0,-9.126514434814453,8.297892564199695e-06,No concern,False,False
+normal,2,4209,left,4209_left.jpg,0,-1.0109643936157227,0.020173968997584273,"Uncertain, refer",True,True
+normal,2,4218,left,4218_left.jpg,0,-4.505533695220947,0.0007105305273277048,No concern,False,False
+normal,2,4224,left,4224_left.jpg,0,-6.58764123916626,9.570190926174474e-05,No concern,False,False
+normal,2,4231,left,4231_left.jpg,0,-1.3483638763427734,0.014658768070638328,No concern,False,False
+normal,2,4240,left,4240_left.jpg,0,1.0045429468154907,0.1254568905223608,Refer,False,True
+normal,2,4272,right,4272_right.jpg,0,-10.44143009185791,2.3385759761621687e-06,No concern,False,False
+normal,2,4297,left,4297_left.jpg,0,-7.70107364654541,3.274974296328829e-05,No concern,False,False
+normal,2,4302,right,4302_right.jpg,0,-6.806774616241455,7.749376057524029e-05,No concern,False,False
+normal,2,4308,left,4308_left.jpg,0,-6.507565975189209,0.00010337419126593028,No concern,False,False
+normal,2,4339,right,4339_right.jpg,0,-2.7254295349121094,0.0039335381299273695,No concern,False,False
+normal,2,4360,left,4360_left.jpg,0,-5.862586498260498,0.00019238150728114804,No concern,False,False
+normal,2,4438,left,4438_left.jpg,0,-4.35023832321167,0.0008250718986185994,No concern,False,False
+normal,2,4458,right,4458_right.jpg,0,-7.197579860687256,5.318712596606799e-05,No concern,False,False
+normal,2,4464,left,4464_left.jpg,0,-0.8684512972831726,0.023073650522305374,"Uncertain, refer",True,True
+normal,2,4500,left,4500_left.jpg,0,-0.5015186667442322,0.03253673814901273,"Uncertain, refer",True,True
+normal,2,4512,left,4512_left.jpg,0,-5.577535629272461,0.0002531462342926871,No concern,False,False
+normal,2,4577,left,4577_left.jpg,0,-7.284393787384033,4.8920939763358006e-05,No concern,False,False
+normal,2,4618,left,4618_left.jpg,0,-2.3085227012634277,0.005865822433244985,No concern,False,False
+normal,2,4625,left,4625_left.jpg,0,-5.469058036804199,0.0002810183568030596,No concern,False,False
+normal,2,4638,right,4638_right.jpg,0,-6.222188472747803,0.0001360721023833556,No concern,False,False
+normal,2,4641,left,4641_left.jpg,0,-7.171711444854736,5.452886977504184e-05,No concern,False,False
+normal,4,8,left,8_left.jpg,0,0.27584224939346313,0.06638519531016326,"Uncertain, refer",True,True
+normal,4,8,right,8_right.jpg,0,-1.068939447402954,0.019099276681915182,"Uncertain, refer",True,True
+normal,4,10,right,10_right.jpg,0,2.6377670764923096,0.40885658882078707,Refer,False,True
+normal,4,29,right,29_right.jpg,0,2.676165819168091,0.4178245354592012,Refer,False,True
+normal,4,38,right,38_right.jpg,0,2.990473747253418,0.49275460755675016,Refer,False,True
+normal,4,63,left,63_left.jpg,0,0.8467584848403931,0.10970967919190225,Refer,False,True
+normal,4,68,left,68_left.jpg,0,1.217193603515625,0.14970403843213254,Refer,False,True
+normal,4,78,right,78_right.jpg,0,1.9549694061279297,0.26379564283011175,Refer,False,True
+normal,4,84,left,84_left.jpg,0,-0.027520224452018738,0.05041317424002035,"Uncertain, refer",True,True
+normal,4,84,right,84_right.jpg,0,2.2155239582061768,0.31531666201404307,Refer,False,True
+normal,4,97,left,97_left.jpg,0,1.4700477123260498,0.18341390991987702,Refer,False,True
+normal,4,110,right,110_right.jpg,0,2.183631420135498,0.30872294300888126,Refer,False,True
+normal,4,122,right,122_right.jpg,0,2.314405918121338,0.33622993278665825,Refer,False,True
+normal,4,129,right,129_right.jpg,0,0.43130525946617126,0.07629008052795491,"Uncertain, refer",True,True
+normal,4,132,left,132_left.jpg,0,1.5621953010559082,0.1970816861155463,Refer,False,True
+normal,4,147,left,147_left.jpg,0,1.3443629741668701,0.1659730053497769,Refer,False,True
+normal,4,173,left,173_left.jpg,0,1.9437164068222046,0.26169614676742486,Refer,False,True
+normal,4,174,right,174_right.jpg,0,0.25187504291534424,0.06496872589499587,"Uncertain, refer",True,True
+normal,4,214,left,214_left.jpg,0,0.09340006858110428,0.05628959412825968,"Uncertain, refer",True,True
+normal,4,219,right,219_right.jpg,0,0.43991169333457947,0.0768762833137789,"Uncertain, refer",True,True
+normal,4,273,left,273_left.jpg,0,-1.7119953632354736,0.010372380126078195,No concern,False,False
+normal,4,279,right,279_right.jpg,0,-0.9567632675170898,0.02123215018371203,"Uncertain, refer",True,True
+normal,4,294,right,294_right.jpg,0,2.802318572998047,0.44764118563798205,Refer,False,True
+normal,4,317,left,317_left.jpg,0,0.7058423757553101,0.09713828408813124,"Uncertain, refer",True,True
+normal,4,326,left,326_left.jpg,0,1.6030203104019165,0.2033780038898498,Refer,False,True
+normal,4,329,right,329_right.jpg,0,0.5241974592208862,0.08283887341259544,"Uncertain, refer",True,True
+normal,4,335,left,335_left.jpg,0,-0.09308930486440659,0.04747434817321583,"Uncertain, refer",True,True
+normal,4,346,left,346_left.jpg,0,0.7544901371002197,0.10132588369553813,"Uncertain, refer",True,True
+normal,4,347,left,347_left.jpg,0,1.080172061920166,0.13366940501818889,Refer,False,True
+normal,4,363,right,363_right.jpg,0,0.27316978573799133,0.06622584185116677,"Uncertain, refer",True,True
+normal,4,384,left,384_left.jpg,0,1.9958748817443848,0.27151794242646554,Refer,False,True
+normal,4,394,left,394_left.jpg,0,1.4801421165466309,0.18487455849435852,Refer,False,True
+normal,4,394,right,394_right.jpg,0,0.013210571371018887,0.05232464858524472,"Uncertain, refer",True,True
+normal,4,399,right,399_right.jpg,0,2.296879291534424,0.3324729559384649,Refer,False,True
+normal,4,400,left,400_left.jpg,0,1.6998839378356934,0.21891175576274333,Refer,False,True
+normal,4,496,left,496_left.jpg,0,1.5388267040252686,0.19354434835905904,Refer,False,True
+normal,4,524,left,524_left.jpg,0,2.889265537261963,0.46842641308066185,Refer,False,True
+normal,4,545,right,545_right.jpg,0,1.710319995880127,0.22063531492916258,Refer,False,True
+normal,4,549,right,549_right.jpg,0,-0.3455452620983124,0.03761247959723568,"Uncertain, refer",True,True
+normal,4,555,right,555_right.jpg,0,1.7241965532302856,0.22294212057089596,Refer,False,True
+normal,4,570,left,570_left.jpg,0,1.7020941972732544,0.21927597899421072,Refer,False,True
+normal,4,580,left,580_left.jpg,0,1.4827178716659546,0.1852487044165297,Refer,False,True
+normal,4,591,left,591_left.jpg,0,-0.04785098508000374,0.04948397816564083,"Uncertain, refer",True,True
+normal,4,598,right,598_right.jpg,0,-2.0004122257232666,0.00787643816348267,No concern,False,False
+normal,4,610,left,610_left.jpg,0,0.3590162694454193,0.07152605449970019,"Uncertain, refer",True,True
+normal,4,617,left,617_left.jpg,0,-0.43604448437690735,0.03458139674190733,"Uncertain, refer",True,True
+normal,4,618,right,618_right.jpg,0,2.4665021896362305,0.36966632898358354,Refer,False,True
+normal,4,623,right,623_right.jpg,0,1.200413703918457,0.1476584076685209,Refer,False,True
+normal,4,633,left,633_left.jpg,0,-0.36881229281425476,0.03680965005550468,"Uncertain, refer",True,True
+normal,4,641,left,641_left.jpg,0,-1.0159821510314941,0.02007865896470605,"Uncertain, refer",True,True
+normal,4,652,right,652_right.jpg,0,1.0369665622711182,0.1289235132835262,Refer,False,True
+normal,4,671,left,671_left.jpg,0,1.928136944770813,0.2588073165719871,Refer,False,True
+normal,4,683,left,683_left.jpg,0,-0.57996666431427,0.030240528542967843,"Uncertain, refer",True,True
+normal,4,689,right,689_right.jpg,0,2.275777578353882,0.32797777450289256,Refer,False,True
+normal,4,716,left,716_left.jpg,0,0.970377504825592,0.1218907409054513,Refer,False,True
+normal,4,766,left,766_left.jpg,0,2.392016887664795,0.35311167822202477,Refer,False,True
+normal,4,782,right,782_right.jpg,0,2.371574878692627,0.3486274035914316,Refer,False,True
+normal,4,795,right,795_right.jpg,0,1.784150242805481,0.2331055082461407,Refer,False,True
+normal,4,800,left,800_left.jpg,0,3.0792908668518066,0.5141364571909938,Refer,False,True
+normal,4,807,right,807_right.jpg,0,3.245762348175049,0.5540130271512496,Refer,False,True
+normal,4,840,right,840_right.jpg,0,-1.9767813682556152,0.008056301837679069,No concern,False,False
+normal,4,872,right,872_right.jpg,0,0.9481675624847412,0.11961958423734144,Refer,False,True
+normal,4,879,right,879_right.jpg,0,0.7561408877372742,0.10147075247462017,"Uncertain, refer",True,True
+normal,4,903,left,903_left.jpg,0,1.2509971857070923,0.15389587686873224,Refer,False,True
+normal,4,918,right,918_right.jpg,0,3.181791067123413,0.5387432563142214,Refer,False,True
+normal,4,945,left,945_left.jpg,0,2.2043914794921875,0.3130064030517262,Refer,False,True
+normal,4,954,right,954_right.jpg,0,-0.08178963512182236,0.04796892837028685,"Uncertain, refer",True,True
+normal,4,966,right,966_right.jpg,0,2.1781022548675537,0.30758758494832356,Refer,False,True
+normal,4,987,right,987_right.jpg,0,0.580586314201355,0.08705984150273262,"Uncertain, refer",True,True
+normal,4,1040,right,1040_right.jpg,0,2.2487740516662598,0.32227112943820674,Refer,False,True
+normal,4,1074,right,1074_right.jpg,0,2.4034721851348877,0.3556359910542604,Refer,False,True
+normal,4,1075,right,1075_right.jpg,0,1.8261806964874268,0.24042035955734573,Refer,False,True
+normal,4,1093,right,1093_right.jpg,0,2.23976731300354,0.3203793583856139,Refer,False,True
+normal,4,1114,right,1114_right.jpg,0,1.8051962852478027,0.23674880893311448,Refer,False,True
+normal,4,1119,right,1119_right.jpg,0,3.8846511840820312,0.696829698170364,Refer,False,True
+normal,4,1142,right,1142_right.jpg,0,1.049204707145691,0.13025304324413253,Refer,False,True
+normal,4,1160,left,1160_left.jpg,0,1.4860546588897705,0.1857342648946663,Refer,False,True
+normal,4,1274,left,1274_left.jpg,0,1.5614913702011108,0.1969744221502236,Refer,False,True
+normal,4,1397,right,1397_right.jpg,0,0.9151887893676758,0.11631474237170088,Refer,False,True
+normal,4,1416,left,1416_left.jpg,0,-3.2526183128356934,0.0023710742092005466,No concern,False,False
+normal,4,1429,right,1429_right.jpg,0,3.1231377124786377,0.5246779662339274,Refer,False,True
+normal,4,1491,right,1491_right.jpg,0,1.8317068815231323,0.2413937001076925,Refer,False,True
+normal,4,1515,right,1515_right.jpg,0,3.7314515113830566,0.664785002895039,Refer,False,True
+normal,4,1868,left,1868_left.jpg,0,1.0442273616790771,0.12971091249563388,Refer,False,True
+normal,4,1975,right,1975_right.jpg,0,1.729567527770996,0.22383958228280587,Refer,False,True
+normal,4,2097,left,2097_left.jpg,0,1.988816261291504,0.27017531076864876,Refer,False,True
+normal,4,2119,left,2119_left.jpg,0,1.7331101894378662,0.2244329480329297,Refer,False,True
+normal,4,2197,left,2197_left.jpg,0,1.4239310026168823,0.17685467653090775,Refer,False,True
+normal,4,2338,left,2338_left.jpg,0,0.06497268378734589,0.05485268920690372,"Uncertain, refer",True,True
+normal,4,2338,right,2338_right.jpg,0,1.2571150064468384,0.15466470328357132,Refer,False,True
+normal,4,2339,left,2339_left.jpg,0,1.73460853099823,0.22468424362720174,Refer,False,True
+normal,4,2339,right,2339_right.jpg,0,0.134243443608284,0.058416138234586995,"Uncertain, refer",True,True
+normal,4,2370,left,2370_left.jpg,0,2.0146238803863525,0.27510447373183833,Refer,False,True
+normal,4,2371,left,2371_left.jpg,0,1.085020899772644,0.1342111458764344,Refer,False,True
+normal,4,2371,right,2371_right.jpg,0,1.8721176385879517,0.24859271214943512,Refer,False,True
+normal,4,2375,left,2375_left.jpg,0,-1.1497230529785156,0.01769486008366444,"Uncertain, refer",True,True
+normal,4,2375,right,2375_right.jpg,0,3.2202701568603516,0.5479386854178372,Refer,False,True
+normal,4,2394,left,2394_left.jpg,0,3.5164060592651367,0.6171738640037339,Refer,False,True
+normal,4,2394,right,2394_right.jpg,0,1.8332290649414062,0.24166227746140387,Refer,False,True
+normal,4,2396,left,2396_left.jpg,0,0.85484379529953,0.11047261586453105,Refer,False,True
+normal,4,2396,right,2396_right.jpg,0,1.6056435108184814,0.20378764970730168,Refer,False,True
+normal,4,2407,left,2407_left.jpg,0,1.6702156066894531,0.21406496775770223,Refer,False,True
+normal,4,2407,right,2407_right.jpg,0,0.18642674386501312,0.061242792729691554,"Uncertain, refer",True,True
+normal,4,2409,left,2409_left.jpg,0,2.126368522644043,0.2970783778797782,Refer,False,True
+normal,4,2409,right,2409_right.jpg,0,2.0841164588928223,0.2886510440587874,Refer,False,True
+normal,4,2434,left,2434_left.jpg,0,0.4675714075565338,0.07878830444811834,"Uncertain, refer",True,True
+normal,4,2434,right,2434_right.jpg,0,0.7279086112976074,0.09901826447842753,"Uncertain, refer",True,True
+normal,4,2438,left,2438_left.jpg,0,2.354128837585449,0.3448213940456407,Refer,False,True
+normal,4,2438,right,2438_right.jpg,0,3.6901133060455322,0.655854977360373,Refer,False,True
+normal,4,2442,left,2442_left.jpg,0,0.37146660685539246,0.07232651975852325,"Uncertain, refer",True,True
+normal,4,2442,right,2442_right.jpg,0,-1.6214735507965088,0.011306620286589495,No concern,False,False
+normal,4,2462,left,2462_left.jpg,0,-0.03737616539001465,0.04996067335533673,"Uncertain, refer",True,True
+normal,4,2462,right,2462_right.jpg,0,2.1493239402770996,0.30171598165126406,Refer,False,True
+normal,4,2474,left,2474_left.jpg,0,0.7123162150382996,0.09768651041504466,"Uncertain, refer",True,True
+normal,4,2474,right,2474_right.jpg,0,1.924103856086731,0.25806286986983173,Refer,False,True
+normal,4,2475,left,2475_left.jpg,0,-1.660482406616211,0.010894236900080765,No concern,False,False
+normal,4,2475,right,2475_right.jpg,0,2.1075096130371094,0.2932993488157159,Refer,False,True
+normal,4,2476,left,2476_left.jpg,0,2.6296143531799316,0.4069601054701265,Refer,False,True
+normal,4,2476,right,2476_right.jpg,0,2.935260534286499,0.4794709507810221,Refer,False,True
+normal,4,2490,left,2490_left.jpg,0,0.23482517898082733,0.06397824616627831,"Uncertain, refer",True,True
+normal,4,2490,right,2490_right.jpg,0,-2.4545769691467285,0.005099997742773536,No concern,False,False
+normal,4,2503,left,2503_left.jpg,0,0.7835991978645325,0.1039075440062133,"Uncertain, refer",True,True
+normal,4,2503,right,2503_right.jpg,0,1.0597436428070068,0.131407299570419,Refer,False,True
+normal,4,2506,left,2506_left.jpg,0,-0.4677790701389313,0.03357534916600225,"Uncertain, refer",True,True
+normal,4,2506,right,2506_right.jpg,0,-4.059209823608398,0.0010917188805609466,No concern,False,False
+normal,4,2508,left,2508_left.jpg,0,1.792767882347107,0.2345925820867663,Refer,False,True
+normal,4,2508,right,2508_right.jpg,0,2.1723392009735107,0.30640667429522855,Refer,False,True
+normal,4,2512,left,2512_left.jpg,0,1.6627562046051025,0.21285871435076295,Refer,False,True
+normal,4,2512,right,2512_right.jpg,0,2.045539617538452,0.28108217045764794,Refer,False,True
+normal,4,2514,left,2514_left.jpg,0,1.432926893234253,0.17811955148129438,Refer,False,True
+normal,4,2514,right,2514_right.jpg,0,1.2005186080932617,0.14767112440024857,Refer,False,True
+normal,4,2540,left,2540_left.jpg,0,2.072092056274414,0.28627886107133543,Refer,False,True
+normal,4,2540,right,2540_right.jpg,0,2.78367280960083,0.4432050269381033,Refer,False,True
+normal,4,2543,left,2543_left.jpg,0,-0.38010621070861816,0.03642591904149098,"Uncertain, refer",True,True
+normal,4,2543,right,2543_right.jpg,0,1.8007220029830933,0.23597098553231582,Refer,False,True
+normal,4,2549,left,2549_left.jpg,0,1.7002239227294922,0.21896775268961913,Refer,False,True
+normal,4,2549,right,2549_right.jpg,0,2.2925100326538086,0.3315396550644088,Refer,False,True
+normal,4,2559,left,2559_left.jpg,0,1.5220367908477783,0.19103275988481572,Refer,False,True
+normal,4,2559,right,2559_right.jpg,0,1.1209162473678589,0.13827948917182503,Refer,False,True
+normal,4,2563,left,2563_left.jpg,0,3.075328826904297,0.5131831565621163,Refer,False,True
+normal,4,2563,right,2563_right.jpg,0,1.2952386140823364,0.15952656286325287,Refer,False,True
+normal,4,2575,left,2575_left.jpg,0,-0.2314453423023224,0.041798982698427294,"Uncertain, refer",True,True
+normal,4,2575,right,2575_right.jpg,0,-1.6558479070663452,0.010942441256405222,No concern,False,False
+normal,4,2576,left,2576_left.jpg,0,2.9423279762268066,0.4811700703880425,Refer,False,True
+normal,4,2576,right,2576_right.jpg,0,3.21887469291687,0.5476057413671647,Refer,False,True
+normal,4,2577,left,2577_left.jpg,0,0.1496460735797882,0.05923748873273931,"Uncertain, refer",True,True
+normal,4,2577,right,2577_right.jpg,0,0.6147518754005432,0.08971106473721989,"Uncertain, refer",True,True
+normal,4,2584,left,2584_left.jpg,0,1.8316599130630493,0.241385416127878,Refer,False,True
+normal,4,2584,right,2584_right.jpg,0,3.4028372764587402,0.5910205052861868,Refer,False,True
+normal,4,2588,left,2588_left.jpg,0,1.348588228225708,0.1665371051751255,Refer,False,True
+normal,4,2588,right,2588_right.jpg,0,1.0609675645828247,0.13154190836537483,Refer,False,True
+normal,4,2590,left,2590_left.jpg,0,0.32913896441459656,0.06963841464540184,"Uncertain, refer",True,True
+normal,4,2590,right,2590_right.jpg,0,1.478147268295288,0.1845851949114143,Refer,False,True
+normal,4,2591,left,2591_left.jpg,0,2.047860622406006,0.2815341267402473,Refer,False,True
+normal,4,2591,right,2591_right.jpg,0,2.967696189880371,0.48727228066985223,Refer,False,True
+normal,4,2593,left,2593_left.jpg,0,2.392085552215576,0.3531267850612852,Refer,False,True
+normal,4,2593,right,2593_right.jpg,0,0.6416372060775757,0.09184829004551322,"Uncertain, refer",True,True
+normal,4,2595,left,2595_left.jpg,0,1.4859790802001953,0.18572325601745374,Refer,False,True
+normal,4,2595,right,2595_right.jpg,0,0.6340451240539551,0.09124016958379105,"Uncertain, refer",True,True
+normal,4,2597,left,2597_left.jpg,0,2.3122873306274414,0.33577468211105443,Refer,False,True
+normal,4,2597,right,2597_right.jpg,0,1.7355847358703613,0.22484807611189866,Refer,False,True
+normal,4,2604,left,2604_left.jpg,0,0.39615973830223083,0.07393858882918708,"Uncertain, refer",True,True
+normal,4,2604,right,2604_right.jpg,0,0.30645981431007385,0.06823643351279501,"Uncertain, refer",True,True
+normal,4,2612,left,2612_left.jpg,0,0.042800143361091614,0.05375600172899502,"Uncertain, refer",True,True
+normal,4,2612,right,2612_right.jpg,0,0.5015876293182373,0.08119931071116894,"Uncertain, refer",True,True
+normal,4,2619,left,2619_left.jpg,0,2.7536301612854004,0.43607665705302195,Refer,False,True
+normal,4,2619,right,2619_right.jpg,0,2.8513803482055664,0.45935193923926987,Refer,False,True
+normal,4,2622,left,2622_left.jpg,0,0.9769902229309082,0.1225740864317318,Refer,False,True
+normal,4,2622,right,2622_right.jpg,0,0.38688817620277405,0.07332946278230777,"Uncertain, refer",True,True
+normal,4,2624,left,2624_left.jpg,0,2.0316529273986816,0.2783873459488071,Refer,False,True
+normal,4,2624,right,2624_right.jpg,0,2.5010995864868164,0.37746407621416644,Refer,False,True
+normal,4,2644,left,2644_left.jpg,0,-2.5341477394104004,0.004725519841788301,No concern,False,False
+normal,4,2644,right,2644_right.jpg,0,-1.111224889755249,0.0183510286051667,"Uncertain, refer",True,True
+normal,4,2657,left,2657_left.jpg,0,1.13608717918396,0.1400298420897225,Refer,False,True
+normal,4,2657,right,2657_right.jpg,0,2.3174519538879395,0.336885010544784,Refer,False,True
+normal,4,2659,left,2659_left.jpg,0,-0.3532557487487793,0.03734458225287111,"Uncertain, refer",True,True
+normal,4,2659,right,2659_right.jpg,0,1.0205293893814087,0.12715601884384867,Refer,False,True
+normal,4,2662,left,2662_left.jpg,0,1.3675968647003174,0.16909387128218725,Refer,False,True
+normal,4,2662,right,2662_right.jpg,0,1.4751782417297363,0.18415517049448718,Refer,False,True
+normal,4,2666,left,2666_left.jpg,0,1.4291781187057495,0.17759159264423235,Refer,False,True
+normal,4,2666,right,2666_right.jpg,0,-0.356466680765152,0.03723356162159151,"Uncertain, refer",True,True
+normal,4,2669,left,2669_left.jpg,0,1.7456461191177368,0.22654157631982566,Refer,False,True
+normal,4,2669,right,2669_right.jpg,0,0.4652896225452423,0.0786289407792211,"Uncertain, refer",True,True
+normal,4,2681,left,2681_left.jpg,0,-0.1734035164117813,0.04409625315361005,"Uncertain, refer",True,True
+normal,4,2681,right,2681_right.jpg,0,0.9931029081344604,0.1242529482368578,Refer,False,True
+normal,4,2684,left,2684_left.jpg,0,1.5152298212051392,0.19002162841477396,Refer,False,True
+normal,4,2684,right,2684_right.jpg,0,1.6847989559173584,0.21643757315122147,Refer,False,True
+normal,4,2702,left,2702_left.jpg,0,0.682570219039917,0.09519013759197834,"Uncertain, refer",True,True
+normal,4,2702,right,2702_right.jpg,0,1.5705225467681885,0.19835392454226355,Refer,False,True
+normal,4,2710,left,2710_left.jpg,0,2.5865111351013184,0.3969807044611132,Refer,False,True
+normal,4,2710,right,2710_right.jpg,0,2.289571762084961,0.3309127654975817,Refer,False,True
+normal,4,2737,right,2737_right.jpg,0,3.401735782623291,0.5907640430250455,Refer,False,True
+normal,4,2745,left,2745_left.jpg,0,1.9691661596298218,0.26645973111619536,Refer,False,True
+normal,4,2745,right,2745_right.jpg,0,2.0273752212524414,0.27756042685149224,Refer,False,True
+normal,4,2748,left,2748_left.jpg,0,1.9758979082107544,0.2677289468101348,Refer,False,True
+normal,4,2748,right,2748_right.jpg,0,1.6418724060058594,0.20950803118260705,Refer,False,True
+normal,4,2756,right,2756_right.jpg,0,0.3032967150211334,0.06804298782316727,"Uncertain, refer",True,True
+normal,4,2762,left,2762_left.jpg,0,-2.6254820823669434,0.004329303261923688,No concern,False,False
+normal,4,2762,right,2762_right.jpg,0,-1.2621774673461914,0.01590735244732365,"Uncertain, refer",True,True
+normal,4,2764,left,2764_left.jpg,0,0.9011769890785217,0.11493476431269978,Refer,False,True
+normal,4,2764,right,2764_right.jpg,0,0.5744403600692749,0.08659050605719748,"Uncertain, refer",True,True
+normal,4,2773,left,2773_left.jpg,0,1.6578373908996582,0.21206601461724847,Refer,False,True
+normal,4,2773,right,2773_right.jpg,0,2.696661949157715,0.42263410363189285,Refer,False,True
+normal,4,2779,left,2779_left.jpg,0,1.7341418266296387,0.22460594849573656,Refer,False,True
+normal,4,2779,right,2779_right.jpg,0,1.3113760948181152,0.1616215613922661,Refer,False,True
+normal,4,2781,left,2781_left.jpg,0,1.0694583654403687,0.13247896372788695,Refer,False,True
+normal,4,2781,right,2781_right.jpg,0,1.618194818496704,0.20575618766028966,Refer,False,True
+normal,4,2783,left,2783_left.jpg,0,0.8554115295410156,0.11052636196585493,Refer,False,True
+normal,4,2783,right,2783_right.jpg,0,0.9838563799858093,0.12328710694964788,Refer,False,True
+normal,4,2784,left,2784_left.jpg,0,-0.926765501499176,0.02184095320926359,"Uncertain, refer",True,True
+normal,4,2784,right,2784_right.jpg,0,0.6957709789276123,0.09629086248098022,"Uncertain, refer",True,True
+normal,4,2792,right,2792_right.jpg,0,-0.515104353427887,0.03212735407610911,"Uncertain, refer",True,True
+normal,4,2823,left,2823_left.jpg,0,0.537563145160675,0.08382220274218206,"Uncertain, refer",True,True
+normal,4,2823,right,2823_right.jpg,0,2.667041063308716,0.41568830463815915,Refer,False,True
+normal,4,2833,left,2833_left.jpg,0,3.2517056465148926,0.5554269628285733,Refer,False,True
+normal,4,2833,right,2833_right.jpg,0,5.086706638336182,0.8797441972240106,Refer,False,True
+normal,4,2855,left,2855_left.jpg,0,-1.4102516174316406,0.013822253651389747,No concern,False,False
+normal,4,2855,right,2855_right.jpg,0,-0.2412271648645401,0.0414232633429811,"Uncertain, refer",True,True
+normal,4,2857,left,2857_left.jpg,0,-0.5845099091529846,0.030112465901380257,"Uncertain, refer",True,True
+normal,4,2857,right,2857_right.jpg,0,-0.9928170442581177,0.020522382883090672,"Uncertain, refer",True,True
+normal,4,2859,left,2859_left.jpg,0,0.1494079977273941,0.05922471130271757,"Uncertain, refer",True,True
+normal,4,2859,right,2859_right.jpg,0,2.7686500549316406,0.43963738997573565,Refer,False,True
+normal,4,2860,left,2860_left.jpg,0,-0.01475555170327425,0.05100498858661042,"Uncertain, refer",True,True
+normal,4,2860,right,2860_right.jpg,0,-1.2802562713623047,0.015637054562312583,No concern,False,False
+normal,4,2865,left,2865_left.jpg,0,2.936690330505371,0.4798146583052196,Refer,False,True
+normal,4,2865,right,2865_right.jpg,0,1.8493398427963257,0.24451736309360456,Refer,False,True
+normal,4,2869,left,2869_left.jpg,0,1.8878988027572632,0.2514427629916953,Refer,False,True
+normal,4,2869,right,2869_right.jpg,0,0.3883417546749115,0.07342465406661422,"Uncertain, refer",True,True
+normal,4,2885,left,2885_left.jpg,0,0.6798158884048462,0.09496189621658983,"Uncertain, refer",True,True
+normal,4,2885,right,2885_right.jpg,0,1.0271165370941162,0.12786183798789855,Refer,False,True
+normal,4,2886,left,2886_left.jpg,0,0.31741198897361755,0.06891017965557726,"Uncertain, refer",True,True
+normal,4,2886,right,2886_right.jpg,0,-0.7867920994758606,0.024914634907389623,"Uncertain, refer",True,True
+normal,4,2904,left,2904_left.jpg,0,2.1430068016052246,0.3004356535653896,Refer,False,True
+normal,4,2904,right,2904_right.jpg,0,2.7739410400390625,0.4408932128738644,Refer,False,True
+normal,4,2905,left,2905_left.jpg,0,1.4367787837982178,0.17866331244486364,Refer,False,True
+normal,4,2905,right,2905_right.jpg,0,2.3196868896484375,0.3373660529252825,Refer,False,True
+normal,4,2906,left,2906_left.jpg,0,1.4196499586105347,0.17625521781974202,Refer,False,True
+normal,4,2906,right,2906_right.jpg,0,-0.018246348947286606,0.05084249317641488,"Uncertain, refer",True,True
+normal,4,2925,left,2925_left.jpg,0,1.2603886127471924,0.15507738464214596,Refer,False,True
+normal,4,2925,right,2925_right.jpg,0,1.008559226989746,0.1258819251326329,Refer,False,True
+normal,4,2930,right,2930_right.jpg,0,1.441657304763794,0.17935386323139427,Refer,False,True
+normal,4,2935,left,2935_left.jpg,0,2.2629027366638184,0.3252504652845578,Refer,False,True
+normal,4,2935,right,2935_right.jpg,0,3.042968511581421,0.5053940173886995,Refer,False,True
+normal,4,2951,left,2951_left.jpg,0,-1.2336535453796387,0.016343190840266236,"Uncertain, refer",True,True
+normal,4,2951,right,2951_right.jpg,0,0.42755910754203796,0.07603620515736215,"Uncertain, refer",True,True
+normal,4,2953,left,2953_left.jpg,0,-0.19977180659770966,0.04303804624679315,"Uncertain, refer",True,True
+normal,4,2953,right,2953_right.jpg,0,-0.01905219256877899,0.050805051100755096,"Uncertain, refer",True,True
+normal,4,2960,left,2960_left.jpg,0,0.5546326637268066,0.08509344233520552,"Uncertain, refer",True,True
+normal,4,2960,right,2960_right.jpg,0,1.7722399234771729,0.23106106720206265,Refer,False,True
+normal,4,2965,left,2965_left.jpg,0,1.58939528465271,0.20126015205501394,Refer,False,True
+normal,4,2965,right,2965_right.jpg,0,1.4208728075027466,0.1764262856896392,Refer,False,True
+normal,4,2967,left,2967_left.jpg,0,0.2034805417060852,0.062193958373208964,"Uncertain, refer",True,True
+normal,4,2967,right,2967_right.jpg,0,-1.5208606719970703,0.01244282543328268,No concern,False,False
+normal,4,2968,left,2968_left.jpg,0,-0.28205689787864685,0.03988961412500713,"Uncertain, refer",True,True
+normal,4,2970,left,2970_left.jpg,0,3.117561101913452,0.5233382802011919,Refer,False,True
+normal,4,2970,right,2970_right.jpg,0,3.138233184814453,0.5283025609252461,Refer,False,True
+normal,4,2978,left,2978_left.jpg,0,1.2797926664352417,0.1575420003434542,Refer,False,True
+normal,4,2978,right,2978_right.jpg,0,2.1700103282928467,0.3059301823567833,Refer,False,True
+normal,4,2980,left,2980_left.jpg,0,-4.315438747406006,0.0008531707778778222,No concern,False,False
+normal,4,2980,right,2980_right.jpg,0,1.2419159412384033,0.152760405762677,Refer,False,True
+normal,4,3002,left,3002_left.jpg,0,-0.14133794605731964,0.045416556180164845,"Uncertain, refer",True,True
+normal,4,3002,right,3002_right.jpg,0,0.796972930431366,0.10511303335592155,Refer,False,True
+normal,4,3017,left,3017_left.jpg,0,-0.170115664601326,0.0442299282754154,"Uncertain, refer",True,True
+normal,4,3017,right,3017_right.jpg,0,1.990668535232544,0.2705272298615734,Refer,False,True
+normal,4,3025,left,3025_left.jpg,0,-0.46539270877838135,0.033650008790526334,"Uncertain, refer",True,True
+normal,4,3025,right,3025_right.jpg,0,-1.0572972297668457,0.01931048780145398,"Uncertain, refer",True,True
+normal,4,3028,left,3028_left.jpg,0,1.142778992652893,0.14080778994768822,Refer,False,True
+normal,4,3028,right,3028_right.jpg,0,2.974003553390503,0.4887901487381118,Refer,False,True
+normal,4,3035,left,3035_left.jpg,0,0.21882709860801697,0.06306167755009762,"Uncertain, refer",True,True
+normal,4,3035,right,3035_right.jpg,0,1.1291829347610474,0.1392309730188292,Refer,False,True
+normal,4,3037,right,3037_right.jpg,0,3.574662446975708,0.6303409274022057,Refer,False,True
+normal,4,3044,left,3044_left.jpg,0,-0.7438011765480042,0.02594060466269834,"Uncertain, refer",True,True
+normal,4,3044,right,3044_right.jpg,0,0.4472409784793854,0.07737874928808781,"Uncertain, refer",True,True
+normal,4,3048,left,3048_left.jpg,0,-0.15179836750030518,0.044981761178444206,"Uncertain, refer",True,True
+normal,4,3048,right,3048_right.jpg,0,3.0256009101867676,0.5012123086574845,Refer,False,True
+normal,4,3071,left,3071_left.jpg,0,2.967428207397461,0.4872077956414301,Refer,False,True
+normal,4,3071,right,3071_right.jpg,0,2.912144422531128,0.4739170120558734,Refer,False,True
+normal,4,3074,left,3074_left.jpg,0,-0.7901027202606201,0.02483728776974926,"Uncertain, refer",True,True
+normal,4,3074,right,3074_right.jpg,0,0.7728437185287476,0.10294694336897187,"Uncertain, refer",True,True
+normal,4,3079,left,3079_left.jpg,0,1.2972209453582764,0.1597827226340828,Refer,False,True
+normal,4,3079,right,3079_right.jpg,0,2.2514936923980713,0.32284351190615107,Refer,False,True
+normal,4,3091,left,3091_left.jpg,0,0.07282024621963501,0.05524586723407512,"Uncertain, refer",True,True
+normal,4,3091,right,3091_right.jpg,0,-1.6018166542053223,0.011520233743310024,No concern,False,False
+normal,4,3094,left,3094_left.jpg,0,-4.496455669403076,0.0007167658393021916,No concern,False,False
+normal,4,3094,right,3094_right.jpg,0,-5.432479381561279,0.00029109240778057874,No concern,False,False
+normal,4,3098,left,3098_left.jpg,0,-3.3403244018554688,0.0021794243528433636,No concern,False,False
+normal,4,3098,right,3098_right.jpg,0,-0.7505640983581543,0.02577652498463463,"Uncertain, refer",True,True
+normal,4,3111,left,3111_left.jpg,0,2.1843714714050293,0.30887508092672805,Refer,False,True
+normal,4,3111,right,3111_right.jpg,0,2.466654062271118,0.3697004140090442,Refer,False,True
+normal,4,3122,left,3122_left.jpg,0,-2.0635569095611572,0.007415131005748838,No concern,False,False
+normal,4,3122,right,3122_right.jpg,0,-2.5901987552642822,0.004478285316352755,No concern,False,False
+normal,4,3130,left,3130_left.jpg,0,1.301659107208252,0.16035743609389022,Refer,False,True
+normal,4,3130,right,3130_right.jpg,0,2.587221384048462,0.3971444755401568,Refer,False,True
+normal,4,3132,left,3132_left.jpg,0,3.0764541625976562,0.5134539319896667,Refer,False,True
+normal,4,3132,right,3132_right.jpg,0,2.2414052486419678,0.32072295298342407,Refer,False,True
+normal,4,3157,left,3157_left.jpg,0,0.46624523401260376,0.07869564636365789,"Uncertain, refer",True,True
+normal,4,3157,right,3157_right.jpg,0,0.6847124099731445,0.09536799239732692,"Uncertain, refer",True,True
+normal,4,3165,left,3165_left.jpg,0,2.314615488052368,0.3362749825773768,Refer,False,True
+normal,4,3165,right,3165_right.jpg,0,2.542041778564453,0.38677416055468095,Refer,False,True
+normal,4,3169,left,3169_left.jpg,0,2.0916004180908203,0.290133367245245,Refer,False,True
+normal,4,3169,right,3169_right.jpg,0,0.5761156678199768,0.08671821329685753,"Uncertain, refer",True,True
+normal,4,3170,left,3170_left.jpg,0,3.229626178741455,0.5501698183310207,Refer,False,True
+normal,4,3170,right,3170_right.jpg,0,3.4332916736602783,0.5980911741906346,Refer,False,True
+normal,4,3191,left,3191_left.jpg,0,0.7195122241973877,0.09829912889505112,"Uncertain, refer",True,True
+normal,4,3191,right,3191_right.jpg,0,2.2744522094726562,0.327696477685256,Refer,False,True
+normal,4,3196,left,3196_left.jpg,0,0.2050020843744278,0.06227948856150328,"Uncertain, refer",True,True
+normal,4,3196,right,3196_right.jpg,0,1.4856491088867188,0.1856751979236312,Refer,False,True
+normal,4,3197,left,3197_left.jpg,0,1.1958483457565308,0.14710586082420068,Refer,False,True
+normal,4,3197,right,3197_right.jpg,0,-2.1182398796081543,0.007037373844691965,No concern,False,False
+normal,4,3229,left,3229_left.jpg,0,1.1650996208190918,0.1434287995553786,Refer,False,True
+normal,4,3229,right,3229_right.jpg,0,0.3481866419315338,0.07083644638390192,"Uncertain, refer",True,True
+normal,4,3230,left,3230_left.jpg,0,-0.17831410467624664,0.043897319373289924,"Uncertain, refer",True,True
+normal,4,3230,right,3230_right.jpg,0,-1.5022428035736084,0.012665109603905166,No concern,False,False
+normal,4,3235,left,3235_left.jpg,0,0.8577301502227783,0.11074609825965169,Refer,False,True
+normal,4,3235,right,3235_right.jpg,0,1.6517359018325806,0.21108571989085162,Refer,False,True
+normal,4,3237,left,3237_left.jpg,0,2.1287238597869873,0.2975523210003446,Refer,False,True
+normal,4,3237,right,3237_right.jpg,0,2.1166374683380127,0.29512491622127945,Refer,False,True
+normal,4,3248,left,3248_left.jpg,0,2.1089062690734863,0.2935782511668769,Refer,False,True
+normal,4,3248,right,3248_right.jpg,0,2.121887683868408,0.296177943982466,Refer,False,True
+normal,4,3264,left,3264_left.jpg,0,1.66453218460083,0.2131454560590199,Refer,False,True
+normal,4,3264,right,3264_right.jpg,0,2.2803468704223633,0.328948509290802,Refer,False,True
+normal,4,3269,left,3269_left.jpg,0,1.6694504022598267,0.21394099861288424,Refer,False,True
+normal,4,3269,right,3269_right.jpg,0,-0.47907161712646484,0.0332242142865002,"Uncertain, refer",True,True
+normal,4,3300,right,3300_right.jpg,0,1.9354674816131592,0.26016399607156776,Refer,False,True
+normal,4,3302,left,3302_left.jpg,0,1.4026556015014648,0.1738913136280263,Refer,False,True
+normal,4,3302,right,3302_right.jpg,0,1.500561237335205,0.18785664252592815,Refer,False,True
+normal,4,3304,left,3304_left.jpg,0,1.7780976295471191,0.23206498909528112,Refer,False,True
+normal,4,3304,right,3304_right.jpg,0,-0.3335909843444824,0.03803147974051978,"Uncertain, refer",True,True
+normal,4,3321,left,3321_left.jpg,0,0.5733862519264221,0.08651023959896159,"Uncertain, refer",True,True
+normal,4,3321,right,3321_right.jpg,0,0.4192858040332794,0.07547827125999126,"Uncertain, refer",True,True
+normal,4,3331,left,3331_left.jpg,0,-0.115387924015522,0.046512532029204225,"Uncertain, refer",True,True
+normal,4,3331,right,3331_right.jpg,0,-0.7601772546768188,0.025545031613818155,"Uncertain, refer",True,True
+normal,4,3341,left,3341_left.jpg,0,2.6781482696533203,0.41828906529992665,Refer,False,True
+normal,4,3341,right,3341_right.jpg,0,0.9551384449005127,0.12032845122993052,Refer,False,True
+normal,4,3345,left,3345_left.jpg,0,4.133059978485107,0.7448824676561258,Refer,False,True
+normal,4,3345,right,3345_right.jpg,0,3.1231327056884766,0.5246767635939689,Refer,False,True
+normal,4,3364,left,3364_left.jpg,0,2.618504762649536,0.4043802645449164,Refer,False,True
+normal,4,3364,right,3364_right.jpg,0,1.305751085281372,0.16088880169410677,Refer,False,True
+normal,4,3366,left,3366_left.jpg,0,2.502830982208252,0.37785601699200244,Refer,False,True
+normal,4,3366,right,3366_right.jpg,0,1.5387561321258545,0.1935337392440289,Refer,False,True
+normal,4,3367,left,3367_left.jpg,0,-0.9433552622795105,0.021502185565772988,"Uncertain, refer",True,True
+normal,4,3367,right,3367_right.jpg,0,-0.9499331712722778,0.02136929024093955,"Uncertain, refer",True,True
+normal,4,3379,left,3379_left.jpg,0,-1.325160264968872,0.014985095256346165,No concern,False,False
+normal,4,3379,right,3379_right.jpg,0,-0.3622330129146576,0.03703498198412872,"Uncertain, refer",True,True
+normal,4,3383,right,3383_right.jpg,0,2.283585786819458,0.3296374952523663,Refer,False,True
+normal,4,3390,left,3390_left.jpg,0,1.3917783498764038,0.17239147517094516,Refer,False,True
+normal,4,3390,right,3390_right.jpg,0,1.7449071407318115,0.22641688750303182,Refer,False,True
+normal,4,3394,left,3394_left.jpg,0,0.026473157107830048,0.05296169966028779,"Uncertain, refer",True,True
+normal,4,3394,right,3394_right.jpg,0,2.04461932182312,0.28090308881298937,Refer,False,True
+normal,4,3404,left,3404_left.jpg,0,2.1294164657592773,0.297691770708603,Refer,False,True
+normal,4,3404,right,3404_right.jpg,0,1.950226068496704,0.2629093519109582,Refer,False,True
+normal,4,3406,left,3406_left.jpg,0,0.3735681474208832,0.07246244554846497,"Uncertain, refer",True,True
+normal,4,3406,right,3406_right.jpg,0,0.7422699928283691,0.10025914930057188,"Uncertain, refer",True,True
+normal,4,3407,left,3407_left.jpg,0,1.7915587425231934,0.23438353476035284,Refer,False,True
+normal,4,3407,right,3407_right.jpg,0,2.500236749649048,0.37726881324537986,Refer,False,True
+normal,4,3408,left,3408_left.jpg,0,-0.21533924341201782,0.04242472756083644,"Uncertain, refer",True,True
+normal,4,3408,right,3408_right.jpg,0,1.3834737539291382,0.1712532824263335,Refer,False,True
+normal,4,3425,left,3425_left.jpg,0,0.5013628602027893,0.0811831609415756,"Uncertain, refer",True,True
+normal,4,3425,right,3425_right.jpg,0,-0.15982402861118317,0.0446508607346178,"Uncertain, refer",True,True
+normal,4,3427,left,3427_left.jpg,0,1.2296243906021118,0.15123448344214888,Refer,False,True
+normal,4,3427,right,3427_right.jpg,0,1.484920620918274,0.18556913256437527,Refer,False,True
+normal,4,3440,left,3440_left.jpg,0,1.8675779104232788,0.2477768604473718,Refer,False,True
+normal,4,3440,right,3440_right.jpg,0,2.0454537868499756,0.2810654656029003,Refer,False,True
+normal,4,3444,left,3444_left.jpg,0,2.4760756492614746,0.37181744523227606,Refer,False,True
+normal,4,3444,right,3444_right.jpg,0,1.0585821866989136,0.13127966897313934,Refer,False,True
+normal,4,3445,left,3445_left.jpg,0,1.685142159461975,0.216493638450326,Refer,False,True
+normal,4,3445,right,3445_right.jpg,0,2.0515317916870117,0.2822498945670936,Refer,False,True
+normal,4,3485,left,3485_left.jpg,0,0.9884414076805115,0.12376522464554357,Refer,False,True
+normal,4,3485,right,3485_right.jpg,0,2.822392702102661,0.45242649239388744,Refer,False,True
+normal,4,3970,left,3970_left.jpg,0,-0.5859266519546509,0.030072639076126794,"Uncertain, refer",True,True
+normal,4,4115,right,4115_right.jpg,0,-0.4883404076099396,0.0329386590476375,"Uncertain, refer",True,True
+normal,4,4152,left,4152_left.jpg,0,1.0261504650115967,0.12775811362083453,Refer,False,True
+normal,4,4156,right,4156_right.jpg,0,2.444186210632324,0.36467219515516325,Refer,False,True
+normal,4,4203,left,4203_left.jpg,0,-2.147753953933716,0.006841491343504144,No concern,False,False
+normal,4,4206,right,4206_right.jpg,0,-1.0905462503433228,0.018713276394950643,"Uncertain, refer",True,True
+normal,4,4209,left,4209_left.jpg,0,0.5257211923599243,0.08295044408182145,"Uncertain, refer",True,True
+normal,4,4218,left,4218_left.jpg,0,0.7195370197296143,0.09830124572111387,"Uncertain, refer",True,True
+normal,4,4224,left,4224_left.jpg,0,-0.373447060585022,0.03665170740182461,"Uncertain, refer",True,True
+normal,4,4231,left,4231_left.jpg,0,1.876004934310913,0.24929273992109902,Refer,False,True
+normal,4,4240,left,4240_left.jpg,0,2.361356258392334,0.3463957404509835,Refer,False,True
+normal,4,4272,right,4272_right.jpg,0,-3.1240639686584473,0.002682765497409528,No concern,False,False
+normal,4,4297,left,4297_left.jpg,0,0.1616424322128296,0.05988468205915859,"Uncertain, refer",True,True
+normal,4,4302,right,4302_right.jpg,0,0.1070839986205101,0.05699382327843938,"Uncertain, refer",True,True
+normal,4,4308,left,4308_left.jpg,0,0.7562592029571533,0.10148114279292109,"Uncertain, refer",True,True
+normal,4,4339,right,4339_right.jpg,0,0.8517993688583374,0.11018479731208318,Refer,False,True
+normal,4,4360,left,4360_left.jpg,0,0.8264161348342896,0.1078105654265196,Refer,False,True
+normal,4,4438,left,4438_left.jpg,0,0.7944210171699524,0.10488205858707475,Refer,False,True
+normal,4,4458,right,4458_right.jpg,0,-0.26090869307518005,0.04067706624399725,"Uncertain, refer",True,True
+normal,4,4464,left,4464_left.jpg,0,1.2762987613677979,0.15709588155427515,Refer,False,True
+normal,4,4500,left,4500_left.jpg,0,1.5205233097076416,0.19080758726545827,Refer,False,True
+normal,4,4512,left,4512_left.jpg,0,0.29024624824523926,0.06725022478474493,"Uncertain, refer",True,True
+normal,4,4577,left,4577_left.jpg,0,-0.2778834402561188,0.040043846593370534,"Uncertain, refer",True,True
+normal,4,4618,left,4618_left.jpg,0,1.4976152181625366,0.18742412325529476,Refer,False,True
+normal,4,4625,left,4625_left.jpg,0,-0.03322943300008774,0.05015058518919525,"Uncertain, refer",True,True
+normal,4,4638,right,4638_right.jpg,0,1.2975155115127563,0.1598208153206498,Refer,False,True
+normal,4,4641,left,4641_left.jpg,0,-2.0275826454162598,0.0076745524609654414,No concern,False,False
+normal,8,8,left,8_left.jpg,0,2.340426445007324,0.3418459558885058,Refer,False,True
+normal,8,8,right,8_right.jpg,0,3.3501498699188232,0.5787001473385373,Refer,False,True
+normal,8,10,right,10_right.jpg,0,5.603623867034912,0.9232878219614878,Refer,False,True
+normal,8,29,right,29_right.jpg,0,3.3924107551574707,0.5885909184197883,Refer,False,True
+normal,8,38,right,38_right.jpg,0,4.618851184844971,0.8233765399611233,Refer,False,True
+normal,8,63,left,63_left.jpg,0,2.7221195697784424,0.42862831043429755,Refer,False,True
+normal,8,68,left,68_left.jpg,0,1.0797678232192993,0.13362432469435662,Refer,False,True
+normal,8,78,right,78_right.jpg,0,3.5938782691955566,0.6346429481388112,Refer,False,True
+normal,8,84,left,84_left.jpg,0,4.173527240753174,0.7522182652315124,Refer,False,True
+normal,8,84,right,84_right.jpg,0,5.193661212921143,0.8902232647968752,Refer,False,True
+normal,8,97,left,97_left.jpg,0,2.881120204925537,0.4664734267518598,Refer,False,True
+normal,8,110,right,110_right.jpg,0,3.517787456512451,0.6174881719362713,Refer,False,True
+normal,8,122,right,122_right.jpg,0,3.362658739089966,0.5816346974100189,Refer,False,True
+normal,8,129,right,129_right.jpg,0,2.8991005420684814,0.4707858122474779,Refer,False,True
+normal,8,132,left,132_left.jpg,0,3.1028943061828613,0.519813277808569,Refer,False,True
+normal,8,147,left,147_left.jpg,0,3.283339023590088,0.5629370455888157,Refer,False,True
+normal,8,173,left,173_left.jpg,0,3.2560746669769287,0.556465800399807,Refer,False,True
+normal,8,174,right,174_right.jpg,0,2.899134635925293,0.4707939936320782,Refer,False,True
+normal,8,214,left,214_left.jpg,0,2.596243381500244,0.39922678601153616,Refer,False,True
+normal,8,219,right,219_right.jpg,0,3.2433841228485107,0.5534469910778028,Refer,False,True
+normal,8,273,left,273_left.jpg,0,3.03438663482666,0.5033277618041524,Refer,False,True
+normal,8,279,right,279_right.jpg,0,3.2938544750213623,0.565427317159364,Refer,False,True
+normal,8,294,right,294_right.jpg,0,3.46744966506958,0.6059733181154218,Refer,False,True
+normal,8,317,left,317_left.jpg,0,2.380359649658203,0.35055125204648857,Refer,False,True
+normal,8,326,left,326_left.jpg,0,3.599794387817383,0.6359631641576297,Refer,False,True
+normal,8,329,right,329_right.jpg,0,3.1742658615112305,0.5369416560796153,Refer,False,True
+normal,8,335,left,335_left.jpg,0,1.4764941930770874,0.1843456729439388,Refer,False,True
+normal,8,346,left,346_left.jpg,0,3.3654637336730957,0.5822919576644163,Refer,False,True
+normal,8,347,left,347_left.jpg,0,3.4148993492126465,0.5938256648044677,Refer,False,True
+normal,8,363,right,363_right.jpg,0,3.586787700653076,0.633057977349424,Refer,False,True
+normal,8,384,left,384_left.jpg,0,3.045522928237915,0.5060090110382106,Refer,False,True
+normal,8,394,left,394_left.jpg,0,3.1443467140197754,0.5297696619315961,Refer,False,True
+normal,8,394,right,394_right.jpg,0,3.8914389610290527,0.6982090537808695,Refer,False,True
+normal,8,399,right,399_right.jpg,0,3.696821689605713,0.6573118580388934,Refer,False,True
+normal,8,400,left,400_left.jpg,0,1.8757137060165405,0.24924024966575617,Refer,False,True
+normal,8,496,left,496_left.jpg,0,2.8614048957824707,0.4617507031315323,Refer,False,True
+normal,8,524,left,524_left.jpg,0,4.867368221282959,0.855542879850822,Refer,False,True
+normal,8,545,right,545_right.jpg,0,3.056459665298462,0.5086418782668944,Refer,False,True
+normal,8,549,right,549_right.jpg,0,2.4890103340148926,0.37473188681089437,Refer,False,True
+normal,8,555,right,555_right.jpg,0,3.5525851249694824,0.6253726296747462,Refer,False,True
+normal,8,570,left,570_left.jpg,0,3.36889386177063,0.5830953005120255,Refer,False,True
+normal,8,580,left,580_left.jpg,0,3.3434720039367676,0.5771312432151822,Refer,False,True
+normal,8,591,left,591_left.jpg,0,2.710346221923828,0.4258534639005119,Refer,False,True
+normal,8,598,right,598_right.jpg,0,2.2015089988708496,0.3124097222840459,Refer,False,True
+normal,8,610,left,610_left.jpg,0,2.3520398139953613,0.34436697455994025,Refer,False,True
+normal,8,617,left,617_left.jpg,0,2.535090923309326,0.38518751156685077,Refer,False,True
+normal,8,618,right,618_right.jpg,0,3.1074695587158203,0.5209131174801706,Refer,False,True
+normal,8,623,right,623_right.jpg,0,3.6078104972839355,0.6377487409608376,Refer,False,True
+normal,8,633,left,633_left.jpg,0,1.9678828716278076,0.2662182130099421,Refer,False,True
+normal,8,641,left,641_left.jpg,0,2.404250144958496,0.3558077172404148,Refer,False,True
+normal,8,652,right,652_right.jpg,0,3.1804087162017822,0.5384123838428184,Refer,False,True
+normal,8,671,left,671_left.jpg,0,3.685108184814453,0.6547660851108673,Refer,False,True
+normal,8,683,left,683_left.jpg,0,2.490039825439453,0.3749642455392085,Refer,False,True
+normal,8,689,right,689_right.jpg,0,3.4712424278259277,0.6068452080229297,Refer,False,True
+normal,8,716,left,716_left.jpg,0,2.6969070434570312,0.42269170757601826,Refer,False,True
+normal,8,766,left,766_left.jpg,0,3.425109624862671,0.59619540259011,Refer,False,True
+normal,8,782,right,782_right.jpg,0,3.065417528152466,0.5107980085684206,Refer,False,True
+normal,8,795,right,795_right.jpg,0,4.244189739227295,0.7646846666097848,Refer,False,True
+normal,8,800,left,800_left.jpg,0,3.962453842163086,0.7124232143732909,Refer,False,True
+normal,8,807,right,807_right.jpg,0,3.6989858150482178,0.657781217796497,Refer,False,True
+normal,8,840,right,840_right.jpg,0,3.315058946609497,0.5704388095183415,Refer,False,True
+normal,8,872,right,872_right.jpg,0,2.6699891090393066,0.41637814039945303,Refer,False,True
+normal,8,879,right,879_right.jpg,0,3.507432222366333,0.6151296797294817,Refer,False,True
+normal,8,903,left,903_left.jpg,0,3.2600724697113037,0.5574159399911024,Refer,False,True
+normal,8,918,right,918_right.jpg,0,4.091568470001221,0.7372142339350397,Refer,False,True
+normal,8,945,left,945_left.jpg,0,2.472799777984619,0.3710807940214203,Refer,False,True
+normal,8,954,right,954_right.jpg,0,3.7612595558166504,0.6711522850052988,Refer,False,True
+normal,8,966,right,966_right.jpg,0,3.370805025100708,0.5835427077486258,Refer,False,True
+normal,8,987,right,987_right.jpg,0,3.521261692047119,0.6182782264776099,Refer,False,True
+normal,8,1040,right,1040_right.jpg,0,3.968255043029785,0.7135665899652671,Refer,False,True
+normal,8,1074,right,1074_right.jpg,0,3.722290515899658,0.6628158845120121,Refer,False,True
+normal,8,1075,right,1075_right.jpg,0,3.5700795650482178,0.6293118212214839,Refer,False,True
+normal,8,1093,right,1093_right.jpg,0,4.1552414894104,0.7489210782722401,Refer,False,True
+normal,8,1114,right,1114_right.jpg,0,2.705504894256592,0.4247137603247535,Refer,False,True
+normal,8,1119,right,1119_right.jpg,0,4.230475902557373,0.7622995937254808,Refer,False,True
+normal,8,1142,right,1142_right.jpg,0,3.086841106414795,0.515952818750419,Refer,False,True
+normal,8,1160,left,1160_left.jpg,0,3.4378578662872314,0.5991478860129568,Refer,False,True
+normal,8,1274,left,1274_left.jpg,0,3.0752172470092773,0.5131563080657942,Refer,False,True
+normal,8,1397,right,1397_right.jpg,0,3.858353614807129,0.6914523079686679,Refer,False,True
+normal,8,1416,left,1416_left.jpg,0,2.646294116973877,0.4108430512802418,Refer,False,True
+normal,8,1429,right,1429_right.jpg,0,3.769131898880005,0.6728235681032422,Refer,False,True
+normal,8,1491,right,1491_right.jpg,0,3.9700989723205566,0.7139294449149226,Refer,False,True
+normal,8,1515,right,1515_right.jpg,0,4.247828960418701,0.7653148011715413,Refer,False,True
+normal,8,1868,left,1868_left.jpg,0,4.13779878616333,0.7457488441611232,Refer,False,True
+normal,8,1975,right,1975_right.jpg,0,3.5953257083892822,0.6349661405190892,Refer,False,True
+normal,8,2097,left,2097_left.jpg,0,3.2966551780700684,0.566090029080374,Refer,False,True
+normal,8,2119,left,2119_left.jpg,0,2.6435086727142334,0.41019383005572535,Refer,False,True
+normal,8,2197,left,2197_left.jpg,0,1.994464635848999,0.2712493629480237,Refer,False,True
+normal,8,2338,left,2338_left.jpg,0,2.1930880546569824,0.3106701285803841,Refer,False,True
+normal,8,2338,right,2338_right.jpg,0,2.6018972396850586,0.4005335822496386,Refer,False,True
+normal,8,2339,left,2339_left.jpg,0,2.4114370346069336,0.3573958954261101,Refer,False,True
+normal,8,2339,right,2339_right.jpg,0,3.613884449005127,0.6390991806414347,Refer,False,True
+normal,8,2370,left,2370_left.jpg,0,3.3748273849487305,0.5844839000582575,Refer,False,True
+normal,8,2371,left,2371_left.jpg,0,3.363215446472168,0.5817651670127879,Refer,False,True
+normal,8,2371,right,2371_right.jpg,0,3.755329132080078,0.6698903975117605,Refer,False,True
+normal,8,2375,left,2375_left.jpg,0,2.213538646697998,0.3149039878496684,Refer,False,True
+normal,8,2375,right,2375_right.jpg,0,3.296046257019043,0.5659459641214616,Refer,False,True
+normal,8,2394,left,2394_left.jpg,0,4.489438056945801,0.8045138760452567,Refer,False,True
+normal,8,2394,right,2394_right.jpg,0,3.5949463844299316,0.63488145467561,Refer,False,True
+normal,8,2396,left,2396_left.jpg,0,3.7216830253601074,0.6626851060243046,Refer,False,True
+normal,8,2396,right,2396_right.jpg,0,3.701655626296997,0.6583598263849002,Refer,False,True
+normal,8,2407,left,2407_left.jpg,0,3.3006200790405273,0.5670278129778191,Refer,False,True
+normal,8,2407,right,2407_right.jpg,0,3.6950929164886475,0.6569366970856111,Refer,False,True
+normal,8,2409,left,2409_left.jpg,0,3.1933186054229736,0.5415010725841748,Refer,False,True
+normal,8,2409,right,2409_right.jpg,0,3.251925468444824,0.5554792423268488,Refer,False,True
+normal,8,2434,left,2434_left.jpg,0,3.2736713886260986,0.5606447483534978,Refer,False,True
+normal,8,2434,right,2434_right.jpg,0,3.353736639022827,0.5795421728384117,Refer,False,True
+normal,8,2438,left,2438_left.jpg,0,4.282104969024658,0.7711921979947638,Refer,False,True
+normal,8,2438,right,2438_right.jpg,0,5.248294353485107,0.8952610002028392,Refer,False,True
+normal,8,2442,left,2442_left.jpg,0,2.328540563583374,0.3392750008637286,Refer,False,True
+normal,8,2442,right,2442_right.jpg,0,2.6393935680389404,0.4092352693750419,Refer,False,True
+normal,8,2462,left,2462_left.jpg,0,2.957874298095703,0.48490911843923246,Refer,False,True
+normal,8,2462,right,2462_right.jpg,0,3.5076146125793457,0.6151712678471214,Refer,False,True
+normal,8,2474,left,2474_left.jpg,0,3.6201670169830322,0.6404936918966889,Refer,False,True
+normal,8,2474,right,2474_right.jpg,0,4.052526473999023,0.7298646515392408,Refer,False,True
+normal,8,2475,left,2475_left.jpg,0,3.361344337463379,0.5813266097561122,Refer,False,True
+normal,8,2475,right,2475_right.jpg,0,3.545154333114624,0.6236943787605562,Refer,False,True
+normal,8,2476,left,2476_left.jpg,0,3.8777313232421875,0.695419842759492,Refer,False,True
+normal,8,2476,right,2476_right.jpg,0,5.199219226837158,0.8907453206702952,Refer,False,True
+normal,8,2490,left,2490_left.jpg,0,1.4117851257324219,0.17515809878583266,Refer,False,True
+normal,8,2490,right,2490_right.jpg,0,2.21270751953125,0.31473131338237226,Refer,False,True
+normal,8,2503,left,2503_left.jpg,0,2.276432991027832,0.3281169252202569,Refer,False,True
+normal,8,2503,right,2503_right.jpg,0,2.730783462524414,0.43067317364428775,Refer,False,True
+normal,8,2506,left,2506_left.jpg,0,2.6185474395751953,0.40439016486598767,Refer,False,True
+normal,8,2506,right,2506_right.jpg,0,2.205368995666504,0.31320889218044495,Refer,False,True
+normal,8,2508,left,2508_left.jpg,0,4.0247883796691895,0.7245650276374553,Refer,False,True
+normal,8,2508,right,2508_right.jpg,0,4.6035566329956055,0.8212240311853851,Refer,False,True
+normal,8,2512,left,2512_left.jpg,0,1.4543150663375854,0.18115528175374612,Refer,False,True
+normal,8,2512,right,2512_right.jpg,0,1.7153005599975586,0.2214612982263457,Refer,False,True
+normal,8,2514,left,2514_left.jpg,0,2.197486400604248,0.31157807289449735,Refer,False,True
+normal,8,2514,right,2514_right.jpg,0,1.1570767164230347,0.14248206172716962,Refer,False,True
+normal,8,2540,left,2540_left.jpg,0,2.588526487350464,0.39744546977025097,Refer,False,True
+normal,8,2540,right,2540_right.jpg,0,3.3356997966766357,0.5753032744382768,Refer,False,True
+normal,8,2543,left,2543_left.jpg,0,3.7492401599884033,0.6685922232826346,Refer,False,True
+normal,8,2543,right,2543_right.jpg,0,4.722701549530029,0.837455635915324,Refer,False,True
+normal,8,2549,left,2549_left.jpg,0,3.5376291275024414,0.6219917735831516,Refer,False,True
+normal,8,2549,right,2549_right.jpg,0,4.598076343536377,0.8204477739187231,Refer,False,True
+normal,8,2559,left,2559_left.jpg,0,4.060122966766357,0.7313047777783579,Refer,False,True
+normal,8,2559,right,2559_right.jpg,0,4.703994274139404,0.8349880257804202,Refer,False,True
+normal,8,2563,left,2563_left.jpg,0,3.6780905723571777,0.6532366279764567,Refer,False,True
+normal,8,2563,right,2563_right.jpg,0,3.1613526344299316,0.533847893371164,Refer,False,True
+normal,8,2575,left,2575_left.jpg,0,2.1692593097686768,0.3057766108775318,Refer,False,True
+normal,8,2575,right,2575_right.jpg,0,2.9126877784729004,0.47404749156381426,Refer,False,True
+normal,8,2576,left,2576_left.jpg,0,4.21146821975708,0.7589664156208411,Refer,False,True
+normal,8,2576,right,2576_right.jpg,0,5.2666168212890625,0.8969042646387012,Refer,False,True
+normal,8,2577,left,2577_left.jpg,0,1.9907701015472412,0.2705465350892721,Refer,False,True
+normal,8,2577,right,2577_right.jpg,0,2.5930492877960205,0.39848915640527716,Refer,False,True
+normal,8,2584,left,2584_left.jpg,0,2.9663636684417725,0.4869516382559889,Refer,False,True
+normal,8,2584,right,2584_right.jpg,0,5.032721996307373,0.8741338567119753,Refer,False,True
+normal,8,2588,left,2588_left.jpg,0,3.2910914421081543,0.5647732895976011,Refer,False,True
+normal,8,2588,right,2588_right.jpg,0,2.7784175872802734,0.44195631939704183,Refer,False,True
+normal,8,2590,left,2590_left.jpg,0,2.842839002609253,0.45730956999451483,Refer,False,True
+normal,8,2590,right,2590_right.jpg,0,3.9344966411590576,0.7068750940896342,Refer,False,True
+normal,8,2591,left,2591_left.jpg,0,3.9698023796081543,0.7138710989426216,Refer,False,True
+normal,8,2591,right,2591_right.jpg,0,4.157751560211182,0.7493754028265558,Refer,False,True
+normal,8,2593,left,2593_left.jpg,0,2.495872735977173,0.3762818330912589,Refer,False,True
+normal,8,2593,right,2593_right.jpg,0,2.6709580421447754,0.41660494013402316,Refer,False,True
+normal,8,2595,left,2595_left.jpg,0,2.722421169281006,0.42869945383269675,Refer,False,True
+normal,8,2595,right,2595_right.jpg,0,3.4774250984191895,0.6082650352803345,Refer,False,True
+normal,8,2597,left,2597_left.jpg,0,4.01767110824585,0.7231948629907108,Refer,False,True
+normal,8,2597,right,2597_right.jpg,0,4.282363414764404,0.7712361186620561,Refer,False,True
+normal,8,2604,left,2604_left.jpg,0,2.592193841934204,0.3982916816579472,Refer,False,True
+normal,8,2604,right,2604_right.jpg,0,3.1946873664855957,0.5418283657060574,Refer,False,True
+normal,8,2612,left,2612_left.jpg,0,3.20851469039917,0.5451326332853285,Refer,False,True
+normal,8,2612,right,2612_right.jpg,0,3.4680917263031006,0.6061209643999879,Refer,False,True
+normal,8,2619,left,2619_left.jpg,0,4.481861591339111,0.803363669735318,Refer,False,True
+normal,8,2619,right,2619_right.jpg,0,4.267811298370361,0.7687538806345644,Refer,False,True
+normal,8,2622,left,2622_left.jpg,0,2.6842098236083984,0.41971031086427896,Refer,False,True
+normal,8,2622,right,2622_right.jpg,0,3.9925785064697266,0.7183308095578419,Refer,False,True
+normal,8,2624,left,2624_left.jpg,0,2.866905689239502,0.4630677426052591,Refer,False,True
+normal,8,2624,right,2624_right.jpg,0,2.8484673500061035,0.4586552388978551,Refer,False,True
+normal,8,2644,left,2644_left.jpg,0,0.9343225955963135,0.11822239160148285,Refer,False,True
+normal,8,2644,right,2644_right.jpg,0,1.3658645153045654,0.16885957202356,Refer,False,True
+normal,8,2657,left,2657_left.jpg,0,4.037389278411865,0.7269805220120491,Refer,False,True
+normal,8,2657,right,2657_right.jpg,0,3.4508183002471924,0.6021421518981632,Refer,False,True
+normal,8,2659,left,2659_left.jpg,0,4.017533779144287,0.7231683840692056,Refer,False,True
+normal,8,2659,right,2659_right.jpg,0,3.697007656097412,0.6573522029180021,Refer,False,True
+normal,8,2662,left,2662_left.jpg,0,3.0539252758026123,0.5080317966014458,Refer,False,True
+normal,8,2662,right,2662_right.jpg,0,3.4274380207061768,0.5967351844065056,Refer,False,True
+normal,8,2666,left,2666_left.jpg,0,3.2858197689056396,0.5635248270864691,Refer,False,True
+normal,8,2666,right,2666_right.jpg,0,3.164224147796631,0.5345360867826878,Refer,False,True
+normal,8,2669,left,2669_left.jpg,0,3.1938278675079346,0.5416228496636316,Refer,False,True
+normal,8,2669,right,2669_right.jpg,0,3.6110708713531494,0.6384739015314767,Refer,False,True
+normal,8,2681,left,2681_left.jpg,0,3.833190441131592,0.686257806923395,Refer,False,True
+normal,8,2681,right,2681_right.jpg,0,4.026767730712891,0.724945329690491,Refer,False,True
+normal,8,2684,left,2684_left.jpg,0,3.580968141555786,0.6317549626458467,Refer,False,True
+normal,8,2684,right,2684_right.jpg,0,3.7490665912628174,0.6685551805391177,Refer,False,True
+normal,8,2702,left,2702_left.jpg,0,2.9827353954315186,0.49089180327351306,Refer,False,True
+normal,8,2702,right,2702_right.jpg,0,3.467848777770996,0.6060650990340517,Refer,False,True
+normal,8,2710,left,2710_left.jpg,0,5.803561687469482,0.9358632185434241,Refer,False,True
+normal,8,2710,right,2710_right.jpg,0,5.824385166168213,0.9370565849453617,Refer,False,True
+normal,8,2737,right,2737_right.jpg,0,5.80279016494751,0.9358186011464751,Refer,False,True
+normal,8,2745,left,2745_left.jpg,0,2.5206990242004395,0.38191010113064483,Refer,False,True
+normal,8,2745,right,2745_right.jpg,0,3.242313861846924,0.5531922153473379,Refer,False,True
+normal,8,2748,left,2748_left.jpg,0,3.5009090900421143,0.613641191069758,Refer,False,True
+normal,8,2748,right,2748_right.jpg,0,3.4480197429656982,0.6014962361143822,Refer,False,True
+normal,8,2756,right,2756_right.jpg,0,3.6143882274627686,0.639211088817207,Refer,False,True
+normal,8,2762,left,2762_left.jpg,0,3.5848560333251953,0.6326256864587095,Refer,False,True
+normal,8,2762,right,2762_right.jpg,0,4.089238166809082,0.7367791886188112,Refer,False,True
+normal,8,2764,left,2764_left.jpg,0,3.082949161529541,0.5150165829504004,Refer,False,True
+normal,8,2764,right,2764_right.jpg,0,3.3485355377197266,0.5783210189692644,Refer,False,True
+normal,8,2773,left,2773_left.jpg,0,3.7179110050201416,0.6618725216785621,Refer,False,True
+normal,8,2773,right,2773_right.jpg,0,3.45061993598938,0.602096380490426,Refer,False,True
+normal,8,2779,left,2779_left.jpg,0,3.1656699180603027,0.5348825337733725,Refer,False,True
+normal,8,2779,right,2779_right.jpg,0,3.4570937156677246,0.6035892417480294,Refer,False,True
+normal,8,2781,left,2781_left.jpg,0,2.7386667728424072,0.4325358615095846,Refer,False,True
+normal,8,2781,right,2781_right.jpg,0,3.3527579307556152,0.5793124581899478,Refer,False,True
+normal,8,2783,left,2783_left.jpg,0,3.3894057273864746,0.5878898790576333,Refer,False,True
+normal,8,2783,right,2783_right.jpg,0,3.417165517807007,0.5943520091606121,Refer,False,True
+normal,8,2784,left,2784_left.jpg,0,2.078005790710449,0.2874440675614162,Refer,False,True
+normal,8,2784,right,2784_right.jpg,0,2.406223773956299,0.3562435408337564,Refer,False,True
+normal,8,2792,right,2792_right.jpg,0,3.5723624229431152,0.6298245943774606,Refer,False,True
+normal,8,2823,left,2823_left.jpg,0,3.720325469970703,0.6623927661676537,Refer,False,True
+normal,8,2823,right,2823_right.jpg,0,3.880589485168457,0.6960026126217845,Refer,False,True
+normal,8,2833,left,2833_left.jpg,0,4.5813727378845215,0.8180655492485762,Refer,False,True
+normal,8,2833,right,2833_right.jpg,0,5.1613593101501465,0.8871457359551037,Refer,False,True
+normal,8,2855,left,2855_left.jpg,0,2.298006534576416,0.33271395598368125,Refer,False,True
+normal,8,2855,right,2855_right.jpg,0,2.7429490089416504,0.4335484822279708,Refer,False,True
+normal,8,2857,left,2857_left.jpg,0,2.390354633331299,0.35274605643514684,Refer,False,True
+normal,8,2857,right,2857_right.jpg,0,2.761697769165039,0.43798843167376494,Refer,False,True
+normal,8,2859,left,2859_left.jpg,0,3.8291263580322266,0.6854144053361293,Refer,False,True
+normal,8,2859,right,2859_right.jpg,0,4.0904927253723145,0.7370134602152705,Refer,False,True
+normal,8,2860,left,2860_left.jpg,0,2.340259075164795,0.341809688227342,Refer,False,True
+normal,8,2860,right,2860_right.jpg,0,3.5438621044158936,0.6234022232100788,Refer,False,True
+normal,8,2865,left,2865_left.jpg,0,5.041006565093994,0.8750091534520084,Refer,False,True
+normal,8,2865,right,2865_right.jpg,0,4.5721564292907715,0.8167406571124597,Refer,False,True
+normal,8,2869,left,2869_left.jpg,0,3.3724122047424316,0.5839188453129529,Refer,False,True
+normal,8,2869,right,2869_right.jpg,0,2.842071533203125,0.4571261252749154,Refer,False,True
+normal,8,2885,left,2885_left.jpg,0,2.8612866401672363,0.46172239531771925,Refer,False,True
+normal,8,2885,right,2885_right.jpg,0,3.297621488571167,0.5663186260689601,Refer,False,True
+normal,8,2886,left,2886_left.jpg,0,3.182131290435791,0.5388246852091716,Refer,False,True
+normal,8,2886,right,2886_right.jpg,0,3.289386034011841,0.5643694959001726,Refer,False,True
+normal,8,2904,left,2904_left.jpg,0,3.29158616065979,0.5648904092807062,Refer,False,True
+normal,8,2904,right,2904_right.jpg,0,3.594580888748169,0.6347998481636363,Refer,False,True
+normal,8,2905,left,2905_left.jpg,0,2.557258129119873,0.39025590827033446,Refer,False,True
+normal,8,2905,right,2905_right.jpg,0,3.056915283203125,0.5087515525479712,Refer,False,True
+normal,8,2906,left,2906_left.jpg,0,3.3202056884765625,0.5716530631118568,Refer,False,True
+normal,8,2906,right,2906_right.jpg,0,2.1149935722351074,0.2947956502343595,Refer,False,True
+normal,8,2925,left,2925_left.jpg,0,3.467446804046631,0.6059726601606875,Refer,False,True
+normal,8,2925,right,2925_right.jpg,0,3.413853168487549,0.5935826041880957,Refer,False,True
+normal,8,2930,right,2930_right.jpg,0,3.187103748321533,0.5400145523993999,Refer,False,True
+normal,8,2935,left,2935_left.jpg,0,2.64058256149292,0.40951215957806647,Refer,False,True
+normal,8,2935,right,2935_right.jpg,0,4.062317371368408,0.7317198828599434,Refer,False,True
+normal,8,2951,left,2951_left.jpg,0,2.3552067279815674,0.34505597560037193,Refer,False,True
+normal,8,2951,right,2951_right.jpg,0,3.3293673992156982,0.5738124122481602,Refer,False,True
+normal,8,2953,left,2953_left.jpg,0,3.0747454166412354,0.513042774804771,Refer,False,True
+normal,8,2953,right,2953_right.jpg,0,2.917175769805908,0.47512535528455113,Refer,False,True
+normal,8,2960,left,2960_left.jpg,0,3.9444873332977295,0.7088649396470734,Refer,False,True
+normal,8,2960,right,2960_right.jpg,0,3.349888324737549,0.5786387293420276,Refer,False,True
+normal,8,2965,left,2965_left.jpg,0,2.9817190170288086,0.4906471546337972,Refer,False,True
+normal,8,2965,right,2965_right.jpg,0,3.047828197479248,0.5065640051495427,Refer,False,True
+normal,8,2967,left,2967_left.jpg,0,2.3811326026916504,0.3507207612289525,Refer,False,True
+normal,8,2967,right,2967_right.jpg,0,2.687694549560547,0.4205279754298529,Refer,False,True
+normal,8,2968,left,2968_left.jpg,0,2.475623607635498,0.3717157582794904,Refer,False,True
+normal,8,2970,left,2970_left.jpg,0,4.454299449920654,0.7991362997817486,Refer,False,True
+normal,8,2970,right,2970_right.jpg,0,4.138894081115723,0.745948816262003,Refer,False,True
+normal,8,2978,left,2978_left.jpg,0,2.6804802417755127,0.41883568091910645,Refer,False,True
+normal,8,2978,right,2978_right.jpg,0,2.8448944091796875,0.4578009213644046,Refer,False,True
+normal,8,2980,left,2980_left.jpg,0,4.057688236236572,0.7308437361896319,Refer,False,True
+normal,8,2980,right,2980_right.jpg,0,4.817535877227783,0.8495092630197365,Refer,False,True
+normal,8,3002,left,3002_left.jpg,0,2.5983238220214844,0.3997074798015458,Refer,False,True
+normal,8,3002,right,3002_right.jpg,0,2.7351813316345215,0.4317120744552577,Refer,False,True
+normal,8,3017,left,3017_left.jpg,0,2.579833507537842,0.3954420926550973,Refer,False,True
+normal,8,3017,right,3017_right.jpg,0,3.2240514755249023,0.5488406546063066,Refer,False,True
+normal,8,3025,left,3025_left.jpg,0,1.7908142805099487,0.23425488955727153,Refer,False,True
+normal,8,3025,right,3025_right.jpg,0,1.893725872039795,0.2525005905309592,Refer,False,True
+normal,8,3028,left,3028_left.jpg,0,2.237457036972046,0.31989505595283413,Refer,False,True
+normal,8,3028,right,3028_right.jpg,0,3.508899211883545,0.6154641309727573,Refer,False,True
+normal,8,3035,left,3035_left.jpg,0,2.8680882453918457,0.4633509466381042,Refer,False,True
+normal,8,3035,right,3035_right.jpg,0,2.904606342315674,0.4721072203913428,Refer,False,True
+normal,8,3037,right,3037_right.jpg,0,3.8330094814300537,0.6862202792526563,Refer,False,True
+normal,8,3044,left,3044_left.jpg,0,3.3052077293395996,0.568112291034751,Refer,False,True
+normal,8,3044,right,3044_right.jpg,0,3.756828546524048,0.6702096780141846,Refer,False,True
+normal,8,3048,left,3048_left.jpg,0,3.594412088394165,0.6347621564356467,Refer,False,True
+normal,8,3048,right,3048_right.jpg,0,3.724705219268799,0.6633354671140539,Refer,False,True
+normal,8,3071,left,3071_left.jpg,0,3.679370641708374,0.6535158505740016,Refer,False,True
+normal,8,3071,right,3071_right.jpg,0,3.765613079071045,0.6720770683183765,Refer,False,True
+normal,8,3074,left,3074_left.jpg,0,3.211815595626831,0.5459208629107863,Refer,False,True
+normal,8,3074,right,3074_right.jpg,0,3.4714322090148926,0.6068888175718979,Refer,False,True
+normal,8,3079,left,3079_left.jpg,0,3.477731466293335,0.6083353441230931,Refer,False,True
+normal,8,3079,right,3079_right.jpg,0,3.893068790435791,0.698539723213789,Refer,False,True
+normal,8,3091,left,3091_left.jpg,0,3.3255887031555176,0.5729221369677836,Refer,False,True
+normal,8,3091,right,3091_right.jpg,0,2.717569351196289,0.42755533265597906,Refer,False,True
+normal,8,3094,left,3094_left.jpg,0,1.8905601501464844,0.2519255301128847,Refer,False,True
+normal,8,3094,right,3094_right.jpg,0,2.086393356323242,0.28910154517940706,Refer,False,True
+normal,8,3098,left,3098_left.jpg,0,2.1340699195861816,0.2986296752845607,Refer,False,True
+normal,8,3098,right,3098_right.jpg,0,1.9910643100738525,0.27060246169641344,Refer,False,True
+normal,8,3111,left,3111_left.jpg,0,3.4519824981689453,0.6024107478175872,Refer,False,True
+normal,8,3111,right,3111_right.jpg,0,3.5712459087371826,0.6295738406263562,Refer,False,True
+normal,8,3122,left,3122_left.jpg,0,2.5530877113342285,0.38930051961227036,Refer,False,True
+normal,8,3122,right,3122_right.jpg,0,3.0095672607421875,0.49735162022958346,Refer,False,True
+normal,8,3130,left,3130_left.jpg,0,3.520792007446289,0.6181714548526617,Refer,False,True
+normal,8,3130,right,3130_right.jpg,0,3.2364501953125,0.5517958765645746,Refer,False,True
+normal,8,3132,left,3132_left.jpg,0,3.8306126594543457,0.6857229933368981,Refer,False,True
+normal,8,3132,right,3132_right.jpg,0,2.8646817207336426,0.46253520099069023,Refer,False,True
+normal,8,3157,left,3157_left.jpg,0,2.873670816421509,0.4646882028902012,Refer,False,True
+normal,8,3157,right,3157_right.jpg,0,2.506737232208252,0.37874087137761225,Refer,False,True
+normal,8,3165,left,3165_left.jpg,0,4.043970584869385,0.7282368356544434,Refer,False,True
+normal,8,3165,right,3165_right.jpg,0,2.690396785736084,0.42116233526552566,Refer,False,True
+normal,8,3169,left,3169_left.jpg,0,2.627105712890625,0.406377101216744,Refer,False,True
+normal,8,3169,right,3169_right.jpg,0,2.646787405014038,0.41095805750293524,Refer,False,True
+normal,8,3170,left,3170_left.jpg,0,3.5454766750335693,0.6237672419295663,Refer,False,True
+normal,8,3170,right,3170_right.jpg,0,3.817789077758789,0.6830551648395066,Refer,False,True
+normal,8,3191,left,3191_left.jpg,0,4.641049385070801,0.8264643551548476,Refer,False,True
+normal,8,3191,right,3191_right.jpg,0,5.17157506942749,0.8881270868430632,Refer,False,True
+normal,8,3196,left,3196_left.jpg,0,3.461456060409546,0.6045941182720622,Refer,False,True
+normal,8,3196,right,3196_right.jpg,0,3.0466129779815674,0.5062714426994506,Refer,False,True
+normal,8,3197,left,3197_left.jpg,0,2.5518577098846436,0.38901890410243256,Refer,False,True
+normal,8,3197,right,3197_right.jpg,0,3.1666669845581055,0.5351214392040633,Refer,False,True
+normal,8,3229,left,3229_left.jpg,0,2.7199738025665283,0.4281222371869854,Refer,False,True
+normal,8,3229,right,3229_right.jpg,0,2.9860663414001465,0.4916936127605214,Refer,False,True
+normal,8,3230,left,3230_left.jpg,0,3.742522716522217,0.6671570778536402,Refer,False,True
+normal,8,3230,right,3230_right.jpg,0,3.7345449924468994,0.6654486451540516,Refer,False,True
+normal,8,3235,left,3235_left.jpg,0,1.990878939628601,0.2705672234607334,Refer,False,True
+normal,8,3235,right,3235_right.jpg,0,3.3255841732025146,0.5729210694087173,Refer,False,True
+normal,8,3237,left,3237_left.jpg,0,4.002400875091553,0.7202409976661314,Refer,False,True
+normal,8,3237,right,3237_right.jpg,0,4.367429256439209,0.7853693775834844,Refer,False,True
+normal,8,3248,left,3248_left.jpg,0,3.4370341300964355,0.5989573241839945,Refer,False,True
+normal,8,3248,right,3248_right.jpg,0,3.583526849746704,0.6323281023910309,Refer,False,True
+normal,8,3264,left,3264_left.jpg,0,3.069356679916382,0.5117460279729726,Refer,False,True
+normal,8,3264,right,3264_right.jpg,0,3.841130018234253,0.6879019240901538,Refer,False,True
+normal,8,3269,left,3269_left.jpg,0,4.5737433433532715,0.8169693163964531,Refer,False,True
+normal,8,3269,right,3269_right.jpg,0,4.717693328857422,0.8367979489047184,Refer,False,True
+normal,8,3300,right,3300_right.jpg,0,3.621397018432617,0.6407664326784346,Refer,False,True
+normal,8,3302,left,3302_left.jpg,0,3.7313272953033447,0.6647583412803083,Refer,False,True
+normal,8,3302,right,3302_right.jpg,0,2.7996675968170166,0.44700994598211885,Refer,False,True
+normal,8,3304,left,3304_left.jpg,0,2.1467204093933105,0.3011879348047528,Refer,False,True
+normal,8,3304,right,3304_right.jpg,0,2.5237767696380615,0.3826100924254296,Refer,False,True
+normal,8,3321,left,3321_left.jpg,0,2.9252758026123047,0.47707128915853897,Refer,False,True
+normal,8,3321,right,3321_right.jpg,0,2.705108880996704,0.42462056953669697,Refer,False,True
+normal,8,3331,left,3331_left.jpg,0,2.05421781539917,0.2827742874493214,Refer,False,True
+normal,8,3331,right,3331_right.jpg,0,2.8377771377563477,0.45609987141004216,Refer,False,True
+normal,8,3341,left,3341_left.jpg,0,3.872241973876953,0.6942988239378269,Refer,False,True
+normal,8,3341,right,3341_right.jpg,0,2.168426752090454,0.30560641634969365,Refer,False,True
+normal,8,3345,left,3345_left.jpg,0,5.6720733642578125,0.9278289170763372,Refer,False,True
+normal,8,3345,right,3345_right.jpg,0,4.323490142822266,0.7781496037388681,Refer,False,True
+normal,8,3364,left,3364_left.jpg,0,2.7558162212371826,0.43659450074478956,Refer,False,True
+normal,8,3364,right,3364_right.jpg,0,4.115911483764648,0.7417310955453325,Refer,False,True
+normal,8,3366,left,3366_left.jpg,0,4.632492542266846,0.8252791612741897,Refer,False,True
+normal,8,3366,right,3366_right.jpg,0,3.340968608856201,0.5765426902411063,Refer,False,True
+normal,8,3367,left,3367_left.jpg,0,2.922149181365967,0.4763200708865621,Refer,False,True
+normal,8,3367,right,3367_right.jpg,0,3.8801753520965576,0.6959182111542112,Refer,False,True
+normal,8,3379,left,3379_left.jpg,0,2.097733497619629,0.29135147558700036,Refer,False,True
+normal,8,3379,right,3379_right.jpg,0,2.4297173023223877,0.3614495950737078,Refer,False,True
+normal,8,3383,right,3383_right.jpg,0,3.5900259017944336,0.6337821791978427,Refer,False,True
+normal,8,3390,left,3390_left.jpg,0,1.5875310897827148,0.2009716712868526,Refer,False,True
+normal,8,3390,right,3390_right.jpg,0,1.9365885257720947,0.26037187632080994,Refer,False,True
+normal,8,3394,left,3394_left.jpg,0,3.7272391319274902,0.6638802761952179,Refer,False,True
+normal,8,3394,right,3394_right.jpg,0,3.8817033767700195,0.6962295613268528,Refer,False,True
+normal,8,3404,left,3404_left.jpg,0,3.5841808319091797,0.6324745317042904,Refer,False,True
+normal,8,3404,right,3404_right.jpg,0,3.4709768295288086,0.606784173708729,Refer,False,True
+normal,8,3406,left,3406_left.jpg,0,3.6257505416870117,0.6417310521949013,Refer,False,True
+normal,8,3406,right,3406_right.jpg,0,3.474966526031494,0.6077006512001966,Refer,False,True
+normal,8,3407,left,3407_left.jpg,0,3.792609214782715,0.6777816620127004,Refer,False,True
+normal,8,3407,right,3407_right.jpg,0,3.9757418632507324,0.7150381595867399,Refer,False,True
+normal,8,3408,left,3408_left.jpg,0,2.9195094108581543,0.4756859091744619,Refer,False,True
+normal,8,3408,right,3408_right.jpg,0,2.9987263679504395,0.4947414289567965,Refer,False,True
+normal,8,3425,left,3425_left.jpg,0,2.265781879425049,0.3258593419940636,Refer,False,True
+normal,8,3425,right,3425_right.jpg,0,2.9965343475341797,0.49421368047213715,Refer,False,True
+normal,8,3427,left,3427_left.jpg,0,3.46622896194458,0.6056925558947778,Refer,False,True
+normal,8,3427,right,3427_right.jpg,0,3.4130566120147705,0.593397508372903,Refer,False,True
+normal,8,3440,left,3440_left.jpg,0,3.093982219696045,0.5176703698243637,Refer,False,True
+normal,8,3440,right,3440_right.jpg,0,3.4323174953460693,0.5978656107292358,Refer,False,True
+normal,8,3444,left,3444_left.jpg,0,2.8288233280181885,0.45396134159983054,Refer,False,True
+normal,8,3444,right,3444_right.jpg,0,3.856329917907715,0.6910363136782006,Refer,False,True
+normal,8,3445,left,3445_left.jpg,0,2.942598342895508,0.48123507951269695,Refer,False,True
+normal,8,3445,right,3445_right.jpg,0,3.384953498840332,0.5868505688958324,Refer,False,True
+normal,8,3485,left,3485_left.jpg,0,3.674744129180908,0.6525061673838234,Refer,False,True
+normal,8,3485,right,3485_right.jpg,0,4.163635730743408,0.750438295161956,Refer,False,True
+normal,8,3970,left,3970_left.jpg,0,2.6286046504974365,0.4067254204640015,Refer,False,True
+normal,8,4115,right,4115_right.jpg,0,2.949829578399658,0.4829740443728332,Refer,False,True
+normal,8,4152,left,4152_left.jpg,0,2.7751035690307617,0.4411692427447535,Refer,False,True
+normal,8,4156,right,4156_right.jpg,0,4.005089282989502,0.7207624380281222,Refer,False,True
+normal,8,4203,left,4203_left.jpg,0,2.748582601547241,0.4348815027075718,Refer,False,True
+normal,8,4206,right,4206_right.jpg,0,3.4959230422973633,0.6125020082869522,Refer,False,True
+normal,8,4209,left,4209_left.jpg,0,1.8193410634994507,0.2392193977709901,Refer,False,True
+normal,8,4218,left,4218_left.jpg,0,2.3287625312805176,0.33932292703237804,Refer,False,True
+normal,8,4224,left,4224_left.jpg,0,4.092604637145996,0.7374075277439542,Refer,False,True
+normal,8,4231,left,4231_left.jpg,0,3.756441593170166,0.6701272964227752,Refer,False,True
+normal,8,4240,left,4240_left.jpg,0,3.621948003768921,0.6408885787959389,Refer,False,True
+normal,8,4272,right,4272_right.jpg,0,2.0103530883789062,0.27428492511811886,Refer,False,True
+normal,8,4297,left,4297_left.jpg,0,1.8566458225250244,0.24581959322372166,Refer,False,True
+normal,8,4302,right,4302_right.jpg,0,3.322518825531006,0.5721985137792626,Refer,False,True
+normal,8,4308,left,4308_left.jpg,0,3.4828569889068604,0.609510939619157,Refer,False,True
+normal,8,4339,right,4339_right.jpg,0,4.032357692718506,0.7260175939865976,Refer,False,True
+normal,8,4360,left,4360_left.jpg,0,2.6788790225982666,0.418460332692956,Refer,False,True
+normal,8,4438,left,4438_left.jpg,0,2.564361095428467,0.39188504204130986,Refer,False,True
+normal,8,4458,right,4458_right.jpg,0,3.666677236557007,0.6507423803942867,Refer,False,True
+normal,8,4464,left,4464_left.jpg,0,3.6815433502197266,0.6539895433069175,Refer,False,True
+normal,8,4500,left,4500_left.jpg,0,3.6480460166931152,0.6466530107144647,Refer,False,True
+normal,8,4512,left,4512_left.jpg,0,3.0065598487854004,0.49662749692382885,Refer,False,True
+normal,8,4577,left,4577_left.jpg,0,1.6234463453292847,0.20658400336148938,Refer,False,True
+normal,8,4618,left,4618_left.jpg,0,3.5675506591796875,0.6287434405500565,Refer,False,True
+normal,8,4625,left,4625_left.jpg,0,3.3174314498901367,0.5709986525172422,Refer,False,True
+normal,8,4638,right,4638_right.jpg,0,3.2635955810546875,0.5582529138880648,Refer,False,True
+normal,8,4641,left,4641_left.jpg,0,2.748838424682617,0.4349420580767856,Refer,False,True
+real_cataract,0,188,right,188_right.jpg,1,3.25616717338562,0.556487790673833,Refer,False,True
+real_cataract,0,294,left,294_left.jpg,1,3.342608690261841,0.5769283011625982,Refer,False,True
+real_cataract,0,448,left,448_left.jpg,1,5.306185245513916,0.9003753008494443,Refer,False,True
+real_cataract,0,477,left,477_left.jpg,1,6.332942485809326,0.960468606877783,Refer,False,True
+real_cataract,0,477,right,477_right.jpg,1,7.649069309234619,0.9885467008822915,Refer,False,True
+real_cataract,0,611,left,611_left.jpg,1,-0.6265256404876709,0.028952791113898174,"Uncertain, refer",True,True
+real_cataract,0,1102,left,1102_left.jpg,1,0.16068494319915771,0.05983278415430582,"Uncertain, refer",True,True
+real_cataract,0,1102,right,1102_right.jpg,1,-0.04178830236196518,0.04975935478743443,"Uncertain, refer",True,True
+real_cataract,0,1415,left,1415_left.jpg,1,0.043611668050289154,0.05379577384820347,"Uncertain, refer",True,True
+real_cataract,0,2097,right,2097_right.jpg,1,4.5201287269592285,0.8091209815843058,Refer,False,True
+real_cataract,0,2114,left,2114_left.jpg,1,3.9690566062927246,0.7137243582769669,Refer,False,True
+real_cataract,0,2114,right,2114_right.jpg,1,0.44573989510536194,0.07727559672261985,"Uncertain, refer",True,True
+real_cataract,0,2118,right,2118_right.jpg,1,5.5795817375183105,0.9216315638409799,Refer,False,True
+real_cataract,0,2120,left,2120_left.jpg,1,4.773930072784424,0.8440607861417233,Refer,False,True
+real_cataract,0,2120,right,2120_right.jpg,1,5.703981399536133,0.9298599637291466,Refer,False,True
+real_cataract,0,2124,left,2124_left.jpg,1,3.8606882095336914,0.6919318253384348,Refer,False,True
+real_cataract,0,2140,left,2140_left.jpg,1,5.334274768829346,0.902775930741396,Refer,False,True
+real_cataract,0,2140,right,2140_right.jpg,1,-2.774839401245117,0.003751414089322876,No concern,False,False
+real_cataract,0,2144,left,2144_left.jpg,1,5.543826580047607,0.9191078432352627,Refer,False,True
+real_cataract,0,2144,right,2144_right.jpg,1,6.062708377838135,0.9493120477243989,Refer,False,True
+real_cataract,0,2146,left,2146_left.jpg,1,5.768739223480225,0.9338204047988974,Refer,False,True
+real_cataract,0,2146,right,2146_right.jpg,1,2.862335681915283,0.4619735216173636,Refer,False,True
+real_cataract,0,2164,right,2164_right.jpg,1,6.6777825355529785,0.9713201129129331,Refer,False,True
+real_cataract,0,2170,left,2170_left.jpg,1,6.233266830444336,0.9566579761097461,Refer,False,True
+real_cataract,0,2170,right,2170_right.jpg,1,6.3276591300964355,0.9602749430801069,Refer,False,True
+real_cataract,0,2173,right,2173_right.jpg,1,6.900694847106934,0.9767325785365885,Refer,False,True
+real_cataract,0,2176,left,2176_left.jpg,1,5.8715500831604,0.9396833383377118,Refer,False,True
+real_cataract,0,2176,right,2176_right.jpg,1,3.3957223892211914,0.5893630692045494,Refer,False,True
+real_cataract,0,2177,right,2177_right.jpg,1,3.2107338905334473,0.5456625855926447,Refer,False,True
+real_cataract,0,2185,left,2185_left.jpg,1,4.524918079376221,0.8098323986201809,Refer,False,True
+real_cataract,0,2192,left,2192_left.jpg,1,5.730429172515869,0.9315032573933412,Refer,False,True
+real_cataract,0,2192,right,2192_right.jpg,1,2.2560276985168457,0.32379893128710485,Refer,False,True
+real_cataract,0,2197,right,2197_right.jpg,1,5.690769672393799,0.9290254860286968,Refer,False,True
+real_cataract,0,2200,left,2200_left.jpg,1,5.8364481925964355,0.9377383946871383,Refer,False,True
+real_cataract,0,2221,left,2221_left.jpg,1,4.057505130767822,0.730809043063893,Refer,False,True
+real_cataract,0,2221,right,2221_right.jpg,1,4.561044216156006,0.8151332833412562,Refer,False,True
+real_cataract,0,2223,left,2223_left.jpg,1,7.013149261474609,0.9790710239688881,Refer,False,True
+real_cataract,0,2223,right,2223_right.jpg,1,4.282654285430908,0.7712855425782694,Refer,False,True
