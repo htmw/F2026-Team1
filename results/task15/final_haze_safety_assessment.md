@@ -233,5 +233,3 @@ Further controlled investigation and team review are recommended before any clin
 - `results/task15/cataract_heatmap_contact_sheet.png` - SCRUM-99 contact sheet.
 - `results/task15/heatmap_generation_manifest.csv` - SCRUM-99 generation records.
 - `results/task15/heatmap_selection_plan.md` - SCRUM-99 predefined selection criteria.
-
-Some supporting artifacts remain on their respective task branches until the related pull requests are merged.
