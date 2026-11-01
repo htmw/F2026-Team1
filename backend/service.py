@@ -5,6 +5,7 @@ import os
 import sys
 import json
 import hashlib
+import logging
 
 from pathlib import Path
 from urllib.parse import quote
@@ -12,7 +13,6 @@ from urllib.parse import quote
 import cv2
 import httpx
 import numpy as np
-import psycopg
 
 from fastapi import HTTPException
 
@@ -26,37 +26,15 @@ from .results import (
 
 
 REPO = Path(__file__).resolve().parents[1]
-
-sys.path.insert(
-    0,
-    str(REPO / "scripts"),
-)
+sys.path.insert(0, str(REPO / "scripts"))
 
 import quality_check as qc
 from preprocess_images import TARGET_SIZE, crop_fundus
 
 
+logger = logging.getLogger(__name__)
+
 EYES = ("right", "left")
-
-
-# ---------- Original SQLite implementation ----------
-
-# Keep your existing SQLite service functions in this
-# section as comments. Their replacements appear below.
-#
-# Original SQLite queries used:
-#
-# SELECT ... WHERE id = ?
-# INSERT INTO ... VALUES (?, ?, ...)
-# INSERT OR IGNORE INTO ...
-#
-# Original local image storage used:
-#
-# db.STORAGE / "images"
-# db.STORAGE / "heatmaps"
-#
-# The PostgreSQL implementation uses %s parameters
-# and Supabase Storage instead of local files.
 
 
 # ---------- Supabase Storage ----------
@@ -108,38 +86,49 @@ def storage_request(
         "Authorization": f"Bearer {service_key}",
     }
 
-    with httpx.Client(timeout=45) as client:
-        if method == "POST":
-            response = client.post(
-                url,
-                headers={
-                    **headers,
-                    "Content-Type": "image/jpeg",
-                    "x-upsert": "false",
-                },
-                content=content,
-            )
+    try:
+        with httpx.Client(timeout=45) as client:
+            if method == "POST":
+                response = client.post(
+                    url,
+                    headers={
+                        **headers,
+                        "Content-Type": "image/jpeg",
+                        "x-upsert": "false",
+                    },
+                    content=content,
+                )
 
-        elif method == "GET":
-            response = client.get(
-                url,
-                headers=headers,
-            )
+            elif method == "GET":
+                response = client.get(
+                    url,
+                    headers=headers,
+                )
 
-        elif method == "DELETE":
-            response = client.request(
-                "DELETE",
-                url,
-                headers=headers,
-                json={
-                    "prefixes": paths or []
-                },
-            )
+            elif method == "DELETE":
+                response = client.request(
+                    "DELETE",
+                    url,
+                    headers=headers,
+                    json={
+                        "prefixes": paths or []
+                    },
+                )
 
-        else:
-            raise ValueError(
-                "Unsupported storage operation"
-            )
+            else:
+                raise ValueError(
+                    "Unsupported storage operation"
+                )
+
+    except httpx.RequestError as exc:
+        logger.error(
+            "Supabase Storage request failed: %s",
+            exc,
+        )
+        raise HTTPException(
+            502,
+            "Supabase Storage is unavailable",
+        ) from exc
 
     if response.status_code == 404:
         raise HTTPException(
@@ -148,6 +137,10 @@ def storage_request(
         )
 
     if response.is_error:
+        logger.error(
+            "Supabase Storage returned HTTP %s",
+            response.status_code,
+        )
         raise HTTPException(
             502,
             "Supabase Storage request failed",
@@ -157,6 +150,8 @@ def storage_request(
 
 
 def storage_upload(bucket, path, content):
+    """Upload JPEG bytes to Supabase Storage."""
+
     storage_request(
         "POST",
         bucket,
@@ -166,6 +161,8 @@ def storage_upload(bucket, path, content):
 
 
 def storage_download(bucket, path):
+    """Download image bytes from Supabase Storage."""
+
     return storage_request(
         "GET",
         bucket,
@@ -174,6 +171,11 @@ def storage_download(bucket, path):
 
 
 def storage_delete(bucket, paths):
+    """Delete objects from Supabase Storage."""
+
+    if not paths:
+        return
+
     storage_request(
         "DELETE",
         bucket,
@@ -181,18 +183,36 @@ def storage_delete(bucket, paths):
     )
 
 
-# ---------- Model versions ----------
+def cleanup_storage_objects(objects):
+    """Clean up objects after a failed operation.
 
-# Original SQLite:
-#
-# conn.execute(
-#     "INSERT OR IGNORE INTO model_versions "
-#     "VALUES (?, ?, ?, ?, ?, ?)",
-#     (...)
-# )
+    Cleanup is best-effort. Any failure is logged
+    without hiding the original exception.
+    """
 
+    failures = []
+
+    for bucket, path in reversed(objects):
+        try:
+            storage_delete(bucket, [path])
+
+        except Exception:
+            logger.exception(
+                "Failed to clean up Supabase object %s/%s",
+                bucket,
+                path,
+            )
+
+            failures.append((bucket, path))
+
+    return failures
+
+
+# ---------- Model Versions ----------
 
 def ensure_model_version(conn):
+    """Insert mock model metadata if it does not exist."""
+
     conn.execute(
         """
         INSERT INTO model_versions (
@@ -218,6 +238,8 @@ def ensure_model_version(conn):
 
 
 def model_version(conn, version_id=model.VERSION):
+    """Retrieve model metadata from PostgreSQL."""
+
     row = conn.execute(
         """
         SELECT *
@@ -233,11 +255,14 @@ def model_version(conn, version_id=model.VERSION):
             "Model version not found",
         )
 
+    thresholds = row["thresholds"]
+
+    if isinstance(thresholds, str):
+        thresholds = json.loads(thresholds)
+
     return {
         "id": row["id"],
-        "thresholds": json.loads(
-            row["thresholds"]
-        ),
+        "thresholds": thresholds,
         "uncertain_margin": row["uncertain_margin"],
         "commit": row["commit_hash"],
         "is_mock": bool(row["is_mock"]),
@@ -248,6 +273,8 @@ def model_version(conn, version_id=model.VERSION):
 # ---------- Patients ----------
 
 def get_patient(conn, patient_id):
+    """Retrieve a patient by ID."""
+
     row = conn.execute(
         """
         SELECT *
@@ -267,6 +294,8 @@ def get_patient(conn, patient_id):
 
 
 def list_patients(conn, query=None):
+    """List patients with optional name or ID filtering."""
+
     sql = "SELECT * FROM patients"
     params = ()
 
@@ -275,6 +304,7 @@ def list_patients(conn, query=None):
             " WHERE full_name ILIKE %s"
             " OR id ILIKE %s"
         )
+
         params = (
             f"%{query}%",
             f"%{query}%",
@@ -288,25 +318,15 @@ def list_patients(conn, query=None):
     return sorted(
         rows,
         key=lambda patient: (
-            patient["full_name"]
-            .split()[-1].lower(),
+            patient["full_name"].split()[-1].lower(),
             patient["full_name"].lower(),
         ),
     )
 
 
-# Original SQLite create_patient() used:
-#
-# patient_id = db.next_id(
-#     conn, "patients", "P-", 3
-# )
-# conn.execute(
-#     "INSERT INTO patients VALUES (?, ?, ?, ?, ?, ?, ?)",
-#     (...)
-# )
-
-
 def create_patient(conn, data, created_at=None):
+    """Create a patient in PostgreSQL."""
+
     patient_id = db.next_id_postgres(
         conn,
         "patients",
@@ -338,17 +358,13 @@ def create_patient(conn, data, created_at=None):
         ),
     )
 
-    return get_patient(
-        conn,
-        patient_id,
-    )
+    return get_patient(conn, patient_id)
 
 
 def patient_detail(conn, patient_id):
-    patient = get_patient(
-        conn,
-        patient_id,
-    )
+    """Retrieve patient details and latest screenings."""
+
+    patient = get_patient(conn, patient_id)
 
     screenings = list_screenings(
         conn,
@@ -387,9 +403,9 @@ def patient_detail(conn, patient_id):
 # ---------- Images ----------
 
 def image_out(row):
-    has_file = (
-        row["stored_path"] is not None
-    )
+    """Format image metadata for API responses."""
+
+    has_file = row["stored_path"] is not None
 
     return {
         "id": row["id"],
@@ -418,6 +434,8 @@ def image_out(row):
 
 
 def get_image_row(conn, image_id):
+    """Retrieve an image record by ID."""
+
     row = conn.execute(
         """
         SELECT *
@@ -436,14 +454,6 @@ def get_image_row(conn, image_id):
     return row
 
 
-# Original SQLite save_image() stored JPEG files at:
-#
-# db.STORAGE / "images" / f"{image_id}.jpg"
-# db.STORAGE / "images" / f"{image_id}_512.jpg"
-#
-# The PostgreSQL version uploads them to Supabase.
-
-
 def save_image(
     conn,
     patient_id,
@@ -451,6 +461,12 @@ def save_image(
     data,
     uploaded_at=None,
 ):
+    """Process and upload a fundus image.
+
+    If an upload, database insert, or metadata lookup
+    fails, attempt to delete the Storage objects.
+    """
+
     get_patient(conn, patient_id)
 
     status, reason = qc.check(data)
@@ -465,6 +481,9 @@ def save_image(
     stored_path = None
     width = None
     height = None
+
+    original_bytes = None
+    processed_bytes = None
 
     if reason != "unreadable":
         image = cv2.imdecode(
@@ -519,65 +538,89 @@ def save_image(
             processed_encoded[1].tobytes()
         )
 
-        storage_upload(
-            "fundus-images",
-            f"{image_id}.jpg",
-            original_bytes,
-        )
-
-        storage_upload(
-            "processed-images",
-            f"{image_id}_512.jpg",
-            processed_bytes,
-        )
-
         stored_path = f"{image_id}.jpg"
 
-    conn.execute(
-        """
-        INSERT INTO images (
-            id,
-            patient_id,
-            eye,
-            file_name,
-            stored_path,
-            width,
-            height,
-            quality_status,
-            quality_reason,
-            uploaded_at,
-            sha256
-        )
-        VALUES (
-            %s, %s, %s, %s, %s, %s,
-            %s, %s, %s, %s, %s
-        )
-        """,
-        (
-            image_id,
-            patient_id,
-            eye,
-            f"{patient_id}_{eye}.jpg",
-            stored_path,
-            width,
-            height,
-            status,
-            reason,
-            uploaded_at or db.now(),
-            hashlib.sha256(data).hexdigest(),
-        ),
-    )
+    # Track attempted uploads. An upload can succeed
+    # remotely even if the network response is lost.
+    attempted_uploads = []
 
-    return image_out(
-        get_image_row(conn, image_id)
-    )
+    try:
+        if stored_path is not None:
+            original_path = f"{image_id}.jpg"
+            processed_path = f"{image_id}_512.jpg"
+
+            attempted_uploads.append(
+                ("fundus-images", original_path)
+            )
+
+            storage_upload(
+                "fundus-images",
+                original_path,
+                original_bytes,
+            )
+
+            attempted_uploads.append(
+                ("processed-images", processed_path)
+            )
+
+            storage_upload(
+                "processed-images",
+                processed_path,
+                processed_bytes,
+            )
+
+        conn.execute(
+            """
+            INSERT INTO images (
+                id,
+                patient_id,
+                eye,
+                file_name,
+                stored_path,
+                width,
+                height,
+                quality_status,
+                quality_reason,
+                uploaded_at,
+                sha256
+            )
+            VALUES (
+                %s, %s, %s, %s, %s, %s,
+                %s, %s, %s, %s, %s
+            )
+            """,
+            (
+                image_id,
+                patient_id,
+                eye,
+                f"{patient_id}_{eye}.jpg",
+                stored_path,
+                width,
+                height,
+                status,
+                reason,
+                uploaded_at or db.now(),
+                hashlib.sha256(data).hexdigest(),
+            ),
+        )
+
+        return image_out(
+            get_image_row(conn, image_id)
+        )
+
+    except Exception:
+        if attempted_uploads:
+            cleanup_storage_objects(
+                attempted_uploads
+            )
+
+        raise
 
 
 def image_file(conn, image_id, original=False):
-    row = get_image_row(
-        conn,
-        image_id,
-    )
+    """Retrieve original or processed image bytes."""
+
+    row = get_image_row(conn, image_id)
 
     if row["stored_path"] is None:
         raise HTTPException(
@@ -598,7 +641,9 @@ def image_file(conn, image_id, original=False):
 
 
 def delete_image(conn, image_id):
-    get_image_row(conn, image_id)
+    """Delete an unscreened image and its Storage objects."""
+
+    row = get_image_row(conn, image_id)
 
     existing = conn.execute(
         """
@@ -615,6 +660,19 @@ def delete_image(conn, image_id):
             "Photo has already been screened",
         )
 
+    # Delete Storage objects before removing metadata.
+    # This permits retrying if Storage deletion fails.
+    if row["stored_path"] is not None:
+        storage_delete(
+            "fundus-images",
+            [f"{image_id}.jpg"],
+        )
+
+        storage_delete(
+            "processed-images",
+            [f"{image_id}_512.jpg"],
+        )
+
     conn.execute(
         """
         DELETE FROM images
@@ -623,18 +681,10 @@ def delete_image(conn, image_id):
         (image_id,),
     )
 
-    storage_delete(
-        "fundus-images",
-        [f"{image_id}.jpg"],
-    )
-
-    storage_delete(
-        "processed-images",
-        [f"{image_id}_512.jpg"],
-    )
-
 
 def heatmap_file(conn, heatmap_id):
+    """Retrieve a heatmap from Supabase Storage."""
+
     row = conn.execute(
         """
         SELECT stored_path
@@ -668,10 +718,9 @@ def create_screening(
     skip_reason=None,
     created_at=None,
 ):
-    get_patient(
-        conn,
-        patient_id,
-    )
+    """Create a skipped screening or run mock inference."""
+
+    get_patient(conn, patient_id)
 
     screening_id = db.next_id_postgres(
         conn,
@@ -720,10 +769,7 @@ def create_screening(
             "image_id is required",
         )
 
-    image = get_image_row(
-        conn,
-        image_id,
-    )
+    image = get_image_row(conn, image_id)
 
     if (
         image["patient_id"] != patient_id
@@ -834,110 +880,131 @@ def create_screening(
             )
         )
 
-    conn.execute(
-        """
-        INSERT INTO screenings (
-            id,
-            patient_id,
-            image_id,
-            eye,
-            created_at,
-            created_by,
-            model_version_id,
-            overall_result
-        )
-        VALUES (
-            %s, %s, %s, %s,
-            %s, %s, %s, %s
-        )
-        """,
-        (
-            screening_id,
-            patient_id,
-            image_id,
-            eye,
-            created_at,
-            user_id,
-            version["id"],
-            overall_result(
-                [item[3] for item in scored]
-            ),
-        ),
-    )
+    # Track attempted heatmap uploads so that they
+    # can be cleaned up if processing fails.
+    attempted_heatmaps = []
 
-    for condition, raw_score, calibrated, result in scored:
-        row = conn.execute(
-            """
-            INSERT INTO condition_results (
-                screening_id,
-                condition,
-                raw_score,
-                calibrated_score,
-                result
-            )
-            VALUES (%s, %s, %s, %s, %s)
-            RETURNING id
-            """,
-            (
-                screening_id,
-                condition,
-                raw_score,
-                calibrated,
-                result,
-            ),
-        ).fetchone()
-
-        heatmap_id = db.next_id_postgres(
-            conn,
-            "heatmaps",
-            "HM-",
-            4,
-        )
-
-        heatmap_encoded = cv2.imencode(
-            ".jpg",
-            model.heatmap(
-                photo,
-                condition,
-            ),
-        )
-
-        if not heatmap_encoded[0]:
-            raise HTTPException(
-                500,
-                "Unable to generate heatmap",
-            )
-
-        heatmap_bytes = (
-            heatmap_encoded[1].tobytes()
-        )
-
-        storage_upload(
-            "heatmaps",
-            f"{heatmap_id}.jpg",
-            heatmap_bytes,
-        )
-
+    try:
         conn.execute(
             """
-            INSERT INTO heatmaps (
+            INSERT INTO screenings (
                 id,
-                condition_result_id,
-                stored_path
+                patient_id,
+                image_id,
+                eye,
+                created_at,
+                created_by,
+                model_version_id,
+                overall_result
             )
-            VALUES (%s, %s, %s)
+            VALUES (
+                %s, %s, %s, %s,
+                %s, %s, %s, %s
+            )
             """,
             (
-                heatmap_id,
-                row["id"],
-                f"{heatmap_id}.jpg",
+                screening_id,
+                patient_id,
+                image_id,
+                eye,
+                created_at,
+                user_id,
+                version["id"],
+                overall_result(
+                    [item[3] for item in scored]
+                ),
             ),
         )
+
+        for condition, raw_score, calibrated, result in scored:
+            row = conn.execute(
+                """
+                INSERT INTO condition_results (
+                    screening_id,
+                    condition,
+                    raw_score,
+                    calibrated_score,
+                    result
+                )
+                VALUES (%s, %s, %s, %s, %s)
+                RETURNING id
+                """,
+                (
+                    screening_id,
+                    condition,
+                    raw_score,
+                    calibrated,
+                    result,
+                ),
+            ).fetchone()
+
+            heatmap_id = db.next_id_postgres(
+                conn,
+                "heatmaps",
+                "HM-",
+                4,
+            )
+
+            heatmap_encoded = cv2.imencode(
+                ".jpg",
+                model.heatmap(
+                    photo,
+                    condition,
+                ),
+            )
+
+            if not heatmap_encoded[0]:
+                raise HTTPException(
+                    500,
+                    "Unable to generate heatmap",
+                )
+
+            heatmap_bytes = (
+                heatmap_encoded[1].tobytes()
+            )
+
+            heatmap_path = f"{heatmap_id}.jpg"
+
+            attempted_heatmaps.append(
+                ("heatmaps", heatmap_path)
+            )
+
+            storage_upload(
+                "heatmaps",
+                heatmap_path,
+                heatmap_bytes,
+            )
+
+            conn.execute(
+                """
+                INSERT INTO heatmaps (
+                    id,
+                    condition_result_id,
+                    stored_path
+                )
+                VALUES (%s, %s, %s)
+                """,
+                (
+                    heatmap_id,
+                    row["id"],
+                    heatmap_path,
+                ),
+            )
+
+    except Exception:
+        if attempted_heatmaps:
+            cleanup_storage_objects(
+                attempted_heatmaps
+            )
+
+        raise
 
     return screening_id
 
 
 def screening_detail(conn, screening_id):
+    """Retrieve complete screening details."""
+
     row = conn.execute(
         """
         SELECT
@@ -991,8 +1058,9 @@ def screening_detail(conn, screening_id):
             conditions.append({
                 "condition": item["condition"],
                 "raw_score": item["raw_score"],
-                "calibrated_score":
-                    item["calibrated_score"],
+                "calibrated_score": (
+                    item["calibrated_score"]
+                ),
                 "threshold": threshold,
                 "result": item["result"],
                 "flag_reason": flag_reason(
@@ -1073,6 +1141,8 @@ def list_screenings(
     eye=None,
     result=None,
 ):
+    """Retrieve screening history with optional filters."""
+
     filters = []
     params = []
 
@@ -1086,6 +1156,7 @@ def list_screenings(
             )
             """
         )
+
         params.extend([f"%{query}%"] * 3)
 
     if patient_id:
@@ -1098,6 +1169,7 @@ def list_screenings(
         filters.append(
             "LEFT(s.created_at, 10) = %s"
         )
+
         params.append(
             db.today()
             if date == "today"
