@@ -14,6 +14,7 @@ from fastapi import (
     File,
     Form,
     HTTPException,
+    Request,
     Response,
     UploadFile,
 )
@@ -62,14 +63,18 @@ PgDb = Annotated[
 ]
 
 
-def cross_site_cookies():
-    """Use cross-site cookies for separate frontend/backend domains."""
+# ---------- Cookie Configuration ----------
 
-    return os.environ.get("DUAL_CROSS_SITE_COOKIES") == "1"
+def cross_site_cookies():
+    """Determine whether cross-site session cookies are enabled."""
+
+    return os.environ.get(
+        "DUAL_CROSS_SITE_COOKIES"
+    ) == "1"
 
 
 def set_session_cookie(response: Response, token: str):
-    """Set the browser's authenticated session cookie."""
+    """Set the authenticated browser session cookie."""
 
     cross_site = cross_site_cookies()
 
@@ -85,7 +90,7 @@ def set_session_cookie(response: Response, token: str):
 
 
 def clear_session_cookie(response: Response):
-    """Clear the same cookie configuration used by login."""
+    """Clear the same cookie created during login."""
 
     cross_site = cross_site_cookies()
 
@@ -97,6 +102,8 @@ def clear_session_cookie(response: Response):
         path="/",
     )
 
+
+# ---------- Application Startup ----------
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -114,9 +121,9 @@ app = FastAPI(
     version="0.1.0",
     lifespan=lifespan,
     description=(
-        "Back end for the DUAL screener. "
-        "Triage, not diagnosis. "
-        "Scores come from a MOCK model."
+        "Backend for the DUAL ocular disease screening tool. "
+        "DUAL supports screening triage, not diagnosis. "
+        "Current inference scores come from a MOCK model."
     ),
 )
 
@@ -141,7 +148,7 @@ def login(
     response: Response,
     conn: PgDb,
 ):
-    """Authenticate a clinician and create a session."""
+    """Authenticate a clinician and create a PostgreSQL session."""
 
     row = conn.execute(
         """
@@ -191,14 +198,13 @@ def login(
 )
 def logout(
     response: Response,
+    request: Request,
     conn: PgDb,
     user: PostgresCurrentUser,
-    token: Annotated[
-        Optional[str],
-        Depends(session_token),
-    ],
 ):
     """Revoke the current session and clear its cookie."""
+
+    token = session_token(request)
 
     if token:
         conn.execute(
@@ -208,6 +214,7 @@ def logout(
             """,
             (token,),
         )
+
         conn.commit()
 
     clear_session_cookie(response)
@@ -236,6 +243,8 @@ def patients(
     user: PostgresCurrentUser,
     query: Optional[str] = None,
 ):
+    """Retrieve patients with optional search filtering."""
+
     return service.list_patients(
         conn,
         query,
@@ -251,6 +260,8 @@ def next_patient_id(
     conn: PgDb,
     user: PostgresCurrentUser,
 ):
+    """Preview the next available patient ID."""
+
     row = conn.execute(
         """
         SELECT COALESCE(
@@ -283,6 +294,8 @@ def add_patient(
     conn: PgDb,
     user: PostgresCurrentUser,
 ):
+    """Create a patient."""
+
     patient = service.create_patient(
         conn,
         body.model_dump(),
@@ -303,6 +316,8 @@ def patient(
     conn: PgDb,
     user: PostgresCurrentUser,
 ):
+    """Retrieve a patient and their latest screenings."""
+
     return service.patient_detail(
         conn,
         patient_id,
@@ -320,6 +335,8 @@ def patient_screenings(
     user: PostgresCurrentUser,
     date: Optional[str] = None,
 ):
+    """Retrieve screening history for a patient."""
+
     service.get_patient(conn, patient_id)
 
     return service.list_screenings(
@@ -346,6 +363,8 @@ def export_patient(
     conn: PgDb,
     user: PostgresCurrentUser,
 ):
+    """Export a patient dossier as PDF."""
+
     detail = service.patient_detail(
         conn,
         patient_id,
@@ -382,18 +401,25 @@ async def upload_image(
     patient_id: Annotated[str, Form()],
     eye: Annotated[Eye, Form()],
 ):
-    """Upload an image, enforcing the 20 MB size limit."""
+    """Upload a fundus image and save its metadata.
+
+    Storage uploads are cleaned up if the PostgreSQL
+    transaction fails before it can be committed.
+    """
 
     maximum_bytes = MAX_UPLOAD_MB * 1024 * 1024
 
-    # Read at most one byte over the limit.
-    # Avoid loading arbitrarily large files into memory.
-    data = await file.read(maximum_bytes + 1)
+    data = await file.read(
+        maximum_bytes + 1
+    )
 
     if len(data) > maximum_bytes:
         raise HTTPException(
             status_code=413,
-            detail=f"Photo is larger than {MAX_UPLOAD_MB} MB",
+            detail=(
+                f"Photo is larger than "
+                f"{MAX_UPLOAD_MB} MB"
+            ),
         )
 
     image = service.save_image(
@@ -403,7 +429,29 @@ async def upload_image(
         data,
     )
 
-    conn.commit()
+    try:
+        conn.commit()
+
+    except Exception:
+        conn.rollback()
+
+        # Only readable images produce Storage objects.
+        # Unreadable images store metadata without files.
+        if image["url"] is not None:
+            image_id = image["id"]
+
+            service.cleanup_storage_objects([
+                (
+                    "fundus-images",
+                    f"{image_id}.jpg",
+                ),
+                (
+                    "processed-images",
+                    f"{image_id}_512.jpg",
+                ),
+            ])
+
+        raise
 
     return image
 
@@ -418,6 +466,8 @@ def image_512(
     conn: PgDb,
     user: PostgresCurrentUser,
 ):
+    """Return the processed 512px fundus image."""
+
     return Response(
         service.image_file(
             conn,
@@ -437,6 +487,8 @@ def image_original(
     conn: PgDb,
     user: PostgresCurrentUser,
 ):
+    """Return the original fundus image."""
+
     return Response(
         service.image_file(
             conn,
@@ -457,6 +509,8 @@ def discard_image(
     conn: PgDb,
     user: PostgresCurrentUser,
 ):
+    """Delete an unscreened image."""
+
     service.delete_image(
         conn,
         image_id,
@@ -475,6 +529,8 @@ def heatmap(
     conn: PgDb,
     user: PostgresCurrentUser,
 ):
+    """Return a generated screening heatmap."""
+
     return Response(
         service.heatmap_file(
             conn,
@@ -497,6 +553,12 @@ def screen(
     conn: PgDb,
     user: PostgresCurrentUser,
 ):
+    """Create a screening and commit the results.
+
+    Generated heatmaps are cleaned up if the
+    PostgreSQL transaction fails before committing.
+    """
+
     screening_id = service.create_screening(
         conn,
         user["id"],
@@ -507,7 +569,40 @@ def screen(
         body.skip_reason,
     )
 
-    conn.commit()
+    # The heatmap metadata is visible inside the
+    # current transaction before commit.
+    # Skipped screenings will have no heatmaps.
+    heatmap_rows = conn.execute(
+        """
+        SELECT h.stored_path
+        FROM heatmaps h
+        JOIN condition_results cr
+            ON cr.id = h.condition_result_id
+        WHERE cr.screening_id = %s
+        """,
+        (screening_id,),
+    ).fetchall()
+
+    uploaded_heatmaps = [
+        (
+            "heatmaps",
+            row["stored_path"],
+        )
+        for row in heatmap_rows
+    ]
+
+    try:
+        conn.commit()
+
+    except Exception:
+        conn.rollback()
+
+        if uploaded_heatmaps:
+            service.cleanup_storage_objects(
+                uploaded_heatmaps
+            )
+
+        raise
 
     return service.screening_detail(
         conn,
@@ -531,6 +626,8 @@ def history(
         Literal["no_concern", "refer"]
     ] = None,
 ):
+    """Retrieve screening history with optional filters."""
+
     return service.list_screenings(
         conn,
         query,
@@ -551,6 +648,8 @@ def screening(
     conn: PgDb,
     user: PostgresCurrentUser,
 ):
+    """Retrieve complete screening results."""
+
     return service.screening_detail(
         conn,
         screening_id,
@@ -574,12 +673,16 @@ def export_screening(
     conn: PgDb,
     user: PostgresCurrentUser,
 ):
+    """Export a screening summary as PDF."""
+
     detail = service.screening_detail(
         conn,
         screening_id,
     )
 
-    pdf = reports.screening_pdf(detail)
+    pdf = reports.screening_pdf(
+        detail,
+    )
 
     return _pdf_response(
         pdf,
@@ -598,6 +701,8 @@ def current_model(
     conn: PgDb,
     user: PostgresCurrentUser,
 ):
+    """Retrieve the current mock model metadata."""
+
     return service.model_version(conn)
 
 
@@ -608,14 +713,18 @@ def current_model(
     tags=["system"],
 )
 def health():
+    """Health check endpoint."""
+
     return {
         "status": "ok"
     }
 
 
-# ---------- PDF response ----------
+# ---------- PDF Response ----------
 
 def _pdf_response(pdf, filename):
+    """Return PDF bytes as a downloadable response."""
+
     return Response(
         pdf,
         media_type="application/pdf",
