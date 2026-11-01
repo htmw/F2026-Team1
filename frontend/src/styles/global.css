@@ -67,7 +67,7 @@ body {
 }
 
 .main {
-  min-height: 85vh;
+  min-height: 100vh;
   max-width: 128rem;
   margin: 0 auto;
   padding: var(--space-16) var(--space-6);

@@ -1,0 +1,125 @@
+classDiagram
+  class preprocess_images {
+    <<built script>>
+    +crop_fundus(image)
+    +preprocess_image(input_path, output_path)
+  }
+  class SharedResNetBackbone {
+    <<built>>
+    +forward(x) features
+  }
+  class DualNet {
+    <<built>>
+    +backbone SharedResNetBackbone
+    +cataract_head Linear
+    +glaucoma_head Linear
+    +forward(x) scores
+  }
+  class GlaucomaNet {
+    <<built>>
+    +backbone SharedResNetBackbone
+    +glaucoma_head Linear
+    +forward(x) glaucoma score
+  }
+  class CataractOnlyNet {
+    <<built>>
+    +backbone SharedResNetBackbone
+    +cataract_head Linear
+    +forward(x) cataract score
+  }
+  class FundusDataset {
+    <<built ODIR only>>
+    +labels_csv eye_labels_task7.csv
+    +image_dir
+    +split
+    +transform
+    +len(dataset)
+    +dataset[index] image, labels
+  }
+  class ExternalTestLoading {
+    <<planned>>
+    +labels_csv labels/external/*.csv
+    +path column per image
+    +glaucoma-only labels, cataract in retina only
+  }
+  class train_dual {
+    <<built script, first version>>
+    +calculate_positive_weights(labels_csv)
+    +train_one_epoch()
+    +validate()
+    +main()
+  }
+  class train_dual_task11 {
+    <<built script>>
+    +train_seed(seed) best checkpoint
+    +train_epoch()
+    +evaluate() cataract, glaucoma and mean AUROC
+    +upsert_csv()
+  }
+  class train_glaucoma_and_cataract {
+    <<built scripts>>
+    +train_seed(seed) best checkpoint
+    +train_one_epoch()
+    +validate() AUROC
+    +save_result()
+    +save_training_history()
+  }
+  class quality_check {
+    <<built script>>
+    +check(photo) status, reason
+  }
+  class Calibrator {
+    <<built>>
+    +fit_platt_scaling(logits, labels) scale, offset
+    +select_threshold(probabilities, labels) cutoff
+    +choose_margin(probabilities, threshold) uncertain band
+    +decision_metrics() refer, uncertain, no concern
+  }
+  class GradCAM {
+    <<planned>>
+    +heatmap(model, image, head)
+    +disc_overlap(heatmap, mask)
+  }
+  class Evaluator {
+    <<planned>>
+    +evaluate(model, dataset) metrics
+  }
+  class mock_model {
+    <<mock>>
+    +predict(image) raw scores
+    +calibrate(condition, raw_score)
+    +heatmap(image, condition)
+  }
+  class ScreeningAPI {
+    <<built>>
+    +main.py endpoints
+    +service.py upload, screen, history, Supabase Storage
+    +results.py per condition and overall result
+    +db.py PostgreSQL tables on Supabase
+  }
+
+  DualNet *-- SharedResNetBackbone
+  GlaucomaNet *-- SharedResNetBackbone
+  CataractOnlyNet *-- SharedResNetBackbone
+  FundusDataset ..> preprocess_images : reads its output
+  train_dual --> DualNet
+  train_dual --> FundusDataset
+  train_dual_task11 --> DualNet
+  train_dual_task11 --> FundusDataset
+  train_glaucoma_and_cataract --> GlaucomaNet
+  train_glaucoma_and_cataract --> CataractOnlyNet
+  train_glaucoma_and_cataract --> FundusDataset
+  Calibrator ..> DualNet : uses scores
+  Calibrator ..> GlaucomaNet : uses scores
+  Calibrator ..> CataractOnlyNet : uses scores
+  GradCAM ..> DualNet : hooks layers
+  Evaluator --> DualNet
+  Evaluator --> Calibrator
+  Evaluator --> FundusDataset
+  Evaluator --> ExternalTestLoading
+  ExternalTestLoading ..> FundusDataset : extends
+  ScreeningAPI --> quality_check
+  ScreeningAPI ..> preprocess_images : crop_fundus
+  ScreeningAPI --> mock_model : until the real model (Sprint 3)
+  mock_model ..> Calibrator : replaced by
+  mock_model ..> GradCAM : replaced by

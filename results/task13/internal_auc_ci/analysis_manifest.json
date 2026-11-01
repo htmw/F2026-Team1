@@ -1,0 +1,32 @@
+{
+  "task": "SCRUM-76",
+  "status": "completed",
+  "created_utc": "2026-10-25T05:35:48.576039+00:00",
+  "source_task": "SCRUM-75",
+  "source_manifest_sha256": "6053eb1ceb13ae9d5b9c0e06cef929bf2b69abf117060d093568460749c52c65",
+  "source_csv_sha256": {
+    "single_cataract_seed_42_test.csv": "03659d24faa2581aaa369dd40597617b44eeb222602c391d8f49e99edfdd7a09",
+    "single_glaucoma_seed_42_test.csv": "087e521e5b5c8a6c6105a7970a74e382c81f6e645de2233eddce3d57bf91af78",
+    "single_cataract_seed_43_test.csv": "90563f6ddea62d41de2d75843f9e1f54aa92a75ea59cbb51e9a9d0e094a77d86",
+    "single_glaucoma_seed_43_test.csv": "19f7d67f56aedd94987bf58f32e1e26db3ef7b1a280cc53be1405a3cbd4a1bbe",
+    "single_cataract_seed_44_test.csv": "ee2dd308c0c245d7ed0cd850f3e53522f98c298d5d1d3170b49ea94f04fafa3c",
+    "single_glaucoma_seed_44_test.csv": "923497d308108da7f86d1c717c1c8aec1ffc74dfa649438c1e373289fd3ff5ba",
+    "shared_cataract_seed_42_test.csv": "10eab8687180a96d52613d9b478344955a952f3bc04e3bf86a057e9a78af8841",
+    "shared_glaucoma_seed_42_test.csv": "c39bc8da3c3dcbfa0b4812382c9762781168c68875f50c2597ccb5aac2c00287",
+    "shared_cataract_seed_43_test.csv": "915378b1957ef172f7d04233559d3d0c92fb0452c9e4e54716eba2fd522c15a4",
+    "shared_glaucoma_seed_43_test.csv": "0747e9745085c91a8f35ea415e6a94819a756f2cdeadccfde73835f92ab2ba39",
+    "shared_cataract_seed_44_test.csv": "06949869bdc1d94a245ee1f5b8eb558bb11342895a95404de63e77e008ce6ec7",
+    "shared_glaucoma_seed_44_test.csv": "9e6883de6a16123efdf2c27fe97386f0a49031ab72485897a7d39c962ac08d89"
+  },
+  "source_settings_sha256": "d1d97e58e25d32892527db0ad459a7b9d555391e5abda924ff33f1700f14db71",
+  "bootstrap_method": "patient-cluster percentile; shared samples across all runs",
+  "bootstrap_replicates": 2000,
+  "bootstrap_random_seed": 42,
+  "bootstrap_max_attempts": 10000,
+  "bootstrap_actual_attempts": 2000,
+  "test_eyes": 1036,
+  "test_patients": 522,
+  "per_seed_rows": 12,
+  "summary_rows": 4,
+  "methodology_status": "Approved internal Task 13 patient-clustered bootstrap methodology"
+}

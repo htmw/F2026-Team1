@@ -1,15 +1,17 @@
 """Turn calibrated scores into results.
 
-Per condition: a score within the margin of the threshold, on either side, is
-Uncertain, refer (too close to call), so it is checked first. Otherwise at or
-above the threshold is Refer and below is No concern. The real uncertain rule
-comes from Task 12; this one is a placeholder.
+Per condition: a score within the margin of the threshold, on either side and
+including the margin itself, is Uncertain, refer (too close to call), so it is
+checked first. Otherwise at or above the threshold is Refer and below is No
+concern. This is the frozen calibration rule (decision_metrics in
+scripts/select_calibration_settings.py), so the app and the frozen settings
+give the same result for the same score.
 Per eye: Refer if any condition is Refer or Uncertain, otherwise No concern.
 """
 
 
 def condition_result(score, threshold, margin):
-    if abs(score - threshold) < margin:
+    if abs(score - threshold) <= margin:
         return "uncertain"
     return "refer" if score >= threshold else "no_concern"
 

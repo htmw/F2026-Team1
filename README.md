@@ -7,6 +7,25 @@ The main result is external validation, plus a multi-task ablation (single-disea
 vs shared models), calibration with an "Uncertain, refer" result, and Grad-CAM
 safety checks. The app lets clinic staff upload a photo and see the result.
 
+## Live prototype
+- App: https://dual-eyeq-frontend.vercel.app/
+- Back end API docs: https://dual-eyeq-backend.onrender.com/docs
+
+To sign in (temporary, until the in-app login screen is added in Sprint 2):
+
+1. Open the back end API docs. The first load can take up to a minute while
+   the server wakes up.
+2. Open `POST /auth/login`, click Try it out, use the body below, then click Execute:
+
+       {"email": "demo.clinician@example.com", "password": "demo"}
+
+3. In the same browser, open the app and use the menu to go to Upload or History.
+
+Known limitations: reloading any page other than Home shows a 404, the doctor
+name and Sign Out in the top bar are placeholders, and Safari may block the
+sign-in, so use Chrome. The demo account and all patients are made up, and the
+scores come from a mock model.
+
 ## Data
 All datasets are in this repo under `data/`, so everyone has the same paths after cloning:
 
@@ -88,8 +107,19 @@ Back end (FastAPI), from the repo folder:
 
     uvicorn backend.main:app --reload
 
+The back end uses Supabase (PostgreSQL for the data, Storage for photos and
+heatmaps). It reads these settings from a `.env` file in the repo folder:
+
+    DATABASE_URL=...
+    SUPABASE_URL=...
+    SUPABASE_SERVICE_ROLE_KEY=...
+
+Ask the team for the values. Never commit `.env` (git ignores it). Your local
+back end uses the same shared database as the live prototype, so sign in with
+the demo account above and only add made-up patients.
+
 It runs at http://localhost:8000, with every endpoint listed at
-http://localhost:8000/docs. Demo login and details: `backend/README.md`.
+http://localhost:8000/docs. Endpoint details: `backend/README.md`.
 
 Frontend (React + Vite), in a second terminal:
 
@@ -130,15 +160,19 @@ links for all nine runs are in `results/task11/README.md`.
 
 ## Calibration and thresholds
 Platt calibration, a decision threshold and an "Uncertain, refer" margin for
-each model, head and seed, fitted on the validation split only. Settings are
-not frozen until the team approves them. Status, commands and results:
-`results/calibration/README.md`.
+each model, head and seed, fitted on the validation split only. Frozen on
+17 October 2026 in `results/calibration/frozen_settings.json`; the app will use
+the shared model, seed 42. Details: `results/calibration/README.md`.
 
 ## Tests
 
     python -m pytest tests
 
-The API tests need the ODIR photos in `data/`. Each model also has a smoke
+The API tests (`tests/test_api.py`) write to a database, so they are skipped
+unless `TEST_DATABASE_URL` points to a separate test database, and they refuse
+to run against the `DATABASE_URL` in `.env` (the shared database the live app
+uses). They were written for the old SQLite back end and are being updated for
+Supabase. Each model also has a smoke
 test in `scripts/` (for example `python scripts/test_train_dual_task11.py`),
 which needs that model's checkpoints downloaded.
 
@@ -169,7 +203,7 @@ Training scripts call `set_seed(seed)` for each run.
 - `src/dual/` shared settings (the random seed in config.py)
 - `scripts/` project code: labels, split, preprocessing, models, training, calibration
 - `results/` training results (`task11/`) and calibration results (`calibration/`)
-- `backend/` the API (FastAPI, SQLite) with the mock model
+- `backend/` the API (FastAPI, Supabase PostgreSQL and Storage) with the mock model
 - `frontend/` the app (React + Vite)
 - `tests/` automatic checks
 - `notebooks/` exploration

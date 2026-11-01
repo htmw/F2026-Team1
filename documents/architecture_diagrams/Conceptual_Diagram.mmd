@@ -24,7 +24,7 @@ flowchart LR
   CAL --> EVAL["Step 4: Evaluation, read once after freeze<br/>internal test + external sets<br/>haze check: 63 media-opacity eyes<br/>uncertain check: 21 low-quality eyes"]
   BB --> GC["Grad-CAM disc check<br/>ORIGA + DRISHTI-GS"]
   subgraph APP["Step 5: Screening app"]
-    UI["React web app<br/>Vite"] <--> API["FastAPI"]
-    API <--> DB[("SQLite<br/>+ stored photo files")]
+    UI["React web app<br/>Vite, hosted on Vercel"] <--> API["FastAPI<br/>hosted on Render"]
+    API <--> DB[("Supabase<br/>PostgreSQL + Storage")]
   end
   CAL -- "frozen shared model, seed 42<br/>(mock model in Sprint 1)" --> API

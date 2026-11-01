@@ -2,6 +2,7 @@ import { History as HistoryIcon, ScanEye } from "lucide-react";
 import Banner from "../components/Banner.jsx";
 import Button from "../components/Button.jsx";
 import Card from "../components/Card.jsx";
+import ResultChip from "../components/ResultChip.jsx";
 import heroImage from "../assets/images/eye.png";
 import heroRing from "../assets/images/heroRing.png";
 import "../styles/home/home.css";
@@ -18,6 +19,21 @@ const STEPS = [
   {
     title: "Review the result",
     text: "You get a result for cataract and glaucoma, each with a risk score and a heatmap.",
+  },
+];
+
+const RESULTS = [
+  {
+    result: "no_concern",
+    text: "Both scores are below their referral thresholds.",
+  },
+  {
+    result: "refer",
+    text: "At least one condition is at or above its threshold.",
+  },
+  {
+    result: "uncertain",
+    text: "The photo or the model is too uncertain to call.",
   },
 ];
 
@@ -72,6 +88,24 @@ function Home() {
             </li>
           ))}
         </ol>
+      </section>
+
+      <section className="home__section">
+        <Card>
+          <h2 className="h2">Reading a result</h2>
+          <p className="home__text body-rg">
+            Each eye gets one of three results. Refer and Uncertain both mean
+            the eye needs a full examination.
+          </p>
+          <ul className="home__results">
+            {RESULTS.map((item) => (
+              <li key={item.result} className="home__result">
+                <ResultChip result={item.result} />
+                <p className="body-rg">{item.text}</p>
+              </li>
+            ))}
+          </ul>
+        </Card>
       </section>
     </main>
   );

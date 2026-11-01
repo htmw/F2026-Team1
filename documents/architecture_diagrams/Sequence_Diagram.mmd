@@ -7,7 +7,7 @@ sequenceDiagram
   participant M as DUAL model
   participant C as Calibrator
   participant G as Grad-CAM
-  participant DB as SQLite
+  participant DB as Supabase (PostgreSQL + Storage)
   Note over M,G: Sprint 1: mock model and mock heatmaps (real model in Sprint 3)
   U->>App: choose patient and eye, upload photo
   App->>API: POST /images
