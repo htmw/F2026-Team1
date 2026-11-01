@@ -5,7 +5,7 @@ from io import BytesIO
 
 from fpdf import FPDF
 
-from . import db, service
+from . import service
 
 
 LABELS = {
@@ -20,62 +20,69 @@ EYES = {
 }
 
 
+def _text(value):
+    """Convert values to text supported by standard PDF fonts."""
+    if value is None:
+        return "-"
+
+    return str(value).encode(
+        "latin-1",
+        errors="replace",
+    ).decode("latin-1")
+
+
+def _date(value):
+    """Format stored timestamps for display."""
+    return _text(value).replace("T", " ")[:16]
+
+
 def _pdf(title):
+    """Create a PDF with the DUAL header."""
+
     pdf = FPDF()
 
     pdf.set_auto_page_break(
-        True,
+        auto=True,
         margin=15,
     )
 
     pdf.add_page()
 
-    pdf.set_font(
-        "Helvetica",
-        "B",
-        16,
-    )
+    pdf.set_font("Helvetica", "B", 16)
 
     pdf.cell(
         0,
         10,
-        title,
+        _text(title),
         new_x="LMARGIN",
         new_y="NEXT",
     )
 
-    pdf.set_font(
-        "Helvetica",
-        "I",
-        9,
-    )
+    pdf.set_font("Helvetica", "I", 9)
 
-    pdf.cell(
+    pdf.multi_cell(
         0,
         5,
         (
             "DUAL: triage, not diagnosis. "
             "Dummy data for a student project."
         ),
-        new_x="LMARGIN",
-        new_y="NEXT",
     )
 
     pdf.ln(4)
+
     return pdf
 
 
 def _line(pdf, label, value, bold=False):
-    pdf.set_font(
-        "Helvetica",
-        "B",
-        10,
-    )
+    """Write a labeled field, wrapping long values."""
+
+    pdf.set_font("Helvetica", "B", 10)
 
     pdf.cell(
         45,
         6,
-        label,
+        _text(label),
     )
 
     pdf.set_font(
@@ -84,16 +91,18 @@ def _line(pdf, label, value, bold=False):
         10,
     )
 
-    pdf.cell(
+    pdf.multi_cell(
         0,
         6,
-        str(value),
+        _text(value),
         new_x="LMARGIN",
         new_y="NEXT",
     )
 
 
 def _version(version):
+    """Format model version metadata."""
+
     if version is None:
         return "-"
 
@@ -111,7 +120,160 @@ def _version(version):
     return text
 
 
+def _section_heading(pdf, title):
+    """Write a section heading."""
+
+    pdf.ln(4)
+
+    pdf.set_font("Helvetica", "B", 12)
+
+    pdf.cell(
+        0,
+        8,
+        _text(title),
+        new_x="LMARGIN",
+        new_y="NEXT",
+    )
+
+
+def _table_header(pdf, columns, font_size=10):
+    """Render a bordered table header."""
+
+    pdf.set_font(
+        "Helvetica",
+        "B",
+        font_size,
+    )
+
+    for heading, width in columns:
+        pdf.cell(
+            width,
+            7,
+            _text(heading),
+            border=1,
+        )
+
+    pdf.ln()
+
+
+def _table_row(pdf, cells, widths, font_size=9):
+    """Render one bordered table row."""
+
+    if pdf.get_y() + 7 > pdf.page_break_trigger:
+        pdf.add_page()
+
+    pdf.set_font(
+        "Helvetica",
+        "",
+        font_size,
+    )
+
+    for value, width in zip(cells, widths):
+        text = _text(value)
+
+        # Keep each value inside its table cell.
+        while (
+            text
+            and pdf.get_string_width(text) > width - 4
+        ):
+            text = text[:-1]
+
+        pdf.cell(
+            width,
+            7,
+            text,
+            border=1,
+        )
+
+    pdf.ln()
+
+
+def _screening_images(pdf, screening):
+    """Embed the processed photograph and available heatmaps."""
+
+    image = screening.get("image")
+
+    if image is None:
+        return
+
+    # Keep images together on one page.
+    if pdf.get_y() + 85 > pdf.page_break_trigger:
+        pdf.add_page()
+
+    pdf.ln(3)
+
+    y = pdf.get_y()
+
+    image_id = image["id"]
+
+    photo_bytes = service.storage_download(
+        "processed-images",
+        f"{image_id}_512.jpg",
+    )
+
+    pdf.image(
+        BytesIO(photo_bytes),
+        x=10,
+        y=y,
+        w=55,
+    )
+
+    for index, condition in enumerate(
+        screening["conditions"]
+    ):
+        heatmap_id = condition.get("heatmap_id")
+
+        if heatmap_id is None:
+            continue
+
+        heatmap_bytes = service.storage_download(
+            "heatmaps",
+            f"{heatmap_id}.jpg",
+        )
+
+        pdf.image(
+            BytesIO(heatmap_bytes),
+            x=70 + 60 * index,
+            y=y,
+            w=55,
+        )
+
+    pdf.set_y(y + 57)
+
+    pdf.set_font(
+        "Helvetica",
+        "",
+        8,
+    )
+
+    for label in (
+        "Photo (preprocessed)",
+        "Heatmap: cataract",
+        "Heatmap: glaucoma",
+    ):
+        pdf.cell(
+            60,
+            5,
+            label,
+        )
+
+    pdf.ln()
+
+    pdf.multi_cell(
+        0,
+        4,
+        (
+            "Heatmaps show which areas most "
+            "influenced a score. They are a "
+            "visual aid, not proof, and never "
+            "show where disease is."
+        ),
+    )
+
+
 def _screening_block(pdf, screening, with_images):
+    """Render details for one screening."""
+
     _line(
         pdf,
         "Screening",
@@ -121,9 +283,7 @@ def _screening_block(pdf, screening, with_images):
     _line(
         pdf,
         "Date and time",
-        screening["created_at"].replace(
-            "T", " "
-        )[:16],
+        _date(screening["created_at"]),
     )
 
     _line(
@@ -133,15 +293,18 @@ def _screening_block(pdf, screening, with_images):
     )
 
     if screening["skipped"]:
+        reason = (
+            screening.get("skip_reason")
+            or "No reason provided"
+        )
+
         _line(
             pdf,
             "Result",
-            (
-                "Not screened "
-                f"({screening['skip_reason']})"
-            ),
+            f"Not screened ({reason})",
             bold=True,
         )
+
         return
 
     _line(
@@ -169,12 +332,6 @@ def _screening_block(pdf, screening, with_images):
 
     pdf.ln(2)
 
-    pdf.set_font(
-        "Helvetica",
-        "B",
-        10,
-    )
-
     columns = (
         ("Condition", 35),
         ("Result", 40),
@@ -183,168 +340,36 @@ def _screening_block(pdf, screening, with_images):
         ("Threshold", 30),
     )
 
-    for heading, width in columns:
-        pdf.cell(
-            width,
-            7,
-            heading,
-            border=1,
-        )
+    _table_header(pdf, columns)
 
-    pdf.ln()
-
-    pdf.set_font(
-        "Helvetica",
-        "",
-        10,
-    )
+    widths = [width for _, width in columns]
 
     for condition in screening["conditions"]:
         cells = (
-            (
-                condition["condition"].capitalize(),
-                35,
-            ),
-            (
-                LABELS[condition["result"]],
-                40,
-            ),
-            (
-                f"{condition['calibrated_score']:.2f}",
-                30,
-            ),
-            (
-                f"{condition['raw_score']:.2f}",
-                25,
-            ),
-            (
-                f"{condition['threshold']:.2f} (example)",
-                30,
-            ),
+            condition["condition"].capitalize(),
+            LABELS[condition["result"]],
+            f"{condition['calibrated_score']:.2f}",
+            f"{condition['raw_score']:.2f}",
+            f"{condition['threshold']:.2f} (example)",
         )
 
-        for text, width in cells:
-            pdf.cell(
-                width,
-                7,
-                text,
-                border=1,
-            )
-
-        pdf.ln()
+        _table_row(
+            pdf,
+            cells,
+            widths,
+            font_size=10,
+        )
 
     if with_images:
-        pdf.ln(3)
-        y = pdf.get_y()
-
-        # Original SQLite/local-storage code:
-        #
-        # photo = (
-        #     db.STORAGE
-        #     / "images"
-        #     / f"{screening['image']['id']}_512.jpg"
-        # )
-        #
-        # pdf.image(
-        #     str(photo),
-        #     x=10,
-        #     y=y,
-        #     w=55,
-        # )
-        #
-        # for i, condition in enumerate(
-        #     screening["conditions"]
-        # ):
-        #     heatmap_path = (
-        #         db.STORAGE
-        #         / "heatmaps"
-        #         / f"{condition['heatmap_id']}.jpg"
-        #     )
-        #
-        #     pdf.image(
-        #         str(heatmap_path),
-        #         x=70 + 60 * i,
-        #         y=y,
-        #         w=55,
-        #     )
-
-        # Supabase Storage implementation
-
-        image_id = screening["image"]["id"]
-
-        photo_bytes = service.storage_download(
-            "processed-images",
-            f"{image_id}_512.jpg",
-        )
-
-        pdf.image(
-            BytesIO(photo_bytes),
-            x=10,
-            y=y,
-            w=55,
-        )
-
-        for index, condition in enumerate(
-            screening["conditions"]
-        ):
-            heatmap_id = condition["heatmap_id"]
-
-            if heatmap_id is None:
-                continue
-
-            heatmap_bytes = service.storage_download(
-                "heatmaps",
-                f"{heatmap_id}.jpg",
-            )
-
-            pdf.image(
-                BytesIO(heatmap_bytes),
-                x=70 + 60 * index,
-                y=y,
-                w=55,
-            )
-
-        pdf.set_y(y + 57)
-
-        pdf.set_font(
-            "Helvetica",
-            "",
-            8,
-        )
-
-        pdf.cell(
-            60,
-            5,
-            "Photo (preprocessed)",
-        )
-
-        pdf.cell(
-            60,
-            5,
-            "Heatmap: cataract",
-        )
-
-        pdf.cell(
-            60,
-            5,
-            "Heatmap: glaucoma",
-            new_x="LMARGIN",
-            new_y="NEXT",
-        )
-
-        pdf.multi_cell(
-            0,
-            4,
-            (
-                "Heatmaps show which areas most "
-                "influenced a score. They are a "
-                "visual aid, not proof, and never "
-                "show where disease is."
-            ),
+        _screening_images(
+            pdf,
+            screening,
         )
 
 
 def screening_pdf(screening):
+    """Generate a complete screening summary PDF."""
+
     pdf = _pdf("Screening summary")
 
     patient = screening["patient"]
@@ -368,6 +393,8 @@ def screening_pdf(screening):
 
 
 def patient_pdf(detail, screenings):
+    """Generate a patient dossier PDF."""
+
     pdf = _pdf("Patient dossier")
 
     patient = detail["patient"]
@@ -397,28 +424,16 @@ def patient_pdf(detail, screenings):
     _line(
         pdf,
         "Last encounter",
-        last_encounter.replace(
-            "T", " "
-        )[:16],
+        _date(last_encounter),
     )
 
+    # Latest screening for each eye.
     for eye in ("right", "left"):
         screening = detail["latest"][eye]
 
-        pdf.ln(4)
-
-        pdf.set_font(
-            "Helvetica",
-            "B",
-            12,
-        )
-
-        pdf.cell(
-            0,
-            8,
+        _section_heading(
+            pdf,
             f"Latest: {EYES[eye]}",
-            new_x="LMARGIN",
-            new_y="NEXT",
         )
 
         if screening is None:
@@ -435,6 +450,7 @@ def patient_pdf(detail, screenings):
                 new_x="LMARGIN",
                 new_y="NEXT",
             )
+
         else:
             _screening_block(
                 pdf,
@@ -442,67 +458,35 @@ def patient_pdf(detail, screenings):
                 with_images=False,
             )
 
-    pdf.ln(4)
-
-    pdf.set_font(
-        "Helvetica",
-        "B",
-        12,
-    )
-
-    pdf.cell(
-        0,
-        8,
+    _section_heading(
+        pdf,
         "All screenings",
-        new_x="LMARGIN",
-        new_y="NEXT",
     )
 
-    pdf.set_font(
-        "Helvetica",
-        "B",
-        10,
+    columns = (
+        ("Screening", 28),
+        ("Date", 32),
+        ("Eye", 32),
+        ("Overall", 30),
+        ("Cataract", 32),
+        ("Glaucoma", 32),
     )
 
-    widths = (
-        30, 35, 35,
-        30, 30, 30,
+    _table_header(
+        pdf,
+        columns,
+        font_size=9,
     )
 
-    headings = (
-        "Screening",
-        "Date",
-        "Eye",
-        "Overall",
-        "Cataract",
-        "Glaucoma",
-    )
-
-    for heading, width in zip(
-        headings,
-        widths,
-    ):
-        pdf.cell(
-            width,
-            7,
-            heading,
-            border=1,
-        )
-
-    pdf.ln()
-
-    pdf.set_font(
-        "Helvetica",
-        "",
-        9,
-    )
+    widths = [
+        width
+        for _, width in columns
+    ]
 
     for screening in screenings:
         cells = (
             screening["id"],
-            screening["created_at"].replace(
-                "T", " "
-            )[:16],
+            _date(screening["created_at"]),
             EYES[screening["eye"]],
             (
                 "Not screened"
@@ -521,17 +505,11 @@ def patient_pdf(detail, screenings):
             ),
         )
 
-        for text, width in zip(
+        _table_row(
+            pdf,
             cells,
             widths,
-        ):
-            pdf.cell(
-                width,
-                7,
-                text,
-                border=1,
-            )
-
-        pdf.ln()
+            font_size=9,
+        )
 
     return bytes(pdf.output())
