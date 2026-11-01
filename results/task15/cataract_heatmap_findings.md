@@ -37,6 +37,8 @@ A total of 21 images were selected across seven categories, with three images pe
 | Media opacity | Uncertain, refer | 3 |
 | **Total** | | **21** |
 
+The plan asks for correctly and incorrectly classified examples from each group where available. The cataract-positive group has Refer examples only because all 31 eligible cataract eyes in the internal test were referred by the frozen model, so no misclassified cataract examples were available.
+
 The selected image IDs, prediction outcomes, and selection ranks are recorded in `results/task15/heatmap_selected_images.csv`.
 
 ## Generated Outputs
@@ -140,6 +142,7 @@ However, these observations do not prove that the model relies on haze, image bo
 5. Synthetic Gaussian blur does not fully represent clinical cataract-related haze.
 6. Small historical-versus-current raw-logit differences remain unexplained.
 7. The selected examples do not establish population-level localization behavior.
+8. Each heatmap is normalized to its own minimum and maximum, so colour intensity shows where the model focused within one image, not how strong the cataract evidence is. Colours should not be compared across images, and red areas on No concern images do not indicate strong cataract evidence.
 
 ## Conclusion
 
