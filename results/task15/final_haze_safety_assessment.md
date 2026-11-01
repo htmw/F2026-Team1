@@ -116,6 +116,8 @@ Some examples also showed broader or scattered activation within the retinal ima
 
 Normal-fundus examples with `No concern`, `Refer`, and `Uncertain, refer` decisions displayed peripheral activation patterns. All three selected cataract-positive examples showed prominent upper-boundary activation.
 
+The predefined selection plan requested correctly and incorrectly classified examples where available. All 31 eligible cataract-positive internal-test eyes were referred by the frozen model, so no misclassified cataract-positive examples were available for selection.
+
 ### Numerical Consistency
 
 All 21 Grad-CAM examples retained their original referral decisions.
@@ -182,6 +184,7 @@ These findings should be reported alongside the triggered warnings rather than o
 - The real-cataract reference group was not clinically matched.
 - Grad-CAM observations were qualitative and limited to 21 predefined examples.
 - Heatmap activation does not identify a causal feature or confirm disease localization.
+- Each Grad-CAM heatmap is normalized independently to its own minimum and maximum. Color intensity indicates relative activation within an image, not the strength of cataract evidence. Colors cannot be compared directly across images, and red regions in No concern images do not imply strong cataract evidence.
 - Small historical-versus-current raw-logit differences were observed without decision changes.
 - These predefined warnings are experimental screening criteria, not clinical diagnostic thresholds.
 
