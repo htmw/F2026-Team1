@@ -1,0 +1,89 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.input__field {
+  position: relative;
+}
+
+.input__control {
+  width: 100%;
+
+  background-color: var(--bg-panel);
+  color: var(--text-primary);
+  border: 0.1rem solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+}
+
+.input__control--with-icon {
+  padding-left: var(--space-10);
+}
+
+.input__control--with-action {
+  padding-right: var(--space-10);
+}
+
+.input__control::placeholder {
+  color: var(--text-secondary);
+}
+
+.input__control:hover {
+  border-color: var(--accent);
+}
+
+.input__control:focus-visible {
+  outline: 0.2rem solid var(--accent);
+  outline-offset: 0.2rem;
+}
+
+.input__control--error,
+.input__control--error:hover {
+  border-color: var(--danger);
+}
+
+.input__icon {
+  position: absolute;
+  top: 50%;
+  left: var(--space-3);
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.input__action {
+  position: absolute;
+  top: 50%;
+  right: var(--space-2);
+  transform: translateY(-50%);
+
+  display: grid;
+  place-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.input__action:hover {
+  color: var(--accent);
+}
+
+.input__action:focus-visible {
+  outline: 0.2rem solid var(--accent);
+  outline-offset: 0.1rem;
+}
+
+.input__message {
+  color: var(--text-secondary);
+}
+
+.input__message--error {
+  color: var(--danger);
+}

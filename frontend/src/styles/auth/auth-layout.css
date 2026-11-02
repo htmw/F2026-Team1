@@ -1,0 +1,95 @@
+.auth {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: var(--space-12) var(--space-4);
+}
+
+.auth__theme {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+}
+
+.auth__panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+  max-width: 44rem;
+}
+
+.auth__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.auth__logo {
+  width: 4rem;
+  height: 4rem;
+}
+
+.auth__wordmark {
+  color: var(--accent);
+}
+
+.auth__descriptor {
+  color: var(--text-secondary);
+}
+
+.auth__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-4);
+}
+
+.auth__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.auth__subtitle {
+  color: var(--text-secondary);
+}
+
+.auth__footer {
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.auth__footer a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth__footer a:hover {
+  text-decoration: underline;
+}
+
+.auth__footer a:focus-visible {
+  outline: 0.2rem solid var(--accent);
+  outline-offset: 0.2rem;
+}
+
+.auth__note {
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (max-width: 40em) {
+  .auth__body {
+    padding: var(--space-2);
+  }
+}

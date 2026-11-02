@@ -1,11 +1,16 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle.jsx";
 import "../styles/navbar.css";
 import logo from "../assets/images/logo.png";
+import useAuth from "../hooks/useAuth.js";
 
 function Navbar() {
-  function signout() {
-    return;
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  async function signout() {
+    await logout();
+    navigate("/login", { replace: true });
   }
 
   return (
@@ -50,7 +55,7 @@ function Navbar() {
           <ThemeToggle />
           <div className="user chip chip--neutral">
             <div className="user-status" role="presentation"></div>
-            <p className="caption-md">Dr. Emily Geller</p>
+            <p className="caption-md">{user?.name}</p>
           </div>
 
           <button onClick={signout} className="nav__btn--signout body-md">

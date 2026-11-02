@@ -34,7 +34,7 @@ export function apiPost(path, data) {
   return request(path, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
+    body: data === undefined ? undefined : JSON.stringify(data),
   });
 }
 
@@ -46,11 +46,11 @@ export function apiDelete(path) {
   return request(path, { method: "DELETE" });
 }
 
-export async function devAutoLogin() {
-  if (!import.meta.env.DEV) return;
+// export async function devAutoLogin() {
+//   if (!import.meta.env.DEV) return;
 
-  await apiPost("/auth/login", {
-    email: import.meta.env.VITE_DEV_EMAIL,
-    password: import.meta.env.VITE_DEV_PASSWORD,
-  }).catch(() => {});
-}
+//   await apiPost("/auth/login", {
+//     email: import.meta.env.VITE_DEV_EMAIL,
+//     password: import.meta.env.VITE_DEV_PASSWORD,
+//   }).catch(() => {});
+// }

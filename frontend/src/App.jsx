@@ -9,6 +9,7 @@ import About from "./pages/About.jsx";
 import Upload from "./pages/Upload.jsx";
 import Results from "./pages/Results.jsx";
 import StyleReference from "./pages/StyleReference.jsx";
+import RequireAuth from "./components/auth/RequireAuth.jsx";
 
 function AppLayout() {
   return (
@@ -25,13 +26,15 @@ function App() {
     <Routes>
       <Route path="/login" element={<Login />} />
 
-      <Route element={<AppLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/upload" element={<Upload />} />
-        <Route path="/results/:id" element={<Results />} />
-        <Route path="/style" element={<StyleReference />} />
+      <Route element={<RequireAuth />}>
+        <Route element={<AppLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="/results/:id" element={<Results />} />
+          <Route path="/style" element={<StyleReference />} />
+        </Route>
       </Route>
     </Routes>
   );
