@@ -18,6 +18,15 @@
   padding: var(--space-3);
 }
 
+.input__control:-webkit-autofill,
+.input__control:-webkit-autofill:hover,
+.input__control:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text-primary);
+  caret-color: var(--text-primary);
+  box-shadow: 0 0 0 100rem var(--bg-panel) inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 .input__control--with-icon {
   padding-left: var(--space-10);
 }
