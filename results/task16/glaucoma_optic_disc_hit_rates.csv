@@ -1,0 +1,3 @@
+dataset,total_heatmaps,evaluated_images,excluded_images,optic_disc_hits,optic_disc_misses,hit_rate_percent,mask_definition,exclusion_note
+ORIGA,650,649,1,239,410,36.83,mask > 0,Image 359 excluded: original image and annotation dimensions differ
+DRISHTI-GS,101,101,0,68,33,67.33,OD softmap >= 128,None
