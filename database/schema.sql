@@ -58,7 +58,7 @@ CREATE TABLE public.screenings (
     id TEXT PRIMARY KEY,
     patient_id TEXT NOT NULL
         REFERENCES public.patients(id),
-    image_id TEXT
+    image_id TEXT UNIQUE
         REFERENCES public.images(id),
     eye TEXT NOT NULL,
     created_at TEXT NOT NULL,
