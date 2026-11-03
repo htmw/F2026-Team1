@@ -24,7 +24,6 @@ import RadioCardGroup from "../components/RadioCardGroup.jsx";
 import FundusPreview from "../components/upload/FundusPreview.jsx";
 import ScreeningForm from "../components/upload/ScreeningForm.jsx";
 import ResultChip from "../components/ResultChip.jsx";
-import BackLink from "../components/BackLink.jsx";
 import ConditionCard from "../components/ConditionCard.jsx";
 import MetaList from "../components/MetaList.jsx";
 import Table from "../components/Table";
@@ -38,6 +37,7 @@ import glaucomaHeatmap from "../assets/images/glaucomaHeatmap.png";
 import eyePhoto from "../assets/images/eye.png";
 import RiskSummary from "../components/results/RiskSummary.jsx";
 import Banner from "../components/Banner.jsx";
+import TextLink from "../components/TextLink.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -260,19 +260,6 @@ function StyleReference() {
       </div>
 
       <div>
-        <BackLink to="/history">Back to History</BackLink>
-      </div>
-
-      <div style={{ display: "flex", alignItems: "center", gap: "1.6rem" }}>
-        <Button variant="secondary" icon={ArrowLeft} to="/upload">
-          New screening
-        </Button>
-        <BackLink to="/history" arrow={false}>
-          or back to History
-        </BackLink>
-      </div>
-
-      <div>
         <ConditionCard condition="Cataract" result="no_concern">
           <p className="body-rg">Risk score 0.14 (14%)</p>
         </ConditionCard>
@@ -364,6 +351,13 @@ function StyleReference() {
           clinical evaluations. It does not provide definitive diagnostic
           findings.
         </Banner>
+      </div>
+
+      <div>
+        <TextLink to="/history" leadingArrow>
+          Back to History
+        </TextLink>
+        <TextLink to="/history">or back to History</TextLink>
       </div>
     </main>
   );

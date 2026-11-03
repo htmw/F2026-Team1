@@ -1,0 +1,26 @@
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-secondary);
+  font: 500 1.4rem/2rem var(--font-sans);
+  text-decoration: none;
+}
+
+.text-link--strong {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.text-link:hover {
+  color: var(--accent);
+}
+
+.text-link:focus-visible {
+  outline: 0.2rem solid var(--accent);
+  outline-offset: 0.2rem;
+  border-radius: var(--radius-sm);
+}

@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import BackLink from "../components/BackLink.jsx";
 import Banner from "../components/Banner.jsx";
 import Button from "../components/Button.jsx";
 import ConditionCard from "../components/ConditionCard.jsx";
 import InfoNote from "../components/InfoNote.jsx";
 import ResultChip from "../components/ResultChip.jsx";
 import SummaryStrip from "../components/SummaryStrip.jsx";
+import TextLink from "../components/TextLink.jsx";
 import HeatmapPanel from "../components/results/HeatmapPanel.jsx";
 import RiskSummary from "../components/results/RiskSummary.jsx";
 import { useScreening } from "../hooks/useScreening.js";
@@ -30,7 +30,7 @@ function ResultsMessage({ children }) {
   return (
     <main className="main results">
       <div className="results__back">
-        <BackLink to="/history">Back to History</BackLink>
+        <TextLink to="/history">Back to History</TextLink>
       </div>
       <p className="body-md">{children}</p>
     </main>
@@ -75,9 +75,7 @@ function Results() {
         <Button variant="secondary" icon={ArrowLeft} to="/upload">
           New screening
         </Button>
-        <BackLink to="/history" arrow={false}>
-          or back to History
-        </BackLink>
+        <TextLink to="/history">or back to History</TextLink>
       </div>
 
       <Banner title="Triage, not diagnosis">
@@ -97,6 +95,9 @@ function Results() {
         asideLabel="Overall result:"
       >
         <ResultChip result={screening.overall_result} />
+        <TextLink to={`/results/${screening.id}/record`} trailingArrow strong>
+          View full record
+        </TextLink>
       </SummaryStrip>
 
       <div className="results__layout">
