@@ -1,0 +1,33 @@
+.meter {
+  position: relative;
+  height: 1.2rem;
+  background-color: var(--bg-canvas);
+  border: 0.1rem solid var(--border-default);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.meter__fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+}
+
+.meter__fill--no_concern {
+  background-color: var(--success);
+}
+
+.meter__fill--refer {
+  background-color: var(--danger);
+}
+
+.meter__fill--uncertain {
+  background-color: var(--warning);
+}
+
+.meter__marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0.2rem;
+  background-color: var(--text-primary);
+}

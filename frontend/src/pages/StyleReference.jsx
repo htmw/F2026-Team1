@@ -38,6 +38,7 @@ import eyePhoto from "../assets/images/eye.png";
 import RiskSummary from "../components/results/RiskSummary.jsx";
 import Banner from "../components/Banner.jsx";
 import TextLink from "../components/TextLink.jsx";
+import Meter from "../components/record/Meter.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -358,6 +359,25 @@ function StyleReference() {
           Back to History
         </TextLink>
         <TextLink to="/history">or back to History</TextLink>
+      </div>
+
+      <div>
+        <h1>Meter Component</h1>
+        <Meter value={0.14} result="no_concern" label="Calibrated risk" />
+        <Meter value={0.78} result="refer" label="Calibrated risk" />
+        <Meter value={0.5} result="uncertain" label="Calibrated risk" />
+        <Meter
+          value={0.14}
+          marker={0.35}
+          result="no_concern"
+          label="Calibrated risk against threshold"
+        />
+        <Meter
+          value={0.78}
+          marker={0.5}
+          result="refer"
+          label="Calibrated risk against threshold"
+        />
       </div>
     </main>
   );
