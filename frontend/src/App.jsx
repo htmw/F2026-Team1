@@ -8,6 +8,7 @@ import History from "./pages/History.jsx";
 import About from "./pages/About.jsx";
 import Upload from "./pages/Upload.jsx";
 import Results from "./pages/Results.jsx";
+import Record from "./pages/Record.jsx";
 import StyleReference from "./pages/StyleReference.jsx";
 import RequireAuth from "./components/auth/RequireAuth.jsx";
 
@@ -33,6 +34,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/results/:id" element={<Results />} />
+          <Route path="/results/:id/record" element={<Record />} />
           <Route path="/style" element={<StyleReference />} />
         </Route>
       </Route>

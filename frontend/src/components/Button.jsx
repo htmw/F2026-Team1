@@ -6,6 +6,7 @@ function Button({
   fullWidth = false,
   type = "button",
   to,
+  href,
   children,
   ...rest
 }) {
@@ -23,6 +24,14 @@ function Button({
       <Link to={to} className={className} {...rest}>
         {content}
       </Link>
+    );
+  }
+
+  if (href) {
+    return (
+      <a href={href} className={className} {...rest}>
+        {content}
+      </a>
     );
   }
 
