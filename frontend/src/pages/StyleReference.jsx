@@ -39,6 +39,7 @@ import RiskSummary from "../components/results/RiskSummary.jsx";
 import Banner from "../components/Banner.jsx";
 import TextLink from "../components/TextLink.jsx";
 import Meter from "../components/record/Meter.jsx";
+import HeatmapTile from "../components/record/HeatmapTile.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -377,6 +378,32 @@ function StyleReference() {
           marker={0.5}
           result="refer"
           label="Calibrated risk against threshold"
+        />
+      </div>
+
+      <div
+        style={{ display: "grid", gap: "var(--space-4)", maxWidth: "60rem" }}
+      >
+        <HeatmapTile
+          title="Cataract heatmap"
+          description="Low influence intensity"
+          result="no_concern"
+          resultLabel="No concern"
+          imageUrl={cataractHeatmap}
+        />
+        <HeatmapTile
+          title="Glaucoma heatmap"
+          description="Elevated influence pattern"
+          result="refer"
+          resultLabel="Refer"
+          imageUrl={glaucomaHeatmap}
+        />
+        <HeatmapTile
+          title="Cataract heatmap"
+          description="Influence unclear"
+          result="uncertain"
+          resultLabel="Uncertain, refer"
+          imageUrl={eyePhoto}
         />
       </div>
     </main>

@@ -1,0 +1,39 @@
+.heatmap-tile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3);
+  background-color: var(--bg-subtle);
+  border: 0.1rem solid var(--border-default);
+  border-radius: var(--radius-md);
+}
+
+.heatmap-tile__image {
+  flex-shrink: 0;
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 0.1rem solid var(--border-default);
+}
+
+.heatmap-tile__image--empty {
+  background-color: var(--bg-canvas);
+}
+
+.heatmap-tile__description {
+  color: var(--text-secondary);
+  margin: var(--space-1) 0 var(--space-2);
+}
+
+.heatmap-tile__result--no_concern {
+  color: var(--success);
+}
+
+.heatmap-tile__result--refer {
+  color: var(--danger);
+}
+
+.heatmap-tile__result--uncertain {
+  color: var(--warning);
+}
