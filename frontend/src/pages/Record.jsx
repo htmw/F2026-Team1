@@ -12,31 +12,15 @@ import HeatmapTile from "../components/record/HeatmapTile.jsx";
 import { useScreening } from "../hooks/useScreening.js";
 import { assetUrl } from "../services/api.js";
 import "../styles/record/record.css";
+import { EYE_LABELS, CONDITION_LABELS, RESULT_LABELS } from "../data/labels.js";
+import { formatDateTime } from "../utils/format.js";
 
-const EYE_LABELS = { right: "Right eye, OD", left: "Left eye, OS" };
-const CONDITION_LABELS = { cataract: "Cataract", glaucoma: "Glaucoma" };
-const RESULT_LABELS = {
-  no_concern: "No concern",
-  refer: "Refer",
-  uncertain: "Uncertain, refer",
-};
+
 const INFLUENCE = {
   no_concern: "Low influence intensity",
   refer: "Elevated influence pattern",
   uncertain: "Influence unclear",
 };
-
-function formatDateTime(iso) {
-  return new Date(iso).toLocaleString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-    timeZoneName: "short",
-  });
-}
 
 function RecordMessage({ children }) {
   return (

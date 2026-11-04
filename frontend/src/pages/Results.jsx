@@ -12,19 +12,11 @@ import RiskSummary from "../components/results/RiskSummary.jsx";
 import { useScreening } from "../hooks/useScreening.js";
 import { assetUrl } from "../services/api.js";
 import "../styles/results/results.css";
+import { EYE_LABELS, CONDITION_LABELS } from "../data/labels.js";
+import { formatDate } from "../utils/format.js";
 
-const EYE_LABELS = { right: "Right eye, OD", left: "Left eye, OS" };
-const CONDITION_LABELS = { cataract: "Cataract", glaucoma: "Glaucoma" };
 const UNCERTAIN_MESSAGE =
   "Low image quality or the model is uncertain. Please refer for a full eye examination.";
-
-function formatDate(iso) {
-  return new Date(iso).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
-}
 
 function ResultsMessage({ children }) {
   return (

@@ -38,7 +38,7 @@ import eyePhoto from "../assets/images/eye.png";
 import RiskSummary from "../components/results/RiskSummary.jsx";
 import Banner from "../components/Banner.jsx";
 import TextLink from "../components/TextLink.jsx";
-import Meter from "../components/record/Meter.jsx";
+import Meter from "../components/Meter.jsx";
 import HeatmapTile from "../components/record/HeatmapTile.jsx";
 import ConditionDetail from "../components/record/ConditionDetail.jsx";
 

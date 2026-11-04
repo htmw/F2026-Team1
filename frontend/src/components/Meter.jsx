@@ -1,4 +1,4 @@
-import "../../styles/record/meter.css";
+import "../styles/record/meter.css";
 
 function clamp(value) {
   return Math.min(Math.max(value, 0), 1);

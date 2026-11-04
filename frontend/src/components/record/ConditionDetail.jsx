@@ -1,5 +1,5 @@
 import InfoNote from "../InfoNote.jsx";
-import Meter from "./Meter.jsx";
+import Meter from "../Meter.jsx";
 import "../../styles/record/condition-detail.css";
 
 function ConditionDetail({ item, isExample = false }) {
