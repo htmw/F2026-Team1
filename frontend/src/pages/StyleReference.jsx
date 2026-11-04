@@ -40,6 +40,7 @@ import Banner from "../components/Banner.jsx";
 import TextLink from "../components/TextLink.jsx";
 import Meter from "../components/record/Meter.jsx";
 import HeatmapTile from "../components/record/HeatmapTile.jsx";
+import ConditionDetail from "../components/record/ConditionDetail.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -381,9 +382,7 @@ function StyleReference() {
         />
       </div>
 
-      <div
-        style={{ display: "grid", gap: "var(--space-4)", maxWidth: "60rem" }}
-      >
+      <div>
         <HeatmapTile
           title="Cataract heatmap"
           description="Low influence intensity"
@@ -405,6 +404,55 @@ function StyleReference() {
           resultLabel="Uncertain, refer"
           imageUrl={eyePhoto}
         />
+      </div>
+
+      <div>
+        <ConditionCard
+          condition="Cataract"
+          eyebrow="Condition"
+          result="no_concern"
+        >
+          <ConditionDetail
+            isExample
+            item={{
+              calibrated_score: 0.14,
+              raw_score: 0.12,
+              threshold: 0.35,
+              result: "no_concern",
+              flag_reason:
+                "Calibrated risk 0.14 is below the referral threshold 0.35.",
+            }}
+          />
+        </ConditionCard>
+        <ConditionCard condition="Glaucoma" eyebrow="Condition" result="refer">
+          <ConditionDetail
+            isExample
+            item={{
+              calibrated_score: 0.78,
+              raw_score: 0.81,
+              threshold: 0.5,
+              result: "refer",
+              flag_reason:
+                "Calibrated risk 0.78 is at or above the referral threshold 0.50.",
+            }}
+          />
+        </ConditionCard>
+        <ConditionCard
+          condition="Cataract"
+          eyebrow="Condition"
+          result="uncertain"
+        >
+          <ConditionDetail
+            item={{
+              calibrated_score: 0.5,
+              raw_score: 0.5,
+              threshold: 0.35,
+              result: "uncertain",
+              flag_reason:
+                "Low image quality or the model is uncertain. Please refer for a full eye examination.",
+            }}
+          />
+        </ConditionCard>
       </div>
     </main>
   );
