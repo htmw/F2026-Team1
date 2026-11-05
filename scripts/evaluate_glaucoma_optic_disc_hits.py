@@ -6,8 +6,8 @@ Datasets:
 
 Heatmaps were generated using the frozen shared glaucoma model.
 
-ORIGA image 359 is provisionally excluded because its original image
-and annotation have different heights.
+ORIGA image 359 has a 13-pixel annotation width mismatch.
+Its mask is right-padded with zeros to match the original image.
 
 This script evaluates localization, not classification accuracy.
 """
@@ -42,7 +42,7 @@ EXPECTED_COUNTS = {
     "DRISHTI-GS": 101,
 }
 
-ORIGA_EXCLUDED_IDS = {"359"}
+ORIGA_EXCLUDED_IDS = set()
 
 DRISHTI_PRIMARY_THRESHOLD = 128
 
@@ -201,6 +201,10 @@ def evaluate_origa():
     hits = 0
     misses = 0
     excluded = []
+    label_counts = {
+        0: {"hits": 0, "total": 0},
+        1: {"hits": 0, "total": 0},
+    }
 
     for image_id, row in sorted(indexed.items()):
         if image_id in ORIGA_EXCLUDED_IDS:
@@ -213,6 +217,27 @@ def evaluate_origa():
             raise ValueError(f"Unreadable ORIGA image: {image_id}")
 
         annotation = loadmat(str(annotations[image_id]))["mask"]
+
+        if image_id == "359":
+            image_height, image_width = image.shape[:2]
+            annotation_height, annotation_width = annotation.shape
+
+            if (
+                image_height != annotation_height
+                or image_width - annotation_width != 13
+            ):
+                raise ValueError(
+                    "Unexpected ORIGA image 359 dimensions: "
+                    f"image={image.shape[:2]}, "
+                    f"annotation={annotation.shape}"
+                )
+
+            annotation = np.pad(
+                annotation,
+                ((0, 0), (0, 13)),
+                mode="constant",
+                constant_values=0
+            )
 
         if image.shape[:2] != annotation.shape:
             raise ValueError(
@@ -240,8 +265,16 @@ def evaluate_origa():
         peak_x = int(row["gradcam_peak_x"])
         peak_y = int(row["gradcam_peak_y"])
 
-        if aligned[peak_y, peak_x] > 0:
+        label = int(row["glaucoma"])
+        if label not in label_counts:
+            raise ValueError(f"Invalid ORIGA glaucoma label: {label}")
+
+        is_hit = aligned[peak_y, peak_x] > 0
+        label_counts[label]["total"] += 1
+
+        if is_hit:
             hits += 1
+            label_counts[label]["hits"] += 1
         else:
             misses += 1
 
@@ -250,10 +283,16 @@ def evaluate_origa():
     if evaluated + len(excluded) != expected:
         raise ValueError("ORIGA evaluation count mismatch")
 
-    if excluded != ["359"]:
-        raise ValueError("Unexpected ORIGA exclusions")
+    if excluded:
+        raise ValueError(f"Unexpected ORIGA exclusions: {excluded}")
 
     hit_rate = round(100 * hits / evaluated, 2)
+
+    if sum(group["total"] for group in label_counts.values()) != evaluated:
+        raise ValueError("ORIGA label totals do not match evaluated images")
+
+    if sum(group["hits"] for group in label_counts.values()) != hits:
+        raise ValueError("ORIGA label hits do not match total hits")
 
     return {
         "dataset": "ORIGA",
@@ -263,10 +302,20 @@ def evaluate_origa():
         "optic_disc_hits": hits,
         "optic_disc_misses": misses,
         "hit_rate_percent": hit_rate,
+        "glaucoma_eyes": label_counts[1]["total"],
+        "glaucoma_hits": label_counts[1]["hits"],
+        "glaucoma_hit_rate_percent": round(
+            100 * label_counts[1]["hits"] / label_counts[1]["total"], 2
+        ),
+        "healthy_eyes": label_counts[0]["total"],
+        "healthy_hits": label_counts[0]["hits"],
+        "healthy_hit_rate_percent": round(
+            100 * label_counts[0]["hits"] / label_counts[0]["total"], 2
+        ),
         "mask_definition": "mask > 0",
         "exclusion_note": (
-            "Image 359 excluded: original image and annotation "
-            "dimensions differ"
+            "No exclusions; image 359 annotation right-padded "
+            "by 13 columns"
         ),
     }
 
@@ -320,6 +369,10 @@ def evaluate_drishti():
     )
 
     hits = {threshold: 0 for threshold in thresholds}
+    label_counts = {
+        0: {"hits": 0, "total": 0},
+        1: {"hits": 0, "total": 0},
+    }
 
     for image_id, row in sorted(indexed.items()):
         image = cv2.imread(str(originals[image_id]))
@@ -364,6 +417,15 @@ def evaluate_drishti():
             aligned[peak_y, peak_x]
         )
 
+        label = int(row["glaucoma"])
+        if label not in label_counts:
+            raise ValueError(f"Invalid DRISHTI glaucoma label: {label}")
+
+        label_counts[label]["total"] += 1
+
+        if peak_annotation_value >= DRISHTI_PRIMARY_THRESHOLD:
+            label_counts[label]["hits"] += 1
+
         for threshold in thresholds:
             if peak_annotation_value >= threshold:
                 hits[threshold] += 1
@@ -377,6 +439,12 @@ def evaluate_drishti():
         2
     )
 
+    if sum(group["total"] for group in label_counts.values()) != evaluated:
+        raise ValueError("DRISHTI label totals do not match evaluated images")
+
+    if sum(group["hits"] for group in label_counts.values()) != primary_hits:
+        raise ValueError("DRISHTI label hits do not match primary hits")
+
     result = {
         "dataset": "DRISHTI-GS",
         "total_heatmaps": expected,
@@ -385,6 +453,16 @@ def evaluate_drishti():
         "optic_disc_hits": primary_hits,
         "optic_disc_misses": primary_misses,
         "hit_rate_percent": hit_rate,
+        "glaucoma_eyes": label_counts[1]["total"],
+        "glaucoma_hits": label_counts[1]["hits"],
+        "glaucoma_hit_rate_percent": round(
+            100 * label_counts[1]["hits"] / label_counts[1]["total"], 2
+        ),
+        "healthy_eyes": label_counts[0]["total"],
+        "healthy_hits": label_counts[0]["hits"],
+        "healthy_hit_rate_percent": round(
+            100 * label_counts[0]["hits"] / label_counts[0]["total"], 2
+        ),
         "mask_definition": "OD softmap >= 128",
         "exclusion_note": "None",
     }

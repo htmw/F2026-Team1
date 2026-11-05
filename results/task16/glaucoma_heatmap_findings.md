@@ -72,8 +72,18 @@ Sensitivity checks also use thresholds of at least 1 and at least 255.
 
 | Dataset | Generated | Evaluated | Excluded | Hits | Misses | Hit rate |
 |---|---:|---:|---:|---:|---:|---:|
-| ORIGA | 650 | 649 | 1 | 239 | 410 | 36.83% |
+| ORIGA | 650 | 650 | 0 | 240 | 410 | 36.92% |
 | DRISHTI-GS | 101 | 101 | 0 | 68 | 33 | 67.33% |
+
+### Results by glaucoma label
+
+| Dataset | Glaucoma eyes | Healthy eyes |
+|---|---:|---:|
+| ORIGA | 94/168 (56.0%) | 146/482 (30.3%) |
+| DRISHTI-GS | 50/70 (71.4%) | 18/31 (58.1%) |
+
+The peak lands in the optic disc more often on glaucoma eyes than
+on healthy eyes in both datasets.
 
 Machine-readable results are saved in:
 
@@ -89,33 +99,44 @@ Machine-readable results are saved in:
 
 The observed hit rate varies with the optic disc mask threshold.
 
-## ORIGA Annotation Exclusion
+## ORIGA Image 359 Annotation Alignment
 
-ORIGA image 359 was excluded from the primary localization denominator.
+ORIGA image 359 is included in the optic disc localization evaluation.
 
-Its original image has a height of 3085 pixels, while the corresponding
-annotation has a height of 3072 pixels. Both have a width of 2048 pixels.
+The original photograph and annotation are both 2048 pixels tall.
+The photograph is 3085 pixels wide, while its annotation is
+3072 pixels wide, giving a 13-pixel width difference.
 
-The annotation alignment cannot be established from matching dimensions
-alone. Rather than silently applying an uncertain transformation, the
-evaluation records this image as excluded.
+To align the annotation with the photograph, the evaluation script
+pads the annotation with 13 zero-valued columns on the right before
+applying the existing fundus crop and resize procedure.
 
-This exclusion requires team review before the denominator and result
-are treated as final.
+The team independently checked left-aligned, right-aligned, and
+stretched annotation placements and reported that the Grad-CAM peak
+falls inside the optic disc in each case.
 
-All 650 heatmaps were generated; the exclusion affects only the
-optic disc localization calculation.
+Image 359 contributes one glaucoma-positive optic disc hit.
+All 650 ORIGA images are evaluated, with zero exclusions.
 
 ## Interpretation
 
-The observed Grad-CAM peak localization rates are 36.83% on ORIGA
-and 67.33% on DRISHTI-GS using the specified masks.
+The observed Grad-CAM peak localization rates are 36.92% on ORIGA
+and 67.33% on DRISHTI-GS using the specified optic disc masks.
 
-These results describe how often the strongest activation location
+The optic disc covers approximately 2.4% of the 512 x 512 image
+in ORIGA and 3.7% in DRISHTI-GS, according to the team's review.
+Under a uniformly random peak-location baseline, a randomly
+placed peak would fall inside the optic disc approximately that
+often. The observed localization rates are substantially higher.
+
+The peak falls inside the optic disc more frequently for
+glaucoma-positive eyes than healthy eyes in both datasets.
+
+These results describe how often the strongest Grad-CAM activation
 overlaps the annotated optic disc under this evaluation procedure.
 
-They do not establish glaucoma diagnostic performance or prove that
-the model relies causally on optic disc structures.
+They do not establish glaucoma diagnostic performance or prove
+that the model relies causally on optic disc structures.
 
 ## Limitations
 
@@ -123,7 +144,7 @@ the model relies causally on optic disc structures.
 2. A single peak coordinate does not describe the full activation distribution.
 3. Results depend on annotation definitions and alignment.
 4. The DRISHTI-GS primary threshold of 128 is an evaluation choice.
-5. ORIGA image 359 requires an annotation-alignment review.
+5. ORIGA image 359 uses 13-column right-padding to align its annotation; the original annotation width differs from the image.
 6. Per-image Grad-CAM normalization does not make heatmap intensity
    directly comparable across different images.
 7. The two datasets differ in image characteristics and annotation formats.
@@ -137,35 +158,69 @@ The evaluation generated 751 PNG heatmap overlays:
 - DRISHTI-GS: 101 PNG files, approximately 24.47 MB.
 - Combined PNG size: approximately 180.49 MB.
 
-These PNGs contain fundus photograph overlays. Section 11.2 of the
-project brief states that photographs must not be placed in Git.
+Fundus photographs and heatmap examples are permitted in the
+repository, as demonstrated by existing dataset files and
+the Task 15 cataract heatmaps.
 
-For this reason, the complete PNG collection is intentionally excluded
-from the SCRUM-104 Git commit. This also avoids adding approximately
-180 MB of generated images to repository history.
+The complete collection is intentionally kept outside Git
+primarily because of its size. Committing approximately 180 MB
+of generated PNGs would unnecessarily increase repository history.
 
-The Git commit instead includes the generation and evaluation scripts,
+The repository includes the generation and evaluation scripts,
 CSV manifests, numerical results, and this findings report.
 
-The complete PNG collection remains stored locally under
-`results/task16/` and has not been deleted.
+A representative glaucoma heatmap contact sheet was generated
+for team review, presentation slides, and the project paper:
 
-The team should confirm an approved storage or sharing location for
-the generated overlays if the complete collection is required for
-review or archival purposes.
+`results/task16/glaucoma_heatmap_contact_sheet.png`
 
-The scripts and manifests support reproducibility when the authorized
-source datasets, frozen checkpoint, and required environment are
-available.
+The contact sheet contains eight examples arranged by dataset:
+
+- ORIGA: glaucoma hit (036), glaucoma miss (037),
+  healthy hit (004), and healthy miss (001).
+- DRISHTI-GS: glaucoma hit (001), glaucoma miss (003),
+  healthy hit (007), and healthy miss (009).
+
+Hit and miss categories were determined using the same optic disc
+localization criteria as the quantitative evaluation.
+
+The contact sheet contains selected examples only and should not
+be interpreted as a representative statistical sample.
+
+The complete PNG collection remains available locally under
+`results/task16/` and will be uploaded to a shared Google Drive
+folder for team access.
+
+Google Drive folder: Pending upload and sharing link.
+
+The full-resolution heatmap directories will be added to
+`.gitignore` to prevent accidental commits.
+
+### Complete Heatmap Archive on Google Drive
+
+The complete collection of 751 generated glaucoma Grad-CAM PNG heatmaps (650 ORIGA and 101 DRISHTI-GS) is available here:
+
+[Download SCRUM-62 Glaucoma Heatmaps ZIP](https://drive.google.com/file/d/1u33q_EUCgEziXSJy0zWo0UGzkFVWFhsT/view?usp=drive_link)
+
+The ZIP archive is approximately 180.66 MB. Google Drive sharing is restricted to authorized teammates. The uploaded archive was successfully downloaded and opened for verification by the file owner.
+
+The full PNG directories are excluded from Git to avoid adding approximately 180 MB of generated images. A representative eight-image contact sheet is retained in the repository for review and presentation purposes.
 
 ## Conclusion
 
 The frozen shared glaucoma model produced 751 Grad-CAM heatmaps across
 ORIGA and DRISHTI-GS.
 
-Using the current documented localization procedure, the optic disc
-peak hit rate was 239/649 (36.83%) for ORIGA and 68/101 (67.33%)
+Using the documented localization procedure, the optic disc
+peak hit rate was 240/650 (36.92%) for ORIGA and 68/101 (67.33%)
 for DRISHTI-GS.
 
-The results should be reviewed together with the mask definitions,
-sensitivity analysis, and ORIGA image 359 exclusion before final approval.
+All 650 ORIGA images were included, with image 359's annotation
+right-padded by 13 columns to match the original photograph.
+
+The peak falls inside the optic disc more often for glaucoma-positive
+eyes than healthy eyes in both datasets. The observed rates are also
+higher than the approximate uniformly random peak-location baselines.
+
+These findings describe Grad-CAM localization, not glaucoma
+classification accuracy or causal reliance on optic disc structures.

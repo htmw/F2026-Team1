@@ -30,3 +30,7 @@ backend/storage/
 .env
 .env.*
 !.env.example
+
+# Task 16 full-resolution generated glaucoma heatmaps (shared via Drive)
+results/task16/origa_glaucoma_heatmaps/
+results/task16/drishti_glaucoma_heatmaps/
