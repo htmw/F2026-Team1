@@ -41,6 +41,7 @@ import TextLink from "../components/TextLink.jsx";
 import Meter from "../components/Meter.jsx";
 import HeatmapTile from "../components/record/HeatmapTile.jsx";
 import ConditionDetail from "../components/record/ConditionDetail.jsx";
+import TriageTile from "../components/patient/TriageTile.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -453,6 +454,12 @@ function StyleReference() {
             }}
           />
         </ConditionCard>
+      </div>
+      <div>
+        <TriageTile label="Cataract triage" score={0.14} result="no_concern" />
+        <TriageTile label="Glaucoma triage" score={0.78} result="refer" />
+        <TriageTile label="Cataract triage" score={0.5} result="uncertain" />
+        <TriageTile label="Glaucoma triage" />
       </div>
     </main>
   );
