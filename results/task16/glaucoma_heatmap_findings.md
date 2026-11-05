@@ -187,15 +187,6 @@ localization criteria as the quantitative evaluation.
 The contact sheet contains selected examples only and should not
 be interpreted as a representative statistical sample.
 
-The complete PNG collection remains available locally under
-`results/task16/` and will be uploaded to a shared Google Drive
-folder for team access.
-
-Google Drive folder: Pending upload and sharing link.
-
-The full-resolution heatmap directories will be added to
-`.gitignore` to prevent accidental commits.
-
 ### Complete Heatmap Archive on Google Drive
 
 The complete collection of 751 generated glaucoma Grad-CAM PNG heatmaps (650 ORIGA and 101 DRISHTI-GS) is available here:

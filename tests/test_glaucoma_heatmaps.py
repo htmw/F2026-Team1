@@ -117,40 +117,26 @@ def test_forward_hook_cleanup(model):
     assert len(layer._forward_hooks) == initial_hooks
 
 
-def test_hit_count_consistency(tmp_path):
-    csv_path = tmp_path / "results.csv"
+def test_hit_count_consistency():
+    csv_path = (
+        Path(__file__).resolve().parents[1]
+        / "results/task16/glaucoma_optic_disc_hit_rates.csv"
+    )
 
-    rows = [
-        {
-            "dataset": "ORIGA",
-            "evaluated_images": 650,
-            "optic_disc_hits": 240,
-            "optic_disc_misses": 410,
-        },
-        {
-            "dataset": "DRISHTI-GS",
-            "evaluated_images": 101,
-            "optic_disc_hits": 68,
-            "optic_disc_misses": 33,
-        },
-    ]
+    assert csv_path.is_file(), "Committed evaluation CSV is missing"
 
-    with csv_path.open("w", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(
-            stream,
-            fieldnames=list(rows[0].keys())
-        )
-        writer.writeheader()
-        writer.writerows(rows)
+    with csv_path.open("r", newline="", encoding="utf-8-sig") as stream:
+        rows = list(csv.DictReader(stream))
 
-    with csv_path.open("r", newline="", encoding="utf-8") as stream:
-        saved_rows = list(csv.DictReader(stream))
+    assert len(rows) == 2
+    assert {row["dataset"] for row in rows} == {"ORIGA", "DRISHTI-GS"}
 
-    assert len(saved_rows) == 2
-
-    for row in saved_rows:
+    for row in rows:
+        evaluated = int(row["evaluated_images"])
         hits = int(row["optic_disc_hits"])
         misses = int(row["optic_disc_misses"])
-        evaluated = int(row["evaluated_images"])
+        glaucoma_eyes = int(row["glaucoma_eyes"])
+        healthy_eyes = int(row["healthy_eyes"])
 
         assert hits + misses == evaluated
+        assert glaucoma_eyes + healthy_eyes == evaluated
