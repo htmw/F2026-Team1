@@ -42,6 +42,7 @@ import Meter from "../components/Meter.jsx";
 import HeatmapTile from "../components/record/HeatmapTile.jsx";
 import ConditionDetail from "../components/record/ConditionDetail.jsx";
 import TriageTile from "../components/patient/TriageTile.jsx";
+import EyeSummaryCard from "../components/patient/EyeSummaryCard.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -460,6 +461,36 @@ function StyleReference() {
         <TriageTile label="Glaucoma triage" score={0.78} result="refer" />
         <TriageTile label="Cataract triage" score={0.5} result="uncertain" />
         <TriageTile label="Glaucoma triage" />
+      </div>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "var(--space-4)",
+          maxWidth: "120rem",
+        }}
+      >
+        <EyeSummaryCard
+          eye="right"
+          screening={{
+            id: "SCR-0841",
+            created_at: "2026-09-22T18:15:00Z",
+            overall_result: "refer",
+            conditions: [
+              {
+                condition: "cataract",
+                calibrated_score: 0.14,
+                result: "no_concern",
+              },
+              {
+                condition: "glaucoma",
+                calibrated_score: 0.78,
+                result: "refer",
+              },
+            ],
+          }}
+        />
+        <EyeSummaryCard eye="left" screening={null} />
       </div>
     </main>
   );
