@@ -357,7 +357,7 @@ datasets in this repo is fine, since the project is not commercial.
 - Glaucoma has three external test sets. External cataract testing relies on
   retina_dataset_2016 alone.
 - ACRIMA photos are tight optic-disc crops, and retina_dataset_2016 has no
-  documented $so both are reported in their own rows.
+  documented origin or licence, so both are reported in their own rows.
 - Calibration was fitted on ODIR-5K and does not transfer to the external sets.
 - The cataract haze check suggests the model may react to haze or image
   quality (see Results).
@@ -394,7 +394,7 @@ For team members:
 - **External test sets**: ORIGA, DRISHTI-GS, ACRIMA and retina_dataset_2016, from other sources, used only to test how well the model works outside ODIR.
 - **Shared vs single-disease model**: one model with two heads that learns both conditions together, compared with separate models for each condition.
 - **Seed**: the random starting point for training. Each model is trained with three seeds to see how much results vary.
-- **AUROC**: how well the scores separate eyes with and without the condition, from 0.5 (no better than chance) to 1.0 (perfect).
+- **AUROC**: how well the scores separate eyes with and without the condition. 0.5 is no better than chance and 1.0 is perfect.
 - **Calibration**: adjusting the raw scores so they can be read as probabilities.
 - **Threshold**: the score at which a result becomes Refer.
 - **Uncertain, refer**: the result for a score too close to the threshold to call. These eyes are referred too.
