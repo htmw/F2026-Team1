@@ -41,3 +41,30 @@ retina_dataset_2016, and lower average AUROC on ORIGA and DRISHTI-GS.
 There is no consistent improvement across all external datasets.
 
 Source: [External test results](../external/frozen_run_20261030/external_results.md).
+
+## Conclusion
+
+The shared model had a slightly higher average AUROC for both
+diseases on the internal test. For external glaucoma testing,
+it did better on ACRIMA and retina_dataset_2016, but worse on
+ORIGA and DRISHTI-GS. So, sharing one backbone did not improve
+the results on every dataset.
+
+Both models had lower glaucoma AUROC on the external datasets
+than on the internal test. ACRIMA was especially difficult.
+Even though the shared model did better there, its average
+AUROC was only 0.5551, which is close to chance.
+
+These results do not show one model as the clear winner.
+We compared three seeds, but we have not tested whether the
+differences are statistically significant.
+
+## Evaluation notes
+
+- We used the saved test results without retraining the models.
+- We kept the calibration and thresholds fixed.
+- The standard deviation shows how much results varied across seeds.
+- Internal confidence intervals were calculated by resampling patients.
+  External intervals used images because patient IDs were unavailable.
+- The datasets contain different images and patient groups.
+  We cannot tell from these results alone why performance changed.
