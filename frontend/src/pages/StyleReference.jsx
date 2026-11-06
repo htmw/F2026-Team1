@@ -10,6 +10,7 @@ import {
   CheckCircle2,
   ShieldCheck,
   ArrowLeft,
+  Plus,
 } from "lucide-react";
 import Button from "../components/Button.jsx";
 import Chip from "../components/Chip.jsx";
@@ -43,6 +44,7 @@ import HeatmapTile from "../components/record/HeatmapTile.jsx";
 import ConditionDetail from "../components/record/ConditionDetail.jsx";
 import TriageTile from "../components/patient/TriageTile.jsx";
 import EyeSummaryCard from "../components/patient/EyeSummaryCard.jsx";
+import PatientHeader from "../components/patient/PatientHeader.jsx";
 
 function StyleReference() {
   const [patientId, setPatientId] = useState("");
@@ -462,14 +464,7 @@ function StyleReference() {
         <TriageTile label="Cataract triage" score={0.5} result="uncertain" />
         <TriageTile label="Glaucoma triage" />
       </div>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "var(--space-4)",
-          maxWidth: "120rem",
-        }}
-      >
+      <div>
         <EyeSummaryCard
           eye="right"
           screening={{
@@ -491,6 +486,28 @@ function StyleReference() {
           }}
         />
         <EyeSummaryCard eye="left" screening={null} />
+      </div>
+      <div>
+        <PatientHeader
+          patient={{
+            id: "P-001",
+            full_name: "Maria Lopez",
+            age: 67,
+            sex: "female",
+          }}
+          lastEncounter="Sep 22, 2026"
+          protocolComplete
+          actions={
+            <>
+              <Button variant="secondary" icon={Download}>
+                Export Dossier
+              </Button>
+              <Button icon={Plus} to="/upload">
+                New screening
+              </Button>
+            </>
+          }
+        />
       </div>
     </main>
   );
