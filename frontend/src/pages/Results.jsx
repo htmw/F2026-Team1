@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ChevronRight } from "lucide-react";
 import Banner from "../components/Banner.jsx";
 import Button from "../components/Button.jsx";
 import ConditionCard from "../components/ConditionCard.jsx";
@@ -87,7 +87,11 @@ function Results() {
         asideLabel="Overall result:"
       >
         <ResultChip result={screening.overall_result} />
-        <TextLink to={`/results/${screening.id}/record`} trailingArrow strong>
+        <TextLink
+          to={`/results/${screening.id}/record`}
+          trailingIcon={ChevronRight}
+          strong
+        >
           View full record
         </TextLink>
       </SummaryStrip>

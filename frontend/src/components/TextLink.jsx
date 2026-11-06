@@ -1,19 +1,27 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, ChevronRight } from "lucide-react";
 import "../styles/text-link.css";
 
 function TextLink({
   to,
-  leadingArrow = false,
-  trailingArrow = false,
+  leadingIcon: LeadingIcon,
+  trailingIcon: TrailingIcon,
   strong = false,
+  accent = false,
   children,
 }) {
+  const className = [
+    "text-link",
+    strong && "text-link--strong",
+    accent && "text-link--accent",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <Link to={to} className={`text-link${strong ? " text-link--strong" : ""}`}>
-      {leadingArrow && <ArrowLeft size={16} aria-hidden="true" />}
+    <Link to={to} className={className}>
+      {LeadingIcon && <LeadingIcon size={16} aria-hidden="true" />}
       {children}
-      {trailingArrow && <ChevronRight size={16} aria-hidden="true" />}
+      {TrailingIcon && <TrailingIcon size={16} aria-hidden="true" />}
     </Link>
   );
 }

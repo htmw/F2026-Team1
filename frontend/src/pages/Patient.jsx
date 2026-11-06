@@ -25,7 +25,9 @@ function PatientMessage({ children }) {
 }
 
 function Patient() {
-  const { id } = useParams();
+  const { id: rawId } = useParams();
+  const id = rawId?.toUpperCase();
+
   const {
     data: detail,
     error,
