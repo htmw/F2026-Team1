@@ -5,6 +5,12 @@ import ResultChip from "./ResultChip";
 import "../styles/table-cell.css";
 
 const DATE_FORMAT = { month: "short", day: "numeric", year: "numeric" };
+const DATETIME_FORMAT = {
+  ...DATE_FORMAT,
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false,
+};
 
 function TableCell({ column, row, href }) {
   const value = row[column.key];
@@ -12,6 +18,8 @@ function TableCell({ column, row, href }) {
   switch (column.type) {
     case "date":
       return new Date(value).toLocaleDateString("en-US", DATE_FORMAT);
+    case "datetime":
+      return new Date(value).toLocaleString("en-US", DATETIME_FORMAT);
     case "link":
       return href ? (
         <Link to={href} className="table-cell__link mono-reference">

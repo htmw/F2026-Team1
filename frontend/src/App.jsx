@@ -9,6 +9,7 @@ import About from "./pages/About.jsx";
 import Upload from "./pages/Upload.jsx";
 import Results from "./pages/Results.jsx";
 import Record from "./pages/Record.jsx";
+import Patient from "./pages/Patient.jsx";
 import StyleReference from "./pages/StyleReference.jsx";
 import RequireAuth from "./components/auth/RequireAuth.jsx";
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/upload" element={<Upload />} />
           <Route path="/results/:id" element={<Results />} />
           <Route path="/results/:id/record" element={<Record />} />
+          <Route path="/patients/:id" element={<Patient />} />
           <Route path="/style" element={<StyleReference />} />
         </Route>
       </Route>
