@@ -17,14 +17,11 @@ main README):
 The API runs at http://localhost:8000. Every endpoint is listed at
 http://localhost:8000/docs, where you can also try each one.
 
-The first start creates `backend/storage/` with demo data: one user, four
-made-up patients and five screenings. The database, photos and heatmaps all
-live there, and git ignores the folder. To start over, stop the server and
-delete `backend/storage/`. Do this before running a demo again with the same
-photos, since a photo can only be screened once per eye.
-
-Demo login: `emily.geller@example.com` / `dual-demo`. This account only exists
-on your own computer.
+It uses the Supabase database and Storage set in `.env` (see Run the app in
+the main README). Locally you work on the same data as the live prototype, so
+sign in with the demo account in the main README and only add made-up patients.
+To set up a new, empty database from `database/schema.sql`, see "New database"
+in the main README.
 
 ## Calling it from the frontend
 - Add `credentials: "include"` to every fetch. Login sets a session cookie, and
@@ -37,8 +34,9 @@ on your own computer.
 - Errors come back as `{"detail": "..."}`: 401 not signed in, 404 not found,
   409 not allowed (for example screening a photo that failed the check),
   422 a missing or wrong field.
-- Thresholds are placeholders until Task 12. Read them from `GET /model` or
-  from each condition in a screening; don't hard-code them.
+- Thresholds are placeholders until the trained model replaces the mock. Read
+  them from `GET /model` or from each condition in a screening; don't hard-code
+  them.
 - When a condition is `uncertain`, Results shows no score. The Screening
   record still shows both scores.
 
@@ -65,6 +63,7 @@ on your own computer.
 | GET /screenings/{id}/export | Screening record: Export summary | PDF |
 | GET /heatmaps/{id} | Results, Screening record | Heatmap image |
 | GET /model | About, Screening record | Model version and thresholds |
+| GET /health | None (server check, no sign-in) | `{"status": "ok"}` |
 
 To skip an eye, send `POST /screenings` with
 `{"patient_id": "P-001", "eye": "left", "skipped": true, "skip_reason": "..."}`.
@@ -76,7 +75,9 @@ To skip an eye, send `POST /screenings` with
   `uncertain` (too close to call). Otherwise a score at or above the threshold
   is `refer` and below it is `no_concern`. For cataract (threshold 0.35):
   0.32 and 0.38 are `uncertain`, 0.45 is `refer`, 0.20 is `no_concern`.
-  This is a placeholder; Task 12 sets the real rule.
+  These numbers are placeholders. The real thresholds and margins were frozen
+  in Task 12 (`results/calibration/frozen_settings.json`) and come in with the
+  trained model.
 - Per eye: `refer` if either condition is `refer` or `uncertain`, otherwise
   `no_concern`.
 - The same eye can be screened again with a new photo, for a follow-up visit
@@ -84,8 +85,8 @@ To skip an eye, send `POST /screenings` with
   patient page.
 - The same photo is never screened twice for the same eye, even if it is
   uploaded again or "Screen this photo" is clicked twice. The second try gets
-  409 with the ID of the earlier screening.
-- Every endpoint except login needs a session. Passwords are stored hashed.
+  409.
+- Every endpoint except login and /health needs a session. Passwords are stored hashed.
 - Only clinic staff have accounts; patients never log in. Every signed-in user
   can see every patient.
 
@@ -97,9 +98,14 @@ To skip an eye, send `POST /screenings` with
 - `auth.py` login, password hashing and sessions
 - `reports.py` the PDF exports
 - `seed.py` the demo user, patients and screenings
-- `db.py` the SQLite tables
+- `db.py` the PostgreSQL connection and readable IDs (P-001, IMG-0001)
+- `../database/schema.sql` the database tables, for setting up a new database
 - `schemas.py` request and response shapes (shown on /docs)
 
 ## Tests
 
     python -m pytest tests/test_api.py
+
+They need `.env` and run against the shared database, using a temporary
+clinician and patient that are deleted at the end. Supabase Storage is
+replaced by a fake one in memory, so no files are uploaded.
