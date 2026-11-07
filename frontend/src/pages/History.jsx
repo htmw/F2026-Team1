@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PageHeader from "../components/PageHeader";
+import SearchBar from "../components/SearchBar";
 import Select from "../components/Select";
 import Table from "../components/Table";
 import { SCREENING_COLUMNS } from "../data/screeningColumns.js";
@@ -8,17 +9,20 @@ import "../styles/history/history.css";
 
 function History() {
   const [patientId, setPatientId] = useState("");
+  const [query, setQuery] = useState("");
 
   const { data: patients } = useApi("/patients");
+
+  const params = new URLSearchParams();
+  if (patientId) params.set("patient", patientId);
+  if (query) params.set("query", query);
+  const queryString = params.toString();
+
   const {
     data: screenings,
     error,
     isLoading,
-  } = useApi(
-    patientId
-      ? `/screenings?patient=${encodeURIComponent(patientId)}`
-      : "/screenings",
-  );
+  } = useApi(queryString ? `/screenings?${queryString}` : "/screenings");
 
   const patientOptions = [
     { value: "", label: "All patients" },
@@ -44,7 +48,9 @@ function History() {
     if (screenings.length === 0) {
       return (
         <p className="history__empty body-md">
-          No screenings for this patient yet.
+          {queryString
+            ? "No screenings match your search."
+            : "No screenings yet."}
         </p>
       );
     }
@@ -70,23 +76,33 @@ function History() {
       <PageHeader
         title="History"
         subtitle="Past screenings for your patients, most recent first"
-        actions={
-          <div className="history__filter">
-            <label
-              htmlFor="patient-filter"
-              className="history__filter-label label-mono"
-            >
-              Filter:
-            </label>
-            <Select
-              id="patient-filter"
-              value={patientId}
-              onChange={(event) => setPatientId(event.target.value)}
-              options={patientOptions}
-            />
-          </div>
-        }
       />
+
+      <div className="history__toolbar">
+        <div className="history__search">
+          <SearchBar
+            id="history-search"
+            label="Search screenings"
+            placeholder="Search by patient name, patient ID or screening ID"
+            onSearch={setQuery}
+          />
+        </div>
+
+        <div className="history__filter">
+          <label
+            htmlFor="patient-filter"
+            className="history__filter-label label-mono"
+          >
+            Filter:
+          </label>
+          <Select
+            id="patient-filter"
+            value={patientId}
+            onChange={(event) => setPatientId(event.target.value)}
+            options={patientOptions}
+          />
+        </div>
+      </div>
 
       {renderContent()}
     </main>
