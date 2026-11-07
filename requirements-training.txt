@@ -14,4 +14,5 @@ uvicorn==0.54.0
 python-multipart==0.0.32
 httpx==0.28.1
 fpdf2==2.8.9
+scipy==1.18.1
 -e .
