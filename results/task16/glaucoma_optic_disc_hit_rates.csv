@@ -1,0 +1,3 @@
+dataset,total_heatmaps,evaluated_images,excluded_images,optic_disc_hits,optic_disc_misses,hit_rate_percent,glaucoma_eyes,glaucoma_hits,glaucoma_hit_rate_percent,healthy_eyes,healthy_hits,healthy_hit_rate_percent,mask_definition,exclusion_note
+ORIGA,650,650,0,240,410,36.92,168,94,55.95,482,146,30.29,mask > 0,No exclusions; image 359 annotation right-padded by 13 columns
+DRISHTI-GS,101,101,0,68,33,67.33,70,50,71.43,31,18,58.06,OD softmap >= 128,None
