@@ -15,7 +15,6 @@ import "../styles/record/record.css";
 import { EYE_LABELS, CONDITION_LABELS, RESULT_LABELS } from "../data/labels.js";
 import { formatDateTime } from "../utils/format.js";
 
-
 const INFLUENCE = {
   no_concern: "Low influence intensity",
   refer: "Elevated influence pattern",
@@ -76,7 +75,10 @@ function Record() {
             <span className="record__id mono-meta">{screening.id}</span>
             <span>{formatDateTime(screening.created_at)}</span>
             <span>
-              Patient: {patient.full_name}, {patient.id}
+              Patient:{" "}
+              <TextLink to={`/patients/${patient.id.toLowerCase()}`} accent>
+                {patient.full_name}, {patient.id}
+              </TextLink>
             </span>
             <span>Eye: {EYE_LABELS[eye]}</span>
             <span>Model version: {model_version.id}</span>

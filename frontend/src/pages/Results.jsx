@@ -79,7 +79,14 @@ function Results() {
       <SummaryStrip
         variant="panel"
         items={[
-          { label: "Patient", value: `${patient.full_name}, ${patient.id}` },
+          {
+            label: "Patient",
+            value: (
+              <TextLink to={`/patients/${patient.id.toLowerCase()}`} accent>
+                {patient.full_name}, {patient.id}
+              </TextLink>
+            ),
+          },
           { label: "Eye", value: EYE_LABELS[eye] },
           { label: "Date", value: formatDate(screening.created_at) },
           { label: "Screening ID", value: screening.id, tag: true },
